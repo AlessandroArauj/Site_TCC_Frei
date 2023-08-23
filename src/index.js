@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import App from './pages/home/App';
+import App from './pages/home/App.js';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -11,7 +11,6 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />} />
-        <Route path='/contato' element={<Contato />} />
       </Routes> 
     </BrowserRouter>
   </React.StrictMode>
