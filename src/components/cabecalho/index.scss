@@ -1,5 +1,4 @@
-
-.cabecalho{
+.cabecalho {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -10,61 +9,71 @@
     padding: 0px 50px;
 
 
-.logo{
-    height: 75px;
-}
+    .logo {
+        height: 75px;
+    }
 
-.input{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 40px;
-    width: 450px;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 25px;
-    gap: 10px;
-}
+    .input {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 40px;
+        width: 450px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 25px;
+        gap: 10px;
+    }
 
-.input  img{
-    height: 25px;
+    .input button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input img {
+        height: 25px;
 
 
-}
+    }
 
-.input input{
-    background-color: transparent;
-    border: none;
-    font-size: 14px;
-    width: 300px;
-}
+    .input input {
+        background-color: transparent;
+        border: none;
+        font-size: 14px;
+        width: 300px;
+        outline: 0;
+    }
 
 
-.dir{
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    
-}
+    .dir {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
 
-.dir div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
+    }
 
-}
+    .dir div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-.dir div img{
-    height: 25px;
-    width: 25px;
-}
 
-.dir div p{
-    text-decoration: none;
-    color: white;
-}
+    }
+
+    .dir div img {
+        height: 25px;
+        width: 25px;
+    }
+
+    .dir div p {
+        text-decoration: none;
+        color: white;
+    }
 
 
 

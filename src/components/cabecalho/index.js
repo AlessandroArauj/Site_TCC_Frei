@@ -1,17 +1,19 @@
 import './index.scss'
 import { Link } from 'react-router-dom'
 
-export default function Cabecalho(){
+export default function Cabecalho() {
 
-    return(
+    return (
         <div className='cabecalho'>
-            
-                <Link><img src='../../../assets/images/logo.png' className='logo'></img></Link>
-            
+
+            <Link><img src='../../../assets/images/logo.png' className='logo'></img></Link>
+
 
             <div className='input'>
-                <img src='../../../assets/images/lupa.png'></img>
-                <input type='text'/>
+                <button>
+                    <img src='../../../assets/images/lupa.png'></img>
+                </button>
+                <input type='text' />
             </div>
 
             <div className='dir'>
@@ -21,7 +23,7 @@ export default function Cabecalho(){
                 </div>
 
                 <div>
-                    <Link><img  src='../../../assets/images/carrinho.png'></img></Link>
+                    <Link><img src='../../../assets/images/carrinho.png'></img></Link>
                     <Link><p>carrinho</p></Link>
                 </div>
             </div>
