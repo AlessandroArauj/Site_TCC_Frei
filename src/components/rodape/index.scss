@@ -1,0 +1,81 @@
+.comp_rodape{
+
+
+.roda{
+    width: 100%;
+    height: 250px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sociais img{
+    height: 35px}
+    
+.contato img{
+    height: 35px}
+
+.esq {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #fff;
+    
+
+}
+
+
+.line{
+    width: 2px;
+    height: 200px;
+    background-color: #fff;
+}
+
+.dir{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    color: #fff;
+    gap: 10px;
+    
+}
+
+.dir h1{
+    font-size: 20px;
+}
+
+.esq h1{
+    font-size: 18px;
+}
+
+.contato{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.sociais{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 150%;
+}
+
+.logo{
+    height: 100px;
+}
+
+Link{
+    cursor: pointer;
+    color: #fff;
+
+}
+
+.esq h1{
+    color: #fff;
+text-decoration: underline black;}
+}
