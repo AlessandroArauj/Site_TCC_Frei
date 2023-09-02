@@ -1,5 +1,5 @@
 import './App.scss';
-import Cabecalho from '../../components/cabecalho';
+import Cabecalho from '../../../components/cabecalho/index.js';
 
 function App() {
   return (
