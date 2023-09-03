@@ -1,8 +1,19 @@
+
+
+
 .prin{
+    *{
+        margin: 0px;
+        box-sizing: border-box;
+    }
+
+    display: flex;
+    flex-direction: row;
 
 .esq{
+    padding: 50px;
     width: 50%;
-    min-height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,13 +23,14 @@
 
 .esq > h1{
     font-size: 45px;
+    color: #fff;
 }
 
-.lina{
-    width: 150px;
+.line{
+    width: 300px;
     height: 1px;
     background-color: white;
-
+    margin-bottom: 20px;
 }
 
 .insercao{
@@ -28,29 +40,70 @@
     background-color: #d9d9d9;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 25px;
+    padding: 25px;
 }
 
-.insercao input{
+.insercao > h1{
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.insercao div h1{
+    font-size: 14px;
+    margin-top: 15px;
+    padding-left: 5px;
+}
+
+.insercao div input{
 
     width: 350px;
     height: 45px;
     background-color: #564F4F;
     border-radius: 15px;
+    outline: 0;
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    border: none;
 }
 
 .insercao button{
     width: 150px;
     height: 45px;
     background-color: #564F4F;
+    border-radius: 25px;
+    color: white;
+    border: none;
 }
 
 .insercao button:hover{
 
-    background-color: #fff;
-    border: solid 1px #564F4F;
+    background-color: transparent;
+    border: solid 2px #564F4F;
+    transition: 0.4s;
+    color: black;
+
 }
+
+
+.dir{
+    width: 50%;
+    min-height: 100vh;
+    background-image: url('https://images.pexels.com/photos/3721941/pexels-photo-3721941.jpeg?cs=srgb&dl=pexels-daniel-reche-3721941.jpg&fm=jpg');
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding: 35px;
+    border-left: solid 2px #564F4F;
+    
+}
+
+
 
 
 

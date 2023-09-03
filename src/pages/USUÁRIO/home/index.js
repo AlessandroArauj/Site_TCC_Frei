@@ -1,4 +1,4 @@
-import './App.scss';
+import './index.scss';
 import Cabecalho from '../../../components/cabecalho/index.js';
 
 function App() {

@@ -6,7 +6,7 @@ export default function Cabecalho() {
     return (
         <div className='cabecalho'>
 
-            <Link><img src='../../../assets/images/logo.png' className='logo'></img></Link>
+            <Link><img src='../../../assets/images/logo.svg' className='logo'></img></Link>
 
 
             <div className='input'>

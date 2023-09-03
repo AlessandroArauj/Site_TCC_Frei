@@ -19,7 +19,7 @@ return(
             <div className="line" />
 
             <div className="dir">
-                <Link><img src='../../../assets/images/logo.png' className="logo"/></Link>
+                <Link><img src='../../../assets/images/logo.svg' className="logo"/></Link>
                 <h1> Siga-nos</h1>
                 <div className="sociais">
                 <Link><img src="https://www.freepnglogos.com/uploads/tik-tok-logo-png/tik-tok-tiktok-logo-glitch-toedit-sticker-fly-wall-7.png" /></Link>
