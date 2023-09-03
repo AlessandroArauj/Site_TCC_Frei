@@ -1,0 +1,58 @@
+.prin{
+
+.esq{
+    width: 50%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+
+}
+
+.esq > h1{
+    font-size: 45px;
+}
+
+.lina{
+    width: 150px;
+    height: 1px;
+    background-color: white;
+
+}
+
+.insercao{
+    border-radius: 25px;
+    width: 400px;
+    height: 420px;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+.insercao input{
+
+    width: 350px;
+    height: 45px;
+    background-color: #564F4F;
+    border-radius: 15px;
+}
+
+.insercao button{
+    width: 150px;
+    height: 45px;
+    background-color: #564F4F;
+}
+
+.insercao button:hover{
+
+    background-color: #fff;
+    border: solid 1px #564F4F;
+}
+
+
+
+
+}
