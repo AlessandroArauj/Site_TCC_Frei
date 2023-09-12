@@ -1,0 +1,165 @@
+.aba-usuario {
+
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    height: 100vh;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: absolute;
+
+
+
+
+
+    .mini-head {
+
+        width: 300px;
+        height: 105px;
+
+        gap: 10px;
+        padding: 10px;
+        border-top-right-radius: 100px;
+
+        background-color: #00C2FF;
+
+        display: flex;
+        align-items: center;
+
+
+
+        .img-usu-aba {
+
+            width: 60px;
+            height: 60px;
+
+        }
+
+        .linhafina {
+
+            width: 100px;
+            height: 0.1px;
+            background-color: bisque;
+
+        }
+
+
+
+
+    }
+
+
+    .conteudo-aba {
+
+        width: 300px;
+        height: 400px;
+
+        background-color: #D9D9D9;
+
+
+
+
+    }
+
+
+    .buttons {
+
+
+        margin-top: 30px;
+
+
+    }
+
+    .deslog-aba {
+
+        margin-top: 55px;
+
+    }
+
+
+
+    .botao-aba>button {
+
+        border: none;
+        height: 50px;
+        background-color: #D9D9D9;
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: space-between !important;
+        padding: 30px;
+        align-items: center !important;
+        transition: 0.3s;
+
+
+        
+
+
+
+    }
+
+
+
+
+    .botao-aba>button:hover {
+
+        background-color: #00C2FF;
+        font-size: 17px;
+
+
+    }
+
+    .deslog-aba {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+
+    .deslog-aba>button {
+
+        border: 0.5px #00C2FF solid;
+        border-radius: 2px;
+        width: 80px;
+        height: 30px;
+        background-color: #D9D9D9;
+        transition: 0.3s;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+
+    }
+
+    .deslog-aba>button:hover {
+
+        background-color: #47d4ff2f;
+        width: 90px;
+        height: 35px;
+        font-size: 17px;
+
+    }
+
+
+    .botao-aba>button>img {
+
+        width: 20px;
+        height: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+
+
+
+
+
+}
