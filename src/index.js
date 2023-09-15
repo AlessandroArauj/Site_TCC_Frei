@@ -5,6 +5,7 @@ import Home from './pages/USUÁRIO/home/index.js';
 import CadastroAdm from './pages/ADM/cadastro/index.js';
 import UsarioPerfil from './pages/USUÁRIO/perfilusuario';
 import Page_adm from './pages/ADM/page_adm';
+import AddCartao from './pages/USUÁRIO/addcartao';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ root.render(
         <Route path='/cadastroAdm' element={<CadastroAdm />} />
         <Route path='/usarioPerfil' element={<UsarioPerfil />} />
         <Route path='/pageAdm' element={<Page_adm />} />
+        <Route path='/addcartao' element={<AddCartao />} />
         
       </Routes> 
     </BrowserRouter>
