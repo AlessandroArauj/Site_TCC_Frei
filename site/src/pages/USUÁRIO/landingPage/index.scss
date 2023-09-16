@@ -1,0 +1,266 @@
+.landingPage{
+    *{
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    header{
+        width: 100%;
+        height: 100px;
+        position: fixed;
+        background-color: rgba(211, 211, 211, 0.863);
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        box-shadow: 0px 0px 15px 5px #d9d9d9;
+    }
+
+    header  nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    header nav h1{
+        text-decoration: underline rgba(187, 187, 187, 0.726);
+        color: black;
+        font-size: 18px;
+    }
+
+    header nav h1:hover{
+        text-decoration: underline #00C2FF;
+        color: #00C2FF;
+        transition: 0.3s;
+        
+    }
+
+    
+    .f1{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 50px;
+        background-image: url();
+        box-shadow: 0px 0px 50px #777;
+        color: #d9d9d9;
+
+    }
+
+    .f1 div{
+        width: 500px;
+    }
+    .f1 h1{
+        font-size: 45px;
+        width: 500px;
+        line-height: 0.8;
+        padding: 15px 0px;
+
+    }
+
+    .f1 p{
+        font-size: 22px;
+        padding: 15px 0px;
+        
+    }
+
+    .f1 button{
+        padding: 15px 0px;
+        width: 150px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        background-color: #00C2FF;
+        border: none;
+        color: white;
+        text-decoration: underline #00C2FF;
+        margin: 10px 0px;
+    }
+
+    .f1 button:hover{
+        background-color: transparent;
+        color: #d9d9d9;
+        border: solid 1px #d9d9d9;
+        transition: 0.7s;
+        text-decoration: underline #777;
+        transform: translateX(5px)
+    }
+
+}
+
+
+
+
+.f2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    }
+
+.f2 h1{
+    font-size: 33px;
+}
+
+.f2 p{
+    font-size: 22px;
+}
+
+.baixo-f2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+
+}
+
+.baixo-f2 div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+    color: black;
+    width: 300px;
+    height: 350px;
+    border-radius: 15px;
+}
+
+.baixo-f2 div h1{
+    font-size: 22px;
+}
+
+.baixo-f2 div p{
+    font-size: 18px;
+    text-align: center;
+}
+
+.baixo-f2 div:hover{
+    width: 285px;
+    height: 332.5px;
+    box-shadow: 0px 0px 15px rgb(173, 173, 173);
+    background-color: white;
+    transition: 0.3s;
+}
+
+
+
+
+
+
+.f3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 50%;
+    width: 100%;
+    padding: 20px 150px;
+}
+
+.f3 div{
+    width: 600px;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.f3 div h1{
+    font-size: 33px;
+}
+.f3 p{
+    font-size: 22px;
+    text-align: end;
+}
+
+.button{
+    padding: 15px 0px;
+        width: 150px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        background-color: #00C2FF;
+        border: none;
+        color: white;
+        text-decoration: underline #00C2FF;
+        margin: 10px 0px;
+}
+
+.button:hover{
+    background-color: transparent;
+    color: black;
+    border: solid 1px black;
+    transition: 0.3s;
+}
+
+.f4{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 50%;
+    width: 100%;
+    padding: 20px 150px;
+    margin-top: 100px;
+}
+
+.f4 div{
+    
+    width: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.f4 div h1{
+    font-size: 33px;
+}
+.f4 p{
+    font-size: 22px;
+}
+
+
+.f5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center ;
+    height: 70%;
+    width: 100%;
+    padding: 20px 150px;
+    margin-top: 100px;
+
+}
+
+.f5 h1{
+    font-size: 33px;
+}
+
+.f5 p{
+    font-size: 22px;
+    text-align: center;
+}
+
+.f5 img{
+    height: 300px;
+}
+
+
+
+
+

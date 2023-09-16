@@ -6,6 +6,7 @@ import CadastroAdm from './pages/ADM/cadastro/index.js';
 import UsarioPerfil from './pages/USUÁRIO/perfilusuario';
 import Page_adm from './pages/ADM/page_adm';
 import AddCartao from './pages/USUÁRIO/addcartao';
+import LandingPage from './pages/USUÁRIO/landingPage';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -19,6 +20,8 @@ root.render(
         <Route path='/usarioPerfil' element={<UsarioPerfil />} />
         <Route path='/pageAdm' element={<Page_adm />} />
         <Route path='/addcartao' element={<AddCartao />} />
+        <Route path='/landingPage' element={<LandingPage />} />
+
         
       </Routes> 
     </BrowserRouter>
