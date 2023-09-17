@@ -7,8 +7,11 @@ import UsarioPerfil from './pages/USUÁRIO/perfilusuario';
 import Page_adm from './pages/ADM/page_adm';
 import AddCartao from './pages/USUÁRIO/addcartao';
 import LandingPage from './pages/USUÁRIO/landingPage';
+import LoginUser from './pages/USUÁRIO/loginUser';
+import cadastroAdm from './pages/ADM/cadastro/index.js';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CadastroUser from './pages/USUÁRIO/cadastroUser';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +24,9 @@ root.render(
         <Route path='/pageAdm' element={<Page_adm />} />
         <Route path='/addcartao' element={<AddCartao />} />
         <Route path='/landingPage' element={<LandingPage />} />
+        <Route path='/cadastroUser' element={<CadastroUser />} />
+        <Route path='/loginUser' element={<LoginUser />} />
+
 
         
       </Routes> 
