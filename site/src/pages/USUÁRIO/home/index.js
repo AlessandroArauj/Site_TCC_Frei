@@ -101,6 +101,13 @@ function Home() {
         </div>
       </section>
 
+
+
+
+      <section className='f2'>
+        
+
+      </section>
     </div>
   );
 }
