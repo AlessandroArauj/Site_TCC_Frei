@@ -1,0 +1,192 @@
+.addProduto{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+
+
+    .addProduto > h1{
+        font-size: 33px;
+    }
+
+    Link{
+        font-size: 22px;
+    }
+
+    .f1{
+        display: flex;
+        gap: 30px;
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px 0px;
+    }
+
+    .left{
+        width: 500px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    .right{
+        width: 500px;
+        height: 450px;
+        background-color: #777;
+        border-radius: 15px;
+        padding: 15px;
+        
+    }
+
+
+    .right input::placeholder{
+        color: #d9d9d9;
+    }
+
+    .start-right{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+    .start-right input{
+
+        display: flex;
+        align-items: center;
+        padding: 0px 15px;
+        background-color: transparent;
+        outline: 0;
+        border:  1px solid #d9d9d9;
+        border-radius: 15px;
+        color: #d9d9d9;
+        height: 30px;
+        width: 225px;
+        margin: 10px;
+    }
+
+    .center-right{
+        display: flex;
+        flex-direction: row;
+    } 
+
+    .center-right > input{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 5px;
+        background-color: transparent;
+        outline: 0;
+        border:  1px solid #d9d9d9;
+        border-radius: 15px;
+        color: #d9d9d9;
+        height: 30px;
+        width: 225px;
+        margin: 10px;        
+    }
+    
+    .center-right label{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 15px;
+        background-color: transparent;
+        outline: 0;
+        border:  1px solid #d9d9d9;
+        border-radius: 15px;
+        color: #d9d9d9;
+        height: 30px;
+        width: 225px;
+        margin: 10px;        
+    }
+
+    .center-right label input{
+        outline: 0;
+        border: none;
+        background-color: transparent;
+        color: #d9d9d9;
+        width: 140px;
+    }
+
+    .center-right label select{
+        border: none;
+        outline: 0;
+        background-color: transparent;
+        color: #d9d9d9;
+    }
+
+    .center-right label option{
+        border: none;
+        outline: 0;
+        background-color: transparent;
+        color: #d9d9d9;
+    }
+
+    .start-left{
+        background-color: #777;
+        width: 500px;
+        height: 320px;
+        border-radius: 15px;
+        padding: 15px;
+        display: flex;
+        gap: 15px;
+    }
+
+
+
+    .end-left{
+        background-color: #777;
+        width: 500px;
+        height: 120px;
+        border-radius: 15px;
+        color: #fff;
+        padding: 10px;
+    }
+
+    .prin{
+        background-color: #d9d9d9 ;
+        width: 400px;
+        height: 100%;
+        border-radius: 15px;
+    }
+
+    .lado{
+        border:solid 2px #d9d9d9 ;
+        width: 120px;
+        height: 100%;
+        border-radius: 15px;
+    }
+
+
+    .end-left h1{
+        font-size: 18px;
+    }
+
+
+    button{
+        width: 200px;
+        height: 35px;
+        background-color: #00C2FF;
+        color: #d9d9d9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 15px;
+    }
+
+    button:hover{
+        background-color: transparent;
+        border: solid 1px black;
+        color: black;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+
+
+
+}

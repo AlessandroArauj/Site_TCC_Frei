@@ -8,10 +8,11 @@ import Page_adm from './pages/ADM/page_adm';
 import AddCartao from './pages/USUÁRIO/addcartao';
 import LandingPage from './pages/USUÁRIO/landingPage';
 import LoginUser from './pages/USUÁRIO/loginUser';
-import CadastroAdm from './pages/ADM/cadastro/index.js';
+import CadastroUser from './pages/USUÁRIO/cadastroUser';
+import AddProduto from './pages/ADM/addProduto';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CadastroUser from './pages/USUÁRIO/cadastroUser';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,6 +27,8 @@ root.render(
         <Route path='/landingPage' element={<LandingPage />} />
         <Route path='/cadastroUser' element={<CadastroUser />} />
         <Route path='/loginUser' element={<LoginUser />} />
+        <Route path='/addProduto' element={<AddProduto />} />
+
 
 
         

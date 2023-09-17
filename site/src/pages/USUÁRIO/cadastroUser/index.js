@@ -23,12 +23,12 @@ export default function ContaUser(){
          <div className='p2'>
             <div className='container1'>
                
-               <input id='name' type='text' name='name' placeholder='NOME COMPLETO'required/>
+               <input id='name' type='text' name='name' placeholder='Nome completo'required/>
                <input id='name' type='date' name='name' required/>
-               <input id='number' type='tel' name='number' placeholder='TELEFONE'required/>
-               <input id='name' type='text' name='name' placeholder='ENDEREÇO' required/>
+               <input id='number' type='tel' name='number' placeholder='Telefone'required/>
+               <input id='name' type='text' name='name' placeholder='Endereço' required/>
                <input id='name' type='text' name='name' placeholder='CPF' required/>
-               <input id='name' type='text' name='name' placeholder='CIDADE' required/>
+               <input id='name' type='text' name='name' placeholder='Cidade' required/>
                
             </div>
 
@@ -37,10 +37,10 @@ export default function ContaUser(){
 
          <div className='p3'>     
             <div className='cont2'>
-            <input id='email' type='email' name='name' placeholder='EMAIL' required/>
-            <input id='password' type='password' name='password' placeholder='SENHA' required/>
+            <input id='email' type='email' name='name' placeholder='Email' required/>
+            <input id='password' type='password' name='password' placeholder='Senha' required/>
           
-            <input id='password' type='password' name='Confirmpassword' placeholder='CONFIRME SUA SENHA' required/>
+            <input id='password' type='password' name='Confirmpassword' placeholder='Confirme sua senha' required/>
           
 
 
