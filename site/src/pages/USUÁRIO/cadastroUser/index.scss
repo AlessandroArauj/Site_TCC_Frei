@@ -1,0 +1,207 @@
+
+.criarConta{
+
+
+    *{
+        margin: 0px;
+        box-sizing: border-box;
+       
+       
+    }
+  
+ 
+    background-color: #000000;
+
+    display: flex;
+    flex-direction: column;
+
+    .cima {
+      font-size: 30px;
+    
+    position: relative;
+    flex-direction: column;
+
+        
+    }
+
+    .cima img{
+      width: 100%;
+    }
+
+   
+    .legenda{
+      position: absolute;
+      left: 40%;
+      bottom: 80px;
+      
+     
+    }
+
+    .legenda h1{
+      margin: 0;
+      color: white;
+     
+    }
+
+    .baixo{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      
+   
+    }
+
+    .p1 p{
+      font-size: 20px;
+      color: #d9d9d9;
+    }
+
+    .p1 hr{
+      margin-top: 4px;
+      color: rgb(134, 56, 56);
+      height: 2px;
+    }
+
+    .p2{
+    border-radius: 25px;
+    width: 1200px;
+    height: 190px;
+ 
+    display: flex;
+    flex-direction: row;
+   margin-top: 10px;
+   
+    }
+
+    .p2 > h1{
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: underline;
+  }
+  
+  .p2 div h1{
+      font-size: 14px;
+      margin-top: 15px;
+      padding-left: 5px;
+
+  }
+  
+  .p2 div input{
+  
+      width: 350px;
+      height: 45px;
+      background-color: #000000;
+      border-radius: 5px;
+      
+      outline: 0;
+      color: rgba(255, 255, 255, 0.616);
+      font-size: 16px;
+      padding: 15px;
+      border: 2px solid white;
+  }
+
+  
+
+  .p2 input{
+
+    margin: 10px;
+    
+  }
+
+  
+
+  .p3{
+    border-radius: 25px;
+    width: 1200px;
+    height: 110px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    
+
+    }
+
+    .p3 > h1{
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: underline;
+  }
+  
+  .p3 div h1{
+      font-size: 14px;
+      margin-top: 15px;
+      padding-left: 5px;
+
+  }
+  
+  .p3 div input{
+  
+      width: 350px;
+      height: 45px;
+      background-color: #000000;
+      border-radius: 5px;
+      
+      outline: 0;
+      color: white;
+      font-size: 16px;
+      padding: 15px;
+      border: 2px solid white;
+  }
+
+  
+
+  .p3 input{
+
+    margin: 10px;
+    
+  }
+
+
+  .right{
+    margin-left: 200px;
+    width: 303px;
+    height: 200px;
+    color: #f1e7e7;
+  
+  }
+  
+  
+  
+
+
+
+   .right  button{
+    width: 350px;
+    height: 45px;
+    font-size: 18px;
+    color: #000000;
+    background-color: #f1e7e7;
+    border-radius: 25px;
+    color: rgb(15, 15, 15);
+    border: none;
+ 
+
+  }
+
+  .right button:hover{
+    background-color: #d9d9d9;
+    border: solid 2px #564F4F;
+    transition: 0.4s;
+    color: rgb(20, 20, 20);
+
+}
+
+
+.final{
+  margin-left: 90px;
+  font-size: 20px;
+  margin-top: 5px;
+
+
+
+}
+
+
+   
+}
