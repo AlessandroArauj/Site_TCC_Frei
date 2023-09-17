@@ -1,1 +1,139 @@
+.pageHome{
 
+
+    .nav-cabe{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        justify-content: space-around;
+        background-color: #d9d9d9;
+    }
+
+    .nav-cabe select{
+        border: 1px solid #d9d9d9;
+        background-color: transparent;
+        outline: 0;
+    }
+
+    .nav-cabe select:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+
+
+
+
+    .slider{
+        margin: 0 auto;
+        width: 800px;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .slides{
+        width: 400%;
+        height: 250px;
+        display: flex;
+
+    }
+
+    .slides input {
+        display: none;
+    }
+
+    .Slide{
+        width: 25%;
+        position: relative;
+        transition: 3s;
+        
+    }
+
+    .Slide img{
+        width: 800px;
+    }
+
+    .manual-navegation{
+        position: absolute;
+        width: 800px;
+        margin-top: -40px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .manual-btn{
+        border: 2px solid green;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .manual-btn:not(:last-child){
+        margin-right: 15px;
+    }
+
+    .manual-btn:hover{
+        background-color: red;
+    }
+
+    #radio1:checked ~ .first{
+        margin-left:0;
+    }
+    
+    #radio2:checked ~ .first{
+        margin-left: -25%;
+    }
+    
+    #radio3:checked ~ .first{
+        margin-left: -50%;
+    }
+    
+    #radio4:checked ~ .first{
+        margin-left: -75%;
+    }
+    
+    
+
+
+    .navegation-auto div{
+        border: 2px solid blue;
+        padding: 5px;
+        border-radius: 10px ;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .navegation-auto{
+        position: absolute;
+        width: 800px;
+        margin-top: 210px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navegation-auto div:not(:last-child){
+        margin-right: 15px;
+    }
+
+    #radio1:checked ~ .navegation-auto .auto-btn1{
+        background-color: red;
+    }
+
+    #radio2:checked ~ .navegation-auto .auto-btn2{
+        background-color: red;
+    }
+
+    #radio3:checked ~ .navegation-auto .auto-btn3{
+        background-color: red;
+    }
+
+    #radio4:checked ~ .navegation-auto .auto-btn4{
+        background-color: red;
+    }
+
+    
+
+
+}
