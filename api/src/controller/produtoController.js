@@ -8,13 +8,13 @@ server.post('/produto', async (req,resp) =>{
     try {
         
         const produto = req.body;
-        const resposta = await inserirProduto();
+        const resposta = await inserirProduto(produto);
 
         resp.send(resposta)
 
     } catch (err) {
         resp.status(400).send({
-            erro: 'Ocorreu um Erro'
+            erro: err.message
         
         })
         
