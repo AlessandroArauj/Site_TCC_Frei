@@ -8,4 +8,4 @@ const con = await mysql.createConnection({
 
 });
 console.log('BD conectado com sucesso!');
-export {con}
+export {con};

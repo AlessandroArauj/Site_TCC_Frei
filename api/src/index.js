@@ -1,19 +1,21 @@
 import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
+import produtoController from './controller/produtoController.js';
 
 import { con } from './repository/connection.js';
 
-const serve = express();
-serve.use(cors());
-serve.use(express.json());
+const server = express();
+server.use(cors());
+server.use(express.json());
+server.use(produtoController);
 
 
-serve.listen(process.env.PORT,
+server.listen(process.env.PORT,
     () => console.log(`API aberta na PORTA ${process.env.PORT} Bem-Vindo`));
 
 
-    serve.get('/ping', (req, resp) =>{
+    server.get('/ping', (req, resp) =>{
         resp.send('pong')
     
     })
