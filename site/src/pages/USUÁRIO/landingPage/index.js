@@ -11,7 +11,7 @@ export default function LandingPage() {
             <header>
                 <img src=' ../../../assets/images/logo.svg' />
                 <nav>
-                    <Link>
+                    <Link to={'/home'}>
                         <h1> Home</h1>
                     </Link>
                     <Link>
