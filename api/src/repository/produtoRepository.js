@@ -2,8 +2,8 @@ import { con } from "./connection.js";
 
 export async function inserirProduto (produto){
     `
-    INSERT INTO TB_PRODUTO (ID_MARCAS, ID_CATEGORIA, NM_PRODUTO, VL_PRECO, VL_PRECO_PROMOCIONAL, BT_DESTAQUE, BT_PROMOCAO, BT_DISPONIVEL, QTD_ESTOQUE, DS_DETALHES) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    INSERT INTO TB_PRODUTO (ID_MARCAS, ID_CATEGORIA, NM_PRODUTO, VL_PRECO, DS_IMAGEM, VL_PRECO_PROMOCIONAL, BT_DESTAQUE, BT_PROMOCAO, BT_DISPONIVEL, QTD_ESTOQUE, DS_DETALHES) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
     
     `
 
@@ -32,11 +32,11 @@ export async function inserirProduto (produto){
 }
 
 
-export async function ExibirTodosProdutos(produto){
+export async function ExibirTodosProdutos(){
     const comando = `
 
     select  ID_MARCAS               AS MARCAS,
-            ID_CATEGORIAS           AS CATEGORIAS,
+            ID_CATEGORIA            AS CATEGORIAS,
             NM_PRODUTO              AS PRODUTO,
             VL_PRECO                AS PRECO,
             VL_PRECO_PROMOCIONAL    AS PRECOPROMO,
@@ -44,7 +44,7 @@ export async function ExibirTodosProdutos(produto){
             BT_PROMOCAO             AS PROMODISP,
             BT_DISPONIVEL           AS DISPONIVEL,
             QTD_ESTOQUE             AS ESTOQUE,
-            DS_DETALHE              AS DETALHE
+            DS_DETALHES             AS DETALHE
 
     from    TB_PRODUTO
     

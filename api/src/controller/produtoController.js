@@ -8,7 +8,7 @@ server.post('/produto', async (req,resp) =>{
     try {
         
         const produto = req.body;
-        const resposta = await inserirProduto(produto);
+        const resposta = await inserirProduto();
 
         resp.send(resposta)
 
@@ -23,7 +23,7 @@ server.post('/produto', async (req,resp) =>{
 });
 
 
-server.get('/cliente', async (req, resp) =>{
+server.get('/produto', async (req, resp) =>{
 
     try {
         
