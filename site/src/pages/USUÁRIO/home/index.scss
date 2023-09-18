@@ -154,6 +154,13 @@
         padding: 5px;
     }
 
+    hr{
+        background-color: black;
+        width: 350px;
+        height: 3px;
+        margin: 10px;
+    }
+
     .f2 div img{
         cursor: pointer;
         
@@ -225,11 +232,148 @@
     }
 
 
-    .f4{
+    .faixa-4{
         width: 100%;
-        height: 250px;
-        background-color: green;
+        height: 300px;
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7D4-Nxy9gi3_2NFcdbL3fBNqyk_olt0zNsQ&usqp=CAU');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: space-between;
+        padding: 50px;
     }
+
+    .left-f4{
+        width: 550px;
+        font-size: 33px;
+        color: #fff;
+    }
+
+
+    .right-f4{
+        display: flex;
+        align-items: end;
+        justify-content: end;
+    }
+
+    .right-f4 button{
+        width: 200px;
+        height: 40px;
+        background-color: #00C2FF;
+        border: none;
+        color: white;
+        font-size: 18px;
+        border-radius: 15px;
+    }
+
+    .right-f4 button:hover{
+        background-color: transparent;
+        border: 1px #00C2FF solid;
+        color: #00C2FF;
+        transition: 0.5s;
+        cursor: pointer;
+
+
+    }
+
+
+    .faixa-5{
+        display: flex;
+        flex-direction: column;
+        background-color: #777;
+        width: 100%;
+        height: 450px;
+        padding: 50px;
+
+    }
+
+    .cima-f5{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        font-size: 22px;
+    }
+
+    .cima-f5 h1{
+        padding: 0px 10px;
+    }
+
+    .f6{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 35px;
+        width: 100%;
+        height: 120px;
+        background-color: #d9d9d9;   
+    }
+
+    .esq-f6{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .text-f6{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-f6 hr{
+        width: 200px;
+        height: 4px;
+        background-color: black;
+    }
+    
+
+    .dir-f6{
+        width: 550px;
+        display: flex ;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .dir-f6 input{
+        width: 350px;
+        height: 40px;
+        background: white;
+        padding: 0px 15px;
+        display: flex;
+        outline: 0;
+        border: 1px solid black;
+        border-radius: 15px;
+
+        
+    }
+
+    .dir-f6 button{
+        width: 150px;
+        border: none;
+        background-color: #00C2FF;
+        height: 40px;
+        border-radius: 15px;
+        color: #fff;
+    }
+
+    .dir-f6 button:hover{
+        background-color: transparent;
+        border:1px solid #000;
+        color: #000;
+        transition: 0.5s;
+    }
+
+
+
+
+
+
+    
+
+
 
 
 

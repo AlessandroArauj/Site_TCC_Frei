@@ -1,6 +1,6 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho/index.js';
-import Rodape from '../../../components/rodape';
+import Rodape from '../../../components/rodape/index.js';
 //import './script.js';
 import { Link } from 'react-router-dom';
 
@@ -90,9 +90,10 @@ function Home() {
 
 
       <section className='f2'>
-        <h1>Marcas</h1>
-        <div className='line' />
 
+
+        <h1>Marcas</h1>
+        <hr />
 
         <div>
           <div>
@@ -118,45 +119,55 @@ function Home() {
         </div>
 
 
-        
+
         <div>
 
         </div>
       </section>
 
-      <section className='f4'>
+      <section className='faixa-4'>
 
-        <div>
+        <div className='left-f4'>
           <h1>Apenas produtos me promoção</h1>
         </div>
 
-        <div>
+        <div className='right-f4'>
           <button> Saiba mais</button>
         </div>
 
       </section>
 
-      <section className='f5'>
-        <div className='line' />
-        <h1> Com os menores preços</h1>
-        <div className='line2' />
+      <section className='faixa-5'>
+        <div className='cima-f5'>
+          <div className='line' />
+          <h1> Com os menores preços</h1>
+          <div className='line2' />
+        </div>
+
+
+        <div>
+
+        </div>
       </section>
 
       <section className='f6'>
-        <div>
-          <img src=' ' />
+        <div className='esq-f6'>
+          <img src='../../../assets/images/Cartas.svg' />
 
           <div className=' text-f6'>
-            <h1></h1>
-            <div></div>
+            <h1> Quer recerber novidades?</h1>
+            <hr></hr>
+            <div>Cadastre seu email agora</div>
           </div>
         </div>
 
-        <div>
+        <div className='dir-f6'>
           <input type='text' placeholder='Insira seu email' />
           <button> Cadastrar </button>
         </div>
       </section>
+
+      < Rodape />
 
     </div>
   );

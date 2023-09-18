@@ -21,14 +21,14 @@ export default function LandingPage() {
                     <Link className='link-head'>
                         <h1 className='button-text-head'> Contatos</h1>
                     </Link>
-                    <Link className='link-head'>
+                    <Link className='link-head' to={'/cadastroUser'}>
                         <h1 className='button-text-head'> Cadastre-se</h1>
                     </Link>
                 </nav>
             </header>
 
 
-            <section className='f1'>
+            <section className='f1'  St>
                 <div>
                     <h1> É aqui na TOTH MUSIC que voce encontra o que mais deseja
                     </h1>
