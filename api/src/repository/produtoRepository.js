@@ -31,6 +31,19 @@ export async function inserirProduto (produto){
 }
 
 
+export async function AlterarImagem(imagem, id){
+    const comando = `
+        UPDATE TB_PRODUTO
+            SET IMG_IMAGEM              = ?
+        WHERE ID_INSTRUMENTOS           = ?
+    
+    `
+    const [resp] = await con.query(comando, [imagem, id]);
+    return resp.affectedRows;
+
+}
+
+
 export async function ExibirTodosProdutos(){
     const comando = `
 
