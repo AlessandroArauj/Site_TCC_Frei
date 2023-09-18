@@ -8,7 +8,7 @@ export default function ContaUser(){
       <div className='cima'>
         <img src='../../../assets/images/Rectangle 10.svg' />
         <div className='legenda'>
-        <h1>Seja Bem Vindo</h1>
+        <h1 className='legenda'>Seja Bem Vindo</h1>
       </div>
 
        </div>
@@ -23,7 +23,7 @@ export default function ContaUser(){
          <div className='p2'>
             <div className='container1'>
                
-               <input id='name' type='text' name='name' placeholder='Nome completo'required/>
+               <input id='name' type='text' name='name' placeholder='Nome Completo'required/>
                <input id='name' type='date' name='name' required/>
                <input id='number' type='tel' name='number' placeholder='Telefone'required/>
                <input id='name' type='text' name='name' placeholder='Endereço' required/>
@@ -40,7 +40,7 @@ export default function ContaUser(){
             <input id='email' type='email' name='name' placeholder='Email' required/>
             <input id='password' type='password' name='password' placeholder='Senha' required/>
           
-            <input id='password' type='password' name='Confirmpassword' placeholder='Confirme sua senha' required/>
+            <input id='password' type='password' name='Confirmpassword' placeholder='Confirme Sua Senha' required/>
           
 
 
