@@ -1,10 +1,16 @@
 import { Router } from "express";
 import { AlterarImagem, AlterarProduto, DeletarProduto, ExibirTodosProdutos, inserirProduto } from "../repository/produtoRepository.js";
+import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
 
 const upload = multer({ dest: 'storage/fotosProdutos' })
 const server = Router();
+
+server.get('/produto/marca', async (req, resp) => {
+    let r = await listarMarcas();
+    resp.send(r)
+})
 
 server.delete('/produto/:id', async (req, resp) => {
     try {
