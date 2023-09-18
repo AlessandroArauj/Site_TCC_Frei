@@ -1,5 +1,6 @@
 import './index.scss'
 import { Link } from 'react-router-dom'
+
 import Rodape from '../../../components/rodape/index.js'
 
 
@@ -11,17 +12,17 @@ export default function LandingPage() {
             <header>
                 <img src=' ../../../assets/images/logo.svg' />
                 <nav>
-                    <Link to={'/home'}>
-                        <h1> Home</h1>
+                    <Link className='link-head' to={'/home'}>
+                        <h1 className='button-text-head'> Home</h1>
                     </Link>
-                    <Link>
-                        <h1> Serviços</h1>
+                    <Link className='link-head'>
+                        <h1 className='button-text-head'> Serviços</h1>
                     </Link>
-                    <Link>
-                        <h1> Contatos</h1>
+                    <Link className='link-head'>
+                        <h1 className='button-text-head'> Contatos</h1>
                     </Link>
-                    <Link>
-                        <h1> Cadastre-se</h1>
+                    <Link className='link-head'>
+                        <h1 className='button-text-head'> Cadastre-se</h1>
                     </Link>
                 </nav>
             </header>

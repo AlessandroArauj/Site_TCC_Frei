@@ -19,20 +19,26 @@
         flex-direction: row;
         align-items: center;
         gap: 20px;
-    }
-
-    header nav h1{
-        text-decoration: underline rgba(187, 187, 187, 0.726);
-        color: black;
-        font-size: 18px;
-    }
-
-    header nav h1:hover{
-        text-decoration: underline #00C2FF;
-        color: #00C2FF;
-        transition: 0.3s;
         
     }
+
+    .link-head{
+        text-decoration: none;
+        color: #1b1b1b;
+        font-size: 12px;
+        
+    
+    }
+
+    .link-head:hover{
+    
+        
+        color: #00C2FF;
+        transition: 0.3s;
+    
+    }
+
+    
 
     
     .f1{
@@ -56,6 +62,7 @@
         width: 500px;
         line-height: 0.8;
         padding: 15px 0px;
+        font-family: 'Fonte1';
 
     }
 
