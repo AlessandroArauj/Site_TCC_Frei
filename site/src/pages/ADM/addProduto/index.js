@@ -64,6 +64,15 @@ export default function addProduto() {
                         </select>
                     </div>
 
+
+                    
+                    <textarea placeholder='Descrição' className='Description'>
+
+                    </textarea >
+                    
+                    
+                    
+
                 </div>
 
 

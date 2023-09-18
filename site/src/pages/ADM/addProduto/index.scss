@@ -38,6 +38,9 @@
         background-color: #777;
         border-radius: 15px;
         padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         
     }
 
@@ -185,6 +188,47 @@
         transition: 0.3s;
         cursor: pointer;
     }
+
+    .end-right{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        
+    }
+
+    .end-right select{
+        border: 1px solid #d9d9d9;
+        outline: 0;
+        background-color: transparent;
+        color: #d9d9d9;
+        width: 140px;
+        height: 30px;
+        border-radius: 15px;
+        padding: 0px 10px;
+    }
+
+    .Description{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        border: 1px solid #d9d9d9;
+        outline: 0;
+        background-color: transparent;
+        color: #d9d9d9;
+        width: 100%;
+        height: 280px;
+        border-radius: 15px;
+        padding:10px;
+
+    }
+
+
+    .Description::placeholder{
+        color: #d9d9d9;
+    }
+
+
 
 
 

@@ -1,25 +1,10 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho/index.js';
 import Rodape from '../../../components/rodape';
+//import './script.js';
 import { Link } from 'react-router-dom';
 
 function Home() {
-  
-  ///let count = 1;
-  ///document.getElementById('radio1').checked = true;
-
-  ///setInterval( function(){
-    ///nextImage();
-  ///}, 5000)
-  
-  ///function nextImage(){
-    ///count++;
-   /// if(count > 4){
-  ///    count = 1
-  ///  }
-
-  ///  document.getElementById('radio' + count).checked = true;
-  ///}
 
 
   return (
@@ -57,7 +42,7 @@ function Home() {
             <input type='radio' name='radio-btn' id='radio3' />
             <input type='radio' name='radio-btn' id='radio4' />
 
-            
+
 
             <div className='Slide first'>
               <img src='https://i.ytimg.com/vi/yUJwC7INGNo/maxresdefault.jpg' />
@@ -105,9 +90,74 @@ function Home() {
 
 
       <section className='f2'>
+        <h1>Marcas</h1>
+        <div className='line' />
+
+
+        <div>
+          <div>
+            <img src='../../../assets/images/Roland.png' className='img-start-start' />
+            <img src='../../../assets/images/Yamaha.png' className='img-start-center' />
+            <img src='../../../assets/images/Boss.png' />
+          </div>
+
+          <div>
+            <img src='../../../assets/images/bose.png' className='img-end-start' />
+            <img src='../../../assets/images/tama.png' className='img-end-center' />
+            <img src='../../../assets/images/Greatsch.png' className='img-end-end' />
+          </div>
+        </div>
+      </section>
+
+
+      <section className='f3'>
+        <div className='cima-f3'>
+          <div className='line' />
+          <h1> Produtos em Destaque</h1>
+          <div className='line2' />
+        </div>
+
+
         
+        <div>
+
+        </div>
+      </section>
+
+      <section className='f4'>
+
+        <div>
+          <h1>Apenas produtos me promoção</h1>
+        </div>
+
+        <div>
+          <button> Saiba mais</button>
+        </div>
 
       </section>
+
+      <section className='f5'>
+        <div className='line' />
+        <h1> Com os menores preços</h1>
+        <div className='line2' />
+      </section>
+
+      <section className='f6'>
+        <div>
+          <img src=' ' />
+
+          <div className=' text-f6'>
+            <h1></h1>
+            <div></div>
+          </div>
+        </div>
+
+        <div>
+          <input type='text' placeholder='Insira seu email' />
+          <button> Cadastrar </button>
+        </div>
+      </section>
+
     </div>
   );
 }

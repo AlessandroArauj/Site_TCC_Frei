@@ -35,10 +35,10 @@
 
     .slider{
         margin: 0 auto;
-        width: 800px;
+        width: 1200px;
         height: 250px;
         overflow: hidden;
-        border-radius: 25px;
+        border-radius: 45px;
     }
 
     .slides{
@@ -60,19 +60,19 @@
     }
 
     .Slide img{
-        width: 800px;
+        width: 1200px;
     }
 
     .manual-navegation{
         position: absolute;
-        width: 800px;
-        margin-top: -40px;
+        width: 1200px;
+        margin-top: -20px;
         display: flex;
         justify-content: center;
     }
 
     .manual-btn{
-        border: 2px solid green;
+        border: 2px solid #00C2FF;
         padding: 5px;
         border-radius: 10px;
         cursor: pointer;
@@ -84,7 +84,7 @@
     }
 
     .manual-btn:hover{
-        background-color: red;
+        background-color: #fff;
     }
 
     #radio1:checked ~ .first{
@@ -116,8 +116,8 @@
 
     .navegation-auto{
         position: absolute;
-        width: 800px;
-        margin-top: 210px;
+        width: 1200px;
+        margin-top: 230px;
         display: flex;
         justify-content: center;
     }
@@ -127,20 +127,117 @@
     }
 
     #radio1:checked ~ .navegation-auto .auto-btn1{
-        background-color: red;
+        background-color: #fff;
     }
 
     #radio2:checked ~ .navegation-auto .auto-btn2{
-        background-color: red;
+        background-color: #fff;
     }
 
     #radio3:checked ~ .navegation-auto .auto-btn3{
-        background-color: red;
+        background-color: #fff;
     }
 
     #radio4:checked ~ .navegation-auto .auto-btn4{
-        background-color: red;
+        background-color: #fff;
     }
+
+
+    .f2{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+    }
+
+    .f2 div{
+        padding: 5px;
+    }
+
+    .f2 div img{
+        cursor: pointer;
+        
+    }
+
+    .img-end-end{
+        border: 1px solid red;
+        border-bottom-left-radius: 1000px;
+    }
+
+    .img-end-start:hover{
+        position: absolute;
+        width: 500px;
+        transition: 0.5s;
+
+    }
+
+
+    .img-start-center{
+        margin-left: -230px;
+        margin-right: 0px;
+        border: 1px solid red;
+        border-bottom-left-radius: 1000px;
+    }
+
+    .img-end-center{
+        margin-left: 0px ;
+        margin-right: -230px ; 
+    }
+
+
+    .f2 img{
+        width: 350px;
+        height: 200px;
+    }
+
+    .f3{
+        width: 100%;
+        height: 450px;
+        padding: 50px;
+        background-color: #777;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .cima-f3{
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .line{
+        width: 350px;
+        height: 2px;
+        background-color: white;
+    }
+
+    .f3 h1{
+        padding: 0px 10px;
+        font-size: 33px;
+    }
+
+    .line2{
+        width: 500px;
+        height: 2px;
+        background-color: white;
+    }
+
+
+    .f4{
+        width: 100%;
+        height: 250px;
+        background-color: green;
+    }
+
+
+
+
+
+
+    
+
 
     
 
