@@ -21,8 +21,8 @@ export default function LandingPage() {
                     <Link className='link-head'>
                         <h1 className='button-text-head'> Contatos</h1>
                     </Link>
-                    <Link className='link-head' to={'/cadastroUser'}>
-                        <h1 className='button-text-head'> Cadastre-se</h1>
+                    <Link className='link-head' to={'/loginUser'}>
+                        <h1 className='button-text-head'> Log-in</h1>
                     </Link>
                 </nav>
             </header>
@@ -78,7 +78,7 @@ export default function LandingPage() {
                 <div>
                     <h1> Parcerias com Shows</h1>
                     <p>Você sabia que aqui no site da TOTH Music, fazemos parcerias com shows bastante renomeado ?  E que uma deles que esta
-                        rolando agora é parceria que a gente está tendo com o Rock in RIo. Caso queira saber mais click no botão abaixo</p>
+                        rolando agora é parceria que a gente está tendo com o Rock in Rio. Caso queira saber mais click no botão abaixo</p>
                     <Link>
                         <button className='button'> Saiba mais</button>
                     </Link>

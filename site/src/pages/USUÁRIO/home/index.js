@@ -128,7 +128,7 @@ function Home() {
       <section className='faixa-4'>
 
         <div className='left-f4'>
-          <h1>Apenas produtos me promoção</h1>
+          <h1>Apenas produtos em promoção</h1>
         </div>
 
         <div className='right-f4'>
