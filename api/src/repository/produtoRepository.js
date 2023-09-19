@@ -1,6 +1,6 @@
 import { con } from "./connection.js";
 
-export async function DeletarProduto(id){
+export async function DeletarProduto(id) {
     const comando = `
         DELETE FROM TB_PRODUTO
             WHERE   ID_INSTRUMENTOS = ?
@@ -12,7 +12,7 @@ export async function DeletarProduto(id){
 
 }
 
-export async function AlterarProduto(produto, id){
+export async function AlterarProduto(produto, id) {
     const comando = `
         UPDATE TB_PRODUTO
         SET
@@ -29,7 +29,7 @@ export async function AlterarProduto(produto, id){
         WHERE ID_INSTRUMENTOS = ?
     `
 
-    const [ resp ] = await con.query(comando, [
+    const [resp] = await con.query(comando, [
         produto.MARCAS,
         produto.CATEGORIA,
         produto.PRODUTO,
@@ -46,16 +46,16 @@ export async function AlterarProduto(produto, id){
     return resp.affectedRows;
 }
 
-export async function inserirProduto (produto){
+export async function inserirProduto(produto) {
     const comando = `
     INSERT INTO TB_PRODUTO (ID_MARCAS, ID_CATEGORIA, NM_PRODUTO, VL_PRECO, VL_PRECO_PROMOCIONAL, BT_DESTAQUE, BT_PROMOCAO, BT_DISPONIVEL, QTD_ESTOQUE, DS_DETALHES) 
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
     
     `
 
-    const [ resp ] = await con.query(comando,
+    const [resp] = await con.query(comando,
         [
-    
+
             produto.MARCAS,
             produto.CATEGORIA,
             produto.PRODUTO,
@@ -67,30 +67,32 @@ export async function inserirProduto (produto){
             produto.ESTOQUE,
             produto.DETALHE
 
-    
+
         ]);
-    
-        
-        return resp
+
+
+    return resp
 
 
 }
 
 
-export async function AlterarImagem(imagem, id){
+export async function AlterarImagem(imagem, id) {
     const comando = `
-        UPDATE TB_PRODUTO
-            SET IMG_IMAGEM              = ?
-        WHERE ID_INSTRUMENTOS           = ?
+        INSERT INTO TB_PRODUTO_IMAGEM (IMG_PRODUTO)
+            values( ? )
     
     `
-    const [resp] = await con.query(comando, [imagem, id]);
-    return resp.affectedRows;
+    const [resp] = await con.query(comando, [
+        imagem.imagem, 
+        id
+    ]);
+    return resp;
 
 }
 
 
-export async function ExibirTodosProdutos(){
+export async function ExibirTodosProdutos() {
     const comando = `
 
     select  ID_MARCAS               AS MARCAS,

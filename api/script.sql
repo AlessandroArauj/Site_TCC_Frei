@@ -1,4 +1,21 @@
-    use infocdb;
+use infocdb;
+
+drop table TB_CADASTRO_USER;
+drop table TB_CADASTRO_ADM;
+drop table TB_LOGIN_USER;
+drop table TB_PRODUTO;
+drop table TB_CATEGORIA;
+drop table TB_PEDIDO;
+drop table TB_PEDIDO_ITEM;
+drop table TB_PRODUTO_IMAGEM;
+drop table TB_CLIENTE;
+drop table TB_ENDERECO;
+drop table TB_MARCAS;
+drop table TB_PREFE_PRODUTO;
+drop table TB_CARTOES;
+drop table TB_FORMAS_PAGAMENTO;
+drop table TB_AVALIACAO;
+drop table TB_CARRINHO;
 
 CREATE TABLE TB_CADASTRO_USER (
 	ID_USER int primary key auto_increment,
@@ -61,7 +78,7 @@ CREATE TABLE TB_PEDIDO(
 	ID_ENDERECO int,
 	DS_NOTA_FISCAL varchar(400),
 	TP_FORMA_PAG varchar(400),
-	QTD_PARCELAS int(400),
+	QTD_PARCELAS int,
 	DT_PEDIDO datetime,
 	DS_SITUACAO varchar(400),
     foreign key (ID_CLIENTE) REFERENCES TB_CLIENTE (ID_CLIENTE),
@@ -163,6 +180,9 @@ CREATE TABLE TB_CARRINHO(
 
 
 );
+
+
+
 
 
 

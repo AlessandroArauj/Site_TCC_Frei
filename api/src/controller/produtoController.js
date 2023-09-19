@@ -48,7 +48,7 @@ server.put('/produto/:id', async (req, resp) =>{
 
 })
 
-server.put('/produto/:id/imagem', upload.single('produtos') , async (req, resp) =>{
+server.post('/produto/:id/imagem', upload.single('produtos') , async (req, resp) =>{
     try {
         const { id } = req.params;
         const imagem = req.file.path;
