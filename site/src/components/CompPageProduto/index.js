@@ -7,49 +7,82 @@ export default function CompProduto() {
 
     return (
         <div className='CompProduto'>
-            <div className='Card-Start'>
-                <div>
-                    <div>
+
+            <section className='CompProd-f1'>
+
+                <div className='Card'>
+                    <div className='Esq'>
+
+                        <div className='Cima-Esq'>
+                            <div className='ladoImg'>
+
+                            </div>
+
+                            <div className='ImgPrincipal'>
+                                <img />
+                            </div>
+
+                            <div className='DesqProd'>
+                                <p> Guitarra eeltrica e os carai a quatro</p>
+                                <h1>Preço </h1>
+
+                                <div>
+                                    <p>Tipos de pagamentos aceitos</p>
+                                    <img src='../../../assets/images/Pix.svg' />
+                                    <img src='../../../assets/images/Visa.svg' />
+                                    <img src='../../../assets/images/Santa.png' />
+                                    <img src='../../../assets/images/HipercCard.svg' />
+                                    <img src='../../../assets/images/MasterCard.svg' />
+                                    <img src='../../../assets/images/Elo.svg' />
+                                    <img src='../../../assets/images/itau.png' />
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div className='Meio-Esq'>
+
+                        </div>
+
+                        <div className='Fim-Esq'>
+
+                        </div>
 
                     </div>
 
-                    <div>
-                        <img />
-                    </div>
+                    <div className='Dir'>
+                        <div className='Cubo-dir'>
 
-                    <div className='right-side'>
-                        <p> fjsdhgsdhgsdaf</p>
-                        <h1>sdagsafdgvsag</h1>
-                        <p>sgvisofhgoisjhn</p>
-                        <p>Tipos de pagamentos aceitos</p>
-                        <img src='../../../assets/images/' />
-                        <img src='../../../assets/images/' />
-                        <img src='../../../assets/images/' />
-                        <img src='../../../assets/images/' />
-                        <img src='../../../assets/images/' />
-                        <img src='../../../assets/images/' />
+                        </div>
+                        <div className='Cubo-dir'>
+                            <p>Produto disponivel</p>
+
+                            <p>Quantidade de estoque</p>
+
+                        </div>
                         
-                    </div>
+                            <button className='button1'> Forma de pagamento</button>
+                            <button className='button2'> Adicionar ao carrinho</button>
+                        
+                        <div className='baixo-dir'>
+                                <h2>Produto Testado e aprovado pela maioria dos compradores.</h2>
+
+                                <h1>Devolução gratis:</h1>
+
+                                <p>Em caso do produto aparecer danificado entrar em contato conosco até 7 dias pós a entrega do produto</p>
 
 
-                </div>
-
-                <div>
-                    <div>
-
-                    </div>
-                    <div>
-
-                    </div>
-
-                    <button></button>
-                    <button></button>
-
-                    <div>
-
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+
+
+            <section className='CompProd-f2'>
+                
+            </section>
         </div>
     )
 }

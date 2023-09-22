@@ -1,0 +1,208 @@
+.CompProduto {
+
+    .CompProd-f1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #d9d9d9;
+        width: 100%;
+        height: 700px;
+        padding: 30px;
+       
+      
+    }
+
+    .Card{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 15px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 20px;
+   }
+
+
+   
+    .Esq{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 100%;
+        padding: 15px;
+        gap: 15px;
+      
+        
+    }
+
+    .Cima-Esq{
+        display: flex;
+        flex-direction: row;
+        padding: 15px;
+        width: 100%;
+        height: 70%;
+        gap: 10px;
+        background-color: #d9d9d9;
+        border-radius: 15px;
+    }
+
+    .ladoImg{
+        width: 15%;
+        height: 100%;
+        box-shadow: 0px 0px 5px black;
+    }
+
+    .ImgPrincipal{
+        width: 55%;
+        height: 100%;
+        box-shadow: 0px 0px 5px black;
+
+        
+    }
+
+    .DesqProd{
+        box-shadow: 0px 0px 5px black;
+        width: 30%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+    }
+
+
+    .DesqProd p{
+        font-size: 18px;
+    }
+
+    .DesqProd h1{
+        font-size: 33px;
+    }
+
+    .Esq img{
+        height: 30px;
+        margin: 5px;
+    }
+
+
+
+
+    .Meio-Esq{
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 20px;
+        width: 100%;
+        height: 15%;
+        background-color: #d9d9d9;
+        border-radius: 15px;
+    }
+
+    .Fim-Esq{
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 20px;
+        width: 100%;
+        height: 15%;
+        border-radius: 15px;
+        background-color: #d9d9d9;
+    }
+
+
+
+    .Dir{
+        width: 30%;
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 15px;
+        background-color: #d9d9d9;
+        padding: 15px;
+        
+    }
+
+    
+
+    
+    .button1{
+        width: 200px;
+        height: 40px;
+        background-color: #00C2FF;
+        border-radius: 15px;
+        border: none;
+        margin: 20px 0px;
+        color: #fff;
+    }
+
+    .button2{
+        width: 200px;
+        height: 40px;
+        background-color: #00c3ff2d;
+        border-radius: 15px;
+        border: none;
+        margin: 20px 0px;
+        color: #fff;
+    }
+
+
+    .Dir button:hover{
+        background-color: transparent;
+        border: 1px solid black;
+        transition: 0.5s;
+        cursor: pointer;
+        color: #000;
+    }
+
+    .Cubo-dir{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        height: 15%;
+        background-color: #fff;
+        margin: 15px;
+        padding: 10px;
+        border-radius: 15px;
+    }
+
+
+    .baixo-dir{
+        width: 100%;
+        height: 30%;
+        background-color: white;
+        border-radius: 15px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+    }
+
+    .baixo-dir h2{
+        font-size: 18px;
+        text-align: center;
+        color: #00C2FF;
+    }
+
+    .baixo-dir h1{
+        font-size: 18px;
+    }
+
+    .baixo-dir p{
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+
+
+}
