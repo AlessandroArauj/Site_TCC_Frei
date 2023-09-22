@@ -1,5 +1,5 @@
 import './index.scss';
-import Cabecalho from '../../../components/cabecalho/index.js';
+import Header from '../../../components/cabecalho/index.js'
 import Rodape from '../../../components/rodape/index.js';
 //import './script.js';
 import { Link } from 'react-router-dom';
@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <div className="pageHome">
-      < Cabecalho />
+      <Header />
       <nav className='nav-cabe'>
 
         <select>

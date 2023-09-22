@@ -1,7 +1,7 @@
 import './index.scss'
 import { Link } from 'react-router-dom'
 
-export default function Cabecalho() {
+export default function Header() {
 
     return (
         <div className='cabecalho'>
@@ -18,8 +18,8 @@ export default function Cabecalho() {
 
             <div className='dir'>
                 <div>
-                    <Link><img src='../../../assets/images/perfil.png'></img></Link>
-                    <Link><p>minha conta</p></Link>
+                    <Link to={'/loginUser'}><img src='../../../assets/images/perfil.png'></img></Link>
+                    <Link to={'/loginUser'}><p>minha conta</p></Link>
                 </div>
 
                 <div>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import './index.scss'
 
 
-export default function () {
+export default function LoginUser() {
 
   return (
 

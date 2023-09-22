@@ -10,6 +10,7 @@ import LandingPage from './pages/USUÁRIO/landingPage';
 import LoginUser from './pages/USUÁRIO/loginUser';
 import CadastroUser from './pages/USUÁRIO/cadastroUser';
 import AddProduto from './pages/ADM/addProduto';
+import PageProduto from './pages/USUÁRIO/pageProduto';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -28,6 +29,7 @@ root.render(
         <Route path='/cadastroUser' element={<CadastroUser />} />
         <Route path='/loginUser' element={<LoginUser />} />
         <Route path='/addProduto' element={<AddProduto />} />
+        <Route path='/PageProduto' element={<PageProduto />} />
 
 
 
