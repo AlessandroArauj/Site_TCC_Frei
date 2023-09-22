@@ -1,11 +1,25 @@
 import { Router } from "express";
-import { AlterarImagem, AlterarProduto, DeletarProduto, ExibirTodosProdutos, inserirProduto } from "../repository/produtoRepository.js";
+import { AlterarImagem, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, inserirProduto } from "../repository/produtoRepository.js";
 import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
 
 const upload = multer({ dest: 'storage/fotosProdutos' })
 const server = Router();
+
+server.get('/produto/nome', async (req, resp) =>{
+    try {
+        const nome = req.query.nome;
+        const resp = await ExibirTodosFiltroNome(nome);
+        resp.send(resp);
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+
+})
 
 server.get('/produto/marca', async (req, resp) => {
     let r = await listarMarcas();

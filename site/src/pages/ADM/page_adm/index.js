@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import './index.scss'
 import { Link } from 'react-router-dom'
 
-export default function page_adm() {
+export default function Page_adm() {
+
+    const [listarProduto, setListaProduto] = useState()
 
     return (
         <div className='pagina_adm'>

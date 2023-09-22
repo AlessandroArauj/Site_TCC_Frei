@@ -19,8 +19,8 @@ export async function AlterarProduto(produto, id) {
             ID_MARCAS               = ?,
             ID_CATEGORIA            = ?,
             NM_PRODUTO              = ?,
-            VL_PRECO                = ?,
-            VL_PRECO_PROMOCIONAL    = ?,
+            DS_PRECO                = ?,
+            DS_PRECO_PROMOCIONAL    = ?,
             BT_DESTAQUE             = ?,
             BT_PROMOCAO             = ?,
             BT_DISPONIVEL           = ?,
@@ -48,7 +48,7 @@ export async function AlterarProduto(produto, id) {
 
 export async function inserirProduto(produto) {
     const comando = `
-    INSERT INTO TB_PRODUTO (ID_MARCAS, ID_CATEGORIA, NM_PRODUTO, VL_PRECO, VL_PRECO_PROMOCIONAL, BT_DESTAQUE, BT_PROMOCAO, BT_DISPONIVEL, QTD_ESTOQUE, DS_DETALHES) 
+    INSERT INTO TB_PRODUTO (ID_MARCAS, ID_CATEGORIA, NM_PRODUTO, DS_PRECO, DS_PRECO_PROMOCIONAL, BT_DESTAQUE, BT_PROMOCAO, BT_DISPONIVEL, QTD_ESTOQUE, DS_DETALHES) 
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
     
     `
@@ -98,8 +98,8 @@ export async function ExibirTodosProdutos() {
     select  ID_MARCAS               AS MARCAS,
             ID_CATEGORIA            AS CATEGORIAS,
             NM_PRODUTO              AS PRODUTO,
-            VL_PRECO                AS PRECO,
-            VL_PRECO_PROMOCIONAL    AS PRECOPROMO,
+            DS_PRECO                AS PRECO,
+            DS_PRECO_PROMOCIONAL    AS PRECOPROMO,
             BT_DESTAQUE             AS DESTAQUE,
             BT_PROMOCAO             AS PROMODISP,
             BT_DISPONIVEL           AS DISPONIVEL,
@@ -112,6 +112,25 @@ export async function ExibirTodosProdutos() {
     `
 
     let [resp] = await con.query(comando)
+    return resp;
+
+}
+
+export async function ExibirTodosFiltroNome(nome) {
+    const comando = `
+
+    select  ID_MARCAS               AS MARCAS,
+            ID_CATEGORIA            AS CATEGORIAS,
+            NM_PRODUTO              AS PRODUTO,
+            DS_DETALHES             AS DETALHE
+
+    from    TB_PRODUTO
+    where NM_PRODUTO LIKE ?
+    
+    
+    `
+
+    let [resp] = await con.query(comando, ['%' + nome + '%'])
     return resp;
 
 }
