@@ -53,8 +53,8 @@ CREATE TABLE TB_PRODUTO(
 	ID_MARCAS INT,
 	ID_CATEGORIA INT,
 	NM_PRODUTO varchar(400),
-	VL_PRECO decimal,
-	VL_PRECO_PROMOCIONAL decimal,
+	DS_PRECO varchar(400),
+	DS_PRECO_PROMOCIONAL varchar(400),
 	BT_DESTAQUE boolean,
 	BT_PROMOCAO boolean,
 	BT_DISPONIVEL boolean,
@@ -181,9 +181,20 @@ CREATE TABLE TB_CARRINHO(
 
 );
 
+select * from TB_PRODUTO;
+select * from TB_MARCAS;
+drop table TB_MARCAS;
 
+insert TB_MARCAS (NM_MARCA)
+		values 	('Yamaha'),
+				('Fender'),
+                ('Gibson'),
+                ('Steinway & Sons e Selmer'),
+                ('Boss');
 
-
+select * from TB_CATEGORIA;
+insert TB_CATEGORIA (NM_CATEGORIA)
+		values ('Cordas');
 
 
 

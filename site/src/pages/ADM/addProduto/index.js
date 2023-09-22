@@ -20,14 +20,10 @@ export default function AddProduto() {
     const [Disponivel, setDisp] = useState(false);
     const [Descricao, setDesc] = useState('');
     const [id, setId] = useState(0);
-    const [listarProduto, setListaProduto] = useState()
-
-
-    async function buscarProduto(){
-        let r = await axios.get('http://localhost:5000/produto')
-        setListaProduto(r.data);
     
-    }
+
+
+    
 
     async function ProdutoSalvar() {
         try {
