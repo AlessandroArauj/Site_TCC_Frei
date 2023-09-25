@@ -1,15 +1,37 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './index.scss'
+import { useState } from 'react'
 
 
 export default function LoginUser() {
+
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [erro, setErro] = useState('');
+  const navigate = useNavigate()
+  
+  async function entrar(){
+
+    let user = {
+      email 
+
+    }
+  }
 
   return (
 
     <div className="principal">
 
       <div className='subprincipal'>
+
+        
+        <Link to={'/home'}>
+
         <img className='imgtoth' src='/assets/images/Group 1.svg'></img>
+
+        </Link>
+
+
         <input className='barra1' type='text' placeholder="EMAIL"></input>
         <input className='barra2' type='password' placeholder="SENHA"></input>
         <button className='logar'>Logar</button>

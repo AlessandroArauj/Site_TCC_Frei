@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <div className='cabecalho'>
 
-            <Link><img src='../../../assets/images/logo.svg' className='logo'></img></Link>
+            <Link to={'/home'}><img src='../../../assets/images/logo.svg' className='logo'></img></Link>
 
 
             <div className='input'>
