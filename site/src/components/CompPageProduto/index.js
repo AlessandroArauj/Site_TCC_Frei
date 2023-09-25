@@ -81,7 +81,7 @@ export default function CompProduto() {
 
 
             <section className='CompProd-f2'>
-                
+                 
             </section>
         </div>
     )
