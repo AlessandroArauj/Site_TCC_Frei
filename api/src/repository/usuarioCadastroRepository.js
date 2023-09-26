@@ -1,5 +1,39 @@
 import { con } from "./connection.js";
 
+export async function EditarUsuario(usuario, id) {
+    const comando = `
+        UPDATE TB_CADASTRO_USER
+        SET
+            NM_NOME_COMP            =?,
+            DT_NASC                 =?,
+            DS_TELEFONE             =?,
+            DS_CPF                  =?,
+            DS_ENDEREÇO             =?,
+            DS_CIDADE               =?,
+            DS_EMAIL                =?,
+            ds_SENHA                =?
+
+        WHERE ID_USER               =?
+    
+    `
+
+    const [resp] = await con.query(comando, [
+
+        usuario.NOME,
+        usuario.DATA,
+        usuario.TELEFONE,
+        usuario.CPF,
+        usuario.ENDERECO,
+        usuario.CIDADE,
+        usuario.EMAIL,
+        usuario.SENHA,
+        id
+
+    ])
+
+    return resp.affectedRows;
+}
+
 export async function CadastrarUsuario(usuario) {
     const comando = `
         INSERT INTO TB_CADASTRO_USER( NM_NOME_COMP, DT_NASC, DS_TELEFONE, DS_CPF, DS_ENDEREÇO, DS_CIDADE, DS_EMAIL, ds_SENHA )
@@ -26,8 +60,6 @@ export async function CadastrarUsuario(usuario) {
 
 }
 
-
-
 export async function ExcluirUsuario(id) {
     const comando = `
         DELETE FROM TB_CADASTRO_USER
@@ -41,7 +73,6 @@ export async function ExcluirUsuario(id) {
 
 }
 
-
 export async function LoginUsuario(email, senha) {
     const comando = `SELECT DS_EMAIL, ds_SENHA
                      FROM TB_CADASTRO_USER
@@ -53,7 +84,7 @@ export async function LoginUsuario(email, senha) {
     const linhas = resp[0];
     const linha = linhas[0];
 
-  
+
 
     return linha;
 }

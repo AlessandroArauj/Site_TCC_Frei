@@ -1,7 +1,27 @@
 import { Router } from 'express';
-import { CadastrarUsuario, ExcluirUsuario, LoginUsuario } from '../repository/usuarioCadastroRepository.js';
+import { CadastrarUsuario, EditarUsuario, ExcluirUsuario, LoginUsuario } from '../repository/usuarioCadastroRepository.js';
 
 const server = Router();
+
+server.put('/cliente/editar/:id', async (req, resp) =>{
+
+    try {
+        const { id } = req.params;
+        const usuario = req.body;
+
+        const resposta = await EditarUsuario(usuario, id)
+
+        if (resposta != 1)
+        throw new Error('usuario não pode ser alterado');
+    else
+        resp.status(204).send();
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+
+        })
+    }
+})
 
 server.post('/cliente/login', async (req, resp) =>{
     try {
