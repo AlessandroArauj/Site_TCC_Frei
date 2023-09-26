@@ -5,8 +5,8 @@ const server = Router();
 
 server.post('/cliente/login', async (req, resp) =>{
     try {
-        const email = req.body.email;
-        const senha = req.body.senha;
+        const email = req.body.EMAIL;
+        const senha = req.body.SENHA;
 
         const linha = await LoginUsuario(email, senha);
         if (linha == undefined){
@@ -15,7 +15,6 @@ server.post('/cliente/login', async (req, resp) =>{
         }
 
         resp.send(linha)
-        
     } catch (err) {
         resp.status(400).send({
             erro: err.message

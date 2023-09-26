@@ -53,7 +53,7 @@ export async function LoginUsuario(email, senha) {
     const linhas = resp[0];
     const linha = linhas[0];
 
-    console.log(linha);
+  
 
     return linha;
 }
