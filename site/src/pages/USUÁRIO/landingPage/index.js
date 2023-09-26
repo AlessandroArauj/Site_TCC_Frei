@@ -33,7 +33,7 @@ export default function LandingPage() {
                     <h1> É aqui na TOTH MUSIC que voce encontra o que mais deseja
                     </h1>
                     <p> Não deixe seu sonho de lado, então aproveite esse oportunidade e realize-o</p>
-                    <Link>
+                    <Link className='butt-landin-page'>
                         <button>
                             Realize-se
                         </button>
@@ -47,7 +47,7 @@ export default function LandingPage() {
 
                 <div className=' baixo-f2'>
 
-                    <Link>
+                    <Link className='butt-landin-page'>
                         <div>
                             <img src='../../../../assets/images/fone.svg' />
                             <h1> Audios</h1>
@@ -55,7 +55,7 @@ export default function LandingPage() {
                         </div>
                     </Link>
 
-                    <Link>
+                    <Link className='butt-landin-page'>
                         <div>
                             <img src='../../../../assets/images/gaita.svg' />
                             <h1> Sopro</h1>
@@ -63,7 +63,7 @@ export default function LandingPage() {
                         </div>
                     </Link>
 
-                    <Link>
+                    <Link className='butt-landin-page'>
                         <div>
                             <img src='../../../../assets/images/violao.svg' />
                             <h1> Cordas</h1>
@@ -79,7 +79,7 @@ export default function LandingPage() {
                     <h1> Parcerias com Shows</h1>
                     <p>Você sabia que aqui no site da TOTH Music, fazemos parcerias com shows bastante renomeado ?  E que uma deles que esta
                         rolando agora é parceria que a gente está tendo com o Rock in Rio. Caso queira saber mais click no botão abaixo</p>
-                    <Link>
+                    <Link className='butt-landin-page'>
                         <button className='button'> Saiba mais</button>
                     </Link>
                 </div>
@@ -90,7 +90,7 @@ export default function LandingPage() {
                     <h1> Dicas de como tocar</h1>
                     <p> Algo muito legal que oferecemos é dicas de como tocar algum instrumento q vc desejou ter escolhido, para receber essas dicas, basta vc fazer o cadastro no site para receber notificações</p>
 
-                    <Link>
+                    <Link className='butt-landin-page'>
                         <button className='button'> Saiba mais</button>
                     </Link>
                 </div>
@@ -105,7 +105,7 @@ export default function LandingPage() {
 
                 <img src='../../../../assets/images/laptop.svg' />
 
-                <Link>
+                <Link className='butt-landin-page'>
                     <button className='button'> Saiba mais</button>
                 </Link>
 

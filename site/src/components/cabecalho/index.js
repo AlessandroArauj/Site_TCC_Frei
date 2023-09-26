@@ -19,12 +19,12 @@ export default function Header() {
             <div className='dir'>
                 <div>
                     <Link to={'/loginUser'}><img src='../../../assets/images/perfil.png'></img></Link>
-                    <Link to={'/loginUser'}><p>minha conta</p></Link>
+                    <Link className='butt-home' to={'/loginUser'}><p>minha conta</p></Link>
                 </div>
 
                 <div>
                     <Link><img src='../../../assets/images/carrinho.png'></img></Link>
-                    <Link><p>carrinho</p></Link>
+                    <Link className='butt-home'><p>carrinho</p></Link>
                 </div>
             </div>
         </div>
