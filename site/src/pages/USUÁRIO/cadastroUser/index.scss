@@ -10,6 +10,25 @@
   display: flex;
   flex-direction: column;
 
+  
+  .mensagem-erro-senha{
+
+    font-size: 12px;
+    color: red;
+    margin-left: 10px;
+    
+
+
+  }
+
+  .confima-senha-div{
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+  }
+
   .Link-cad-voltar {
 
     text-decoration: none;

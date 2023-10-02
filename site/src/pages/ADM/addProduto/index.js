@@ -78,7 +78,7 @@ export default function AddProduto() {
 
         <div className="addProduto">
             <h1>Insira ou Edite o Produto</h1>
-            <Link> Voltar p/ Home</Link>
+            <Link to={'/'}> Voltar p/ Home</Link>
 
             <div className='f1'>
 
