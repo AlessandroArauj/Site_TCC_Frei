@@ -53,8 +53,8 @@ export default function LoginUser() {
         </Link>
 
 
-        <input className='barra1' type='text' placeholder="EMAIL" value={email} onChange={e => setEmail(e.target.value)}></input>
-        <input className='barra2' type='password' placeholder="SENHA" value={senha} onChange={e => setSenha(e.target.value)}></input>
+        <input className='barra1' type='text' placeholder=" EMAIL " value={email} onChange={e => setEmail(e.target.value)}></input>
+        <input className='barra2' type='password' placeholder=" SENHA " value={senha} onChange={e => setSenha(e.target.value)}></input>
         <button className='logar' onClick={LoginUsuarioReact}>Logar</button>
         <a href='https://i.pinimg.com/564x/fd/4f/f3/fd4ff31c42c79d2442d4fc3ce7eb029a.jpg' className='esqueceu' >ESQUECEU A SENHA?</a>
 

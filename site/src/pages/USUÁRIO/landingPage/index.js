@@ -33,7 +33,7 @@ export default function LandingPage() {
                     <h1> É aqui na TOTH MUSIC que voce encontra o que mais deseja
                     </h1>
                     <p> Não deixe seu sonho de lado, então aproveite esse oportunidade e realize-o</p>
-                    <Link className='butt-landin-page'>
+                    <Link className='butt-landin-page' to={'/home'}>
                         <button>
                             Realize-se
                         </button>

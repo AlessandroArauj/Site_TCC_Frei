@@ -182,16 +182,3 @@ insert TB_CATEGORIA (NM_CATEGORIA)
         
         
 select * from TB_CADASTRO_USER;
-
-
-
-
-
-
-
-
-
-
-
-
-
