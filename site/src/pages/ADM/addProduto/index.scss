@@ -169,6 +169,12 @@
     }
 
 
+    .buttons{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+
     button{
         width: 200px;
         height: 35px;

@@ -23,8 +23,8 @@ export default function Header() {
                 </div>
 
                 <div>
-                    <Link><img src='../../../assets/images/carrinho.png'></img></Link>
-                    <Link className='butt-home'><p>carrinho</p></Link>
+                    <Link to={'/Carrinho'}><img src='../../../assets/images/carrinho.png'></img></Link>
+                    <Link className='butt-home' to={'/Carrinho'}><p>carrinho</p></Link>
                 </div>
             </div>
         </div>

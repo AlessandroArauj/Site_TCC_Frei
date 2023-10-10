@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import Home from './pages/USUÁRIO/home/index.js';
+import Home from './pages/USUARIO/home/index.js';
 import CadastroAdm from './pages/ADM/cadastro/index.js';
-import UsarioPerfil from './pages/USUÁRIO/perfilusuario';
+import UsarioPerfil from './pages/USUARIO/perfilusuario';
 import Page_adm from './pages/ADM/page_adm';
-import AddCartao from './pages/USUÁRIO/addcartao';
-import LandingPage from './pages/USUÁRIO/landingPage';
-import LoginUser from './pages/USUÁRIO/loginUser';
-import CadastroUser from './pages/USUÁRIO/cadastroUser';
+import AddCartao from './pages/USUARIO/addcartao';
+import LandingPage from './pages/USUARIO/landingPage';
+import LoginUser from './pages/USUARIO/loginUser';
+import CadastroUser from './pages/USUARIO/cadastroUser';
 import AddProduto from './pages/ADM/addProduto';
-import PageProduto from './pages/USUÁRIO/pageProduto';
+import PageProduto from './pages/USUARIO/pageProduto';
+import Carrinho from './pages/USUARIO/carrinho'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -30,7 +31,7 @@ root.render(
         <Route path='/loginUser' element={<LoginUser />} />
         <Route path='/addProduto' element={<AddProduto />} />
         <Route path='/PageProduto' element={<PageProduto />} />
-
+        <Route path='/Carrinho' element={<Carrinho />} />
 
 
 

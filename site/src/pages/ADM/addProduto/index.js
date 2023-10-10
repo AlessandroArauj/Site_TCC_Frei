@@ -20,10 +20,10 @@ export default function AddProduto() {
     const [Disponivel, setDisp] = useState(false);
     const [Descricao, setDesc] = useState('');
     const [id, setId] = useState(0);
-    
 
 
-    
+
+
 
     async function ProdutoSalvar() {
         try {
@@ -68,7 +68,7 @@ export default function AddProduto() {
     useEffect(() => {
         //
         listarMarcas();
-      }, [])
+    }, [])
 
 
 
@@ -87,7 +87,8 @@ export default function AddProduto() {
                         <div className='lado'>
                             <div />
                         </div>
-                        <div className='prin' />
+                        <input type='image'   className='prin'/>
+                            
                     </div>
 
                     <div className='end-left'>
@@ -141,8 +142,10 @@ export default function AddProduto() {
 
             </div>
 
-
-            <button> Adicionar produto</button>
+            <div className='buttons'>
+                <button> Adicionar imagem</button>
+                <button> Adicionar produto</button>
+            </div>
         </div>
     )
 
