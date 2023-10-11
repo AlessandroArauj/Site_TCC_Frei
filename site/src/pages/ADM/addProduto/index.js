@@ -25,7 +25,7 @@ export default function AddProduto() {
 
 
 
-    
+
 
 
 
@@ -44,8 +44,17 @@ export default function AddProduto() {
                         <div className='lado'>
                             <div />
                         </div>
-                        <input type='image'   className='prin' src=''/>
-                            
+
+                        
+
+
+                    
+                    
+
+
+
+
+
                     </div>
 
                     <div className='end-left'>
@@ -63,7 +72,7 @@ export default function AddProduto() {
 
                     <div className='center-right'>
                         <label>
-                            <input type='text' placeholder='Promoção'/>
+                            <input type='text' placeholder='Promoção' />
 
                         </label>
 
