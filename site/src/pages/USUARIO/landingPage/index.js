@@ -39,6 +39,26 @@ export default function LandingPage() {
                         </button>
                     </Link>
                 </div>
+                <div className= 'texto2'>
+
+                    <h1>
+
+                        A equipe Toth Music Está aqui para você!
+
+                    </h1>
+                    <p>
+                    Na música, nossos sonhos se transformam em notas
+                    e as expectativas em harmonias, transcendendo o 
+                    tempo e o espaço. Cada acorde promete novos 
+                    horizontes sonoros, colorindo a melodia da vida. 
+                    Deixe-se envolver na magia das composições, explore 
+                    nosso universo musical e descubra o que o futuro
+                    reserva para os amantes da música. Cada nota é 
+                    um convite para sua jornada musical única.
+
+                    </p>
+               
+                </div>
             </section>
 
             <section className='f2'>

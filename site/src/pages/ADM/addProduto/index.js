@@ -25,50 +25,7 @@ export default function AddProduto() {
 
 
 
-    async function ProdutoSalvar() {
-        try {
-            let Produtos = {
 
-                nome: setNome,
-                promo: setPromo,
-                estoque: setEstoque,
-                idmarca: setMarca,
-                destaque: setDest,
-                disp: setDisp,
-                desc: setDesc
-
-
-            }
-
-            if (id == 0) {
-                let r = await axios.post('http://localhost:5000/produto', Produtos)
-                alert('Produto Cabrastado')
-
-            }
-
-            else {
-
-                let r = await axios.put('http://localhost:5000/produto', Produtos)
-                alert('Produto Alterado')
-            }
-
-
-        } catch (err) {
-
-
-        }
-
-    }
-
-
-    async function listarMarcas() {
-        let r = await axios.get('http://localhost:5000/produto/marca')
-    }
-
-    useEffect(() => {
-        //
-        listarMarcas();
-    }, [])
 
 
 
@@ -87,8 +44,17 @@ export default function AddProduto() {
                         <div className='lado'>
                             <div />
                         </div>
-                        <input type='image'   className='prin'/>
-                            
+
+                        
+
+
+                    
+                    
+
+
+
+
+
                     </div>
 
                     <div className='end-left'>
@@ -100,21 +66,21 @@ export default function AddProduto() {
                 <div className='right'>
 
                     <div className='start-right'>
-                        <input type='text' placeholder='Nome' value={Nome} onChange={e => setNome(e.target.value)} />
-                        <input type='text' placeholder='Preço' value={Preco} onChange={e => setPreco(e.target.value)} />
+                        <input type='text' placeholder='Nome' />
+                        <input type='text' placeholder='Preço' />
                     </div>
 
                     <div className='center-right'>
                         <label>
-                            <input type='text' placeholder='Promoção' value={Promo} onChange={e => setPromo(e.target.value)} />
+                            <input type='text' placeholder='Promoção' />
 
                         </label>
 
-                        <input type='text' placeholder=' estoque' value={Estoque} onChange={e => setEstoque(e.target.value)} />
+                        <input type='text' placeholder=' estoque' />
                     </div>
 
                     <div className='end-right'>
-                        <select id='marca' name='marca' value={Marca} onChange={e => setMarca(e.target.value)}>
+                        <select id='marca' name='marca'>
                             <option value={0}> Marca</option>
 
                         </select>
