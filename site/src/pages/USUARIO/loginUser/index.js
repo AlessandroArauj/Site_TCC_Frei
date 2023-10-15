@@ -23,7 +23,7 @@ export default function LoginUsuario() {
 
   useEffect(() => {
       if (storage('usuario-logado')){
-        navigate('/usarioPerfil')
+        navigate('/perfilusuario')
       }
   }, [])
 

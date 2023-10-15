@@ -27,7 +27,7 @@ root.render(
         <Route path='/' element={<LandingPage />} />
         <Route path='/home' element={<Home />} />
         <Route path='/cadastroAdm' element={<CadastroAdm />} />
-        <Route path='/usarioPerfil' element={<UsarioPerfil />} />
+        <Route path='/perfilusuario' element={<UsarioPerfil />} />
         <Route path='/pageAdm' element={<Page_adm />} />
         <Route path='/addcartao' element={<AddCartao />} />
         <Route path='/cadastroUser' element={<CadastroUser />} />

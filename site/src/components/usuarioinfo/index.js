@@ -1,9 +1,27 @@
 import './index.scss'
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 export default function AbaUsuario() {
     const navigate = useNavigate()
+
+    const [usuario, setUsuario] = useState('-');
+    const [email, setEmail] = useState('-');
+
+
+
+    useEffect(() => {
+        if (!storage('usuario-logado')){
+            navigate('/loginUser')
+        }
+        else {
+            const usuariologado = storage('usuario-logado');
+            setUsuario(usuariologado.nome)
+            
+        
+        }
+    }, [])
 
     function sairClick(){
         
@@ -22,9 +40,9 @@ export default function AbaUsuario() {
                     <div className='cima'>
                         <img src='../../../assets/images/logo.svg' />
                         <div>
-                            <h1>Nome</h1>
+                            <h1> {usuario}</h1>
                             <div className='line' />
-                            <p>Email</p>
+                            <p>{email}</p>
                         </div>
                     </div>
 
