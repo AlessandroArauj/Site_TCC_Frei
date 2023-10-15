@@ -6,13 +6,18 @@ import { useEffect, useState } from 'react'
 export default function Header() {
     const navigate = useNavigate();
 
-    const [usuario, setUsuario] = useState('Denis')
+    const [usuario, setUsuario] = useState('-')
 
 
 
     useEffect(() => {
         if (!storage('usuario-logado')){
             navigate('/loginUser')
+        }
+        else {
+            const usuariologado = storage('usuario-logado');
+            setUsuario(usuariologado.nome)
+        
         }
     }, [])
 
@@ -32,7 +37,7 @@ export default function Header() {
             <div className='dir'>
                 <div>
                     <Link className='butt-home' to={'/loginUser'}>
-                        <div className='UserLetra'> {usuario[0]} </div>
+                        <div className='UserLetra'> <h1> {usuario[0]} </h1></div>
 
                     </Link>
                     <Link className='butt-home' to={'/loginUser'}><p>minha conta</p></Link>
