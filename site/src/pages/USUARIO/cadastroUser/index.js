@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './index.scss'
 import { Link } from 'react-router-dom'
-import { CadastroUsuarioReact } from '../../../api/cadastroUser.js';
+import { CadastroUsuarioReact } from '../../../api/loginUserApi';
 
 
 
@@ -64,7 +64,7 @@ export default function ContaUser() {
       <div className='criarConta'>
 
          <div className='cima'>
-            <img src='../../../assets/images/Rectangle 10.svg' />
+            
             <div className='legenda'>
                <h1 className='legenda'>Seja Bem Vindo</h1>
             </div>

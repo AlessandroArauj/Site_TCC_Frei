@@ -30,10 +30,11 @@ server.post('/cliente/login', async (req, resp) =>{
 
         const linha = await LoginUsuario(email, senha);
         if (linha == undefined){
-            throw new Error('⚠ Credencial(is) Invalida ⚠')
+            throw new Error('⚠ Credenciais Invalidas ⚠')
 
         }
 
+       
         resp.send(linha)
     } catch (err) {
         resp.status(400).send({

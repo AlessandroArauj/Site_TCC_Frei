@@ -56,9 +56,10 @@
         height: 80vh;
         width: 100%;
         display: flex;
-        justify-content: start;
-        align-items: center;
         padding: 50px;
+        
+        align-items: center;
+        justify-content: space-around !important;
         
         
         box-shadow: 0px 0px 50px #777;
@@ -73,10 +74,11 @@
     .texto2{
 
         display: flex;
-        align-items: center;
-        justify-content: flex-end;
+        
+        
         flex-direction: column;
-        margin-left: 200px;
+        width: 500px;
+        height: 275px;
 
     }
 
@@ -310,6 +312,8 @@
 .f5 img{
     height: 300px;
 }
+
+
 
 
 

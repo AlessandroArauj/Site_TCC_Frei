@@ -6,7 +6,7 @@
 
 
   background-color: #000000;
-  height: 100vh;
+  
   display: flex;
   flex-direction: column;
 
@@ -35,7 +35,7 @@
     width: 260px;
     margin-top: 10px;
     height: 41px;
-    background-color: #0E0D10;
+    
     border-radius: 8px;
     border: solid 1px rgb(255, 255, 255);
     align-items: center;
@@ -47,9 +47,15 @@
 
   .cima {
     font-size: 30px;
-
+    width: 100%;
+    height: 200px;
     position: relative;
     flex-direction: column;
+
+    background-image: url('../../../../public/assets/images/Rectangle 10.svg');
+    
+    background-size: cover;
+
 
 
   }
@@ -79,7 +85,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    height: 100%;
 
 
   }
@@ -177,7 +185,7 @@
     align-items: center;
     flex-direction: column;
     width: 303px;
-    height: 250px;
+    
     color: #f1e7e7;
 
   }

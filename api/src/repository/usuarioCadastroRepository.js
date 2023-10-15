@@ -74,7 +74,11 @@ export async function ExcluirUsuario(id) {
 }
 
 export async function LoginUsuario(email, senha) {
-    const comando = `SELECT DS_EMAIL, ds_SENHA
+    const comando = `SELECT
+                        ID_USER         AS "id",
+                        NM_NOME_COMP    AS "nome",
+                        DS_EMAIL        AS "email",
+                        ds_SENHA        AS "senha"
                      FROM TB_CADASTRO_USER
                     WHERE DS_EMAIL = ? AND ds_SENHA = ?
 `

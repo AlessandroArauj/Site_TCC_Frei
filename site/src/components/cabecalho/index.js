@@ -1,7 +1,20 @@
 import './index.scss'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import storage from 'local-storage'
+import { useEffect, useState } from 'react'
 
 export default function Header() {
+    const navigate = useNavigate();
+
+    const [usuario, setUsuario] = useState('Denis')
+
+
+
+    useEffect(() => {
+        if (!storage('usuario-logado')){
+            navigate('/loginUser')
+        }
+    }, [])
 
     return (
         <div className='cabecalho'>
@@ -18,7 +31,10 @@ export default function Header() {
 
             <div className='dir'>
                 <div>
-                    <Link to={'/loginUser'}><img src='../../../assets/images/perfil.png'></img></Link>
+                    <Link className='butt-home' to={'/loginUser'}>
+                        <div className='UserLetra'> {usuario[0]} </div>
+
+                    </Link>
                     <Link className='butt-home' to={'/loginUser'}><p>minha conta</p></Link>
                 </div>
 

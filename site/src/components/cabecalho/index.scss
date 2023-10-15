@@ -8,6 +8,19 @@
     background-color: #000;
     padding: 0px 50px;
 
+    .UserLetra{
+        height: 35px;
+        width: 35px;
+        border-radius: 100%;
+        background-color: #ffffff;
+        font-size: 25px;
+        color: black;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
 
     .logo {
         height: 75px;
