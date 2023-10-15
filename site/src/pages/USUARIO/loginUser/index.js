@@ -11,6 +11,7 @@ export default function LoginUsuario() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
+  const [mostrarSenha, setMostrarSenha] = useState(false);
   const [carregando, setCarregando] = useState(false)
 
 
@@ -18,9 +19,11 @@ export default function LoginUsuario() {
   const ref = useRef()
 
 
+
+
   useEffect(() => {
       if (storage('usuario-logado')){
-        navigate('/perfilusuario')
+        navigate('/usarioPerfil')
       }
   }, [])
 
@@ -68,7 +71,8 @@ export default function LoginUsuario() {
 
 
         <input className='barra' type='email' placeholder=" EMAIL " value={email} onChange={e => setEmail(e.target.value)}></input>
-        <input className='barra' type='password' placeholder=" SENHA " value={senha} onChange={e => setSenha(e.target.value)}></input>
+        <input className='barra' type={mostrarSenha ? 'text' : 'password'} placeholder=" SENHA " value={senha} onChange={e => setSenha(e.target.value)}></input>
+        <button onClick={() => setMostrarSenha(!mostrarSenha)}> FUTURO OLHO </button>
         <div className='form-entrar invalido'>
 
           {erro}

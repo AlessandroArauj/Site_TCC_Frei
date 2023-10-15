@@ -19,6 +19,7 @@ export default function ContaUser() {
    const [confirmaSenha, setConfirmar] = useState('');
    const [erroConfirma, setErroConfirma] = useState('');
    const [termosAceitos, setTermosAceitos] = useState(false);
+   const [mostrarSenha, setMostrarSenha] = useState(false);
 
    async function Cadastrar() {
       try {
@@ -98,14 +99,16 @@ export default function ContaUser() {
 
                <div className='container2'>
                   <input id='email' type='email' name='name' placeholder='Email' required value={email} onChange={e => setEmail(e.target.value)} />
-                  <input id='password' type='password' name='password' placeholder='Senha' required value={senha} onChange={e => setSenha(e.target.value)} />
+                  <input id='password' type={mostrarSenha ? 'text' : 'password'} name='password' placeholder='Senha' required value={senha} onChange={e => setSenha(e.target.value)} />
 
                   <div className='confima-senha-div'>
 
-                     <input id='password' type='password' name='Confirmpassword' placeholder='Confirme Sua Senha' required value={confirmaSenha} onChange={e => setConfirmar(e.target.value)} />
+                     <input id='password' type={mostrarSenha ? 'text' : 'password'} name='Confirmpassword' placeholder='Confirme Sua Senha' required value={confirmaSenha} onChange={e => setConfirmar(e.target.value)} />
                      <p className='mensagem-erro-senha'> {erroConfirma} </p>
 
                   </div>
+
+                  <button onClick={() => setMostrarSenha(!mostrarSenha)}> FUTURO OLHO </button>
 
                </div>
 

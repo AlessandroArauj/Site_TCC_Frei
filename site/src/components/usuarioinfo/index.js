@@ -1,6 +1,15 @@
 import './index.scss'
+import storage from 'local-storage'
+import { useNavigate } from 'react-router-dom'
 
 export default function AbaUsuario() {
+    const navigate = useNavigate()
+
+    function sairClick(){
+        
+    storage.remove('usuario-logado');
+    navigate('/')
+    }
 
     return (
 
@@ -64,7 +73,7 @@ export default function AbaUsuario() {
 
                             <nav className='deslog-aba'>
 
-                                <button>Deslogar</button>
+                                <button onClick={sairClick}>Deslogar</button>
 
                             </nav>
 
