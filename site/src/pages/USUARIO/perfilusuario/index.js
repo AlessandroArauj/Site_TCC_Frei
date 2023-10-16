@@ -19,6 +19,7 @@ export default function AbaUsuario() {
         else {
             const usuariologado = storage('usuario-logado');
             setUsuario(usuariologado.nome)
+            setEmail(usuariologado.email)
 
 
         }

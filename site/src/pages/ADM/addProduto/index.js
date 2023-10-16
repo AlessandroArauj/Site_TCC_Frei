@@ -34,34 +34,14 @@ export default function AddProduto() {
 
 
         <div className="addProduto">
-            <h1>Insira ou Edite o Produto</h1>
-            <Link to={'/'}> Voltar p/ Home</Link>
+            <h1>Cadastre ou  Edite as informações de seu produto  </h1>
+           
 
             <div className='f1'>
 
-                <div className='left'>
-                    <div className='start-left'>
-                        <div className='lado'>
-                            <div />
-                        </div>
+                
+    
 
-                        
-
-
-                    
-                    
-
-
-
-
-
-                    </div>
-
-                    <div className='end-left'>
-                        <h1> Cores :</h1>
-                        <div />
-                    </div>
-                </div>
 
                 <div className='right'>
 
@@ -95,23 +75,52 @@ export default function AddProduto() {
                     </div>
 
 
+                    
+
+
 
                     <textarea placeholder='Descrição' className='Description'>
 
                     </textarea >
 
+                    
+
+                    
+                    
 
 
 
                 </div>
+                
+                <button className='buttons'> Adicionar produto</button>
+                <h1>Cadastrar ou  Editar as Imagens do seu Produto</h1>
 
 
+                <div className='left'>
+                    <div className='start-left'>
+                        <div className='lado'>
+                            <div />
+                        </div>
+
+                        
+                    </div>
+
+                    <div className='end-left'>
+                        <h2> Cores :</h2>
+                        <div />
+                    </div>
+                    
+                </div>
+
+                <button className='buttons'> Adicionar Imagem   </button>
+                <Link className='voltar' to={'/'}> Voltar p/ Home</Link>
+                
             </div>
 
-            <div className='buttons'>
-                <button> Adicionar imagem</button>
-                <button> Adicionar produto</button>
-            </div>
+         
+            
+                
+            
         </div>
     )
 
