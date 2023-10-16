@@ -1,11 +1,22 @@
 import './index.scss'
-import { Link } from 'react-router-dom'
-
+import { Link, useNavigate } from 'react-router-dom'
+import storage from 'local-storage'
+import { useEffect } from 'react'
 import Rodape from '../../../components/rodape/index.js'
 
 
 
+
 export default function LandingPage() {
+    
+    const navigate = useNavigate()
+    
+    useEffect(() => {
+        if (storage('usuario-logado')){
+          navigate('/home')
+        }
+    }, [])
+
 
     return (
         <div className='landingPage'>
