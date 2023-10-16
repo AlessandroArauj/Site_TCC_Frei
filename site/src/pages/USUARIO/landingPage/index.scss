@@ -59,7 +59,7 @@
         padding: 50px;
         
         align-items: center;
-        justify-content: space-around !important;
+        justify-content: start;
         
         
         box-shadow: 0px 0px 50px #777;
@@ -71,16 +71,7 @@
     }
 
 
-    .texto2{
-
-        display: flex;
-        
-        
-        flex-direction: column;
-        width: 500px;
-        height: 275px;
-
-    }
+    
 
     .f1 div{
         width: 500px;
