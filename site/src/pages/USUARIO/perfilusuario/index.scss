@@ -37,15 +37,15 @@
     }
 
     .cima {
-
+        margin-top: 30%;
         width: 100%;
         height: 165px;
-        gap: 10px;
         padding: 25px;
         border-top-right-radius: 100px;
         background-color: #00C2FF;
         display: flex;
         align-items: center;
+        gap: 30px;
 
     }
 
@@ -59,10 +59,64 @@
 
 
     .baixo {
+    
+
         width: 100%;
         min-height: 70%;
         background-color: #D9D9D9;
+      
+    
 
+    }
+
+    .baixo img{
+    height: 30px;
+    padding-left: 30px;
+    display: flex;
+   
+   
+       
+    }
+
+    ul{
+        height: 100%;
+        list-style-type: none;
+        
+      
+      
+    }
+
+    ul li.item-menu{
+        transition: 0.4s ;
+
+    }
+   
+
+    ul li.ativo{
+        background-color: #00C2FF;
+    }
+
+
+    ul li.item-menu:hover{
+        background: #00C2FF ;
+      
+       
+       
+    }
+
+   
+    ul li.item-menu a{
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 20px 4%;
+        display: flex;
+        margin-bottom: 30px;
+        line-height: 40px;
+    }
+
+    .link{
+     font-size: 30px;
     }
 
 
@@ -78,57 +132,16 @@
 
 
 
-    .botao-aba>button {
-
-        border: none;
-        height: 50px;
-        background-color: #D9D9D9;
-        cursor: pointer;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between !important;
-        padding: 50px;
-
-        transition: 0.3s;
 
 
 
 
 
 
-    }
 
 
 
 
-
-    button.item-botao:hover {
-
-        background-color: #00C2FF;
-        font-size: 15px;
-
-
-    }
-
-    
-
-    button.ativo{
-        background-color: #00C2FF;
-    }
-
-
-
-    .botao-aba>button>img {
-
-        width: 25px;
-        height: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-
-    }
 
 
     

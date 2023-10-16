@@ -37,7 +37,7 @@ export default function AbaUsuario() {
 
 
 
-    var aba = document.querySelectorAll('.botao-aba')
+    var aba = document.querySelectorAll('.item-menu')
 
     function selectAba() {
         aba.forEach((item) =>
@@ -49,6 +49,27 @@ export default function AbaUsuario() {
     aba.forEach((item) =>
         item.addEventListener('click', selectAba)
     )
+
+
+
+    function abrirAlt(){
+
+        const modal = document.getElementById('editarPerfil')
+        
+        modal.classList.remove('abrir')
+        modal.classList.add('abrir')
+        
+        
+    }
+    
+    function abrirSeguranca(){
+
+        const modal = document.getElementById('senhaSeguranca')
+        modal.classList.remove('abrir')
+        modal.classList.add('abrir')
+    }
+
+   
 
 
 
@@ -76,71 +97,61 @@ export default function AbaUsuario() {
                     </div>
 
 
-                    <div className='baixo'>
+                    <ul className='baixo'>
+                        <li className='item-menu'>
+                            <a href='#'>
+                               
+                                <span className='link'>Home</span>
+                                <img src='../../assets/images/image142.svg'></img>
+                            </a>
 
+                        </li>
 
-                        <div className='buttons'>
-                            <article className='botao-aba '>
+                        <li className='item-menu ativo' onClick={abrirAlt}>
+                            <a href='#'>
+                              
+                                <span className='link'>Editar Perfil</span>
+                                <img src='../../assets/images/image138.svg'></img>
+                            </a>
 
-                                <button className='item-botao'>
-                                    <p>HOME</p>
-                                    <img src='../../assets/images/image142.svg'></img>
-                                </button>
+                        </li>
 
+                        <li className='item-menu'>
+                            <a href='#'>
+                                
+                                <span className='link'>Notificação</span>
+                                <img src='../../assets/images/image137.svg'></img>
+                                
+                            </a>
 
-                            </article>
+                        </li>
 
-                            <article className='botao-aba'>
+                        <li className='item-menu' onClick={abrirSeguranca}>
+                            <a href='#'>
+                                
+                                <span className='link'>Senha/Segurança</span>
+                                <img src='../../assets/images/image139.svg'></img>
+                            </a>
 
-                                <button className='item-botao ativo'>
-                                    <p>EDITAR PERFIL</p>
-                                    <img src='../../assets/images/image138.svg'></img>
-                                </button>
+                        </li>
 
-                            </article>
+                        <li className='item-menu'>
+                            <a href='#'>
+                                
+                                <span className='link'>Sair da conta</span>
+                                <img src='../../assets/images/sair.png'></img>
 
-                            <article className='botao-aba'>
+                            </a>
 
-                                <button className='item-botao'>
-                                    <p>NOTIFICAÇÕES</p>
-                                    <img src='../../assets/images/image137.svg'></img>
-                                </button>
+                        </li>
 
-                            </article>
-
-                            <article className='botao-aba'>
-
-                                <button className='item-botao'>
-                                    <p>SENHAS/SEGURANÇA</p>
-                                    <img src='../../assets/images/image139.svg'></img>
-                                </button>
-
-                            </article>
-
-
-                            <article className='botao-aba' onClick={sairClick}>
-
-                                <button className='item-botao'>
-                                    <p>SAIR DA CONTA</p>
-                                    <img src='../../assets/images/sair.png'></img>
-                                </button>
-
-                            </article>
-
-                        </div>
-
-
-                        <script src='lateral.js' />
-
-
-                    </div>
+                    </ul>
 
                 </div>
 
                 <div className='conteudo-option'>
 
-                    < Modais />
-
+                        <Modais />
                 </div>
 
 

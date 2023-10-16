@@ -6,7 +6,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        display: none;
 
+    }
+
+    .editarPerfil.abrir{
+        display: flex;
     }
 
     .inputs{
@@ -23,5 +28,19 @@
         border-radius: 15px;
         border: 1px solid #00C2FF;
         outline: 0;
+    }
+
+
+
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    .senhaSeguranca{
+        display: none;
+    }
+
+    .senhaSeguranca.abrir{
+        display: flex;
     }
 }

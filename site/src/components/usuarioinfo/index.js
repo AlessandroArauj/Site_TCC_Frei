@@ -4,12 +4,14 @@ import './index.scss'
 export default function conteudoOptions(){
 
 
+    
+
     return(
         <div className='conteudoOption'>
 
 
 
-            <section className='editarPerfil'>
+            <section className='editarPerfil'  id='editarPerfil'>
                 <h1> Dados Cadastrais</h1>
                 <div className='line' />
 
@@ -31,6 +33,27 @@ export default function conteudoOptions(){
                 <button > SALVAR ALTERAÇÕES</button>
             </section>
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+            <section className='senhaSeguranca' id='senhaSeguranca'>
+
+                <div>
+                    <div className='senhas'>
+                        <input type='text' placeholder='Senha atual'/>
+                        <input type='text' placeholder='Nova senha'/>
+                        <input type='text' placeholder='confirmar'/>
+                    </div>
+
+
+                    <h1>Excluir conta</h1>
+                </div> 
+
+            </section>
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+        
+                <script src='./script.js'/>
         </div>
     )
 }
