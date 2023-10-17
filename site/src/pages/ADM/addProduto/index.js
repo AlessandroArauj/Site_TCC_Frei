@@ -80,7 +80,7 @@ export default function AddProduto() {
 
 
                     <textarea placeholder='Descrição' className='Description'>
-
+                  
                     </textarea >
 
                     
@@ -98,15 +98,14 @@ export default function AddProduto() {
 
                 <div className='left'>
                     <div className='start-left'>
-                        <div className='lado'>
-                            <div />
-                        </div>
+                    <div className='lado'></div>
+                    <input className='ladoo' type='image'></input>
 
                         
                     </div>
 
                     <div className='end-left'>
-                        <h2> Cores :</h2>
+                    
                         <div />
                     </div>
                     

@@ -39,7 +39,7 @@ export default function LoginUsuario() {
 
       setTimeout(() => {
       navigate('/home')
-      }, 6000)
+      }, 3000)
       
 
 

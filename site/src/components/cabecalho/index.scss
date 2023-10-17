@@ -8,6 +8,25 @@
     background-color: #000;
     padding: 0px 50px;
 
+    .minhaconta  img{
+
+        position: absolute;
+        height: 35px;
+        width: 35px;
+        
+
+    }
+
+    .minhaconta h1{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+
+    }
+
+    
     .UserLetra{
         height: 35px;
         width: 35px;

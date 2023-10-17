@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AlterarImagem, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, inserirProduto } from "../repository/produtoRepository.js";
+import { AdicionarImagens, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, inserirProduto } from "../repository/produtoRepository.js";
 import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
@@ -62,23 +62,22 @@ server.put('/produto/:id', async (req, resp) =>{
 
 })
 
-server.post('/produto/:id/imagem', upload.single('produtos') , async (req, resp) =>{
+server.post('/produto/imagem', upload.single('produtosIma'), async (req, resp) => {
     try {
-        const { id } = req.params;
         const imagem = req.file.path;
-        const resposta = await AlterarImagem(imagem, id)
+        const id = req.body.id; 
+        const resposta = await AdicionarImagens(imagem, id);
 
-        if ( resposta != 1)
-            throw new Error('A imagem não pode ser alterada.')
-            resp.status(204).send()
+        if (resposta != 1)
+            throw new Error('A imagem não pode ser adicionada.');
+
+        resp.status(204).send();
     } catch (err) {
         resp.status(400).send({
             erro: err.message
-        })
-
+        });
     }
-
-})
+});
 
 server.post('/produto', async (req,resp) =>{
     try {

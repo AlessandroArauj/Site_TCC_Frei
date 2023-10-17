@@ -35,7 +35,7 @@
 
     .slider{
         margin: 0 auto;
-        width: 1200px;
+        width: 90%;
         height: 250px;
         overflow: hidden;
         border-radius: 45px;
@@ -60,12 +60,12 @@
     }
 
     .Slide img{
-        width: 1200px;
+        width: 100%;
     }
 
     .manual-navegation{
         position: absolute;
-        width: 1200px;
+        width: 90%;
         margin-top: -20px;
         display: flex;
         justify-content: center;
@@ -116,7 +116,7 @@
 
     .navegation-auto{
         position: absolute;
-        width: 1200px;
+        width: 90%;
         margin-top: 230px;
         display: flex;
         justify-content: center;

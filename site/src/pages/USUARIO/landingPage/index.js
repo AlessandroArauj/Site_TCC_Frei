@@ -11,11 +11,7 @@ export default function LandingPage() {
     
     const navigate = useNavigate()
     
-    useEffect(() => {
-        if (storage('usuario-logado')){
-          navigate('/home')
-        }
-    }, [])
+    
 
 
     return (
@@ -32,8 +28,8 @@ export default function LandingPage() {
                     <Link className='link-head'>
                         <h1 className='button-text-head'> Contatos</h1>
                     </Link>
-                    <Link className='link-head' to={'/loginUser'}>
-                        <h1 className='button-text-head'> Log-in</h1>
+                    <Link className='link-head' to={!storage('usuario-logado') ? '/LoginUser' : '/perfilusuario'}>
+                        <h1 className='button-text-head'>{storage('usuario-logado') ? "Minha Conta" : 'Login'}</h1>
                     </Link>
                 </nav>
             </header>

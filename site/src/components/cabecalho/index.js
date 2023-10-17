@@ -11,14 +11,11 @@ export default function Header() {
 
 
     useEffect(() => {
-        if (!storage('usuario-logado')){
-            navigate('/loginUser')
-        }
-        else {
+        if (storage('usuario-logado')){
             const usuariologado = storage('usuario-logado');
             setUsuario(usuariologado.nome)
-        
         }
+        
     }, [])
 
     return (
@@ -37,10 +34,10 @@ export default function Header() {
             <div className='dir'>
                 <div>
                     <Link className='butt-home' to={'/loginUser'}>
-                        <div className='UserLetra'> <h1> {usuario[0]} </h1></div>
+                        <div className={!storage('usuario-logado') ? 'minhaconta' :'UserLetra'}> <h1> {storage('usuario-logado') ? usuario[0] : <img className='Perfilimg' src='../../../assets/images/perfil.png'/>} </h1></div>
 
                     </Link>
-                    <Link className='butt-home' to={'/loginUser'}><p>minha conta</p></Link>
+                    <Link className='butt-home' to={storage('usuario-logado') ? '/LoginUser' : '/perfilusuario'}><p>{storage('usuario-logado') ? "Minha Conta" : 'Login'}</p></Link>
                 </div>
 
                 <div>
