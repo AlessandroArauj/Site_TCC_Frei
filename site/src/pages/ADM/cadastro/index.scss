@@ -37,13 +37,19 @@
     border-radius: 25px;
     width: 400px;
     height: 420px;
-    background-color: #d9d9d9;
+    border: 1px solid rgb(168, 168, 168);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 25px;
     padding: 25px;
+}
+
+.insercao > div{
+
+    background-color: transparent;
+
 }
 
 .insercao > h1{
@@ -58,34 +64,36 @@
     padding-left: 5px;
 }
 
-.insercao div input{
+.inputs{
 
     width: 350px;
     height: 45px;
-    background-color: #564F4F;
+    background-color: transparent;
+    border: 1px solid #c7c7c7;
     border-radius: 15px;
     outline: 0;
     color: white;
-    font-size: 16px;
-    padding: 15px;
-    border: none;
+    font-size: 14px;
+    padding: 10px;
+    
 }
 
 .insercao button{
     width: 150px;
     height: 45px;
-    background-color: #564F4F;
+    background-color: transparent;
+    border: 1px solid white;
     border-radius: 25px;
     color: white;
-    border: none;
+   
 }
 
 .insercao button:hover{
 
     background-color: transparent;
-    border: solid 2px #564F4F;
+    border: solid 1px #03f3fc;
     transition: 0.4s;
-    color: black;
+    
 
 }
 

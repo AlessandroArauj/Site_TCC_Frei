@@ -7,12 +7,14 @@
         width: 100%;
         height: 40px;
         justify-content: space-around;
-        background-color: #d9d9d9;
+        background-color: #fcfcfc;
     }
 
     .nav-cabe select{
         border: 1px solid #d9d9d9;
         background-color: transparent;
+        border: none;
+        text-decoration: none;
         outline: 0;
     }
 
@@ -26,7 +28,8 @@
         padding: 50px;
         width: 100%;
         height: 100%;
-        background-color: #777;
+        background-color: white;
+        box-shadow: 0px 0px 10px #c7c7c7;
     }
 
 
@@ -147,6 +150,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
+        
 
     }
 
@@ -201,9 +205,10 @@
         width: 100%;
         height: 450px;
         padding: 50px;
-        background-color: #777;
+        background-color: #ffffff;
         display: flex;
         flex-direction: column;
+        box-shadow: 0px 0px 10px #c7c7c7;
 
     }
 
@@ -217,7 +222,7 @@
     .line{
         width: 350px;
         height: 2px;
-        background-color: white;
+        background-color: rgb(0, 0, 0);
     }
 
     .f3 h1{
@@ -228,7 +233,7 @@
     .line2{
         width: 500px;
         height: 2px;
-        background-color: white;
+        background-color: rgb(0, 0, 0);
     }
 
 
@@ -280,10 +285,11 @@
     .faixa-5{
         display: flex;
         flex-direction: column;
-        background-color: #777;
+        background-color: #ffffff;
         width: 100%;
         height: 450px;
         padding: 50px;
+        box-shadow: 0px 0px 10px #c7c7c7;
 
     }
 

@@ -58,7 +58,7 @@ export default function LoginUsuario() {
   return (
 
     <div className="principal">
-      <LoadinBar className='barradeloading' color='#00a4e6' ref={ref} />
+      <LoadinBar className='barradeloading' color='#12adf9' ref={ref} />
 
       <div className='subprincipal'>
 

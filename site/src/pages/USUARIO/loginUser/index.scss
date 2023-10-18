@@ -9,9 +9,10 @@
     flex-direction: row;
     
 
-    .barradeloading{
+    LoadingBar{
         
         width: 100%;
+        color: #12adf9;
     
     }
 
@@ -45,6 +46,7 @@
             align-items: center;
             justify-content: start;
             margin-top: 30px;
+            padding: 10px;
             width: 330px;
             height: 50px;
             background-color: #0E0D10;
@@ -144,6 +146,8 @@
 
             .imgmeio{
                 position: absolute;
+                filter: grayscale(1);
+                filter: brightness(10);
             }
         }
 

@@ -1,6 +1,6 @@
 import './index.scss'
 import storage from 'local-storage'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Modais from '../../../components/usuarioinfo/index.js'
 
@@ -52,38 +52,38 @@ export default function AbaUsuario() {
     )
 
 
-    
-
-
-
-    
 
 
 
 
-    function abrirAlt(){
+
+
+
+
+
+    function abrirAlt() {
 
         const modal = document.getElementById('editarPerfil')
         modal.classList.add('abrir')
 
         modal.classList.remove('open')
-        
+
     }
 
 
-    function abrirSeg(){
+    function abrirSeg() {
 
         const modal = document.getElementById('senhaSeguranca')
-         if(modal.classList.add('abrir')){
+        if (modal.classList.add('abrir')) {
             modal.classList.remove('abrir')
-         }
-        
-        
-    }
-    
- 
+        }
 
-   
+
+    }
+
+
+
+
 
 
 
@@ -114,48 +114,53 @@ export default function AbaUsuario() {
                     <ul className='baixo'>
                         <li className='item-menu'>
                             <div>
-                               
+
+                                <Link to={'/home'} className='Link'>
+                                
                                 <span className='link'>Home</span>
                                 <img src='../../assets/images/image142.svg'></img>
-                                                        </div>
+
+                                </Link>
+
+                            </div>
 
                         </li>
 
-                        <li className='item-menu ativo'  onClick={abrirAlt}>
+                        <li className='item-menu ativo' onClick={abrirAlt}>
                             <div>
-                              
+
                                 <span className='link'>Editar Perfil</span>
                                 <img src='../../assets/images/image138.svg'></img>
-                                                        </div>
+                            </div>
 
                         </li>
 
                         <li className='item-menu' >
                             <div>
-                                
+
                                 <span className='link'>Notificação</span>
                                 <img src='../../assets/images/image137.svg'></img>
-                                                            </div>
-                            
+                            </div>
+
 
                         </li>
 
-                        <li className='item-menu'  onClick={abrirSeg}>
+                        <li className='item-menu' onClick={abrirSeg}>
                             <div>
-                                
+
                                 <span className='link'>Senha/Segurança</span>
                                 <img src='../../assets/images/image139.svg'></img>
-                                                        </div>
+                            </div>
 
                         </li>
 
                         <li className='item-menu' >
                             <div>
-                                
-                                <span className='link'>Sair da conta</span>
+
+                                <span className='link' onClick={sairClick}>Sair da conta</span>
                                 <img src='../../assets/images/sair.png'></img>
                             </div>
-                            
+
 
                         </li>
 
@@ -165,7 +170,7 @@ export default function AbaUsuario() {
 
                 <div className='conteudo-option'>
 
-                        <Modais />
+                    <Modais />
                 </div>
 
 

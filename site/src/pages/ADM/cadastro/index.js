@@ -13,17 +13,17 @@ export default function cadastroAdm() {
 
                     <div>
                         <h1>Email</h1>
-                        <input type="text" />
+                        <input type="text" placeholder='Email' className='inputs' />
 
                         <h1>Senha</h1>
-                        <input type="text" />
+                        <input type="password" placeholder='Senha' className='inputs' />
                     </div>
                     
                     <h1>
                         Solicitar nova senha
                     </h1>
 
-                    <button>
+                    <button className='Botao'>
                         Entrar
                     </button>
                 </div>
