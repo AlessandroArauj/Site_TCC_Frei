@@ -6,7 +6,7 @@ return(
     <div className="comp_rodape">
         <div className="roda">
             <div className="esq">
-                <Link> <h1>Sobre a empresa</h1></Link>
+                <Link to={'/'}> <h1>Sobre a empresa</h1></Link>
                 <Link> <h1>Ajuda e atendimentos</h1></Link>
                 <h1> Contatos para contratos</h1>
                 <div className='contato'>
