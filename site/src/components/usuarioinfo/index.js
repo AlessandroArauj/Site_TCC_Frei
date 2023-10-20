@@ -11,7 +11,7 @@ export default function conteudoOptions() {
 
 
 
-            <section className='editarPerfil' id='editarPerfil'>
+            <section className='editarPerfil ' id='editarPerfil'>
 
 
 
@@ -44,7 +44,7 @@ export default function conteudoOptions() {
 
 
 
-            <section className='senhaSeguranca' id='senhaSeguranca'>
+            <section className='senhaSeguranca abrir' id='senhaSeguranca'>
 
                 <div className='Seg'>
                     <h1> Altere sua senha</h1>
