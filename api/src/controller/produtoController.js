@@ -62,11 +62,11 @@ server.put('/produto/:id', async (req, resp) =>{
 
 })
 
-server.post('/produto/imagem', upload.single('produtosIma'), async (req, resp) => {
+server.post('/produto/:id/imagem', upload.single('produtosIma'), async (req, resp) => {
     try {
         const imagem = req.file.path;
-        const id = req.body.id; 
-        const resposta = await AdicionarImagens(imagem, id);
+        const idProduto = req.params.id; 
+        const resposta = await AdicionarImagens(imagem, idProduto);
 
         if (resposta != 1)
             throw new Error('A imagem não pode ser adicionada.');
