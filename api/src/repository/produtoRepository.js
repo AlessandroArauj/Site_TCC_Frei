@@ -1,16 +1,18 @@
 import { con } from "./connection.js";
 
-export async function AdicionarImagens(id ,imagem){
+export async function AdicionarImagens(imagem, id){
     const comando = `
         INSERT INTO TB_PRODUTO_IMAGEM (ID_INSTRUMENTOS, IMG_PRODUTO)
                     VALUES            (?, ?)
     `
 
+    console.log({imagem, id})
+
     const [ resp ] = await con.query(comando, [id, imagem]);
 
-    return resp;
-
+    return resp.affectedRows;
 }
+
 
 export async function DeletarProduto(id) {
     const comando = `
