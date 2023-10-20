@@ -1,11 +1,15 @@
 import './index.scss';
 import Header from '../../../components/cabecalho/index.js'
 import Rodape from '../../../components/rodape/index.js';
-//import './script.js';
+import {carrossel} from './repeticao'
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Home() {
 
+  useEffect (() => {
+    carrossel()
+  } , [])
 
   return (
     <div className="pageHome">

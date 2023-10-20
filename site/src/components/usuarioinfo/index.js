@@ -67,6 +67,12 @@ export default function conteudoOptions() {
             </section>
 
 
+            <section className='notificacao' id='notificacao'>
+                <h1>deu booooom</h1>
+
+            </section>
+
+
 
             <script src='./script.js' />
         </div>
