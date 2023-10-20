@@ -1,4 +1,6 @@
-
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
 
 .landingPage{
     
@@ -61,14 +63,9 @@
         background-size: cover;
         align-items: center;
         justify-content: start;
-        
-        
+        background-image: url('../../../../public/assets/images/backlandin.png');
         box-shadow: 0px 0px 50px #777;
         color: #383838;
-
-
-
-
     }
 
 
@@ -76,6 +73,7 @@
 
     .f1 div{
         width: 500px;
+        
     }
 
     .imagemfaixa{
@@ -107,6 +105,8 @@
     .f1 p{
         font-size: 22px;
         padding: 15px 0px;
+        color:#383838
+        
         
     }
 
@@ -121,12 +121,12 @@
         background-color: #00C2FF;
         border: none;
         color: white;
-        
-        margin: 10px 0px;
+        transition: 0.7s ease;
+        margin: 60px 0px;
     }
 
     .f1 button:hover{
-        background-color: transparent;
+        background-color:#3838389c;
         color: #d9d9d9;
         border: solid 1px #d9d9d9;
         transition: 0.7s;
@@ -177,6 +177,7 @@
     width: 300px;
     height: 350px;
     border-radius: 15px;
+    transition: 0.3s ease;
 }
 
 .baixo-f2 div h1{
@@ -194,6 +195,8 @@
     box-shadow: 0px 0px 15px rgb(173, 173, 173);
     background-color: white;
     transition: 0.3s;
+    background-color:#beb3b33d;
+
 }
 
 
@@ -239,15 +242,17 @@
         background-color: #00C2FF;
         border: none;
         color: white;
-        
+        transition: 0.4s ease;
         margin: 10px 0px;
+        cursor: pointer;
 }
 
 .button:hover{
     background-color: transparent;
     color: black;
     border: solid 1px black;
-    transition: 0.3s;
+    transition: 0.4s;
+   
 }
 
 .f4{
@@ -261,6 +266,12 @@
     margin-top: 100px;
     background-color: #d9d9d9;
     box-shadow: 0px 0px 15px rgba(185, 185, 185, 0.733);
+}
+
+
+
+.butt-landin-page{
+    cursor: default;
 }
 
 .f4 div{

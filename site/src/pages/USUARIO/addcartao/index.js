@@ -20,22 +20,38 @@ export default function AddCartao(){
                     <p className='subtitulo'>CARTOES CADASTRADOS</p>
                     <div className='parcela'>
                     <input className='cartao' type='text' ></input>
-                        
+
                         <label className='labelzim'>
-                            <p className='testinho'>PARCELAR EM</p>
+                            <p className='testinho'>PARCELAR EM:</p>
                             <input className='numero_parcela' type='number'></input>
                         </label>
-                        <button className='cadastrar'>CADASTRAR NOVO CARTAO</button>
-                    
-                    
-                    
-                    
-                    
+                        <button className='cadastrar'>Cadastrar Novo Cartão</button>
+
+
+
+
+
                     </div>
                 <div className='dd'>
                 <div className='divisinha'></div>
                 <p className='outras'>outras formas</p>
                 <div className='divisinha'></div>
+                </div>
+
+                <div className='baixo'>
+                    <button className='pix'>pix</button>
+                    <img src='/assets/images/pix.svg'></img>
+                    <p>OU</p>
+                    <button className='boleto'>boleto</button>
+                    <img src='/assets/images/image_125.png'></img>
+
+                </div>
+
+                <div className='ultima'>
+                    <p className='total'>Total:</p>
+                    <p className='valor'></p>
+                    <button className='cadastrar'>Efetuar Compra</button>
+
                 </div>
 
 

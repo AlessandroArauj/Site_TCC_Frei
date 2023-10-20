@@ -15,6 +15,8 @@ import CadastroUser from './pages/USUARIO/cadastroUser';
 import AddProduto from './pages/ADM/addProduto';
 import PageProduto from './pages/USUARIO/pageProduto';
 import Carrinho from './pages/USUARIO/carrinho'
+import FilterProduto from './pages/USUARIO/FilterProduto'
+import CadastrarCartao from './pages/USUARIO/cadastrar_cartao';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -35,6 +37,8 @@ root.render(
         <Route path='/addProduto' element={<AddProduto />} />
         <Route path='/PageProduto' element={<PageProduto />} />
         <Route path='/Carrinho' element={<Carrinho />} />
+        <Route path='/filter'   element={<FilterProduto />} />
+        <Route path='/CadastrarCartao' element={<CadastrarCartao />} />
 
 
 

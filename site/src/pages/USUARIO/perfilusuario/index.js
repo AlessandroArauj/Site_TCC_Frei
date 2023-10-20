@@ -62,21 +62,40 @@ export default function AbaUsuario() {
 
 
     function abrirAlt() {
+        const editar = document.getElementById('editarPerfil')
+        editar.classList.add('abrir')
 
-        const modal = document.getElementById('editarPerfil')
-        modal.classList.add('abrir')
+        const senha = document.getElementById('senhaSeguranca')
+        senha.classList.remove('abrir')
 
-        modal.classList.remove('open')
+        const notificacao = document.getElementById('notificacao')    
+        notificacao.classList.remove('abrir')
+
+    }
+
+    function abrirNoti(){
+        const notificacao = document.getElementById('notificacao')
+        notificacao.classList.add('abrir')
+
+        const editar = document.getElementById('editarPerfil')
+        editar.classList.remove('abrir')
+
+        const senha = document.getElementById('senhaSeguranca')
+        senha.classList.remove('abrir')
 
     }
 
 
-    function abrirSeg() {
 
-        const modal = document.getElementById('senhaSeguranca')
-        if (modal.classList.add('abrir')) {
-            modal.classList.remove('abrir')
-        }
+    function abrirSeg() {
+        const senha = document.getElementById('senhaSeguranca')
+        senha.classList.add('abrir')
+
+        const editar = document.getElementById('editarPerfil')
+        editar.classList.remove('abrir')
+
+        const notificacao = document.getElementById('notificacao')
+        notificacao.classList.remove('abrir')
 
 
     }
@@ -112,20 +131,21 @@ export default function AbaUsuario() {
 
 
                     <ul className='baixo'>
-                        <li className='item-menu'>
-                            <div>
+                        <Link to={'/home'} className='Link'>
+                            <li className='item-menu'>
+                                <div>
 
-                                <Link to={'/home'} className='Link'>
-                                
-                                <span className='link'>Home</span>
-                                <img src='../../assets/images/image142.svg'></img>
 
-                                </Link>
 
-                            </div>
+                                    <span className='link'>Home</span>
+                                    <img src='../../assets/images/image142.svg'></img>
 
-                        </li>
 
+
+                                </div>
+
+                            </li>
+                        </Link>
                         <li className='item-menu ativo' onClick={abrirAlt}>
                             <div>
 
@@ -135,7 +155,7 @@ export default function AbaUsuario() {
 
                         </li>
 
-                        <li className='item-menu' >
+                        <li className='item-menu' onClick={abrirNoti}>
                             <div>
 
                                 <span className='link'>Notificação</span>
@@ -154,10 +174,10 @@ export default function AbaUsuario() {
 
                         </li>
 
-                        <li className='item-menu' >
+                        <li className='item-menu' onClick={sairClick}>
                             <div>
 
-                                <span className='link' onClick={sairClick}>Sair da conta</span>
+                                <span className='link' >Sair da conta</span>
                                 <img src='../../assets/images/sair.png'></img>
                             </div>
 

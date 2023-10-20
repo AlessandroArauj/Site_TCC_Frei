@@ -1,0 +1,92 @@
+.page-add-cartao {
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+
+    .card {
+        width: 474px;
+        height: 483px;
+        background-color: black;
+        border-radius: 49px;
+
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        .titulo {
+            margin-top: 15px;
+
+
+
+        }
+
+        .sair {
+            font-size: 19px;
+            color: aliceblue;
+            margin-left: 350px;
+            margin-bottom: 15px;
+        }
+
+        .forma {
+            font-size: 22px;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .linha {
+            margin-top: 10px;
+            height: 0.1px;
+            width: 100%;
+            background-color: aliceblue;
+        }
+
+
+
+        .subcard {
+            width: 425px;
+            height: 330px;
+            margin-top: 20px;
+            background-color: #9999;
+            border-radius: 29px;
+            display: flex;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            border: solid 2px;
+            color: aliceblue;
+
+
+        .info{
+            display: flex;
+            flex-direction: column;
+            padding: 50px 0px;
+            
+        }
+
+        .container{
+           display: flex;
+           width: 100%;
+           padding: 0px 0px 20px;
+        }
+
+        input{
+            height: 50px;
+            width: 100%;            
+            margin-left: 15px;
+            border-radius: 10px;
+            border: none;
+           
+
+            
+        }
+
+
+
+
+        }
+    }
+}
