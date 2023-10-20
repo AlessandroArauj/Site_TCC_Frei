@@ -59,7 +59,7 @@ export default function LandingPage() {
                         <div>
                             <img src='../../../../assets/images/fone.svg' />
                             <h1> Audios</h1>
-                            <p> Vendemos qualquer tipo de equipamentos ligado a Audios</p>
+                            <p> Vendemos qualquer tipo de equipamentos ligado a Audios.</p>
                         </div>
                     </Link>
 
@@ -67,7 +67,7 @@ export default function LandingPage() {
                         <div>
                             <img src='../../../../assets/images/gaita.svg' />
                             <h1> Sopro</h1>
-                            <p>  Ofercemos A grande maioria dos instrumentos relacionados a Sopro</p>
+                            <p>  Ofercemos A grande maioria dos instrumentos relacionados a Sopro.</p>
                         </div>
                     </Link>
 
@@ -75,7 +75,7 @@ export default function LandingPage() {
                         <div>
                             <img src='../../../../assets/images/violao.svg' />
                             <h1> Cordas</h1>
-                            <p> Aqui disponibilizamos uma alta diversificação de instrumentos relacionados a Cordas</p>
+                            <p> Aqui disponibilizamos uma alta diversificação de instrumentos relacionados a Cordas.</p>
                         </div>
                     </Link>
                 </div>
