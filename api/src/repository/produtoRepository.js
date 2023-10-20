@@ -6,8 +6,6 @@ export async function AdicionarImagens(imagem, id){
                     VALUES            (?, ?)
     `
 
-    console.log({imagem, id})
-
     const [ resp ] = await con.query(comando, [id, imagem]);
 
     return resp.affectedRows;
