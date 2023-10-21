@@ -39,12 +39,15 @@ export default function AddCartao(){
                 </div>
 
                 <div className='baixo'>
-                    <button className='pix'>pix</button>
-                    <img src='/assets/images/pix.svg'></img>
-                    <p>OU</p>
-                    <button className='boleto'>boleto</button>
-                    <img src='/assets/images/image_125.png'></img>
-
+                   
+                <div>   <button className='pix'>pix</button>
+                        <img src='/assets/images/pix.svg'></img>
+                </div>
+                        <p>OU</p>
+                <div>
+                        <button className='boleto'>boleto</button>
+                        <img src='/assets/images/image_125.png'></img>
+                </div>
                 </div>
 
                 <div className='ultima'>
