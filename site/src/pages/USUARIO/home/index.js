@@ -1,15 +1,37 @@
 import './index.scss';
 import Header from '../../../components/cabecalho/index.js'
 import Rodape from '../../../components/rodape/index.js';
-import {carrossel} from './repeticao'
+import { carrossel } from './script'
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import CardProduto from '../../../components/cardProduto';
+
 
 function Home() {
 
-  useEffect (() => {
+
+
+  useEffect(() => {
     carrossel()
-  } , [])
+  }, [])
+
+
+  const carousel = useRef(null)
+
+  const handleLeftClick = (e) => {
+    e.preventDefault();
+    console.log(carousel.current.offsetWidth)
+    carousel.current.scrollLeft -= carousel.current.offsetWidth
+
+  }
+
+  const handleRightClick = (e) => {
+    e.preventDefault();
+    console.log(carousel.current.offsetWidth)
+    carousel.current.scrollLeft += carousel.current.offsetWidth
+
+  }
+
 
   return (
     <div className="pageHome">
@@ -115,18 +137,20 @@ function Home() {
       </section>
 
 
-      <section className='f3'>
-        <div className='cima-f3'>
-          <div className='line' />
-          <h1> Produtos em Destaque</h1>
-          <div className='line2' />
+      <section className='faixa-3'>
+        <button onClick={handleLeftClick}><img src='../../../assets/images/menor.png' /></button>
+        <div className='meio'>
+          <div className='cima-f3'>
+            <div className='line' />
+            <h1> Produtos em Destaque</h1>
+            <div className='line2' />
+          </div>
+          <CardProduto addcarousel={carousel} />
+
+
+
         </div>
-
-
-
-        <div>
-
-        </div>
+        <button onClick={handleRightClick}><img src='../../../assets/images/maior.png' /></button>
       </section>
 
       <section className='faixa-4'>
