@@ -1,11 +1,22 @@
 import { Router } from "express";
-import { AdicionarImagens, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, inserirProduto } from "../repository/produtoRepository.js";
+import { AdicionarImagens, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
 import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
 
 const upload = multer({ dest: 'storage/fotosProdutos' })
 const server = Router();
+
+server.get('/produto/categoria', async (req, resp) =>{
+    try {
+        const resposta = await listarCategorias();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 server.get('/produto/nome', async (req, resp) =>{
     try {
@@ -22,8 +33,15 @@ server.get('/produto/nome', async (req, resp) =>{
 })
 
 server.get('/produto/marca', async (req, resp) => {
-    let r = await listarMarcas();
-    resp.send(r)
+    try {
+        const resposta = await listarMarcas()
+        resp.send(resposta)
+        
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
 })
 
 server.delete('/produto/:id', async (req, resp) => {

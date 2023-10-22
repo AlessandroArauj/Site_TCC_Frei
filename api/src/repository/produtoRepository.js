@@ -1,5 +1,16 @@
 import { con } from "./connection.js";
 
+export async function listarCategorias(){
+    const comando = `
+        select NM_CATEGORIA     as Categoria,
+               ID_CATEGORIA     as Id
+
+        from TB_CATEGORIA
+    `
+    const [resp] = await con.query(comando);
+    return resp
+}
+
 export async function AdicionarImagens(imagem, id){
     const comando = `
         INSERT INTO TB_PRODUTO_IMAGEM (ID_INSTRUMENTOS, IMG_PRODUTO)

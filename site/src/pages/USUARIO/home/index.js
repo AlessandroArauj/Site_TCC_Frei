@@ -16,25 +16,25 @@ function Home() {
       <Header />
       <nav className='nav-cabe'>
 
-        <select>
-          <option>Sopro</option>
-        </select>
+        
+          <p>Sopro</p>
+        
 
-        <select>
-          <option>Bateria e Percurssão</option>
-        </select>
+        
+          <p>Bateria e Percurssão</p>
+        
 
-        <select>
-          <option>Teclas</option>
-        </select>
+       
+          <p>Teclas</p>
+        
 
-        <select>
-          <option>Cordas</option>
-        </select>
+        
+          <p>Cordas</p>
+        
 
-        <select>
-          <option>Audio</option>
-        </select>
+       
+          <p>Audio</p>
+        
 
       </nav>
 
