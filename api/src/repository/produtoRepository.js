@@ -1,6 +1,6 @@
 import { con } from "./connection.js";
 
-export async function listarCategorias(){
+export async function listarCategorias() {
     const comando = `
         select NM_CATEGORIA     as Categoria,
                ID_CATEGORIA     as Id
@@ -11,13 +11,13 @@ export async function listarCategorias(){
     return resp
 }
 
-export async function AdicionarImagens(imagem, id){
+export async function AdicionarImagens(imagem, id) {
     const comando = `
         INSERT INTO TB_PRODUTO_IMAGEM (ID_INSTRUMENTOS, IMG_PRODUTO)
                     VALUES            (?, ?)
     `
 
-    const [ resp ] = await con.query(comando, [id, imagem]);
+    const [resp] = await con.query(comando, [id, imagem]);
 
     return resp.affectedRows;
 }
@@ -107,7 +107,7 @@ export async function AlterarImagem(imagem, id) {
     
     `
     const [resp] = await con.query(comando, [
-        imagem.imagem, 
+        imagem.imagem,
         id
     ]);
     return resp;
@@ -118,7 +118,9 @@ export async function AlterarImagem(imagem, id) {
 export async function ExibirTodosProdutos() {
     const comando = `
 
-    select  ID_MARCAS               AS MARCAS,
+    select  
+            ID_INSTRUMENTOS         AS ID,
+            ID_MARCAS               AS MARCAS,
             ID_CATEGORIA            AS CATEGORIAS,
             NM_PRODUTO              AS PRODUTO,
             DS_PRECO                AS PRECO,
@@ -142,9 +144,17 @@ export async function ExibirTodosProdutos() {
 export async function ExibirTodosFiltroNome(nome) {
     const comando = `
 
-    select  ID_MARCAS               AS MARCAS,
+    select  
+            ID_INSTRUMENTOS         AS ID,
+            ID_MARCAS               AS MARCAS,
             ID_CATEGORIA            AS CATEGORIAS,
             NM_PRODUTO              AS PRODUTO,
+            DS_PRECO                AS PRECO,
+            DS_PRECO_PROMOCIONAL    AS PRECOPROMO,
+            BT_DESTAQUE             AS DESTAQUE,
+            BT_PROMOCAO             AS PROMODISP,
+            BT_DISPONIVEL           AS DISPONIVEL,
+            QTD_ESTOQUE             AS ESTOQUE,
             DS_DETALHES             AS DETALHE
 
     from    TB_PRODUTO
@@ -153,7 +163,7 @@ export async function ExibirTodosFiltroNome(nome) {
     
     `
 
-    let [resp] = await con.query(comando, ['%' + nome + '%'])
+    let [resp] = await con.query(comando, [ `%${nome}%` ])
     return resp;
 
 }

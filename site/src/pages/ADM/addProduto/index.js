@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
+
 import './index.scss'
+
 import { useState, useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import axios from 'axios'
-import { adicionarProduto } from '../../../api/produtoApi'
+import { ListarTodosProdutos, adicionarProduto } from '../../../api/produtoApi'
 
 
 
@@ -10,6 +15,7 @@ import { adicionarProduto } from '../../../api/produtoApi'
 
 
 export default function AddProduto() {
+
 
     const [marca, setMarca] = useState(0);
     const [marcasTipo, setTipoMarcas] = useState([]);
@@ -27,46 +33,58 @@ export default function AddProduto() {
     const [destaque, setDest] = useState(false);
     const [disponivel, setDisp] = useState(false);
     const [descricao, setDesc] = useState('');
+    const [imagem, setImagem] = useState('');
     const [id, setId] = useState(0);
 
-    async function SalvarCLick(){
+    const [produtos, setProdutos] = useState([])
+
+    async function CarregarTodosProdutos() {
+        const resp = await ListarTodosProdutos();
+        console.log(resp);
+        setProdutos(resp);
+    }
+
+    async function SalvarCLick() {
         try {
             const r = await adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao)
-            alert('Produto Cadastrado!')
+            toast.dark('Produto Cadastrado!')
 
         } catch (err) {
-            
-            alert(err.response.message)
+
+            toast.error(err.message)
+            console.log(err.response.message);
         }
     }
 
-    async function listarCategorias(){
-        
+    async function listarCategorias() {
+
         const r = await axios.get('http://localhost:5000/produto/categoria');
         setCategoriaTipo(r.data)
     }
 
-    async function listarMarcas(){
-        
+    async function listarMarcas() {
+
         const r = await axios.get('http://localhost:5000/produto/marca');
         setTipoMarcas(r.data)
     }
 
+    useEffect(() => {
+        //
+        CarregarTodosProdutos();
+    }, [])
 
-    
 
-    useEffect(() =>{
-    //
-    listarMarcas();
+    useEffect(() => {
+        //
+        listarMarcas();
     }, []);
 
 
 
     useEffect(() => {
-    //
-    listarCategorias()
+        //
+        listarCategorias()
     }, [])
-
 
 
 
@@ -77,108 +95,249 @@ export default function AddProduto() {
 
 
         <div className="addProduto">
-            <h1>Cadastre ou  Edite as informações de seu produto  </h1>
+            <ToastContainer />
 
+            <div className='Cabecalho'>
 
-            <div className='f1'>
+                <div className='BemvindoADM'>
 
-
-
-
-
-                <div className='right'>
-
-                    <div className='start-right'>
-                        <input type='text' placeholder='Nome' value={nome} onChange={e => setNome(e.target.value)} />
-                        <input type='text' placeholder='Preço' value={preco} onChange={e => setPreco(e.target.value)} />
-                    </div>
-
-                    <div className='center-right'>
-                        <label>
-                            <input type='text' placeholder='Promoção' value={precoPromo} onChange={e => setPrecoPromo(e.target.value)}/>
-
-
-                        </label>
-
-                        <input type='text' placeholder=' estoque' value={estoque} onChange={e => setEstoque(e.target.value)}/>
-                    </div>
-
-                    <div className='end-right'>
-
-
-
-                        <select value={marca} onChange={e => setMarca(e.target.value)}>
-                            <option value={0}> Marca</option>
-                            {marcasTipo.map(item =>
-                                
-                                <option value={item.id}> {item.marca} </option>
-                            )}
-
-                        </select>
-
-                        <select value={categoria} onChange={e => setCategoria(e.target.value)}>
-                            <option value={0}> Categoria</option>
-                            {categoriaTipo.map(item =>
-                                
-                                <option value={item.Id}> {item.Categoria} </option>    
-                            )}
-                        </select>
-
-                            <p>Promoção?</p>
-                            <input type='checkbox' checked={promo} onChange={e => setPromo(e.target.checked)}></input>
-                        
-
-
-                            <p>Destaque</p>
-                            <input type='checkbox' checked={destaque} onChange={e => setDest(e.target.checked)}/>
-
-                            <p>Disponivel</p>
-                            <input type='checkbox' checked={disponivel} onChange={e => setDisp(e.target.checked)}/>
-                    </div>
-
-
-
-
-
-
-                    <input type='text' value={descricao} onChange={e => setDesc(e.target.value)}/>
-
-
-
-
-
-
-
+                    <p>Seja bem vindo, </p>
 
                 </div>
+                <div className='FotoADM'>
 
-                <button className='buttons' onClick={SalvarCLick}> Adicionar produto</button>
-                <h1>Cadastrar ou  Editar as Imagens do seu Produto</h1>
-
-
-                <div className='left'>
-                    <div className='start-left'>
-                        <div className='lado'></div>
-                        <input className='ladoo' type='image'></input>
-
-
-                    </div>
-
-                    <div className='end-left'>
-
-                        <div />
-                    </div>
+                    <div className='Foto'> D </div>
 
                 </div>
-
-                <button className='buttons'> Adicionar Imagem   </button>
-                <Link className='voltar' to={'/'}> Voltar p/ Home</Link>
 
             </div>
 
 
+            <div className='Container'>
 
 
+
+                <div className='conteudo'>
+
+                    <div className='apresentacao'>
+
+                        <div className='azul'></div>
+                        <h3>Cadastrar Novo Produto</h3>
+
+                    </div>
+
+                    <div className='inputsgeral'>
+
+                        <div className='InputEsquerda'>
+
+                            <div className='inputs'>
+
+                                <div className='p'>
+                                    <p>Nome:</p>
+                                </div>
+                                <div className='inp'>
+                                    <input type='text' value={nome} onChange={e => setNome(e.target.value)} />
+                                </div>
+
+                            </div>
+
+                            <div className='inputs'>
+
+                                <div className='p'>
+                                    <p>Preço:</p>
+                                </div>
+                                <div className='inp'>
+                                    <input value={preco} onChange={e => setPreco(e.target.value)} />
+                                </div>
+
+                            </div>
+
+                            <div className='inputs'>
+
+                                <div className='p'>
+                                    <p>Preço Promoção:</p>
+                                </div>
+                                <div className='inp'>
+                                    <input value={precoPromo} onChange={e => setPrecoPromo(e.target.value)} />
+                                </div>
+
+                            </div>
+
+
+                            <div className='inputs'>
+
+                                <div className='p'>
+                                    <p>Estoque:</p>
+                                </div>
+                                <div className='inp'>
+                                    <input value={estoque} onChange={e => setEstoque(e.target.value)} />
+                                </div>
+
+                            </div>
+
+                            <div className='inputs'>
+
+                                <div className='p'>
+                                    <p>Promoçao:</p>
+                                </div>
+                                <div className='inp-c'>
+                                    <input type='checkbox' value={promo} onChange={e => setPromo(e.target.checked)} />
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <div className='InputDireta'>
+
+                            <div className='inputs'>
+
+                                <div className='p'>
+                                    <p>Descrição:</p>
+                                </div>
+                                <div className='inp-d'>
+                                    <textarea value={descricao} onChange={e => setDesc(e.target.value)}></textarea>
+                                </div>
+
+                            </div>
+
+                            <div className='inputs'>
+
+                                <div className='p'>
+                                    <p>Destaque:</p>
+                                </div>
+                                <div className='inp-c'>
+                                    <input type='checkbox' value={destaque} onChange={e => setDest(e.target.checked)} />
+                                </div>
+
+                            </div>
+
+                            <div className='inputs'>
+
+                                <div className='p'>
+                                    <p>Disponivel:</p>
+                                </div>
+                                <div className='inp-c'>
+                                    <input type='checkbox' value={disponivel} onChange={e => setDisp(e.target.checked)} />
+                                </div>
+
+                            </div>
+
+
+
+                            <div className='inputs'>
+
+                                <p> Marcas: </p>
+                                <select value={marca} onChange={e => setMarca(e.target.value)}>
+
+                                    <option id='options' value={0}> Marcas </option>
+                                    {marcasTipo.map(item =>
+
+                                        <option value={item.id}> {item.marca} </option>
+                                    )}
+
+                                </select>
+
+                            </div>
+
+                            <div className='inputs'>
+
+                                <p> Categorias: </p>
+                                <select value={categoria} onChange={e => setCategoria(e.target.value)}>
+
+                                    <option id='options' value={0}> Categorias </option>
+                                    {categoriaTipo.map(item =>
+
+                                        <option value={item.Id}> {item.Categoria} </option>
+                                    )}
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div className='butt'>
+
+                        <div className='Salvar'>
+
+                            <Link className='Links' to={'/pageAdm'}> Voltar para Adm</Link>
+
+                        </div>
+
+                        <div className='Salvar' onClick={SalvarCLick}>
+
+                            <p> Salvar </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div className='Container'>
+
+                <div className='apresentacao'>
+
+                    <div className='azul'></div>
+                    <h3>Cadastrar Novo imagem do produto</h3>
+
+                </div>
+
+
+                <div className='conteudo2'>
+
+                    <div className='imageminput'>
+
+                        <input type='number' placeholder='Id do produto'/>
+
+                        <input />
+
+                    </div>
+
+                    <div className='miniconsulta'>
+
+                        <table>
+                            <thead className='thead'>
+                                <tr className='headzinhaconsulta'>
+                                    <th>Identificação</th>
+                                    <th>Nome</th>
+                                    <th>Disponivel</th>
+                                </tr>
+                            </thead>
+                        </table>
+
+                        <tbody>
+
+                            {produtos.map(item =>
+                                <tr>
+                                    <td>
+                                        {item.ID}
+                                    </td>
+                                    <td>
+                                        {item.PRODUTO}
+                                    </td>
+                                    <td>
+                                        {item.DISPONIVEL ? 'Sim' : 'Não'}
+                                    </td>
+                                </tr>
+
+                            )}
+
+                        </tbody>
+
+                    </div>
+
+                </div>
+
+
+            </div>
 
         </div>
     )

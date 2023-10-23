@@ -1,308 +1,257 @@
-.addProduto{
+.addProduto {
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    background-color: #e4e4e4;
+    background-color: rgb(240, 240, 240);
+    height: 170vh;
 
+    .miniconsulta {
 
-    .addProduto > h1{
-        font-size: 33px;
-    }
-
-    Link{
-        font-size: 22px;
-    }
-
-    .f1{
         display: flex;
-        gap: 30px;
-        flex-direction: column;
-        justify-content: center;
-        margin: 20px 0px;
-        align-items: center;
-    }
-
-    .left{
-        width: 500px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-    }
-
-    .right{
-        width: 500px;
-        height: 450px;
-        background-color: #888888;
-        border-radius: 15px;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         
+        flex-direction: column;
+        justify-content: end;
+        width: 30%;
+        
+
+        
+
     }
 
-
-    .right input::placeholder{
-        color: #535353;
-    }
-
-    .center-right input::placeholder{
-        color: #535353;
-    }
-
-    .start-right{
+    tbody{
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-    }
-
-    .start-right input{
-        display: flex;
-        align-items: center;
-        padding: 0px 15px;
-        background-color:#D9D9D9;
-        outline: 0;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        border-radius: 15px;
-        font-size: 20px;
-        color: #000000;
-        height: 35px;
-        width: 225px;
-        margin: 10px;
-        border: none;
-    }
-
-    .center-right{
-        display: flex;
-        flex-direction: row;
-    } 
-
-    .center-right > input{
-        display: flex;
-        align-items: center;
-        padding: 0px 15px;
-        background-color:#D9D9D9;
-        outline: 0;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        border-radius: 15px;
-        font-size: 20px;
-        color: #000000;
-        height: 35px;
-        width: 225px;
-        margin: 10px;
-        border: none;
-    }
+        flex-direction: column;
+        width: 100%;
+        background-color: #d8d8d8;
     
-    .center-right label{
-        display: flex;
-        align-items: center;
-        padding: 0px 15px;
-        background-color:#D9D9D9;
-        outline: 0;
-      
-        border-radius: 15px;
+    }
+
+    table{
         
-        color: #000000;
-        height: 35px;
-        width: 225px;
-        margin: 10px;
-        border: none;  
-    }
-
-    .center-right label input{
-        outline: 0;
-        border: none;
-        background-color: transparent;
-        color: #000000;
-        width: 140px;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 20px;
-    }
-
-    .center-right label select{
-        border: none;
-        outline: 0;
-        background-color: transparent;
-        color: #d9d9d9;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        
-    }
-
-    .center-right label option{
-        border: none;
-        outline: 0;
-        background-color: transparent;
-        color: #d9d9d9;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-
-    .start-left{
-        background-color: #888888;
-        width: 500px;
-        height: 320px;
-        border-radius: 15px;
-        padding: 15px;
-        display: flex;
-        gap: 15px;
-        
-    }
-   
-
-
-
-    .end-left{
-        background-color: #888888;
-        width: 500px;
-        height: 320px;
-        margin-top: 20px;
-        border-radius: 15px;
-        color: #fff;
-        padding: 10px;
-    }
-
-    .prin{
-        background-color: #d9d9d9 ;
-        width: 400px;
-        height: 100%;
-        border-radius: 15px;
-    }
-
-    .lado{
-        border:solid 2px #d9d9d9 ;
-        width: 120px;
-        height: 120px;
-        border-radius: 15px;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        background-color: #d9d9d9;
-    }
-
-    .ladoo{
-        border:solid 2px #d9d9d9 ;
-        background-color: #d9d9d9;
-        width: 290px;
-        height: 290px;
-        border-radius: 15px;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-    }
-
-    .ladoo0{
-        border:solid 2px #d9d9d9 ;
-        background-color: #d9d9d9;
-        width: 80px;
-        height: 80px;
-        border-radius: 15px;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-    }
-
-
-    .end-left h1{
-        font-size: 18px;
-    }
-
-
-
-
-    button{
-        width: 200px;
-        height: 60px;
-        background-color: #000000;
-        color: #d9d9d9;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        border-radius: 15px;
-        font-size: 22px;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-
-    button:hover{
-        background-color: transparent;
-        border: solid 1px black;
-        color: black;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-
-    .end-right{
-        display: flex;
         width: 100%;
+        margin-top: 90px;
+        
+        
+    
+    }
+
+    thead{
+        
+        background-color: rgb(0, 174, 255);
+        height: 40px;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+
+    .headzinhaconsulta{
+        
+        display: flex;
         justify-content: space-between;
-        margin-bottom: 10px;
-        
-        
-    }
-
-    .end-right select{
-        border: 1px solid #d9d9d9;
-        outline: 0;
-        
-        background-color:#D9D9D9;
-        width: 100px;
-        height: 30px;
-        border-radius: 15px;
-        padding: 0px 10px;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: #787878;
-    }
-
-    .Description{
-        display: flex;
-        align-items: start;
-        justify-content: start;
-        border: 1px solid #d9d9d9;
-        outline: 0;
-        background-color: #D9D9D9;
-        color: #787878;
         width: 100%;
-        height: 280px;
-        border-radius: 15px;
-        padding:10px;
+        
+    
+    }
+
+    
+
+    tr {
+        
+        display: flex;
+        justify-content: space-between !important;
+        flex-wrap: nowrap;
+        
+    
+    }
+
+    .Cabecalho {
+
+        width: 100%;
+        height: 80px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 10px #b4b4b4;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 120px 0px;
+        font-size: 16px;
+
+
+    }
+
+    .Foto {
+
+        width: 45px;
+        height: 45px;
+        background-color: rgb(0, 204, 255);
+        border-radius: 100%;
+
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 20px;
+        color: white;
+
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .Container {
+
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 10px #b4b4b4;
+
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 60px;
+        width: 90%;
+        height: 450px;
+
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .conteudo {
+
+        padding: 0px 30px 0px;
+
+    }
+
+    .apresentacao {
+
+        display: flex;
+        align-items: center;
+
+
+        gap: 5px;
+
+
 
     }
 
 
-    .Description::placeholder{
-        color: #d9d9d9;
-    }
+    .azul {
 
-    .prin{
-
-        width: 400px;
+        width: 5px;
+        height: 20px;
+        background-color: rgb(0, 204, 255);
 
     }
-    .voltar{
+
+
+    .inputsgeral {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-top: 90px;
+        padding: 0px 35px 0px;
+
+
+    }
+
+    .inputs {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px 10px;
+
+        gap: 20px;
+    }
+
+    .inp-d textarea {
+
+        box-shadow: none;
+        outline: none;
+        border: 1px solid rgb(201, 201, 201);
+        width: 160px;
+        height: 95px;
+        padding-left: 10px;
+        resize: none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: start;
+        flex-wrap: wrap;
+
+    }
+
+    .inp input {
+
+        box-shadow: none;
+        outline: none;
+        border: 1px solid rgb(201, 201, 201);
+        width: 160px;
+        height: 24px;
+        padding-left: 10px;
+
+    }
+
+    .inputs select {
+
+        width: 120px;
+        outline: none;
+        border: 1px solid rgb(201, 201, 201);
+        padding-left: 10px;
+
+    }
+
+
+
+    #options:focus {
+
+        outline: none;
+        background-color: #b4b4b4;
         text-decoration: none;
-        font-size: 19px;
-       color: #000000;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    .voltar:hover{
-        color: #00C2FF;
-    }
-    h1{
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-         color: #00C2FF;
-    }
 
-    h2{
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-         
+
     }
 
 
+    .butt {
 
+        margin-top: 30px;
+        height: 40px;
+        width: 95%;
+
+        display: flex;
+        justify-content: space-between;
+
+
+    }
+
+    .Salvar {
+
+        background-color: rgb(0, 174, 255);
+        border-radius: 5px;
+        color: white;
+
+        height: 40px;
+        width: 110px;
+        font-size: 18px;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+
+    .Links {
+
+        text-decoration: none;
+        color: white;
+        font-size: 13px;
+
+    }
 
 
 

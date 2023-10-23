@@ -18,11 +18,18 @@ server.get('/produto/categoria', async (req, resp) =>{
     }
 })
 
-server.get('/produto/nome', async (req, resp) =>{
+server.get('/produto/busca', async (req, resp) =>{
     try {
-        const nome = req.query.nome;
-        const resp = await ExibirTodosFiltroNome(nome);
-        resp.send(resp);
+        const { nome } = req.query;
+        const resposta = await ExibirTodosFiltroNome(nome);
+        
+
+        if(resposta.length == 0){
+            resp.status(404).send([])
+        }
+        else{
+            resp.send(resposta);
+        }
 
     } catch (err) {
         resp.status(400).send({
