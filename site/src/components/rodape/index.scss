@@ -21,7 +21,7 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        color: #fff;
+        color: #ffffff9d;
         
     
     }
@@ -69,13 +69,14 @@
         height: 100px;
     }
     
-    Link{
-        cursor: pointer;
-        color: #fff;
-    
-    }
     
     .esq h1{
-        color: #fff;
+        color: #ffffff9a;
     text-decoration: underline black;}
+    }
+
+    .esq h1:hover{
+        color: #fff;
+        transition: 0.3s;
+        cursor: pointer;
     }

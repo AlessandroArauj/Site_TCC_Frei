@@ -1,9 +1,9 @@
+import { Link } from 'react-router-dom'
 import './index.scss'
 
 
 export default function cardProduto(props) {
 
-//fique feliz, ainda tenho coisa pra adicionar no card do produto, mas acho q da pra tu colocar suas api
     const carousel = props.addcarousel
 
     return (
@@ -15,17 +15,175 @@ export default function cardProduto(props) {
                     <div className='card'>
 
                         <div className='cima'>
-                            <div className='img-prod' />
+                            <div> </div>
                             <div className='line-prod' />
                         </div>
 
                         <div className='baixo'>
+                            <div className='baixo_cima'>
                             <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
                             <h1> R$ 2 real e um pão</h1>
+                            </div>
+                            
+                            <Link to={'/pageProduto'}>
+                                <button className='Comp_button'> Ver produto</button>
+                            </Link>
                         </div>
+
 
                     </div>
 
+                    <div className='card'>
+
+<div className='cima'>
+    <div> </div>
+    <div className='line-prod' />
+</div>
+
+<div className='baixo'>
+    <div className='baixo_cima'>
+    <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+    <h1> R$ 2 real e um pão</h1>
+    </div>
+    
+    <Link to={'/pageProduto'}>
+        <button className='Comp_button'> Ver produto</button>
+    </Link>
+</div>
+
+
+</div>
+
+<div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+
+                        <div className='baixo'>
+                            <div className='baixo_cima'>
+                            <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                            <h1> R$ 2 real e um pão</h1>
+                            </div>
+                            
+                            <Link to={'/pageProduto'}>
+                                <button className='Comp_button'> Ver produto</button>
+                            </Link>
+                        </div>
+
+
+                    </div>
+
+
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+
+                        <div className='baixo'>
+                            <div className='baixo_cima'>
+                            <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                            <h1> R$ 2 real e um pão</h1>
+                            </div>
+                            
+                            <Link to={'/pageProduto'}>
+                                <button className='Comp_button'> Ver produto</button>
+                            </Link>
+                        </div>
+
+
+                    </div>
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+
+                        <div className='baixo'>
+                            <div className='baixo_cima'>
+                            <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                            <h1> R$ 2 real e um pão</h1>
+                            </div>
+                            
+                            <Link to={'/pageProduto'}>
+                                <button className='Comp_button'> Ver produto</button>
+                            </Link>
+                        </div>
+
+
+                    </div>
+
+
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+
+                        <div className='baixo'>
+                            <div className='baixo_cima'>
+                            <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                            <h1> R$ 2 real e um pão</h1>
+                            </div>
+                            
+                            <Link to={'/pageProduto'}>
+                                <button className='Comp_button'> Ver produto</button>
+                            </Link>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+
+                        <div className='baixo'>
+                            <div className='baixo_cima'>
+                            <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                            <h1> R$ 2 real e um pão</h1>
+                            </div>
+                            
+                            <Link to={'/pageProduto'}>
+                                <button className='Comp_button'> Ver produto</button>
+                            </Link>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+
+                        <div className='baixo'>
+                            <div className='baixo_cima'>
+                            <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                            <h1> R$ 2 real e um pão</h1>
+                            </div>
+                            
+                            <Link to={'/pageProduto'}>
+                                <button className='Comp_button'> Ver produto</button>
+                            </Link>
+                        </div>
+
+
+                    </div>
                 </div>
 
                 <div>
