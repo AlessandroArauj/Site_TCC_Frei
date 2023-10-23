@@ -38,25 +38,25 @@ function Home() {
       <Header />
       <nav className='nav-cabe'>
 
-        
-          <p>Sopro</p>
-        
 
-        
-          <p>Bateria e Percurssão</p>
-        
+        <p>Sopro</p>
 
-       
-          <p>Teclas</p>
-        
 
-        
-          <p>Cordas</p>
-        
 
-       
-          <p>Audio</p>
-        
+        <p>Bateria e Percurssão</p>
+
+
+
+        <p>Teclas</p>
+
+
+
+        <p>Cordas</p>
+
+
+
+        <p>Audio</p>
+
 
       </nav>
 
@@ -71,25 +71,19 @@ function Home() {
 
 
             <div className='Slide first'>
-              <img src='https://i.ytimg.com/vi/yUJwC7INGNo/maxresdefault.jpg' />
-
+              <img src='https://images.musicstore.de/teaser/1600/misc/markenseiten/2020/Y/Yamaha_Header_2020.jpg' />
             </div>
 
             <div className='Slide'>
-              <img src='https://media.istockphoto.com/id/1219335974/pt/foto/instruments-in-white-wooden-background.jpg?s=612x612&w=0&k=20&c=lbDVBVKGH1BN_EBDPGsMaJiAVIPyxCbQHfd41AY1NfA=' />
+              <img src='https://musicshopnepal.com/wp-content/uploads/2021/08/roland-brand-logo.png' />
             </div>
 
             <div className='Slide'>
-              <Link>
+              <img src='https://www.logolynx.com/images/logolynx/04/04e2f42d060a203aa96f9ecd874a333d.jpeg' />
 
-                <button> Compre já</button>
-              </Link>
             </div>
-
             <div className='Slide'>
-              <Link>
-                <button> Não sei maizi</button>
-              </Link>
+              <img src='https://casiomusic.sg/cdn/shop/files/EMI_Logo-03_1024x.jpg?v=1613543746' />
             </div>
 
             <div className='navegation-auto'>
@@ -111,31 +105,6 @@ function Home() {
 
         </div>
       </section>
-
-
-
-
-      <section className='f2'>
-
-
-        <h1>Marcas</h1>
-        <hr />
-
-        <div>
-          <div>
-            <img src='../../../assets/images/Roland.png' className='img-start-start' />
-            <img src='../../../assets/images/Yamaha.png' className='img-start-center' />
-            <img src='../../../assets/images/Boss.png' />
-          </div>
-
-          <div>
-            <img src='../../../assets/images/bose.png' className='img-end-start' />
-            <img src='../../../assets/images/tama.png' className='img-end-center' />
-            <img src='../../../assets/images/Greatsch.png' className='img-end-end' />
-          </div>
-        </div>
-      </section>
-
 
       <section className='faixa-3'>
         <button onClick={handleLeftClick}><img src='../../../assets/images/menor.png' /></button>
