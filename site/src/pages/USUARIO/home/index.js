@@ -108,6 +108,7 @@ function Home() {
 
       <section className='faixa-3'>
         <button onClick={handleLeftClick}><img src='../../../assets/images/menor.png' /></button>
+        
         <div className='meio'>
           <div className='cima-f3'>
             <div className='line' />
@@ -119,6 +120,7 @@ function Home() {
 
 
         </div>
+        
         <button onClick={handleRightClick}><img src='../../../assets/images/maior.png' /></button>
       </section>
 

@@ -226,7 +226,7 @@
         display: flex;
     }
 
-    .faixa-3 button {
+    .faixa-3 > button {
         height: 50px;
         width: 50px;
         padding: 5px 15px;
@@ -234,18 +234,18 @@
         
     }
 
-    .faixa-3 button img{
+    .faixa-3 > button img{
         width: 100%;
     }
 
-    .faixa-3 button:not(:last-child){
+    .faixa-3> button:not(:last-child){
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
         border: none;
         cursor: pointer;
 
     }
-    .faixa-3 button:last-child{
+    .faixa-3 > button:last-child{
         border-top-left-radius: 50px;
         border-bottom-left-radius: 50px;    
         border: none;
