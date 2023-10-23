@@ -170,7 +170,7 @@ export default function AddProduto() {
                                     <p>Estoque:</p>
                                 </div>
                                 <div className='inp'>
-                                    <input value={estoque} onChange={e => setEstoque(e.target.value)} />
+                                    <input type='Number' value={estoque} onChange={e => setEstoque(e.target.value)} />
                                 </div>
 
                             </div>
