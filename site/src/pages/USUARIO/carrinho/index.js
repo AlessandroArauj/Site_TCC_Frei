@@ -1,5 +1,6 @@
 import './index.scss'
 import Header from '../../../components/cabecalho'
+import Compcarrinho from '../../../components/compcarrinho'
 
 export default function Cadastrar() {
 
@@ -7,25 +8,8 @@ export default function Cadastrar() {
         <div className='Carrinho-page'>
             <Header />
             <section>
-
-                <div className='cima'>
-                    <h1> Outros produtos</h1>
-                    
-                </div>
-
-
-                <div>
-                    <h1> Meu carrinho</h1>
-                    
-                    <div>
-                        <p>calcular frete</p>
-                         <div>
-                            <input  type='text' />
-                            <button> Calcular</button>
-                        </div>   
-                    </div>
-                </div>
-
+                <Compcarrinho />
+              
             </section>
         </div>
     )

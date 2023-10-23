@@ -1,0 +1,44 @@
+.comp{
+    width: 70%;
+    height: 200px;
+    background-color: rgb(209, 209, 209);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+
+    .img{
+      
+        background-color: #fff;
+        height: 80%;
+        width: 20%;
+        margin-left: 20px;
+        align-items: center;
+        justify-content: center;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        .imagem{
+
+            width: 100%;
+            height: 100%;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+    }
+     .avaliacao{
+             width: 50%;
+             height: 80%;
+             align-items: center;
+             justify-content: center;
+             display: flex;
+             margin-left: 20px;
+
+             .nome{
+                font-size: 17px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+                text-align: center;
+            }
+     }
+
+}
