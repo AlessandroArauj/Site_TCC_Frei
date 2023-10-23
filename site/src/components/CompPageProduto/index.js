@@ -1,3 +1,4 @@
+import CompCartao from '../compCartao'
 import './index.scss'
 
 
@@ -5,9 +6,19 @@ import './index.scss'
 export default function CompProduto() {
 
 
+    function abrirModal1() {
+        const editar = document.getElementById('Modal1')
+        editar.classList.add('abrir')
+
+    }
+
+    
+
+   
+
     return (
         <div className='CompProduto'>
-
+<CompCartao />
             <section className='CompProd-f1'>
 
                 <div className='Card'>
@@ -64,8 +75,8 @@ export default function CompProduto() {
 
                         </div>
 
-                        <button className='button1'> Forma de pagamento</button>
-                        <button className='button2'> Adicionar ao carrinho</button>
+                        <button className='button1'  onClick={abrirModal1}> Forma de pagamento</button>
+                        <button className='button2' > Adicionar ao carrinho</button>
 
                         <div className='baixo-dir'>
                             <h2>Produto Testado e aprovado pela maioria dos compradores.</h2>
@@ -110,6 +121,11 @@ export default function CompProduto() {
 
 
             </section>
+
+
+
+
+            
         </div>
     )
 }
