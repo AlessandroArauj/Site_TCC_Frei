@@ -48,6 +48,30 @@
             top: 50%;
             left: 5px;
             transform:translateY(-50%);
+            font-size: 16px;
+            color: #ffffff;
+            padding: 0 5px;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .inputbox input{
+            width: 400px;
+            height: 60px;
+            font-size: 16px;
+            color: #ffffff;
+            padding: 0 10px;
+            background: transparent;
+            border: 1.2px solid #ffffff;
+            outline: none;
+            border-radius: 10px;
+        }
+
+        .inputbox input:focus~label,
+        .inputbox input:valid~label{
+            top: 0;
+            font-size: 12px;
+            background:#0E0D10;
         }
 
 
