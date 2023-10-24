@@ -24,14 +24,14 @@
 
     .subprincipal{
         height: auto;
-        width: 720px;
+        width: 100%;
         background-color: #0E0D10;
         align-items: center;
         display: flex;
         flex-direction: row;
         display: flex;
         flex-direction: column;
-        
+        gap: 10px; 
 
         .imgtoth{
             margin-top: 20px;
@@ -45,14 +45,14 @@
 
         .inputbox label{
             position: absolute;
-            top: 50%;
-            left: 5px;
-            transform:translateY(-50%);
+            top: 17%;
+            left: 17px;
+            transform: translateY(100%);
             font-size: 16px;
             color: #ffffff;
             padding: 0 5px;
             pointer-events: none;
-            transition: .5s;
+            transition: .6s;
         }
 
         .inputbox input{
@@ -60,34 +60,44 @@
             height: 60px;
             font-size: 16px;
             color: #ffffff;
-            padding: 0 10px;
+            padding: 0 15px;
             background: transparent;
             border: 1.2px solid #ffffff;
             outline: none;
+           
             border-radius: 10px;
         }
 
         .inputbox input:focus~label,
         .inputbox input:valid~label{
             top: 0;
+            color: #12adf9;
             font-size: 12px;
             background:#0E0D10;
+          
         }
 
 
         
 
         .logar{
-            margin-top: 60px;
+            
             width: 260px;
-            height: 41px;
+            height: 45px;
             background-color: #0E0D10;
             border-radius: 8px;
             border:solid 1px  rgb(255, 255, 255);
             align-items: center;
+            font-size: 17px;
             justify-content: center;
             color: #ffffff;
             display: flex;
+        }
+
+        .logar:hover{
+            color: #12adf9;
+            border: 3px solid #12adf9;
+            transition: 1.2s;
         }
 
 
@@ -105,16 +115,18 @@
       
 
             .comp{
-                margin-top: 30px;
+                margin-top: 10px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                background: transparent;
+
+                
 
             .linha{
                 
-                margin-left: 7px;
-                margin-right: 7px;
-                width: 320px;
+              
+                width: 300px;
                 height: 1px;
                 background-color: #ffffff;
             }
@@ -126,10 +138,10 @@
             } 
 
             .criar{
-                margin-top: 30px;
+               
                 text-decoration: none;
                 width: 260px;
-                height: 41px;
+                height: 45px;
                 
                 border-radius: 8px;
                 border:solid 1px  rgb(255, 255, 255);
@@ -137,6 +149,13 @@
                 justify-content: center;
                 color: #ffffff;
                 display: flex;
+            }
+
+            .criar:hover{
+                color: #12adf9;
+                border: 3.5px solid #12adf9;
+                transition: 1.2s;
+                cursor: pointer;
             }
 
 

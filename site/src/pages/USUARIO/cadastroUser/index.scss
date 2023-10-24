@@ -132,10 +132,18 @@
   }
 
   .container1 {
-    margin-top: 30px;
+    margin-top: 20px 0;
+    position: relative;
   }
 
-  .container1 input {
+  .box{
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .container1  input {
 
     width: 350px;
     height: 45px;
@@ -181,13 +189,13 @@
 
 
   .right {
-    margin-top: 60px;
+    padding-top: 50px;
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 303px;
-    
     color: #f1e7e7;
+    gap: 10px;
 
   }
 
@@ -196,22 +204,28 @@
     width: 300px;
     height: 45px;
     font-size: 18px;
-    color: #000000;
-    background-color: #f1e7e7;
-    border-radius: 25px;
-    color: rgb(15, 15, 15);
-    border: none;
+    background: transparent;
+    border-radius: 8px;
+    border:solid 1px  rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    display: flex;
 
 
   }
 
   .right button:hover {
-    background-color: #f3f3f3b0;
-    border: solid 2px #141010;
-    transition: 0.5s;
-    color: rgb(255, 255, 255);
+
+    color: #12adf9;
+    border: 3.5px solid #12adf9;
+    transition: 1s;
+    cursor: pointer;
 
   }
+
+ 
+
 
 
   .final {
