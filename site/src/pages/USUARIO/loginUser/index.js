@@ -86,7 +86,7 @@ export default function LoginUsuario() {
 
         </div>
 
-        <button className='logar' onClick={LoginUsuarioReact} disabled={carregando}>Logar</button>
+        <button className='logar' onClick={LoginUsuarioReact} disabled={carregando}>LOGAR</button>
 
 
 
