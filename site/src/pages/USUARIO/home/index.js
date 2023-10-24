@@ -4,7 +4,8 @@ import Rodape from '../../../components/rodape/index.js';
 import { carrossel } from './script'
 import { Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
-import CardProduto from '../../../components/cardProduto';
+import CardProduto from '../../../components/cardDestaque';
+import CardProdutoMenor from '../../../components/cardMenorPreco';
 
 
 function Home() {
@@ -17,6 +18,8 @@ function Home() {
 
 
   const carousel = useRef(null)
+  const carousel2 = useRef(null)
+
 
   const handleLeftClick = (e) => {
     e.preventDefault();
@@ -31,6 +34,28 @@ function Home() {
     carousel.current.scrollLeft += carousel.current.offsetWidth
 
   }
+
+  const handleLeftClick2 = (e) => {
+    e.preventDefault();
+    console.log(carousel2.current.offsetWidth)
+    carousel2.current.scrollLeft -= carousel2.current.offsetWidth
+
+  }
+
+  const handleRightClick2 = (e) => {
+    e.preventDefault();
+    console.log(carousel2.current.offsetWidth)
+    carousel2.current.scrollLeft += carousel.current.offsetWidth
+
+  }
+
+
+
+
+
+
+
+
 
 
   return (
@@ -108,7 +133,7 @@ function Home() {
 
       <section className='faixa-3'>
         <button onClick={handleLeftClick}><img src='../../../assets/images/menor.png' /></button>
-        
+
         <div className='meio'>
           <div className='cima-f3'>
             <div className='line' />
@@ -120,7 +145,7 @@ function Home() {
 
 
         </div>
-        
+
         <button onClick={handleRightClick}><img src='../../../assets/images/maior.png' /></button>
       </section>
 
@@ -137,16 +162,23 @@ function Home() {
       </section>
 
       <section className='faixa-5'>
-        <div className='cima-f5'>
-          <div className='line' />
-          <h1> Com os menores preços</h1>
-          <div className='line2' />
+        <button onClick={handleLeftClick2}><img src='../../../assets/images/maior.png' /></button>
+        <div className='meio'>
+          <div className='cima-f5'>
+            <div className='line' />
+            <h1> Com os menores preços</h1>
+            <div className='line2' />
+          </div>
+
+
+          <CardProdutoMenor addcarousel2={carousel2} />
+
+
+
         </div>
 
+        <button onClick={handleRightClick2}><img src='../../../assets/images/maior.png' /></button>
 
-        <div>
-
-        </div>
       </section>
 
       <section className='f6'>

@@ -23,6 +23,7 @@ export async function AdicionarImagens(imagem, id) {
 }
 
 
+
 export async function DeletarProduto(id) {
     const comando = `
         DELETE FROM TB_PRODUTO
@@ -92,9 +93,9 @@ export async function inserirProduto(produto) {
 
 
         ]);
+        produto.id = resp.insertId
 
-
-    return resp
+    return produto;
 
 
 }

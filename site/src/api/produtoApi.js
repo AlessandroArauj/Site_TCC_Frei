@@ -17,15 +17,15 @@ export async function ListarTodosProdutos() {
 
 export async function adicionarImagem(imagem, id) {
     const formData = new FormData();
-    formData.append('produtosIma',)
-    const resposta = await api(`/produto/${id}/imagem`, formData, {
+    formData.append('produtosIma', imagem)
+    const resposta = await api.post(`/produto/${id}/imagem`, formData, {
         headers: {
             "Content-Type": "multipart/form-data"
         },
 
     });
 
-    return resposta.status
+    return resposta.data
 
 }
 

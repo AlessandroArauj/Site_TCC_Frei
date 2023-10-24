@@ -30,22 +30,22 @@ export default function CompCartao() {
             <div className='page-cadastrar-cartao' id='Modal2'>
                 <div className='card'>
                     <div className='titulo'>
-                        <h1 className='x' onClick={fecharModal2}>x</h1>
+                        <h1 className='x' onClick={fecharModal2}>X</h1>
                         <h1 className='forma'>Cadastrar Cartão</h1>
                         <div className='linha'></div>
                     </div>
                     <div className='subcard'>
                         <div className='info'>
                             <div className='container'>
-                                <input type='text' placeholder='Numero do Cartão' />
-                                <input type='text' placeholder='Validade' />
+                                <input type='text' placeholder='Numero do Cartão' required />
+                                <input type='text' placeholder='Validade' required/>
                             </div>
                             <div className='container'>
-                                <input type='text' placeholder='Nome do titular' />
+                                <input type='text' placeholder='Nome do titular' required />
                             </div>
                             <div className='container'>
-                                <input ctype='text' placeholder='CVV' />
-                                <input type='text' placeholder='CPF' />
+                                <input ctype='text' placeholder='CVV' required/>
+                                <input type='text' placeholder='CPF' required/>
                             </div>
                         </div>
                     </div>
