@@ -213,14 +213,12 @@
     }
 
     .faixa-3 {
-        margin: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #ffffff;
         width: 100%;
         height: 550px;
-        background-color: rgb(247, 247, 247);
-        display: flex;
-        gap: 25px;
-        flex-direction: row;
-        align-items: center;
         box-shadow: 0px 0px 10px #c7c7c7;
 
     }
@@ -281,10 +279,7 @@
         background-color: rgb(0, 0, 0);
         margin-bottom: 15px;
     }
-    .meio{
-        width: 100%;
-    }
-
+    
     
 
 
@@ -353,13 +348,46 @@
 
     .faixa-5 {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         background-color: #ffffff;
         width: 100%;
         height: 550px;
-        padding: 50px;
         box-shadow: 0px 0px 10px #c7c7c7;
 
+    }
+
+    .faixa-5 .meio {
+        padding: 35px;
+        overflow: hidden;
+    }
+
+
+    .faixa-5 > button {
+        height: 50px;
+        width: 50px;
+        padding: 5px 15px;
+        background-color: #00C2FF;
+        
+    }
+
+    .faixa-5 > button img{
+        width: 100%;
+    }
+
+    .faixa-5> button:not(:last-child){
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border: none;
+        cursor: pointer;
+
+    }
+    .faixa-5 > button:last-child{
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;    
+        border: none;
+        cursor: pointer;
+        
     }
 
     .cima-f5 {
@@ -373,6 +401,7 @@
 
     .cima-f5 h1 {
         padding: 0px 10px;
+        font-size: 24px;
     }
 
     .f6 {

@@ -1,11 +1,11 @@
-.compCartao{
+.compCartao {
 
 
-    .page-cadastrar-cartao.abrir{
+    .page-cadastrar-cartao.abrir {
         display: flex;
-    
+
     }
-    
+
     .page-cadastrar-cartao {
         position: absolute;
         justify-content: center;
@@ -13,332 +13,364 @@
         display: none;
         width: 100%;
         height: 100%;
-    
-    
+
+
         .card {
-            width: 474px;
-            height: 490px;
-            background-color: black;
+            position: fixed;
+            width: 544px;
+            height: 550px;
+            background-color: #222222;
             display: flex;
-            align-items: center ;
+            align-items: center;
             flex-direction: column;
             border-radius: 25px;
-    
-         
+
+
+            .titulo {
+                margin-top: 15px;
+            }
+
+
             .x {
                 font-size: 19px;
                 color: aliceblue;
                 display: flex;
-                align-items: center;
+                margin-bottom: 10px;
                 justify-content: right;
-                padding: 10px;
-             
+                color: aliceblue;
+
             }
-    
+
             .forma {
                 font-size: 22px;
                 color: aliceblue;
                 display: flex;
+                padding-top: 10px;
                 justify-content: center;
-    
+
             }
-    
+
+            .linha {
+                margin-top: 10px;
+                height: 1px;
+                width: 400px;
+                background-color: aliceblue;
+            }
+
+
+
+            .subcard {
+                width: 465px;
+                height: 380px;
+                margin-top: 20px;
+                background-color: #fffffff6;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+
+                color: aliceblue;
+
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 50px 0px;
+
+                }
+
+                .container {
+                    display: flex;
+                    width: 100%;
+                    padding: 10px 0px 20px;
+                    gap: 20px;
+
+                }
+
+                input {
+                    height: 50px;
+                    width: 100%;
+                    padding: 10px;
+                    font-size: 15px;
+                    border-radius: 7px;
+                    border: 1px solid black;
+                    outline: none;
+                    color: #161616;
+                    background: transparent;
+                    transition: 0.4s;
+
+                }
+
+                input::placeholder {
+                    color: #161515;
+                }
+
+
+                input:focus{
+                    border: 3px solid #00C2ff;
+                   
+
+                }
+
+
+
+
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+    .page-add-cartao.abrir {
+        display: flex;
+    }
+
+
+    .page-add-cartao {
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        width: 100%;
+        height: 100%;
+
+
+        .parcela {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            position: fixed;
+            margin-top: 50px;
+            width: 485px;
+            height: 550px;
+            background-color: black;
+            border-radius: 30px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+
+            .titulo {
+                margin-top: 15px;
+            }
+
+            .sair {
+                font-size: 19px;
+                display: flex;
+                margin-bottom: 10px;
+                justify-content: right;
+                color: aliceblue;
+            }
+
+            .forma {
+                font-size: 19px;
+                color: aliceblue;
+                margin-left: 10px;
+
+            }
+
             .linha {
                 margin-top: 10px;
                 height: 0.1px;
                 width: 100%;
                 background-color: aliceblue;
             }
-    
-    
-    
+
+
+
             .subcard {
                 width: 425px;
-                height: 330px;
-                margin-top: 20px;
+                height: 370px;
                 background-color: #9999;
                 border-radius: 29px;
                 display: flex;
-                align-items: center;
+                align-items: start;
                 display: flex;
                 flex-direction: column;
-
+                border: solid 2px;
                 color: aliceblue;
-    
-    
-            .info{
-                display: flex;
-                flex-direction: column;
-                padding: 50px 0px;
-                
-            }
-    
-            .container{
-               display: flex;
-               width: 100%;
-               padding: 0px 0px 20px;
-            }
-    
-            input{
-                height: 50px;
-                width: 100%;            
-                margin-left: 15px;
-                border-radius: 10px;
-                border: none;
-               
-    
-                
-            }
-    
-    
-    
-    
-            }
-        }
-    }
+                padding: 15px;
+                gap: 5px;
 
+                .subtitulo {
+                    font-size: 13px;
+                    color: aliceblue;
+                    margin-bottom: 10px;
 
-
-
-
-
-
-
-
-
-
-    .page-add-cartao.abrir{
-        display: flex;
-    }
-
-
-    .page-add-cartao{
-        position: absolute;
-        justify-content: center;
-        align-items: center;
-        display: none;
-        width: 100%;
-        height: 100%;       
-        
-
-        .parcela{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-            .card{
-                margin-top: 50px;
-                width: 485px;
-                height: 550px;
-                background-color: black;
-                border-radius: 30px;
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-        
-                .titulo{
-                    margin-top: 15px;
                 }
-                    .sair{
-                        font-size: 19px;
-                        display: flex;
-                        margin-bottom: 10px;
-                        justify-content: right;
-                        color: aliceblue;
-                    }
-                    .forma{
-                        font-size: 19px;
-                        color: aliceblue;
-                        margin-left: 10px;
-        
-                       }
-                       .linha{
-                        margin-top: 10px;
-                        height: 0.1px;
-                        width: 100%;
-                        background-color: aliceblue;
-                       }
-        
-        
-        
-                       .subcard{
-                        width: 425px;
-                        height: 370px;
-                        background-color: #9999;
-                        border-radius: 29px;
-                        display: flex;
-                        align-items: start;
-                        display: flex;
-                        flex-direction: column;
-                        border: solid 2px ;
-                        color: aliceblue;
-                        padding: 15px;
-                        gap: 5px;
-        
-                            .subtitulo{
-                                font-size: 13px;
-                                color: aliceblue;
-                                margin-bottom: 10px;
-                                
-                                }
-                                .cartao{
-    
-                                    width: 390px;
-                                    height: 35px;
-                                    border-radius: 10px;
-                                    border: none;
-                                    text-decoration:none ;
-                                    font-size: 20px;
-                                    margin-bottom: 10px;
-                                }
-                                .labelzim{
-                                    display: flex;
-                                    margin-bottom: 10px ;
-                                   
-                                        .testinho{
-                                            color: black;
-                                            background-color: #ffffff;
-                                            font-size: 13px;
-                                            width: 160px;
-                                            height: 35px;
-                                            align-items: center;
-                                            justify-content: center;
-                                            display: flex;
-                                            border-top-left-radius: 10px;
-                                            border-bottom-left-radius: 10px;
-                                        }
-                                        .numero_parcela{
-                                            background-color: #fff;
-                                            width: 40px;
-                                            height: 35px;
-                                            border: none;
-                                            border-top-right-radius: 10px;
-                                            border-bottom-right-radius: 10px;
-                                            font-size: 15px;
-                                            color: #4e4e4e;
-                                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-                                        }
-                                }
-    
-                            .cadastrar{
-                                
-                                width: 150px;
-                                height: 35px;
-                                background-color: #00C2ff;
-                                font-size: 12px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                color: #e9e9e9;
-                                border-radius: 10px;
-                                border: none;
-                                transition: 0.5s ease;
-    
-                            }
-    
-                            .cadastrar:hover{
-                                transition: 0.5s;
-                                background-color: #3f3f3f59;
-                                color: #ffffff;
-                                border: solid 2px;
-                                cursor: pointer;
-    
-                            }
-    
-                            .dd{
-                                flex-direction: row;
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                
-                                width: 100%;
+                .cartao {
 
-                                
-    
-                            .divisinha{
-                                height: 1px;
-                                width: 35%;
-                                background-color: #e9e9e9;
-                            }
-                            .outras{
-                                text-align: center;
-                                font-size: 14px;
-                                width: 30%;
-                                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                            }
-                            }
-        
-                    .baixo{
-                            align-items: center;
-                            justify-content: space-around;
-                            display: flex;
-                            margin-top: 10px;
-                            width: 100%;
-                            font-size: 15px;
-                            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                            div{
-                            align-items: center;
-                            justify-content: center;
-                            display: flex;
-                            cursor: pointer;
-                                }
-    
-                            img{
-    
-                                height: 40px;
-                                width: 55px;
-                                background: #fff;
-                                border-top-right-radius: 10px;
-                                border-bottom-right-radius: 10px;
-                                border: none;
-                            }
-    
-                        .pix{
-                            height: 40px;
-                            width: 55px;
-                            border-top-left-radius: 10px;
-                            border-bottom-left-radius: 10px;
-                            border: none;
-                            background-color: #fff;
-                            
-    
-                        }
-    
-                        .boleto{
-                            height: 40px;
-                            width: 55px;
-                            border-top-left-radius: 10px;
-                            border-bottom-left-radius: 10px;
-                            border: none;
-                            background-color: #fff;
-                        }
-                       
-    
-                    }
-        
-                    .ultima{
-                        align-items:center;
-                        justify-content: space-around;
+                    width: 390px;
+                    height: 35px;
+                    border-radius: 10px;
+                    border: none;
+                    text-decoration: none;
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+
+                .labelzim {
+                    display: flex;
+                    margin-bottom: 10px;
+
+                    .testinho {
+                        color: black;
+                        background-color: #ffffff;
+                        font-size: 13px;
+                        width: 160px;
+                        height: 35px;
+                        align-items: center;
+                        justify-content: center;
                         display: flex;
-                        height: 100%;
-                        
-    
-                            .total{
-                                font-size: 17px;
-                                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                            }
-                            .valor{
-    
-                               display: flex;
-                            }
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
                     }
-    
-        
-        
-        
-        
-             }}}
-        
+
+                    .numero_parcela {
+                        background-color: #fff;
+                        width: 40px;
+                        height: 35px;
+                        border: none;
+                        border-top-right-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        font-size: 15px;
+                        color: #4e4e4e;
+                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+                    }
+                }
+
+                .cadastrar {
+
+                    width: 150px;
+                    height: 35px;
+                    background-color: #00C2ff;
+                    font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #e9e9e9;
+                    border-radius: 10px;
+                    border: none;
+                    transition: 0.5s ease;
+
+                }
+
+                .cadastrar:hover {
+                    transition: 0.5s;
+                    background-color: #3f3f3f59;
+                    color: #ffffff;
+                    border: solid 2px;
+                    cursor: pointer;
+
+                }
+
+                .dd {
+                    flex-direction: row;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    width: 100%;
+
+
+
+                    .divisinha {
+                        height: 1px;
+                        width: 35%;
+                        background-color: #e9e9e9;
+                    }
+
+                    .outras {
+                        text-align: center;
+                        font-size: 14px;
+                        width: 30%;
+                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    }
+                }
+
+                .baixo {
+                    align-items: center;
+                    justify-content: space-around;
+                    display: flex;
+                    margin-top: 10px;
+                    width: 100%;
+                    font-size: 15px;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+                    div {
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;
+                        cursor: pointer;
+                    }
+
+                    img {
+
+                        height: 40px;
+                        width: 55px;
+                        background: #fff;
+                        border-top-right-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        border: none;
+                    }
+
+                    .pix {
+                        height: 40px;
+                        width: 55px;
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                        border: none;
+                        background-color: #fff;
+
+
+                    }
+
+                    .boleto {
+                        height: 40px;
+                        width: 55px;
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                        border: none;
+                        background-color: #fff;
+                    }
+
+
+                }
+
+                .ultima {
+                    align-items: center;
+                    justify-content: space-around;
+                    display: flex;
+                    height: 100%;
+
+
+                    .total {
+                        font-size: 17px;
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                    }
+
+                    .valor {
+
+                        display: flex;
+                    }
+                }
+
+
+
+
+
+            }
+        }
+    }
+
 }
