@@ -53,16 +53,19 @@
     
 
     
+    section{
+        margin: 0px;
+    }
+    
     .f1{
-        min-height: 80vh;
         height: 80vh;
         width: 100%;
         display: flex;
         padding: 50px;
         background-repeat: no-repeat;
         background-size: cover;
-        align-items: center;
-        justify-content: start;
+        align-items: start;
+        justify-content: center;
         background-image: url('../../../../public/assets/images/backlandin.png');
         box-shadow: 0px 0px 50px #777;
         color: #383838;
@@ -76,13 +79,6 @@
         
     }
 
-    .imagemfaixa{
-
-        display: flex;
-        
-        margin-bottom: -250px;
-
-    }
     .f1 h1{
         font-size: 45px;
         width: 500px;
