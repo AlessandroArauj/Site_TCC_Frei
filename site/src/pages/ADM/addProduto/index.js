@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import axios from 'axios'
-import { ListarTodosProdutos, adicionarProduto } from '../../../api/produtoApi'
+import { ListarTodosProdutos, adicionarImagem, adicionarProduto } from '../../../api/produtoApi'
 
 
 
@@ -15,7 +15,6 @@ import { ListarTodosProdutos, adicionarProduto } from '../../../api/produtoApi'
 
 
 export default function AddProduto() {
-
 
     const [marca, setMarca] = useState(0);
     const [marcasTipo, setTipoMarcas] = useState([]);
@@ -33,26 +32,34 @@ export default function AddProduto() {
     const [destaque, setDest] = useState(false);
     const [disponivel, setDisp] = useState(false);
     const [descricao, setDesc] = useState('');
-    const [imagem, setImagem] = useState('');
-    const [id, setId] = useState(0);
+    const [imagem, setImagem] = useState();
+   
 
-    const [produtos, setProdutos] = useState([])
+    const [produtos, setProdutos] = useState([]);
+
+    
 
     async function CarregarTodosProdutos() {
         const resp = await ListarTodosProdutos();
-        console.log(resp);
+        
         setProdutos(resp);
     }
 
+    function MostrarImagem() {
+        return URL.createObjectURL(imagem)
+    }
+
+    
     async function SalvarCLick() {
         try {
-            const r = await adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao)
+            const ProdutoCadastrado = await adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao)
+            const r = await adicionarImagem(imagem, ProdutoCadastrado.id)
             toast.dark('Produto Cadastrado!')
 
         } catch (err) {
 
             toast.error(err.message)
-            console.log(err.response.message);
+            
         }
     }
 
@@ -85,6 +92,7 @@ export default function AddProduto() {
         //
         listarCategorias()
     }, [])
+    
 
 
 
@@ -259,6 +267,25 @@ export default function AddProduto() {
 
                         </div>
 
+                        <div className='imageminput'>
+
+                            
+
+                            <label className='inputdeimagem'>
+
+                                {!imagem &&
+                                    <img className='imagemUpload' src='../../../assets/images/upload-solid.svg' />
+                                }
+
+                                {imagem &&
+                                    <img className='imgaem-Upload' src={MostrarImagem()} />
+                                }
+                                <input className='inputdeimagem' type='file' id='imagemProduto' onChange={e => setImagem(e.target.files[0])} />
+
+                            </label>
+
+                        </div>
+
                     </div>
 
                     <div className='butt'>
@@ -281,63 +308,7 @@ export default function AddProduto() {
 
             </div>
 
-            <div className='Container'>
-
-                <div className='apresentacao'>
-
-                    <div className='azul'></div>
-                    <h3>Cadastrar Novo imagem do produto</h3>
-
-                </div>
-
-
-                <div className='conteudo2'>
-
-                    <div className='imageminput'>
-
-                        <input type='number' placeholder='Id do produto'/>
-
-                        <input />
-
-                    </div>
-
-                    <div className='miniconsulta'>
-
-                        <table>
-                            <thead className='thead'>
-                                <tr className='headzinhaconsulta'>
-                                    <th>Identificação</th>
-                                    <th>Nome</th>
-                                    <th>Disponivel</th>
-                                </tr>
-                            </thead>
-                        </table>
-
-                        <tbody>
-
-                            {produtos.map(item =>
-                                <tr>
-                                    <td>
-                                        {item.ID}
-                                    </td>
-                                    <td>
-                                        {item.PRODUTO}
-                                    </td>
-                                    <td>
-                                        {item.DISPONIVEL ? 'Sim' : 'Não'}
-                                    </td>
-                                </tr>
-
-                            )}
-
-                        </tbody>
-
-                    </div>
-
-                </div>
-
-
-            </div>
+            
 
         </div>
     )
