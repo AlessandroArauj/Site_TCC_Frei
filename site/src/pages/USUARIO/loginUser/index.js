@@ -22,9 +22,9 @@ export default function LoginUsuario() {
 
 
   useEffect(() => {
-      if (storage('usuario-logado')){
-        navigate('/perfilusuario')
-      }
+    if (storage('usuario-logado')) {
+      navigate('/perfilusuario')
+    }
   }, [])
 
 
@@ -34,13 +34,13 @@ export default function LoginUsuario() {
     setCarregando(true);
 
     try {
-      const r = await login(email, senha); 
+      const r = await login(email, senha);
       storage('usuario-logado', r)
 
       setTimeout(() => {
-      navigate('/home')
+        navigate('/home')
       }, 3000)
-      
+
 
 
     }
@@ -69,9 +69,16 @@ export default function LoginUsuario() {
 
         </Link>
 
+        <div className='inputbox'>
+          <input className='barra' type='text' value={email} onChange={e => setEmail(e.target.value)} required ></input>
+          <label for="">EMAIL</label>
+        </div>
 
-        <input className='barra' type='email' placeholder=" EMAIL " value={email} onChange={e => setEmail(e.target.value)}></input>
-        <input className='barra' type={mostrarSenha ? 'text' : 'password'} placeholder=" SENHA " value={senha} onChange={e => setSenha(e.target.value)}></input>
+        <div className='inputbox'>
+          <input className='barra' type={mostrarSenha ? 'text' : 'password'} value={senha} onChange={e => setSenha(e.target.value)} required ></input>
+          <label for="">SENHA</label>
+        </div>
+
         <button onClick={() => setMostrarSenha(!mostrarSenha)}> FUTURO OLHO </button>
         <div className='form-entrar invalido'>
 

@@ -29,30 +29,27 @@
         align-items: center;
         display: flex;
         flex-direction: row;
-      
         display: flex;
         flex-direction: column;
         
 
         .imgtoth{
             margin-top: 20px;
-
-        }        
-
-        .barra{ 
-            font-size: 18px;
-            color: aliceblue;
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            margin-top: 30px;
-            padding: 10px;
-            width: 330px;
-            height: 50px;
-            background-color: #0E0D10;
-            border-radius: 8px;
-            border:solid 1px  rgb(255, 255, 255);
+            padding: 15px;
+        } 
+        
+        .inputbox{
+            position: relative;
+            padding: 20px 0;
         }
+
+        .inputbox label{
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform:translateY(-50%);
+        }
+
 
         
 
