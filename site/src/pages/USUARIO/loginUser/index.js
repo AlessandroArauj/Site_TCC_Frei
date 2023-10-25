@@ -84,6 +84,8 @@ export default function LoginUsuario() {
 
           {erro}
 
+          <i class="material-icons">cloud</i>
+
         </div>
 
         <button className='logar' onClick={LoginUsuarioReact} disabled={carregando}>LOGAR</button>

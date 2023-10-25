@@ -74,8 +74,16 @@
             color: #12adf9;
             font-size: 12px;
             background:#0E0D10;
+            
           
         }
+
+        .inputbox input:focus,
+        .inputbox input:valid{
+            border: 1px solid #12adf9;
+            transition: 0.7s;
+        }
+
 
 
         
