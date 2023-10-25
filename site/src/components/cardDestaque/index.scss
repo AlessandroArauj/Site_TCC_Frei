@@ -1,5 +1,12 @@
+.CardDestaques{
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
 .cardProduto{
    
+    
     .container .carousel{
         display: flex;
         overflow-x: auto;
@@ -105,5 +112,5 @@
         transition: 0.4s;
     }
 
-
+}
 }
