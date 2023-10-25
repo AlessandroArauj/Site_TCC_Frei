@@ -24,6 +24,16 @@
         
     }
 
+    .baixo{
+        position: inherit;
+        background-color: transparent;
+        
+    }
+
+    .baixo p{
+        color: #000;
+    }
+
 
     .container .carousel .card:hover{
         transition: 0.7s ease;
