@@ -56,7 +56,7 @@ export async function CadastrarUsuario(usuario) {
 
     usuario.id = resp.insertId
 
-    return resp;
+    return usuario;
 
 }
 
