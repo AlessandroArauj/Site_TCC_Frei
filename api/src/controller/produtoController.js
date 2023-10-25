@@ -7,7 +7,7 @@ import multer from 'multer'
 const upload = multer({ dest: 'storage/fotosProdutos' })
 const server = Router();
 
-server.get('/produto/categoria', async (req, resp) =>{
+server.get('/produto/categoria', async (req, resp) => {
     try {
         const resposta = await listarCategorias();
         resp.send(resposta)
@@ -18,16 +18,16 @@ server.get('/produto/categoria', async (req, resp) =>{
     }
 })
 
-server.get('/produto/busca', async (req, resp) =>{
+server.get('/produto/busca', async (req, resp) => {
     try {
         const { nome } = req.query;
         const resposta = await ExibirTodosFiltroNome(nome);
-        
 
-        if(resposta.length == 0){
+
+        if (resposta.length == 0) {
             resp.status(404).send([])
         }
-        else{
+        else {
             resp.send(resposta);
         }
 
@@ -43,7 +43,7 @@ server.get('/produto/marca', async (req, resp) => {
     try {
         const resposta = await listarMarcas()
         resp.send(resposta)
-        
+
     } catch (err) {
         resp.status(400).send({
             erro: err.message
@@ -57,7 +57,7 @@ server.delete('/produto/:id', async (req, resp) => {
         const resposta = await DeletarProduto(id);
         if (resposta != 1)
             throw new Error('Tarefa não pode ser removida')
-        
+
         resp.status(204).send();
     } catch (err) {
         resp.status(400).send({
@@ -68,7 +68,7 @@ server.delete('/produto/:id', async (req, resp) => {
 
 })
 
-server.put('/produto/:id', async (req, resp) =>{
+server.put('/produto/:id', async (req, resp) => {
     try {
         const { id } = req.params;
         const produto = req.body;
@@ -78,7 +78,7 @@ server.put('/produto/:id', async (req, resp) =>{
             throw new Error('produto não pode ser alterado')
         else
             resp.status(204).send();
-        
+
     } catch (err) {
         resp.status(400).send({
             erro: err.message
@@ -90,7 +90,7 @@ server.put('/produto/:id', async (req, resp) =>{
 server.post('/produto/:id/imagem', upload.single('produtosIma'), async (req, resp) => {
     try {
         const imagem = req.file.path;
-        const idProduto = req.params.id; 
+        const idProduto = req.params.id;
         const resposta = await AdicionarImagens(imagem, idProduto);
 
         if (resposta != 1)
@@ -104,10 +104,37 @@ server.post('/produto/:id/imagem', upload.single('produtosIma'), async (req, res
     }
 });
 
-server.post('/produto', async (req,resp) =>{
+server.post('/produto', async (req, resp) => {
     try {
-        
+
         const produto = req.body;
+            if (!produto.MARCAS)
+                throw new Error(' MARCAS Campo Obrigatório')
+
+            if (!produto.CATEGORIAS)
+                throw new Error(' CATEGORIAS Campo Obrigatório')
+
+            if (!produto.PRODUTO)
+                throw new Error(' PRODUTO Campo Obrigatório')
+
+            if (!produto.PRECO)
+                throw new Error(' PREÇO Campo Obrigatório')
+
+            if (!produto.PRECOPROMO)
+                throw new Error(' PREÇO PROMOÇÃO Campo Obrigatório')
+
+            
+
+            
+
+            
+
+            if (!produto.ESTOQUE)
+                throw new Error(' ESTOQUE Campo Obrigatório')
+
+            if (!produto.DETALHE)
+                throw new Error(' DETALHE Campo Obrigatório')
+
         const resposta = await inserirProduto(produto);
 
         resp.send(resposta)
@@ -115,19 +142,20 @@ server.post('/produto', async (req,resp) =>{
     } catch (err) {
         resp.status(400).send({
             erro: err.message
-        
+
         })
-        
+
     }
 
 });
 
 
-server.get('/produto', async (req, resp) =>{
+server.get('/produto', async (req, resp) => {
 
     try {
-        
+
         const resposta = await ExibirTodosProdutos();
+
         resp.send(resposta)
 
     } catch (err) {
