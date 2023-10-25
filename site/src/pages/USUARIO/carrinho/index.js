@@ -3,7 +3,7 @@ import Header from '../../../components/cabecalho'
 import Compcarrinho from '../../../components/compcarrinho'
 
 
-export default function Cadastrar() {
+export default function Carrinho() {
 
     return (
         <div className='Carrinho-page'>
