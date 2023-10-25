@@ -13,7 +13,6 @@ import LoginUser from './pages/USUARIO/loginUser';
 import CadastroUser from './pages/USUARIO/cadastroUser';
 import AddProduto from './pages/ADM/addProduto';
 import PageProduto from './pages/USUARIO/pageProduto';
-import Carrinho from './pages/USUARIO/carrinho'
 import FilterProduto from './pages/USUARIO/FilterProduto'
 ;
 
@@ -34,7 +33,6 @@ root.render(
         <Route path='/loginUser' element={<LoginUser />} />
         <Route path='/addProduto' element={<AddProduto />} />
         <Route path='/PageProduto' element={<PageProduto />} />
-        <Route path='/Carrinho' element={<Carrinho />} />
         <Route path='/filter'   element={<FilterProduto />} />
         
 
