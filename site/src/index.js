@@ -13,8 +13,8 @@ import LoginUser from './pages/USUARIO/loginUser';
 import CadastroUser from './pages/USUARIO/cadastroUser';
 import AddProduto from './pages/ADM/addProduto';
 import PageProduto from './pages/USUARIO/pageProduto';
-import FilterProduto from './pages/USUARIO/FilterProduto'
-;
+import FilterProduto from './pages/USUARIO/FilterProduto';
+import PageCarrinho from './pages/USUARIO/carrinho';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -34,6 +34,8 @@ root.render(
         <Route path='/addProduto' element={<AddProduto />} />
         <Route path='/PageProduto' element={<PageProduto />} />
         <Route path='/filter'   element={<FilterProduto />} />
+        <Route path='/carrinho'   element={<PageCarrinho />} />
+        
         
 
 
