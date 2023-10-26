@@ -1,5 +1,17 @@
 import { con } from "./connection.js";
 
+export async function ListarImagemPorIDinstrumentos(id) {
+    const comando = `
+        SELECT IMG_PRODUTO      AS imagem
+
+        FROM TB_PRODUTO_IMAGEM
+        WHERE ID_INSTRUMENTOS = ?
+    `
+    const [resp] = await con.query(comando, [id]);
+    return resp
+
+}
+
 export async function listarCategorias() {
     const comando = `
         select NM_CATEGORIA     as Categoria,

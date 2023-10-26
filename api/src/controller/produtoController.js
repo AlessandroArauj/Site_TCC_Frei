@@ -1,11 +1,23 @@
 import { Router } from "express";
-import { AdicionarImagens, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
+import { AdicionarImagens, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, ListarImagemPorIDinstrumentos, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
 import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
 
 const upload = multer({ dest: 'storage/fotosProdutos' })
 const server = Router();
+
+server.get('/produto/imagem/:id', async (req, resp) => {
+    try {
+        const { id } = req.params
+        const resposta = await ListarImagemPorIDinstrumentos(id);
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 server.get('/produto/categoria', async (req, resp) => {
     try {
@@ -107,36 +119,8 @@ server.post('/produto/:id/imagem', upload.single('produtosIma'), async (req, res
 server.post('/produto', async (req, resp) => {
     try {
 
-        const produto = req.body;
-            if (!produto.MARCAS)
-                throw new Error(' MARCAS Campo Obrigatório')
-
-            if (!produto.CATEGORIAS)
-                throw new Error(' CATEGORIAS Campo Obrigatório')
-
-            if (!produto.PRODUTO)
-                throw new Error(' PRODUTO Campo Obrigatório')
-
-            if (!produto.PRECO)
-                throw new Error(' PREÇO Campo Obrigatório')
-
-            if (!produto.PRECOPROMO)
-                throw new Error(' PREÇO PROMOÇÃO Campo Obrigatório')
-
-            
-
-            
-
-            
-
-            if (!produto.ESTOQUE)
-                throw new Error(' ESTOQUE Campo Obrigatório')
-
-            if (!produto.DETALHE)
-                throw new Error(' DETALHE Campo Obrigatório')
-
+        const produto = req.body;   
         const resposta = await inserirProduto(produto);
-
         resp.send(resposta)
 
     } catch (err) {

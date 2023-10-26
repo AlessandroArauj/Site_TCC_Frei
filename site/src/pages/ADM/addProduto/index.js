@@ -59,6 +59,7 @@ export default function AddProduto() {
         } catch (err) {
 
             toast.error(err.message)
+            console.log(err.response.message);
             
         }
     }
@@ -255,7 +256,7 @@ export default function AddProduto() {
                                 <p> Categorias: </p>
                                 <select value={categoria} onChange={e => setCategoria(e.target.value)}>
 
-                                    <option id='options' value={0}> Categorias </option>
+                                    <option id='options' value={0}> Categorias </option>    
                                     {categoriaTipo.map(item =>
 
                                         <option value={item.Id}> {item.Categoria} </option>
