@@ -23,7 +23,7 @@ export default function CardProduto(props) {
     return (
         <div className='CardDestaques'>
     
-        {produto.map(item =>
+        
         
             <div className='cardProduto'>
 
@@ -39,9 +39,9 @@ export default function CardProduto(props) {
 
                         <div className='baixo'>
                             <div className='baixo_cima'>
-                                <p>{item.PRODUTO}</p>
-                                <h1>{item.PRECO}</h1>
-                                <h2>{item.PRECOPROMO}</h2>
+                                <p></p>
+                                <h1></h1>
+                                <h2></h2>
                             </div>
 
                             <Link to={'/pageProduto'}>
@@ -57,8 +57,7 @@ export default function CardProduto(props) {
             </div>
 
         </div>
-        )}
-
+        
         </div>
         
     )

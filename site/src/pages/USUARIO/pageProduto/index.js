@@ -7,7 +7,10 @@ export default function PageProduto(){
 
     return(
         <div className='PageProduto'>
+            <div>
             <Cabecalho />
+            </div>
+            
             <CompProduto />
         
             
