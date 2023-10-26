@@ -10,6 +10,11 @@ export async function ListarProdutosPorNome(nome) {
     return resposta.data;
 }
 
+export async function ListarImagemPorIDinstrumentos(id) {
+    const resposta = await api.get(`/produto/imagem/${id}`)
+    return resposta.data
+}
+
 export async function ListarTodosProdutos() {
     const resposta = await api.get('/produto');
     return resposta.data;
@@ -48,4 +53,8 @@ export async function adicionarProduto(marca, categoria, nome, preco, precoPromo
 
 }
 
+
+export function BuscarImagem(imagem) {
+    return `${api.getUri()}/${imagem}`
+}
 
