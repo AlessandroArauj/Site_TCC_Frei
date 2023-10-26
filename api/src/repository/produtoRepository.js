@@ -1,5 +1,16 @@
 import { con } from "./connection.js";
 
+export async function ListarTodasImagens(){
+    const comando = `
+        SELECT IMG_PRODUTO      AS  Imagem  
+
+        FROM TB_PRODUTO_IMAGEM
+    `
+    const [resp] = await con.query(comando)
+    return resp
+
+}
+
 export async function ListarImagemPorIDinstrumentos(id) {
     const comando = `
         SELECT IMG_PRODUTO      AS imagem
