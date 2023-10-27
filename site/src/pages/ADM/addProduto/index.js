@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom'
-
 import './index.scss'
-
 import { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { URL_API } from '../../../constant';
 import axios from 'axios'
 import { ListarTodosProdutos, adicionarImagem, adicionarProduto } from '../../../api/produtoApi'
 
@@ -66,13 +64,13 @@ export default function AddProduto() {
 
     async function listarCategorias() {
 
-        const r = await axios.get('http://localhost:5000/produto/categoria');
+        const r = await axios.get(URL_API + '/produto/categoria');
         setCategoriaTipo(r.data)
     }
 
     async function listarMarcas() {
 
-        const r = await axios.get('http://localhost:5000/produto/marca');
+        const r = await axios.get(URL_API + '/produto/marca');
         setTipoMarcas(r.data)
     }
 
