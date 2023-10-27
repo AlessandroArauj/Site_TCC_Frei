@@ -4,7 +4,6 @@ import cors from 'cors'
 import produtoController from './controller/produtoController.js';
 import usuarioCadastroController from './controller/usuarioCadastroController.js'
 
-import { con } from './repository/connection.js';
 
 const server = express();
 server.use(cors());
@@ -14,8 +13,8 @@ server.use(usuarioCadastroController)
 
 
 
-server.listen(process.env.PORT,
-    () => console.log(`API aberta na PORTA ${process.env.PORT} Bem-Vindo`));
+server.listen(process.env.MYSQL_PORT,
+    () => console.log(`API aberta na PORTA ${process.env.MYSQL_PORT} Bem-Vindo`));
 
 
     server.get('/ping', (req, resp) =>{

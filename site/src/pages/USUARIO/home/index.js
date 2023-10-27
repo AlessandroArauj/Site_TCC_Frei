@@ -3,12 +3,30 @@ import Header from '../../../components/cabecalho/index.js'
 import Rodape from '../../../components/rodape/index.js';
 import { carrossel } from './script'
 import { Link } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CardProduto from '../../../components/cardDestaque';
 import CardProdutoMenor from '../../../components/cardMenorPreco';
 
+import { ListarTodosProdutos } from '../../../api/produtoApi';
+
 
 function Home() {
+
+  const [produto, setProduto] = useState([])
+
+
+  async function CarregarProduto() {
+    const resp = await ListarTodosProdutos();
+    setProduto(resp);
+    console.log(resp);
+  }
+
+  useEffect(() => {
+    CarregarProduto()
+  }, [])
+
+
+
 
 
 
@@ -140,13 +158,20 @@ function Home() {
             <h1> Produtos em Destaque</h1>
             <div className='line2' />
           </div>
-          <CardProduto addcarousel={carousel} />
 
+          <div className='cardss'>
+            {produto.map(item =>
+              
+                <CardProduto addcarousel={carousel} produto={item} />
+            
+          )}
+
+              </div>
 
 
         </div>
 
-        <button onClick={handleRightClick}><img src='../../../assets/images/maior.png' /></button>
+          <button onClick={handleRightClick}><img src='../../../assets/images/maior.png' /></button>
       </section>
 
       <section className='faixa-4'>

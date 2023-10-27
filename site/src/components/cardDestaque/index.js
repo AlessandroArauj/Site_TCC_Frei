@@ -1,24 +1,14 @@
 import { Link } from 'react-router-dom'
 import './index.scss'
 import { useEffect, useState } from 'react'
-import { ListarTodosProdutos } from '../../api/produtoApi';
+
 
 
 export default function CardProduto(props) {
 
     const carousel = props.addcarousel
 
-    const [produto, setProduto] = useState([]);
-
-    async function CarregarProduto(){
-        const resp = await ListarTodosProdutos();
-        setProduto(resp);
-    }
-
-    useEffect(() => {
-        CarregarProduto();
-
-    }, [])
+   
 
     return (
         <div className='CardDestaques'>
@@ -39,7 +29,7 @@ export default function CardProduto(props) {
 
                         <div className='baixo'>
                             <div className='baixo_cima'>
-                                <p></p>
+                                <p>{props.produto.PRODUTO}</p>
                                 <h1></h1>
                                 <h2></h2>
                             </div>

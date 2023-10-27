@@ -8,16 +8,16 @@ export default function cadastroAdm() {
 
 
             <div className="esq">
-                <h1> Cadastrar-se </h1>
+                <h1> Logar</h1>
                 <div className="line" />
 
                 <div className="insercao">
 
                     <div>
-                        <h1>Email</h1>
+                    
                         <input type="text" placeholder='Email' className='inputs' />
 
-                        <h1>Senha</h1>
+                        
                         <input type="password" placeholder='Senha' className='inputs' />
                     </div>
                     
