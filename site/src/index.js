@@ -15,8 +15,15 @@ import AddProduto from './pages/ADM/addProduto';
 import PageProduto from './pages/USUARIO/pageProduto';
 import FilterProduto from './pages/USUARIO/FilterProduto';
 import PageCarrinho from './pages/USUARIO/carrinho';
+import Cardcordas from './pages/USUARIO/cardcordas';
+import Cardsopro from './pages/USUARIO/cardsopro';
+import Cardaudio from './pages/USUARIO/cardaudio';
+import Cardbateria_percusao from './pages/USUARIO/cardbateria_percusao';
+import Cardteclas from './pages/USUARIO/cardteclas';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -35,6 +42,12 @@ root.render(
         <Route path='/PageProduto' element={<PageProduto />} />
         <Route path='/filter'   element={<FilterProduto />} />
         <Route path='/carrinho'   element={<PageCarrinho />} />
+
+        <Route path='/sopro'   element={<Cardsopro />} />
+        <Route path='/audio'   element={<Cardaudio />} />
+        <Route path='/bateria_percusao'   element={<Cardbateria_percusao />} />
+        <Route path='/teclas'   element={<Cardteclas />} />
+        <Route path='/cordas'   element={<Cardcordas />} />
         
         
 

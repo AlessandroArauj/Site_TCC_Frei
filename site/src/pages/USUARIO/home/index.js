@@ -63,25 +63,25 @@ function Home() {
       <Header />
       <nav className='nav-cabe'>
 
+        <Link className='link-head' to={'/sopro'}>
+        <p className='cardizinho'>Sopro</p>
+        </Link>
 
-        <p>Sopro</p>
+        <Link className='link-head' to={'/bateria_percusao'}>
+        <p className='cardizinho'>Bateria e Percurssão</p>
+        </Link>
 
+        <Link className='link-head' to={'/teclas'}>
+        <p className='cardizinho'>Teclas</p>
+        </Link>
 
+        <Link className='link-head' to={'/cordas'}>
+        <p className='cardizinho'>Cordas</p>
+        </Link>
 
-        <p>Bateria e Percurssão</p>
-
-
-
-        <p>Teclas</p>
-
-
-
-        <p>Cordas</p>
-
-
-
-        <p>Audio</p>
-
+        <Link className='link-head' to={'/audio'}>
+        <p className='cardizinho'>Audio</p>
+        </Link>
 
       </nav>
 
