@@ -1,4 +1,6 @@
 import './index.scss'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 export default function cadastroAdm() {
     return (
