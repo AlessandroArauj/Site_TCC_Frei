@@ -1,5 +1,5 @@
-CREATE USE TOTH_Music
-USE TOTH_Music
+CREATE DATABASE TOTH_Music;
+USE TOTH_Music;
 
 CREATE TABLE TB_CADASTRO_USER (
 	ID_USER int primary key auto_increment,
