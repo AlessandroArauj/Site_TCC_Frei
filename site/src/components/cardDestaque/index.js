@@ -2,13 +2,15 @@ import { Link } from 'react-router-dom'
 import './index.scss'
 import { useEffect, useState } from 'react'
 
-
+import { URL_API } from '../../constant'
 
 export default function CardProduto(props) {
 
     const carousel = props.addcarousel
 
-   
+   function buscarImagem() {
+    `${URL_API}/${props.}`'/produto/imagem/'
+   }
 
     return (
         <div className='CardDestaques'>
@@ -23,7 +25,9 @@ export default function CardProduto(props) {
                     <div className='card'>
 
                         <div className='cima'>
-                            <div> </div>
+                            <div> 
+                                {/* <img src={`${URL_API}/${props.}`} /> */}
+                            </div>
                             <div className='line-prod' />
                         </div>
 
