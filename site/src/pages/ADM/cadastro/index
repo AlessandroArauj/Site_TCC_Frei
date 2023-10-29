@@ -14,27 +14,27 @@ export default function CadastroAdm() {
     const [erro, setErro] = useState('');
     const [mostrarSenha, setMostrarSenha] = useState(false);
     const [carregando, setCarregando] = useState(false)
-
-
+  
+  
     const navigate = useNavigate();
     const ref = useRef()
 
     async function LoginADMReact() {
         ref.current.continuousStart();
         setCarregando(true);
-
+    
         try {
             const r = await loginAdm(email, senha);
             storage('admin-logado', r)
-
+    
             setTimeout(() => {
                 navigate('/pageAdm')
             }, 3000)
-
-
-
+    
+    
+    
         }
-
+    
         catch (err) {
             ref.current.complete();
             setCarregando(false)
@@ -42,33 +42,53 @@ export default function CadastroAdm() {
                 setErro(err.response.data.erro)
             }
         }
-
+    
     }
 
 
     useEffect(() => {
         if (storage('admin-logado')) {
-            navigate('/pageAdm')
+          navigate('/pageAdm')
         }
-    }, [])
+      }, [])
 
 
     return (
-        <div className='prin'>
+        <div className="prin">
+            <LoadingBar className='barradeloading' color='#12adf9' ref={ref} />
 
-            <div className='win'>
-                <form action='' />
-                <h2>login</h2>
-                <div className='inputbox'>
-                    <span className='icon'></span>
-                    <input type='text' placeholder='Email' required />
+
+            <div className="esq">
+                <h1> Logar</h1>
+                <div className="line" />
+
+                <div className="insercao">
+
+                    <div>
+
+                        <input type="text" placeholder='Email' className='inputs' value={email} onChange={e => setEmail(e.target.value)} />
+
+
+                        <input type="password" placeholder='Senha' className='inputs' value={senha} onChange={e => setSenha(e.target.value)} />
+                    </div>
+
+                    <h1>
+                        Solicitar nova senha
+                    </h1>
+
+                    <button className='Botao' onClick={LoginADMReact} disabled= {carregando}>
+                        Entrar
+                    </button>
                 </div>
-                <div className='inputbox'>
-                    <span className='icon'></span>
-                    <input type='password' placeholder='Senha' required />
-                </div>
-                <button type='submit'>Login</button>
+
             </div>
+
+
+
+            <div className='dir'>
+                <img src='../../../assets/images/logo.svg' />
+            </div>
+
         </div>
     )
 }
