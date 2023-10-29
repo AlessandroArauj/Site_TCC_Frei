@@ -23,11 +23,16 @@
     border-radius: 10px;
    }
 
+   .win:hover{
+    border: 5px solid #0ef;
+   }
+
    h2{
     font-size: 2em;
     text-align: center;
     color: #fff;
-   }
+
+  }
 
    .inputbox{
     position: relative;
@@ -56,6 +61,7 @@
    button{
     position: relative;
     width: 80%;
+    margin-top: 20px;
     height: 45px;
     background: #333;
     border: none;
@@ -66,6 +72,11 @@
     color: #fff;
     font-weight: 500;
    }
+
+
+
+
+
 
 
 
