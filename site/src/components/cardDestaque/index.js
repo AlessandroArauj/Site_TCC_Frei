@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
+
 import './index.scss';
 import { useEffect, useState } from 'react';
-import { URL_API } from '../../constant';
-import axios from 'axios';
 import { ListarImagemPorIDinstrumentos, BuscarImagem } from '../../api/produtoApi';
 
 export default function CardProduto(props) {
