@@ -1,0 +1,43 @@
+.categorias{
+
+
+justify-content: center;
+display: flex;
+flex-direction: column;
+}
+
+.produtos{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    gap: 90px;
+
+  
+    
+}
+
+    
+    .liner {
+        width: 350px;
+        height: 2px;
+        background-color: rgb(0, 0, 0);
+        margin-top: 40px;
+    }
+
+    .destaque {
+        padding: 0px 10px;
+        font-size: 33px;
+      
+    }
+
+    .liner2 {
+        width: 500px;
+        height: 2px;
+        background-color: rgb(0, 0, 0);
+        margin-bottom: 15px;
+    }
+
+    
+    

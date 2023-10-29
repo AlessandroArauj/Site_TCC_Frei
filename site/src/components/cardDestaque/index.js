@@ -5,38 +5,19 @@ import { ListarImagemPorIDinstrumentos, BuscarImagem } from '../../api/produtoAp
 
 export default function CardProduto(props) {
 
-    const carousel = props.addcarousel;
-    const [imagem, setImagem] = useState([]);
-    
-
-    //essa função esta puxando a imagem pelo ID do produto
-    async function buscarImagens() {
-        const resposta = await ListarImagemPorIDinstrumentos(props.produto.ID)
-        
-        setImagem(resposta)
-    
-    }
-
-    
-
-    
-    
-
-    useEffect(() => {
-        buscarImagens();
-    }, []);
+   
     
     return (
         <div className='cardProduto'>
 
             <div className='container'>
-                <div className='carousel' ref={carousel}>
+                <div className='carousel'>
 
                     <div className='card'>
 
                             <div className='superior'>
 
-                                <img className='imagem-produto' src={BuscarImagem(imagem.map(item => item.IMAGEM))} />
+                                <img className='imagem-produto'  />
 
                             </div>
 
@@ -45,13 +26,13 @@ export default function CardProduto(props) {
                             <div className='inferior'>
 
                                 <div className='nomeProduto'>
-                                    <p> {props.produto.PRODUTO} </p>
+                                    <p>  </p>
                                 </div>
 
                                 <div className='precos'>
 
-                                    <h3 className='preco'>R${props.produto.PRECO}</h3>
-                                    <h2 className='precopromo'> R${props.produto.PRECOPROMO} </h2>
+                                    <h3 className='preco'>R$</h3>
+                                    <h2 className='precopromo'> R$</h2>
 
                                 </div>
 
