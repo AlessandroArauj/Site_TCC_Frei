@@ -92,3 +92,25 @@ export async function LoginUsuario(email, senha) {
 
     return linha;
 }
+
+
+
+export async function LoginAdmin(email, senha) {
+    const comando = `SELECT
+                        ID_ADM         AS "id",
+                        NM_NOME_COMP    AS "nome",
+                        DS_EMAIL        AS "email",
+                        DS_SENHA        AS "senha"
+                     FROM TB_CADASTRO_ADM
+                    WHERE DS_EMAIL = ? AND ds_SENHA = ?
+`
+
+    const resp = await con.query(comando, [email, senha]);
+
+    const linhas = resp[0];
+    const linha = linhas[0];
+
+
+
+    return linha;
+}

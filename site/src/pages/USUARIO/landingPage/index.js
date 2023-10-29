@@ -11,7 +11,11 @@ export default function LandingPage() {
     
     const navigate = useNavigate()
     
-    
+    useEffect(() => {
+        if (storage('admin-logado')) {
+          navigate('/pageAdm')
+        }
+      }, [])
 
 
     return (

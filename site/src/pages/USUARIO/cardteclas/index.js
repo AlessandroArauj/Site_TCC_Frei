@@ -10,9 +10,7 @@ export default function Cardteclas() {
       return (
 
 <div className='cardteclas'>
-<Header />
 
-<p>tecla</p>
 
 
 

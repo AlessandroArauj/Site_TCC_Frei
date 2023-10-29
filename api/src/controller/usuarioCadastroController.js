@@ -1,7 +1,29 @@
 import { Router } from 'express';
-import { CadastrarUsuario, EditarUsuario, ExcluirUsuario, LoginUsuario } from '../repository/usuarioCadastroRepository.js';
+import { CadastrarUsuario, EditarUsuario, ExcluirUsuario, LoginAdmin, LoginUsuario } from '../repository/usuarioCadastroRepository.js';
 
 const server = Router();
+
+server.post('/cliente/login/adm', async (req, resp) =>{
+    try {
+        const email = req.body.email;
+        const senha = req.body.senha;
+
+        const linha = await LoginAdmin(email, senha);
+        if (linha == undefined){
+            throw new Error('⚠ Credenciais Invalidas ⚠')
+
+        }
+
+       
+        resp.send(linha)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+
+        })
+    }
+
+})
 
 server.put('/cliente/editar/:id', async (req, resp) =>{
 

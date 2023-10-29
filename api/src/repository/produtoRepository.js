@@ -13,7 +13,7 @@ export async function ListarTodasImagens(){
 
 export async function ListarImagemPorIDinstrumentos(id) {
     const comando = `
-        SELECT IMG_PRODUTO      AS imagem
+        SELECT IMG_PRODUTO      AS IMAGEM
 
         FROM TB_PRODUTO_IMAGEM
         WHERE ID_INSTRUMENTOS = ?

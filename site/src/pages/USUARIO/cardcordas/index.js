@@ -11,7 +11,7 @@ export default function Cardcordas() {
       return (
 
 <div className='cardcordas'>
-<Header />
+
 
 <p>cordas</p>
 

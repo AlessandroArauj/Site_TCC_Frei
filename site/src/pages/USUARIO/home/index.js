@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import CardProduto from '../../../components/cardDestaque';
 import CardProdutoMenor from '../../../components/cardMenorPreco';
 
-import { ListarTodosProdutos } from '../../../api/produtoApi';
+import { ListarImagemPorIDinstrumentos, ListarTodosProdutos } from '../../../api/produtoApi';
 
 
 function Home() {
@@ -15,15 +15,32 @@ function Home() {
   const [produto, setProduto] = useState([])
 
 
+
+
+
+
+
+
+
+
+
+
   async function CarregarProduto() {
-    const resp = await ListarTodosProdutos();
-    setProduto(resp);
-    console.log(resp);
+    try {
+      const resp = await ListarTodosProdutos();
+      setProduto(resp);
+
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   useEffect(() => {
     CarregarProduto()
   }, [])
+
+
+ 
 
 
 
@@ -82,23 +99,23 @@ function Home() {
       <nav className='nav-cabe'>
 
         <Link className='link-head' to={'/sopro'}>
-        <p className='cardizinho'>Sopro</p>
+          <p className='cardizinho'>Sopro</p>
         </Link>
 
         <Link className='link-head' to={'/bateria_percusao'}>
-        <p className='cardizinho'>Bateria e Percurssão</p>
+          <p className='cardizinho'>Bateria e Percurssão</p>
         </Link>
 
         <Link className='link-head' to={'/teclas'}>
-        <p className='cardizinho'>Teclas</p>
+          <p className='cardizinho'>Teclas</p>
         </Link>
 
         <Link className='link-head' to={'/cordas'}>
-        <p className='cardizinho'>Cordas</p>
+          <p className='cardizinho'>Cordas</p>
         </Link>
 
         <Link className='link-head' to={'/audio'}>
-        <p className='cardizinho'>Audio</p>
+          <p className='cardizinho'>Audio</p>
         </Link>
 
       </nav>
@@ -161,17 +178,17 @@ function Home() {
 
           <div className='cardss'>
             {produto.map(item =>
-              
-                <CardProduto addcarousel={carousel} produto={item} />
-            
-          )}
 
-              </div>
+              <CardProduto addcarousel={carousel} produto={item} />
+
+            )}
+
+          </div>
 
 
         </div>
 
-          <button onClick={handleRightClick}><img src='../../../assets/images/maior.png' /></button>
+        <button onClick={handleRightClick}><img src='../../../assets/images/maior.png' /></button>
       </section>
 
       <section className='faixa-4'>

@@ -2,11 +2,43 @@ import './index.scss'
 import { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import storage from 'local-storage'
 
 import axios from 'axios'
 import { ListarTodosProdutos, adicionarImagem, adicionarProduto } from '../../../api/produtoApi'
+import { useNavigate } from 'react-router-dom';
 
 export default function Page_adm() {
+
+    
+    const [usuario, setUsuario] = useState('-');
+    const navigate = useNavigate();
+
+
+    function sairClick() {
+
+        storage.remove('admin-logado');
+        navigate('/')
+    }
+
+    useEffect(() => {
+        if (storage('usuario-logado')) {
+          navigate('/perfilusuario')
+        }
+      }, [])
+
+      useEffect(() => {
+        if (!storage('admin-logado')) {
+          navigate('/')
+
+        }
+
+        else {
+            const adminlogado = storage('admin-logado')
+            setUsuario(adminlogado.nome)
+        
+        }
+      }, [])
 
     const [listarProduto, setListaProduto] = useState()
 
@@ -118,7 +150,7 @@ export default function Page_adm() {
         <div className='pageAdm'>
             <nav className='lateral-menu'>
                 <div>
-                    <h1> ADMINISTRADOR</h1>
+                    <h1> Bem Vindo , {usuario}</h1>
                 </div>
 
 
@@ -155,7 +187,7 @@ export default function Page_adm() {
                     <li className='item-menu' >
                         <div>
 
-                            <span className='link' >Sair da conta</span>
+                            <span className='link' onClick={sairClick}>Sair da conta</span>
                             <img src='../../assets/images/sair.png'></img>
                         </div>
                     </li>
