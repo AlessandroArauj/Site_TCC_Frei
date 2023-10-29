@@ -7,7 +7,8 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #000;
+    background: url('https://images.pexels.com/photos/3721941/pexels-photo-3721941.jpeg?cs=srgb&dl=pexels-daniel-reche-3721941.jpg&fm=jpg');
+    background-size: cover;
 
   
    .win{
@@ -18,20 +19,27 @@
     align-items: center;
     width: 400px;
     height: 500px;
-    background: transparent;
+    background: #000;
     border: 5px solid #333;
     border-radius: 10px;
+    transition: 1s;
    }
 
    .win:hover{
     border: 5px solid #0ef;
+    box-shadow: 0 0 20px #0ef, inset 0 0 20px #0ef;
    }
 
    h2{
     font-size: 2em;
     text-align: center;
     color: #fff;
+    transition: 1s;
 
+  }
+
+  .win:hover h2{
+    color: #0ef;
   }
 
    .inputbox{
@@ -50,6 +58,13 @@
     font-size: 1em;
     color: #fff;
     padding: 10px 15px;
+    transition: 1s;
+   }
+
+   .win:hover .inputbox input{
+    border: 2px solid #0ef;
+    box-shadow: 0 0 15px #0ef, inset 0 0 5px #0ef;
+
    }
 
 
@@ -71,6 +86,13 @@
     font-size: 1em;
     color: #fff;
     font-weight: 500;
+    transition: 1s;
+   }
+
+   .win:hover button{
+    background: #0ef;
+    color: #000;
+    box-shadow: 0 0 20px;
    }
 
 
