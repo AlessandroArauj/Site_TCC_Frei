@@ -84,7 +84,7 @@ export default function LoginUsuario() {
 
           {erro}
 
-          <i class="material-icons">cloud</i>
+         
 
         </div>
 
