@@ -11,7 +11,7 @@ export default function CardProduto(props) {
     const [imagem, setImagem] = useState([]);
     
 
-    
+    //essa função esta puxando a imagem pelo ID do produto
     async function buscarImagens() {
         const resposta = await ListarImagemPorIDinstrumentos(props.produto.ID)
         

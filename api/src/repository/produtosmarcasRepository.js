@@ -1,24 +1,30 @@
-import { con } from './connection.js'
+// Importa a conexão do arquivo "connection.js"
+import { con } from './connection.js';
 
+// Função para buscar uma marca por seu ID no banco de dados
 export async function buscarMarcasPorId(id) {
-
+    // Define o comando SQL de seleção
     let comando = `
-        select * from TB_MARCAS where ID_MARCAS = ?
-    
-    `
+        SELECT * FROM TB_MARCAS WHERE ID_MARCAS = ?
+    `;
+
+    // Executa a consulta SQL com o ID fornecido e aguarda a resposta
     let [resp] = await con.query(comando, [id]);
-    return resp
 
-};
+    // Retorna o resultado da consulta, que deve conter as informações da marca
+    return resp;
+}
 
-export async function listarMarcas(){
+// Função para listar todas as marcas no banco de dados
+export async function listarMarcas() {
+    // Define o comando SQL de seleção para listar todas as marcas
     let comando = `
-        select ID_MARCAS    id,
-               NM_MARCA     marca
-        FROM TB_MARCAS
+        SELECT ID_MARCAS id, NM_MARCA marca FROM TB_MARCAS
+    `;
 
-    `
-
+    // Executa a consulta SQL e aguarda a resposta
     let [resp] = await con.query(comando);
+
+    // Retorna o resultado da consulta, que deve conter uma lista de marcas com seus IDs e nomes
     return resp;
 }
