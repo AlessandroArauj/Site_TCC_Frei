@@ -7,21 +7,12 @@ import { useEffect, useRef, useState } from 'react';
 import CardProduto from '../../../components/cardDestaque';
 import CardProdutoMenor from '../../../components/cardMenorPreco';
 
-import { ListarImagemPorIDinstrumentos, ListarTodosProdutos } from '../../../api/produtoApi';
+import { ListarImagemPorIDinstrumentos, ListarTodosProdutos, BuscarImagem } from '../../../api/produtoApi';
 
 
 function Home() {
 
   const [produto, setProduto] = useState([])
-
-
-
-
-
-
-
-
-
 
 
 
@@ -40,7 +31,28 @@ function Home() {
   }, [])
 
 
- 
+
+  const [imagem, setImagem] = useState([]);
+
+
+
+  async function buscarImagens() {
+    const resposta = await ListarImagemPorIDinstrumentos(produto.ID)
+
+    setImagem(resposta)
+
+  }
+
+
+
+
+
+
+  useEffect(() => {
+    buscarImagens();
+  }, []);
+
+
 
 
 
@@ -80,7 +92,7 @@ function Home() {
   const handleRightClick2 = (e) => {
     e.preventDefault();
     console.log(carousel2.current.offsetWidth)
-    carousel2.current.scrollLeft += carousel2.current.offsetWidth
+    carousel2.current.scrollLeft += carousel.current.offsetWidth
 
   }
 
@@ -98,23 +110,23 @@ function Home() {
       <Header />
       <nav className='nav-cabe'>
 
-        <Link className='link-head' to={'/categorias'}>
+        <Link className='link-head' to={'/sopro'}>
           <p className='cardizinho'>Sopro</p>
         </Link>
 
-        <Link className='link-head' to={'/categorias'}>
+        <Link className='link-head' to={'/bateria_percusao'}>
           <p className='cardizinho'>Bateria e Percurssão</p>
         </Link>
 
-        <Link className='link-head' to={'/categorias'}>
+        <Link className='link-head' to={'/teclas'}>
           <p className='cardizinho'>Teclas</p>
         </Link>
 
-        <Link className='link-head' to={'/categorias'}>
+        <Link className='link-head' to={'/cordas'}>
           <p className='cardizinho'>Cordas</p>
         </Link>
 
-        <Link className='link-head' to={'/categorias'}>
+        <Link className='link-head' to={'/audio'}>
           <p className='cardizinho'>Audio</p>
         </Link>
 
@@ -176,14 +188,35 @@ function Home() {
             <div className='line2' />
           </div>
 
-          <div className='cardss'>
-            {produto.map(item =>
+          <div className='container'>
 
-              <CardProduto addcarousel={carousel} />
+            <div className='carousel' ref={carousel}>
+              {produto.map((item =>
+                <div className='card-item'>
 
-            )}
+
+                  <div className='superior'>
+                    <img className='imagem-produto' src={BuscarImagem(imagem.map(item => item.IMAGEM))} />
+                  </div>
+
+
+                  <div className='line-carousel' />
+
+                  <div className='inferior'>
+                      <p> {produto.PRODUTO} </p>
+                      <h3 className='preco'>R${produto.PRECO}</h3>
+                      <h2 className='precopromo'> R${produto.PRECOPROMO} </h2>
+                      <p>Frete Grátis</p>
+                  </div>
+
+
+                </div>
+              ))}
+
+            </div>
 
           </div>
+
 
 
         </div>
@@ -208,18 +241,58 @@ function Home() {
         <div className='meio'>
           <div className='cima-f5'>
             <div className='line' />
+
             <h1> Com os menores preços</h1>
+
             <div className='line2' />
+
           </div>
 
 
-          <CardProdutoMenor addcarousel2={carousel2} />
+          <div className='container'>
+            <div className='carousel' ref={carousel2}>
+
+              <div className='card'>
+
+                <div className='superior'>
+
+                  <img className='imagem-produto' />
+
+                </div>
+                <div className='inferior'>
+
+                  <div className='nomeProduto'>
+                    <p>--------</p>
+                  </div>
+
+                  <div className='precos'>
+
+                    <h3 className='preco'>----</h3>
+                    <h2 className='precopromo'>-------</h2>
+
+                  </div>
+
+                  <div className='freteVisual'>
+
+                    <p>Frete Grátis</p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
 
 
 
         </div>
 
+
         <button onClick={handleRightClick2}><img src='../../../assets/images/maior.png' /></button>
+
+
 
       </section>
 

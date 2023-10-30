@@ -472,32 +472,47 @@
 
     }
 
-    .cardizinho{
-        text-decoration: none;
 
-        cursor:pointer;
-        color: #000;
-        font-size: 15px;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        transition: 0.4s ease;
+    .container{
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
     }
 
-    .cardizinho:hover{
-        
-        font-size: 16px;
-        color: #00C2FF;
-        transition: 0.4s;
-    }
-
-
-
-
-
-    .cardss{
-
+    .container .carousel{
         display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        overflow: hidden;
+
     }
 
+    .container .carousel .card-item{
+        height: 400px;
+        border: solid 1px blue;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .line-carousel{
+        width: 250px;
+        background-color: #000;
+        height: 1px;
+    }
+
+
+
+
+
+   
+
+
+
+
+   
 
 
 

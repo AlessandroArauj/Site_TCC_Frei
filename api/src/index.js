@@ -15,8 +15,8 @@ server.use('/storage/fotosProdutos', express.static('storage/fotosProdutos'))
 
 
 
-server.listen(process.env.PORT,
-    () => console.log(`API aberta na PORTA ${process.env.PORT} Bem-Vindo`));
+server.listen(process.env.MYSQL_PORT,
+    () => console.log(`API aberta na PORTA ${process.env.MYSQL_PORT} Bem-Vindo`));
 
 
     server.get('/ping', (req, resp) =>{
