@@ -46,10 +46,6 @@
         font-size: 20px;
     }
     
-    .esq h1{
-        font-size: 18px;
-    }
-    
     .contato{
         display: flex;
         flex-direction: row;
@@ -71,12 +67,62 @@
     
     
     .esq h1{
+        font-size: 18px;
         color: #ffffff9a;
-    text-decoration: underline black;}
-    }
+        text-decoration: underline black;}
 
+    .esq h1:not(:last-child){
+        margin-bottom: 10%;
+
+    }
+    
+    
+    
     .esq h1:hover{
         color: #fff;
         transition: 0.3s;
         cursor: pointer;
     }
+    
+    
+    
+    @media(max-width: 415px){
+        
+        
+        .esq h1{
+            font-size: 14px;
+        }
+
+        .dir h1{
+            font-size: 14px;
+        }
+        
+
+        .logo{
+            width: 70px;
+        }
+
+        .contato img{
+            height: 25px;
+        }
+
+        .sociais img{
+            height: 25px;
+        }
+
+        
+    }
+
+    
+
+    
+    
+    
+    
+    
+    }
+
+    
+
+
+  
