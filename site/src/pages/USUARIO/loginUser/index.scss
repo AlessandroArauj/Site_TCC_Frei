@@ -1,4 +1,4 @@
-.principal{
+.principal {
 
     background-color: rgb(0, 0, 0);
     border: 0px;
@@ -7,22 +7,22 @@
     justify-content: center;
     display: flex;
     flex-direction: row;
-    
 
-    LoadingBar{
-        
+
+    LoadingBar {
+
         width: 100%;
         color: #12adf9;
-    
+
     }
 
-    .form-entrar{
+    .form-entrar {
         color: red;
         margin-top: 10px;
-    
+
     }
 
-    .subprincipal{
+    .subprincipal {
         height: auto;
         width: 100%;
         background-color: #0E0D10;
@@ -31,19 +31,19 @@
         flex-direction: row;
         display: flex;
         flex-direction: column;
-        gap: 10px; 
+        gap: 10px;
 
-        .imgtoth{
+        .imgtoth {
             margin-top: 20px;
             padding: 15px;
-        } 
-        
-        .inputbox{
+        }
+
+        .inputbox {
             position: relative;
             padding: 20px 0;
         }
 
-        .inputbox label{
+        .inputbox label {
             position: absolute;
             top: 17%;
             left: 17px;
@@ -55,7 +55,7 @@
             transition: .6s;
         }
 
-        .inputbox input{
+        .inputbox input {
             width: 400px;
             height: 60px;
             font-size: 16px;
@@ -64,37 +64,39 @@
             background: transparent;
             border: 1.2px solid #ffffff;
             outline: none;
-           
+
             border-radius: 10px;
         }
 
+
+
         .inputbox input:focus~label,
-        .inputbox input:valid~label{
+        .inputbox input:valid~label {
             top: 0;
             color: #12adf9;
             font-size: 12px;
-            background:#0E0D10;
-            
-          
+            background: #0E0D10;
+
+
         }
 
         .inputbox input:focus,
-        .inputbox input:valid{
+        .inputbox input:valid {
             border: 1px solid #12adf9;
             transition: 0.7s;
         }
 
 
 
-        
 
-        .logar{
-            
+
+        .logar {
+
             width: 260px;
             height: 45px;
             background-color: #0E0D10;
             border-radius: 8px;
-            border:solid 1px  rgb(255, 255, 255);
+            border: solid 1px rgb(255, 255, 255);
             align-items: center;
             font-size: 17px;
             justify-content: center;
@@ -102,119 +104,111 @@
             display: flex;
         }
 
-        .logar:hover{
+        .logar:hover {
             color: #12adf9;
             border: 3px solid #12adf9;
             transition: 1.2s;
         }
 
-
-
-        .esqueceu{
+        .esqueceu {
             margin-top: 5px;
             color: #595959;
-            text-decoration:underline;
-            
+            text-decoration: underline;
+        }
+    }
+
+    .comp {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background: transparent;
+
+
+
+        .linha {
+
+
+            width: 300px;
+            height: 1px;
+            background-color: #ffffff;
         }
 
+        .ou {
+            font-size: 30px;
+            color: #ffff;
+        }
+    }
 
-            }
+    .criar {
 
-      
+        text-decoration: none;
+        width: 260px;
+        height: 45px;
 
-            .comp{
-                margin-top: 10px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                background: transparent;
+        border-radius: 8px;
+        border: solid 1px rgb(255, 255, 255);
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        display: flex;
+    }
 
-                
-
-            .linha{
-                
-              
-                width: 300px;
-                height: 1px;
-                background-color: #ffffff;
-            }
-            
-            .ou{ 
-                font-size: 30px;
-                color: #ffff;
-            }
-            } 
-
-            .criar{
-               
-                text-decoration: none;
-                width: 260px;
-                height: 45px;
-                
-                border-radius: 8px;
-                border:solid 1px  rgb(255, 255, 255);
-                align-items: center;
-                justify-content: center;
-                color: #ffffff;
-                display: flex;
-            }
-
-            .criar:hover{
-                color: #12adf9;
-                border: 3.5px solid #12adf9;
-                transition: 1.2s;
-                cursor: pointer;
-            }
+    .criar:hover {
+        color: #12adf9;
+        border: 3.5px solid #12adf9;
+        transition: 1.2s;
+        cursor: pointer;
+    }
+}
 
 
+.compmeio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .linhameio {
+        width: 1px;
+        height: 100%;
+        background-color: #ffffff;
+    }
+
+    .imgmeio {
+        position: absolute;
+        filter: grayscale(1);
+        filter: brightness(10);
+    }
+}
+
+.subprincipalimg {
+
+    height: auto;
+    width: 100%;
+
+
+}
+
+.subprincipalimg>img {
+    width: 100%;
+    height: auto;
 
 
 }
 
 
-
-
-
-
-            .compmeio{
-                
-                
-                
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-            .linhameio {
-           
-                width: 1px;
-                height: 100%;
-                background-color: #ffffff;
-            }
-
-            .imgmeio{
-                position: absolute;
-                filter: grayscale(1);
-                filter: brightness(10);
-            }
-        }
-
-
-
-
-
-
-  .subprincipalimg{
-                    
-                height: auto;
-                width: 100%;
-                
-                
-            }
-
-
-    .subprincipalimg > img{
-        width: 100%;
-        height: auto;
-    
+@media screen and (max-width: 768px) {
+    .compmeio {
+        display: none;
     }
+
+    .subprincipalimg {
+        display: none;
+    }
+
+    .imgtoth {
+        padding: 0px;
+    }
+
+}

@@ -178,3 +178,4 @@ insert into TB_CADASTRO_ADM (NM_NOME_COMP ,DS_EMAIL, DS_SENHA)
 
 select * from TB_CADASTRO_ADM;
 
+
