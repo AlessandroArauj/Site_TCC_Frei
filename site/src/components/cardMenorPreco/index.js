@@ -6,6 +6,9 @@ export default function cardProdutoMenor(props) {
 
     const carousel2 = props.addcarousel2
 
+
+    
+
     return (
         <div className='cardMenorPreco'>
 
@@ -14,37 +17,254 @@ export default function cardProdutoMenor(props) {
 
                     <div className='card'>
 
-                            <div className='superior'>
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+                        <div className='superior'>
 
-                                <img className='imagem-produto' />
+                            <div className='baixo'>
+                                <div className='baixo_cima'>
+                                    <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                                    <h1> R$ 2 real e um pão</h1>
+                                </div>
 
+                                <Link to={'/pageProduto'}>
+                                    <button className='Comp_button'> Ver produto</button>
+                                </Link>
                             </div>
-                            <div className='inferior'>
 
-                                <div className='nomeProduto'>
-                                    <p>--------</p>
-                                </div>
 
-                                <div className='precos'>
+                        </div>
 
-                                    <h3 className='preco'>----</h3>
-                                    <h2 className='precopromo'>-------</h2>
-
-                                </div>
-
-                                <div className='freteVisual'>
-
-                                    <p>Frete Grátis</p>
-
-                                </div>
-
-                            </div>
 
                     </div>
 
-                </div>
-            </div>
 
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+                        <div className='superior'>
+
+                            <div className='baixo'>
+                                <div className='baixo_cima'>
+                                    <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                                    <h1> R$ 2 real e um pão</h1>
+                                </div>
+
+                                <Link to={'/pageProduto'}>
+                                    <button className='Comp_button'> Ver produto</button>
+                                </Link>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+                        <div className='superior'>
+
+                            <div className='baixo'>
+                                <div className='baixo_cima'>
+                                    <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                                    <h1> R$ 2 real e um pão</h1>
+                                </div>
+
+                                <Link to={'/pageProduto'}>
+                                    <button className='Comp_button'> Ver produto</button>
+                                </Link>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+                        <div className='superior'>
+
+                            <div className='baixo'>
+                                <div className='baixo_cima'>
+                                    <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                                    <h1> R$ 2 real e um pão</h1>
+                                </div>
+
+                                <Link to={'/pageProduto'}>
+                                    <button className='Comp_button'> Ver produto</button>
+                                </Link>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+                        <div className='superior'>
+
+                            <div className='baixo'>
+                                <div className='baixo_cima'>
+                                    <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                                    <h1> R$ 2 real e um pão</h1>
+                                </div>
+
+                                <Link to={'/pageProduto'}>
+                                    <button className='Comp_button'> Ver produto</button>
+                                </Link>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+                        <div className='superior'>
+
+                            <div className='baixo'>
+                                <div className='baixo_cima'>
+                                    <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                                    <h1> R$ 2 real e um pão</h1>
+                                </div>
+
+                                <Link to={'/pageProduto'}>
+                                    <button className='Comp_button'> Ver produto</button>
+                                </Link>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+                        <div className='superior'>
+
+                            <div className='baixo'>
+                                <div className='baixo_cima'>
+                                    <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                                    <h1> R$ 2 real e um pão</h1>
+                                </div>
+
+                                <Link to={'/pageProduto'}>
+                                    <button className='Comp_button'> Ver produto</button>
+                                </Link>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                    <div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+                        <div className='superior'>
+
+                            <div className='baixo'>
+                                <div className='baixo_cima'>
+                                    <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                                    <h1> R$ 2 real e um pão</h1>
+                                </div>
+
+                                <Link to={'/pageProduto'}>
+                                    <button className='Comp_button'> Ver produto</button>
+                                </Link>
+                            </div>
+
+
+                        </div>
+
+
+                    </div><div className='card'>
+
+<div className='cima'>
+    <div> </div>
+    <div className='line-prod' />
+</div>
+<div className='superior'>
+
+    <div className='baixo'>
+        <div className='baixo_cima'>
+            <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+            <h1> R$ 2 real e um pão</h1>
+        </div>
+
+        <Link to={'/pageProduto'}>
+            <button className='Comp_button'> Ver produto</button>
+        </Link>
+    </div>
+
+
+</div>
+
+
+</div>
+<div className='card'>
+
+                        <div className='cima'>
+                            <div> </div>
+                            <div className='line-prod' />
+                        </div>
+                        <div className='superior'>
+
+                            <div className='baixo'>
+                                <div className='baixo_cima'>
+                                    <p>Violão Jumbo Yamaha Cpx sla oq, eletrico com cordas de aço</p>
+                                    <h1> R$ 2 real e um pão</h1>
+                                </div>
+
+                                <Link to={'/pageProduto'}>
+                                    <button className='Comp_button'> Ver produto</button>
+                                </Link>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
 
         </div>
     )

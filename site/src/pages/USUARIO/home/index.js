@@ -80,7 +80,7 @@ function Home() {
   const handleRightClick2 = (e) => {
     e.preventDefault();
     console.log(carousel2.current.offsetWidth)
-    carousel2.current.scrollLeft += carousel.current.offsetWidth
+    carousel2.current.scrollLeft += carousel2.current.offsetWidth
 
   }
 
@@ -179,7 +179,7 @@ function Home() {
           <div className='cardss'>
             {produto.map(item =>
 
-              <CardProduto addcarousel={carousel} produto={item} />
+              <CardProduto addcarousel={carousel} />
 
             )}
 
