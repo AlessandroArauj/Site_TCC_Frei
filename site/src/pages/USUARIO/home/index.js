@@ -37,7 +37,7 @@ function Home() {
 
 
   async function buscarImagens() {
-    const resposta = await ListarImagemPorIDinstrumentos(produto.ID)
+    const resposta = await ListarImagemPorIDinstrumentos(produto.map(item => item.ID))
 
     setImagem(resposta)
 
@@ -203,9 +203,9 @@ function Home() {
                   <div className='line-carousel' />
 
                   <div className='inferior'>
-                      <p> {produto.PRODUTO} </p>
-                      <h3 className='preco'>R${produto.PRECO}</h3>
-                      <h2 className='precopromo'> R${produto.PRECOPROMO} </h2>
+                      <p> {item.PRODUTO} </p>
+                      <h3 className='preco'>R${item.PRECO}</h3>
+                      <h2 className='precopromo'> R${item.PRECOPROMO} </h2>
                       <p>Frete Grátis</p>
                   </div>
 
