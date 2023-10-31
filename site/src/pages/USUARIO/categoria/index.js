@@ -5,87 +5,75 @@ import CardProduto from '../../../components/cardDestaque'
 import Rodape from '../../../components/rodape'
 
 export default function Cardaudio() {
-    
+
       return (
 
-<div className='categorias'>
-      <Header />
+            <div className='categorias'>
+                  <Header />
 
-      <div className='start'>
-<div className='liner' />
-            <h1 className='destaque'>Sopro</h1>
-          
-            <div className='liner2' /> 
-</div>
+                  <div className='start'>
+                        <div className='liner' />
+                        <h1 className='destaque'>Categorias</h1>
 
-<div className='produtos'>
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-</div>
+                        <div className='liner2' />
+                  </div>
 
-<div className='start'>
-<div className='liner' />
-            <h1 className='destaque'>Audio</h1>
-            <div className='liner2' /> 
-</div>
+                  <div className='produtos'>
 
-<div className='produtos'>
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-</div>
-
-<div className='start'>
-<div className='liner' />
-            <h1 className='destaque'>Bateria/Percussão</h1>
-            <div className='liner2' /> 
-</div>
-
-<div className='produtos'>
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-</div>
+                        <div className='cardProduto'>
 
 
-<div className='start'>
-<div className='liner' />
-            <h1 className='destaque'>Cordas</h1>
-            <div className='liner2' /> 
-</div>
 
-<div className='produtos'>
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-</div>
+                              <div className='carousel' >
+
+                                    <div className='card'>
+
+                                          <div className='superior'>
 
 
-<div className='start'>
-<div className='liner' />
-            <h1 className='destaque'>Teclas</h1>
-            <div className='liner2' /> 
-</div>
+                                          </div>
 
-<div className='produtos'>
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-      <CardProduto />
-</div>
+                                          <div className='linhareta' />
 
-<Rodape />
+                                          <div className='inferior'>
 
-</div>
+                                                <div className='nomeProduto'>
+                                                      <p>  </p>
+                                                </div>
 
-    )}
+                                                <div className='precos'>
+
+                                                      <h3 className='preco'>R$</h3>
+                                                      <h2 className='precopromo'> R$</h2>
+
+                                                </div>
+
+                                                <div className='freteVisual'>
+
+                                                      <p>Frete Grátis</p>
+
+                                                </div>
+
+                                          </div>
+
+                                    </div>
+
+
+
+                              </div>
+
+
+                        </div>
+                        <div className='cardpro'>
+
+                        </div>
+
+                  </div>
+
+                
+                  <Rodape />
+
+            </div>
+
+      )
+}

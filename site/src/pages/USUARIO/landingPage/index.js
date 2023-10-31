@@ -59,7 +59,7 @@ export default function LandingPage() {
 
                     <div className=' baixo-f2'>
 
-                        <Link className='butt-landin-page'>
+                        <Link className='butt-landin-page' to={'/categorias'}>
                             <div>
                                 <img src='../../../../assets/images/fone.svg' />
                                 <h1> Audios</h1>
@@ -67,7 +67,7 @@ export default function LandingPage() {
                             </div>
                         </Link>
 
-                        <Link className='butt-landin-page'>
+                        <Link className='butt-landin-page' to={'/categorias'}>
                             <div>
                                 <img src='../../../../assets/images/gaita.svg' />
                                 <h1> Sopro</h1>
@@ -75,7 +75,7 @@ export default function LandingPage() {
                             </div>
                         </Link>
 
-                        <Link className='butt-landin-page'>
+                        <Link className='butt-landin-page' to={'/categorias'}>
                             <div>
                                 <img src='../../../../assets/images/violao.svg' />
                                 <h1> Cordas</h1>
