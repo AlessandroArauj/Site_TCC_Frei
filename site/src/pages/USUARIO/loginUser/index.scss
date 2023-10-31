@@ -40,14 +40,14 @@
 
         .inputbox {
             position: relative;
-            padding: 20px 0;
+            padding: 12px 0;
         }
 
         .inputbox label {
             position: absolute;
-            top: 17%;
+            top: 25%;
             left: 17px;
-            transform: translateY(100%);
+            transform: translatey(30%);
             font-size: 16px;
             color: #ffffff;
             padding: 0 5px;
@@ -160,55 +160,83 @@
         transition: 1.2s;
         cursor: pointer;
     }
-}
 
-
-.compmeio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .linhameio {
-        width: 1px;
-        height: 100%;
-        background-color: #ffffff;
-    }
-
-    .imgmeio {
-        position: absolute;
-        filter: grayscale(1);
-        filter: brightness(10);
-    }
-}
-
-.subprincipalimg {
-
-    height: auto;
-    width: 100%;
-
-
-}
-
-.subprincipalimg>img {
-    width: 100%;
-    height: auto;
-
-
-}
-
-
-@media screen and (max-width: 768px) {
     .compmeio {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .linhameio {
+            width: 1px;
+            height: 100%;
+            background-color: #ffffff;
+        }
+
+        .imgmeio {
+            position: absolute;
+            filter: grayscale(1);
+            filter: brightness(10);
+        }
     }
 
     .subprincipalimg {
-        display: none;
+
+        height: auto;
+        width: 100%;
+
+
     }
 
-    .imgtoth {
-        padding: 0px;
+    .subprincipalimg>img {
+        width: 100%;
+        height: auto;
+
+
+    }
+
+
+    @media (max-width: 720px) {
+
+
+        .compmeio {
+            display: none;
+        }
+
+        .subprincipalimg {
+            display: none;
+        }
+
+        .imgtoth {
+            padding: 0px;
+        }
+
+        .comp {
+            width: 100%;
+        }
+
+        
+
+    }
+
+
+    @media(max-width:458px) {
+        .imgtoth {
+            padding: 0px;
+            height: 140px;
+        }
+
+        .subprincipal{
+
+            .inputbox input{
+                width: 300px;
+                height: 50PX;
+            }
+        }
+
+
+       
+
     }
 
 }

@@ -75,7 +75,8 @@
 
 
     .f1 div {
-        width: 35%;
+        width: 45%;
+        padding: 20px 0;
 
     }
 
@@ -304,156 +305,6 @@
 
 
 
-    @media(max-width: 415px) {
-
-        header {
-            height: 50px;
-            padding: 5px;
-        }
-
-        header nav {
-            display: none;
-        }
-
-        header img {
-            width: 50px;
-
-        }
-
-
-        header .menu {
-            display: inline;
-        }
-
-        .f1 {
-            height: 400px;
-            padding: 0px;
-            justify-content: center;
-            align-items: start;
-            padding: 30px 0;
-
-        }
-
-        .f1 div {
-            width: 100%;
-            padding: 30px;
-
-        }
-
-        .f1 p {
-            font-size: 12px;
-            width: 80%;
-        }
-
-        .f1 h1 {
-            font-size: 22px;
-            width: 80%;
-            padding: 0;
-        }
-
-        .f1 button {
-
-            display: none;
-        }
-
-
-
-
-        .f2 {
-            display: none;
-        }
-
-        .f3 {
-            padding: 0;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0;
-
-
-        }
-
-        .f3 div {
-            width: 80%;
-        }
-
-        .f3 div h1 {
-            font-size: 22px;
-            width: 100%;
-            text-align: center;
-
-        }
-
-        .f3 button {
-            display: none;
-        }
-
-
-        .f3 p {
-            text-align: center;
-            font-size: 12px;
-        }
-
-
-        .f3 img {
-            width: 150px;
-        }
-
-
-
-
-        .f4 {
-            padding: 20px 0;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .f4 button {
-            display: none;
-        }
-
-
-        .f4 div {
-            width: 80%
-        }
-
-
-        .f4 div h1 {
-            font-size: 22px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .f4 p {
-            font-size: 12px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .f4 img {
-            width: 150px;
-        }
-
-        .f5 {
-            padding: 0;
-        }
-
-        .f5 h1 {
-            font-size: 22px;
-        }
-
-        .f5 p {
-            font-size: 12px;
-        }
-
-        .f5 img {
-            width: 250px;
-        }
-
-
-
-    }
-
-
     @media(max-width: 720px) {
 
         header{
@@ -467,9 +318,13 @@
       .f1{
         padding: 20px 50px;
       }
+      
+      .f1 div{
+        width: 60%
+      }
+
 
       .f1 h1{
-        margin-top: -50px;
         font-size: 30px;
       }
 
@@ -485,6 +340,10 @@
         padding: 40px 0;
 
 
+    }
+
+    .f3 button{
+        display: none;
     }
 
     .f3 div {
@@ -566,6 +425,156 @@
     .f5 img {
         width: 350px;
     }
+
+    }
+
+
+
+    @media(max-width: 415px) {
+
+        header {
+            height: 50px;
+            padding: 5px;
+        }
+
+        header nav {
+            display: none;
+        }
+
+        header img {
+            width: 50px;
+
+        }
+
+
+        header .menu {
+            display: inline;
+        }
+
+        .f1 {
+            height: 400px;
+            justify-content: center;
+            align-items: start;
+            padding: 30px 0;
+
+        }
+
+        .f1 div {
+            width: 100%;
+            padding: 45px 30px;
+
+        }
+
+        .f1 p {
+            font-size: 12px;
+            width: 80%;
+        }
+
+        .f1 h1 {
+            font-size: 22px;
+            width: 80%;
+        }
+
+        .f1 button {
+
+            display: none;
+        }
+
+
+
+
+        .f2 {
+            display: none;
+        }
+
+        .f3 {
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 0px;
+
+
+        }
+
+        .f3 div {
+            width: 80%;
+            
+        }
+
+        .f3 div h1 {
+            font-size: 22px;
+            width: 100%;
+            text-align: center;
+
+        }
+
+        .f3 button {
+            display: none;
+        }
+
+
+        .f3 p {
+            text-align: center;
+            font-size: 12px;
+        }
+
+
+        .f3 img {
+            width: 150px;
+        }
+
+
+
+
+        .f4 {
+            padding: 20px 0;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+
+        .f4 button {
+            display: none;
+        }
+
+
+        .f4 div {
+            width: 80%
+        }
+
+
+        .f4 div h1 {
+            font-size: 22px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .f4 p {
+            font-size: 12px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .f4 img {
+            width: 150px;
+        }
+
+        .f5 {
+            padding: 0;
+        }
+
+        .f5 h1 {
+            font-size: 22px;
+        }
+
+        .f5 p {
+            font-size: 12px;
+        }
+
+        .f5 img {
+            width: 250px;
+        }
+
+
 
     }
 
