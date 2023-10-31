@@ -40,6 +40,7 @@ root.render(
         <Route path='/PageProduto' element={<PageProduto />} />
         <Route path='/carrinho'   element={<PageCarrinho />} />
         <Route path='/categorias'   element={<Categoria />} />
+
         
         
         

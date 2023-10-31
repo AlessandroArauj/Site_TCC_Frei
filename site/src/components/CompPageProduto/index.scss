@@ -228,21 +228,46 @@
        
     }
 
+    .infoPro .cima{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin: 15px
+    }
+
+    .infoPro .baixo{
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .infoPro .baixo h1{
+        width: 100%;
+    }
+
 
     .infoPro{
        
         display: flex;
+        flex-direction: column;
         align-items: center;
         width: 100%;
         border-radius: 25px;
         background-color: #f0f2f3;
         height: 70px;
+        padding: 0 30px;
+        font-size: 14px;
+        overflow: hidden;
+        
         
     }
 
-    .infoPro h1{
-        padding: 40px;
-        
+
+
+
+    .infoPro.maior{
+        transition: 0.5s;
+        height: 100%;
     }
 
 

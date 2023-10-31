@@ -12,13 +12,20 @@ export default function CompProduto() {
 
     }
 
-    
 
-   
+
+    function Descricao() {
+        const Modal1 = document.getElementById('desc')
+        Modal1.classList.add('maior')
+    }
+
+
+
+
 
     return (
         <div className='CompProduto'>
-<CompCartao />
+            <CompCartao />
             <section className='CompProd-f1'>
 
                 <div className='Card'>
@@ -75,7 +82,7 @@ export default function CompProduto() {
 
                         </div>
 
-                        <button className='button1'  onClick={abrirModal1}> Forma de pagamento</button>
+                        <button className='button1' onClick={abrirModal1}> Forma de pagamento</button>
                         <button className='button2' > Adicionar ao carrinho</button>
 
                         <div className='baixo-dir'>
@@ -95,8 +102,23 @@ export default function CompProduto() {
 
             <section className='CompProd-f2'>
 
-                <div className='infoPro'>
-                    <h1>INFORMAÇÕES DO PRODUTO</h1>
+                <div className='infoPro' id='desc'>
+                    <div className='cima'>
+                        <h1>INFORMAÇÕES DO PRODUTO</h1>
+                        <button onClick={Descricao}>nsei</button>
+                    </div>
+                    <div className='baixo'>
+                        <h1> esse procuto e pica demais e3u sei do q eu to falndo pq eu toco muito nas madrugadas que tem, alem de eu fazer bastante pragrama, PROGRAMO MUITOYasfsafsdaf asdfa asf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as
+                        asf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g
+                        asf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g sadf sadf fs sdf sdf wsfggsg fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g
+                        asf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g sadf sadf fs sdf sdf wsfggsg fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g
+                        asf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g sadf sadf fs sdf sdf wsfggsg fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g
+                        asf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g sadf sadf fs sdf sdf wsfggsg fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g
+                        asf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g sadf sadf fs sdf sdf wsfggsg fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g
+                        asf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g sadf sadf fs sdf sdf wsfggsg fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g
+                        asf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg gasf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g sadf sadf fs sdf sdf wsfggsg g</h1>
+                    </div>
+
                 </div>
 
                 <div className='comen'>
@@ -125,7 +147,7 @@ export default function CompProduto() {
 
 
 
-            
+
         </div>
     )
 }

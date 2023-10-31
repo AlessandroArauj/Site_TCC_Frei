@@ -317,9 +317,7 @@
 
 
     .right-f4 {
-        display: flex;
-        align-items: end;
-        justify-content: end;
+        display: none
     }
 
     .right-f4 button {
@@ -489,6 +487,10 @@
         overflow: hidden;
 
     }
+
+        .f6{
+            display: none;
+        }
 
     .container .carousel .card-item{
         height: 400px;
