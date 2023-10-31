@@ -2,7 +2,7 @@ import './index.scss';
 import Header from '../../../components/cabecalho/index.js'
 import Rodape from '../../../components/rodape/index.js';
 import { carrossel } from './script'
-import { Link } from 'react-router-dom';
+import { Link, redirect, useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import CardProduto from '../../../components/cardDestaque';
 import CardProdutoMenor from '../../../components/cardMenorPreco';
@@ -12,52 +12,38 @@ import { ListarImagemPorIDinstrumentos, ListarTodosProdutos, BuscarImagem } from
 
 function Home() {
 
-  const [produto, setProduto] = useState([])
+  const navigate = useNavigate();
 
+  
+  const [produto, setProduto] = useState([]);
 
+  // Estudar Depois
 
   async function CarregarProduto() {
     try {
       const resp = await ListarTodosProdutos();
-      setProduto(resp);
+      
+      let array = resp;
+
+      for(let i = 0; i < array.length; i++) {
+        let p = array[i];
+        let img = await ListarImagemPorIDinstrumentos(p.ID);
+      
+        p.img = img[0].IMAGEM;
+      }
+
+      setProduto(array);
+      console.log(array);
 
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
     }
   }
+
 
   useEffect(() => {
     CarregarProduto()
   }, [])
-
-
-
-  const [imagem, setImagem] = useState([]);
-
-
-
-  async function buscarImagens() {
-    const resposta = await ListarImagemPorIDinstrumentos(produto.map(item => item.ID))
-
-    setImagem(resposta)
-
-  }
-
-
-
-
-
-
-  useEffect(() => {
-    buscarImagens();
-  }, []);
-
-
-
-
-
-
-
 
   useEffect(() => {
     carrossel()
@@ -192,21 +178,21 @@ function Home() {
 
             <div className='carousel' ref={carousel}>
               {produto.map((item =>
-                <div className='card-item'>
+                <div className='card-item' onClick={() => navigate('/pageProduto/' + item.ID)}>
 
 
                   <div className='superior'>
-                    <img className='imagem-produto' src={BuscarImagem(imagem.map(item => item.IMAGEM))} />
+                    <img className='imagem-produto' src={BuscarImagem(item.img)} />
                   </div>
 
 
                   <div className='line-carousel' />
 
                   <div className='inferior'>
-                      <p> {item.PRODUTO} </p>
-                      <h3 className='preco'>R${item.PRECO}</h3>
-                      <h2 className='precopromo'> R${item.PRECOPROMO} </h2>
-                      <p>Frete Grátis</p>
+                    <p> {item.PRODUTO} </p>
+                    <h3 className='preco'>R${item.PRECO}</h3>
+                    <h2 className='precopromo'> R${item.PRECOPROMO} </h2>
+                    <p>Frete Grátis</p>
                   </div>
 
 

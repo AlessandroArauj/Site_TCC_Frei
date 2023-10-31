@@ -3,8 +3,6 @@
 
 
 
-   
-
     .nav-cabe {
         display: flex;
         align-items: center;
@@ -495,6 +493,11 @@
         border: solid 1px blue;
         margin: 10px;
         padding: 10px;
+    }
+
+
+    .carousel .card-item img{
+        width: 100%;
     }
 
     .line-carousel{

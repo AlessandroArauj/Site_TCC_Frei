@@ -13,8 +13,11 @@ const server = Router();
 server.get('/produto/imagem/:id', async (req, resp) => {
     try {
         const { id } = req.params;
+
         const resposta = await ListarImagemPorIDinstrumentos(id);
+
         resp.send(resposta);
+
     } catch (err) {
         resp.status(400).send({
             erro: err.message
@@ -102,6 +105,7 @@ server.post('/produto/:id/imagem', upload.single('produtosIma'), async (req, res
     try {
         const imagem = req.file.path;
         const idProduto = req.params.id;
+        
         const resposta = await AdicionarImagens(imagem, idProduto);
 
         if (resposta != 1)
@@ -119,6 +123,26 @@ server.post('/produto/:id/imagem', upload.single('produtosIma'), async (req, res
 server.post('/produto', async (req, resp) => {
     try {
         const produto = req.body;
+        if (!produto.PRODUTO) {
+            throw new Error('Nome do produto Obrigatório')
+        }
+
+        if (!produto.PRECO) {
+            throw new Error('Preço do produto é obrigatória')
+        }
+
+        if(!produto.ESTOQUE) {
+            throw new Error('Estoque do produto é obrigatória')
+        }
+
+        if(!produto.DETALHE) {
+            throw new Error('Detalhe do produto é obrigatória')
+        }
+
+        if(produto.DISPONIVEL === false) {
+            throw new Error('Disponivel do produto é obrigatória')
+        }
+
         const resposta = await inserirProduto(produto);
         resp.send(resposta);
     } catch (err) {

@@ -56,8 +56,8 @@ export default function AddProduto() {
 
         } catch (err) {
 
-            toast.error(err.message)
-            console.log(err.response.message);
+            toast.error(err.response.data.erro)
+            console.log(err.message.response);
             
         }
     }

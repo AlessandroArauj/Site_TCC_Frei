@@ -57,6 +57,7 @@ export async function adicionarProduto(marca, categoria, nome, preco, precoPromo
 
 
 export function BuscarImagem(imagem) {
+    console.log(imagem);
     return `${api.getUri()}/${imagem}`
 }
 
