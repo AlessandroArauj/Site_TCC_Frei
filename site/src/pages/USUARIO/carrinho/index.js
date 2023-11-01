@@ -8,8 +8,11 @@ export default function PageCarrinho() {
     return (
         <div className='Carrinho-page'>
             <Header />
+         
             <section className='componenteCarro'>
                 < Compcarrinho/>
+        
+              
             </section>
             
             <div className='BAIXO'>

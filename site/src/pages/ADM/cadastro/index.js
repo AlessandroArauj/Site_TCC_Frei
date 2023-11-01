@@ -59,14 +59,14 @@ export default function CadastroAdm() {
 
             <div className='win'>
                 <form action='' />
-                <h2>login</h2>
+                <h2>LOGIN</h2>
                 <div className='inputbox'>
-                    <span className='icon'></span>
-                    <input type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} required />
+                    <input type='text' value={email} onChange={e => setEmail(e.target.value)} required />
+                    <label for="">EMAIL</label>
                 </div>
                 <div className='inputbox'>
-                    <span className='icon'></span>
-                    <input type='password' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} required />
+                    <input type='password'  value={senha} onChange={e => setSenha(e.target.value)} required />
+                    <label for="">SENHA</label>
                 </div>
                 <button type='submit' onClick={LoginADMReact} disabled= {carregando}>Login</button>
             </div>

@@ -20,14 +20,14 @@
     width: 400px;
     height: 500px;
     background: #000;
-    border: 5px solid #333;
+    border: 3px solid #333;
     border-radius: 10px;
     transition: 1s;
    }
 
    .win:hover{
     border: 5px solid #0ef;
-    box-shadow: 0 0 20px #0ef, inset 0 0 20px #0ef;
+    box-shadow: 0 0 20px #12adf9, inset 0 0 20px #12adf9;
    }
 
    h2{
@@ -39,7 +39,7 @@
   }
 
   .win:hover h2{
-    color: #0ef;
+    color: #12adf9;
   }
 
    .inputbox{
@@ -47,6 +47,55 @@
     width: 320px;
     padding: 20px 0;
    }
+
+   .inputbox {
+    position: relative;
+    padding: 12px 0;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 25%;
+    left: 17px;
+    transform: translatey(30%);
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .6s;
+}
+
+.inputbox input {
+    width: 400px;
+    height: 60px;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0 15px;
+    background: transparent;
+    border: 1.2px solid #ffffff;
+    outline: none;
+
+    border-radius: 10px;
+}
+
+
+
+.inputbox input:focus~label,
+.inputbox input:valid~label {
+    top: 0;
+    color: #12adf9;
+    font-size: 12px;
+    background: #000;
+
+
+}
+
+.inputbox input:focus,
+.inputbox input:valid {
+    border: 1px solid #12adf9;
+    transition: 0.7s;
+}
+
 
    .inputbox input{
     width: 100%;
@@ -62,8 +111,8 @@
    }
 
    .win:hover .inputbox input{
-    border: 2px solid #0ef;
-    box-shadow: 0 0 15px #0ef, inset 0 0 5px #0ef;
+    border: 2px solid #12adf9;
+    box-shadow: 0 0 15px #12adf9, inset 0 0 5px #12adf9;
 
    }
 
@@ -90,7 +139,7 @@
    }
 
    .win:hover button{
-    background: #0ef;
+    background: #12adf9;
     color: #000;
     box-shadow: 0 0 20px;
    }
