@@ -4,6 +4,9 @@
 justify-content: center;
 display: flex;
 flex-direction: column;
+position: fixed;
+width: 100%;
+
 }
 
 .produtos{
@@ -24,12 +27,13 @@ flex-direction: column;
         height: 2px;
         background-color: rgb(0, 0, 0);
         margin-top: 40px;
+        animation: animacao 1.5s ease-in-out ;
     }
 
     .destaque {
         padding: 0px 10px;
         font-size: 33px;
-      
+        animation: letraani 2.5s ease-in-out ;
     }
 
     .liner2 {
@@ -37,12 +41,45 @@ flex-direction: column;
         height: 2px;
         background-color: rgb(0, 0, 0);
         margin-bottom: 15px;
+        animation: animacao 1.8s ease-in-out ;
     }
 
-    
-    
+    @keyframes animacao{
+
+0%{
+    margin-left: 100%;
+    width: 100%;
+}
+50%{
+     background-color:#03cdff;
+     width: 100%;
+}
+
+100%{
+    margin-left: 0px;
+   
+}
+
+}
 
 
+
+
+@keyframes letraani{
+
+    0%{
+        margin-left: 100%;
+    }
+    50%{
+        color: #03cdff;
+    }
+    
+    100%{
+        margin-left: 0px;
+
+        
+    }
+}
 
 
 
@@ -146,7 +183,7 @@ flex-direction: column;
     
         .precopromo {
     
-            color: rgb(3, 205, 255);
+            color: #03cdff;
     
         }
     
