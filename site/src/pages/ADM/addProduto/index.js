@@ -23,8 +23,8 @@ export default function AddProduto() {
 
 
     const [nome, setNome] = useState('');
-    const [preco, setPreco] = useState('');
-    const [precoPromo, setPrecoPromo] = useState('');
+    const [preco, setPreco] = useState(0);
+    const [precoPromo, setPrecoPromo] = useState(0);
     const [promo, setPromo] = useState(false);
     const [estoque, setEstoque] = useState(0);
     const [destaque, setDest] = useState(false);
@@ -154,7 +154,7 @@ export default function AddProduto() {
                                     <p>Preço:</p>
                                 </div>
                                 <div className='inp'>
-                                    <input value={preco} onChange={e => setPreco(e.target.value)} />
+                                    <input type='number' value={preco} onChange={e => setPreco(e.target.value)} />
                                 </div>
 
                             </div>
@@ -165,7 +165,7 @@ export default function AddProduto() {
                                     <p>Preço Promoção:</p>
                                 </div>
                                 <div className='inp'>
-                                    <input value={precoPromo} onChange={e => setPrecoPromo(e.target.value)} />
+                                    <input type='number' value={precoPromo} onChange={e => setPrecoPromo(e.target.value)} />
                                 </div>
 
                             </div>

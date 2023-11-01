@@ -1,11 +1,17 @@
 import axios from "axios";
 import { URL_API } from "../constant";
 
-
-
 const api = axios.create({
     baseURL: URL_API
 });
+
+
+
+export async function ListarProdutosDestaques() {
+    const resposta = await api.get('/produto/destaques');
+    return resposta.data;
+}
+
 
 export async function ListarProdutosPorNome(nome) {
     const resposta = await api.get(`/produto/busca?nome${nome}`);

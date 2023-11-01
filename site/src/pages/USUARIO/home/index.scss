@@ -69,7 +69,7 @@
     .Slide img {
         width: 100%;
         height: 100%;
-        
+
     }
 
     .manual-navegation {
@@ -229,36 +229,37 @@
         display: flex;
     }
 
-    .faixa-3 > button {
+    .faixa-3>button {
         height: 50px;
         width: 50px;
         padding: 5px 15px;
         background-color: #00C2FF;
-        
+
     }
 
-    .faixa-3 > button img{
+    .faixa-3>button img {
         width: 100%;
     }
 
-    .faixa-3> button:not(:last-child){
+    .faixa-3>button:not(:last-child) {
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
         border: none;
         cursor: pointer;
 
     }
-    .faixa-3 > button:last-child{
+
+    .faixa-3>button:last-child {
         border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;    
+        border-bottom-left-radius: 50px;
         border: none;
         cursor: pointer;
-        
+
     }
 
-
-
     
+
+
     .line {
         width: 350px;
         height: 1px;
@@ -276,8 +277,8 @@
         background-color: rgb(0, 0, 0);
         margin-bottom: 15px;
     }
-    
-    
+
+
 
 
     .faixa-4 {
@@ -360,31 +361,32 @@
     }
 
 
-    .faixa-5 > button {
+    .faixa-5>button {
         height: 50px;
         width: 50px;
         padding: 5px 15px;
         background-color: #00C2FF;
-        
+
     }
 
-    .faixa-5 > button img{
+    .faixa-5>button img {
         width: 100%;
     }
 
-    .faixa-5> button:not(:last-child){
+    .faixa-5>button:not(:last-child) {
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
         border: none;
         cursor: pointer;
 
     }
-    .faixa-5 > button:last-child{
+
+    .faixa-5>button:last-child {
         border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;    
+        border-bottom-left-radius: 50px;
         border: none;
         cursor: pointer;
-        
+
     }
 
     .cima-f5 {
@@ -469,15 +471,15 @@
     }
 
 
-    .container{
-        *{
+    .container {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
     }
 
-    .container .carousel{
+    .container .carousel {
         display: flex;
         gap: 20px;
         overflow-x: auto;
@@ -486,38 +488,91 @@
 
     }
 
-        .f6{
-            display: none;
-        }
+    .f6 {
+        display: none;
+    }
 
-    .container .carousel .card-item{
+    .container .carousel .card-item {
+        cursor: pointer;
         height: 400px;
-        border: solid 1px blue;
+        width: 240px;
+        box-shadow: 0px 0px 10px #b8b8b8;
+        border-radius: 10px;
         margin: 10px;
+        transition: 0.3s;
+    }
+
+    .container .carousel .card-item:hover {
+        height: 410px;
+        width: 250px;
+
+        box-shadow: 0px 0px 15px #9c9c9c;
+    }
+
+    .card-item .superior {
+        width: 100%;
+        height: 50%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .card-item .inferior {
+        width: 100%;
+        height: 50%;
         padding: 10px;
     }
 
-
-    .carousel .card-item img{
-        width: 100%;
+    .carousel .card-item .imagem-produto {
+        width: 70%;
+        height: 100%;
     }
 
-    .line-carousel{
-        width: 250px;
-        background-color: #000;
+
+
+    .line-carousel {
+        width: 100%;
+        background-color: #c0c0c0;
         height: 1px;
     }
 
 
+    .precopromo {
+
+        color: #00C2FF;
+
+    }
+
+    .infos-prod {
+
+        height: 50%;
+
+    }
+
+
+    .frete {
+
+        height: 50%;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        
+
+    }
 
 
 
-   
 
 
 
 
-   
+
+
+
+
 
 
 

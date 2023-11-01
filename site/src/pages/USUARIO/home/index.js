@@ -7,28 +7,28 @@ import { useEffect, useRef, useState } from 'react';
 import CardProduto from '../../../components/cardDestaque';
 import CardProdutoMenor from '../../../components/cardMenorPreco';
 
-import { ListarImagemPorIDinstrumentos, ListarTodosProdutos, BuscarImagem } from '../../../api/produtoApi';
+import { ListarImagemPorIDinstrumentos, ListarTodosProdutos, BuscarImagem, ListarProdutosDestaques } from '../../../api/produtoApi';
 
 
 function Home() {
 
   const navigate = useNavigate();
 
-  
+
   const [produto, setProduto] = useState([]);
 
   // Estudar Depois
 
   async function CarregarProduto() {
     try {
-      const resp = await ListarTodosProdutos();
-      
+      const resp = await ListarProdutosDestaques();
+
       let array = resp;
 
-      for(let i = 0; i < array.length; i++) {
+      for (let i = 0; i < array.length; i++) {
         let p = array[i];
         let img = await ListarImagemPorIDinstrumentos(p.ID);
-      
+
         p.img = img[0].IMAGEM;
       }
 
@@ -180,21 +180,26 @@ function Home() {
               {produto.map((item =>
                 <div className='card-item' onClick={() => navigate('/pageProduto/' + item.ID)}>
 
-
                   <div className='superior'>
                     <img className='imagem-produto' src={BuscarImagem(item.img)} />
                   </div>
 
-
                   <div className='line-carousel' />
 
                   <div className='inferior'>
+                    <div className='infos-prod'>
+
                     <p> {item.PRODUTO} </p>
                     <h3 className='preco'>R${item.PRECO}</h3>
-                    <h2 className='precopromo'> R${item.PRECOPROMO} </h2>
-                    <p>Frete Grátis</p>
-                  </div>
+                    <h2 className='precopromo' style={{ display: parseFloat(item.PRECOPROMO) === 0 ? 'none' : 'block' }}> R${item.PRECOPROMO} </h2>
 
+                    </div>
+                    <div className='frete'>
+
+                      <p>Frete Grátis</p>
+
+                    </div>
+                  </div>
 
                 </div>
               ))}
@@ -239,35 +244,22 @@ function Home() {
             <div className='carousel' ref={carousel2}>
 
               <div className='card'>
-
                 <div className='superior'>
-
                   <img className='imagem-produto' />
-
                 </div>
                 <div className='inferior'>
-
                   <div className='nomeProduto'>
                     <p>--------</p>
                   </div>
-
                   <div className='precos'>
-
                     <h3 className='preco'>----</h3>
                     <h2 className='precopromo'>-------</h2>
-
                   </div>
-
                   <div className='freteVisual'>
-
                     <p>Frete Grátis</p>
-
                   </div>
-
                 </div>
-
               </div>
-
             </div>
           </div>
 

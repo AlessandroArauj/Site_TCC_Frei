@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AdicionarImagens, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, ListarImagemPorIDinstrumentos, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
+import { AdicionarImagens, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, ListarImagemPorIDinstrumentos, ListarProdutosDestaques, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
 import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
@@ -8,6 +8,18 @@ import multer from 'multer'
 const upload = multer({ dest: 'storage/fotosProdutos' });
 
 const server = Router();
+
+server.get('/produto/destaques', async (req, resp) => {
+    try {
+        const resposta = await ListarProdutosDestaques();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+
+})
 
 // Endpoint para obter imagens de produtos por ID
 server.get('/produto/imagem/:id', async (req, resp) => {
@@ -105,7 +117,7 @@ server.post('/produto/:id/imagem', upload.single('produtosIma'), async (req, res
     try {
         const imagem = req.file.path;
         const idProduto = req.params.id;
-        
+
         const resposta = await AdicionarImagens(imagem, idProduto);
 
         if (resposta != 1)
@@ -131,17 +143,15 @@ server.post('/produto', async (req, resp) => {
             throw new Error('Preço do produto é obrigatória')
         }
 
-        if(!produto.ESTOQUE) {
+        if (!produto.ESTOQUE) {
             throw new Error('Estoque do produto é obrigatória')
         }
 
-        if(!produto.DETALHE) {
+        if (!produto.DETALHE) {
             throw new Error('Detalhe do produto é obrigatória')
         }
 
-        if(produto.DISPONIVEL === false) {
-            throw new Error('Disponivel do produto é obrigatória')
-        }
+
 
         const resposta = await inserirProduto(produto);
         resp.send(resposta);
@@ -159,7 +169,7 @@ server.get('/produto', async (req, resp) => {
         resp.send(resposta);
     } catch (err) {
         resp.status(400).send({
-            erro: 'Ocorreu um Erro'
+            erro: err.message
         });
     }
 });

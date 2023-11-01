@@ -1,5 +1,8 @@
-CREATE DATABASE TOTH_Music;
+
 USE TOTH_Music;
+
+show tables from TOTH_Music;
+
 
 CREATE TABLE TB_CADASTRO_USER (
 	ID_USER int primary key auto_increment,
@@ -52,8 +55,8 @@ CREATE TABLE TB_PRODUTO(
 	ID_MARCAS INT,
 	ID_CATEGORIA INT,
 	NM_PRODUTO varchar(400),
-	DS_PRECO varchar(400),
-	DS_PRECO_PROMOCIONAL varchar(400),
+	NR_PRECO decimal(10, 2),
+	NR_PRECO_PROMOCIONAL decimal(10, 2),
 	BT_DESTAQUE boolean,
 	BT_PROMOCAO boolean,
 	BT_DISPONIVEL boolean,
@@ -170,12 +173,12 @@ insert TB_CATEGORIA (NM_CATEGORIA)
 
 
 insert into TB_CADASTRO_ADM (NM_NOME_COMP ,DS_EMAIL, DS_SENHA)
-            values      ('Denis Dias' ,'denistodias@hotmail.com', '2308@Admin'),
+            values      ('Denis Dias' ,'denistodias@hotmail', '2308@Admin'),
                         ('Diogo Alves', 'tavaresfalcon5@gmail.com', '2512@Admin'),
                         ('Thiago Almeida', 'thisouza640@gmail.com', '7362@Admin'),
                         ('Alessandro Araujo', 'araujobr1903@gmail.com', '1903@Admin');
-                        
 
-select * from TB_CADASTRO_ADM;
+
+select * from TB_PRODUTO;
 
 

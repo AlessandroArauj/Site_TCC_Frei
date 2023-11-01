@@ -1,6 +1,30 @@
 // Importa a conexão do arquivo "connection.js"
 import { con } from "./connection.js";
 
+export async function ListarProdutosDestaques() {
+    const comando = `
+        SELECT 
+            ID_INSTRUMENTOS AS ID,
+            ID_MARCAS AS MARCAS,
+            ID_CATEGORIA AS CATEGORIAS,
+            NM_PRODUTO AS PRODUTO,
+            NR_PRECO AS PRECO,
+            NR_PRECO_PROMOCIONAL AS PRECOPROMO,
+            BT_DESTAQUE AS DESTAQUE,
+            BT_PROMOCAO AS PROMODISP,
+            BT_DISPONIVEL AS DISPONIVEL,
+            QTD_ESTOQUE AS ESTOQUE,
+            DS_DETALHES AS DETALHE
+        FROM TB_PRODUTO
+
+        WHERE BT_DESTAQUE = 1 AND BT_DISPONIVEL = 1;
+    `
+    const [resp] = await con.query(comando)
+    return resp;
+
+}
+
+
 // Função para listar todas as imagens de produtos no banco de dados
 export async function ListarTodasImagens() {
     // Define o comando SQL para selecionar todas as imagens de produtos
@@ -78,8 +102,8 @@ export async function AlterarProduto(produto, id) {
             ID_MARCAS = ?,
             ID_CATEGORIA = ?,
             NM_PRODUTO = ?,
-            DS_PRECO = ?,
-            DS_PRECO_PROMOCIONAL = ?,
+            NR_PRECO = ?,
+            NR_PRECO_PROMOCIONAL = ?,
             BT_DESTAQUE = ?,
             BT_PROMOCAO = ?,
             BT_DISPONIVEL = ?,
@@ -111,7 +135,7 @@ export async function AlterarProduto(produto, id) {
 export async function inserirProduto(produto) {
     // Define o comando SQL para inserir um novo produto
     const comando = `
-        INSERT INTO TB_PRODUTO (ID_MARCAS, ID_CATEGORIA, NM_PRODUTO, DS_PRECO, DS_PRECO_PROMOCIONAL, BT_DESTAQUE, BT_PROMOCAO, BT_DISPONIVEL, QTD_ESTOQUE, DS_DETALHES)
+        INSERT INTO TB_PRODUTO (ID_MARCAS, ID_CATEGORIA, NM_PRODUTO, NR_PRECO, NR_PRECO_PROMOCIONAL, BT_DESTAQUE, BT_PROMOCAO, BT_DISPONIVEL, QTD_ESTOQUE, DS_DETALHES)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
     `;
 
@@ -158,8 +182,8 @@ export async function ExibirTodosProdutos() {
             ID_MARCAS AS MARCAS,
             ID_CATEGORIA AS CATEGORIAS,
             NM_PRODUTO AS PRODUTO,
-            DS_PRECO AS PRECO,
-            DS_PRECO_PROMOCIONAL AS PRECOPROMO,
+            NR_PRECO AS PRECO,
+            NR_PRECO_PROMOCIONAL AS PRECOPROMO,
             BT_DESTAQUE AS DESTAQUE,
             BT_PROMOCAO AS PROMODISP,
             BT_DISPONIVEL AS DISPONIVEL,
@@ -182,8 +206,8 @@ export async function ExibirTodosFiltroNome(nome) {
             ID_MARCAS AS MARCAS,
             ID_CATEGORIA AS CATEGORIAS,
             NM_PRODUTO AS PRODUTO,
-            DS_PRECO AS PRECO,
-            DS_PRECO_PROMOCIONAL AS PRECOPROMO,
+            NR_PRECO AS PRECO,
+            NR_PRECO_PROMOCIONAL AS PRECOPROMO,
             BT_DESTAQUE AS DESTAQUE,
             BT_PROMOCAO AS PROMODISP,
             BT_DISPONIVEL AS DISPONIVEL,
