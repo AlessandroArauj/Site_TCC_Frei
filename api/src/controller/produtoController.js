@@ -55,6 +55,7 @@ server.get('/produto/busca', async (req, resp) => {
         const { nome } = req.query;
         const resposta = await ExibirTodosFiltroNome(nome);
 
+        
         if (resposta.length == 0) {
             resp.status(404).send([]);
         } else {

@@ -40,6 +40,7 @@ export default function CadastroAdm() {
             setCarregando(false)
             if (err.response.status === 400) {
                 setErro(err.response.data.erro)
+                toast.error(erro)
             }
         }
 
@@ -56,6 +57,7 @@ export default function CadastroAdm() {
     return (
         <div className='prin'>
               <LoadingBar className='barradeloading' color='#12adf9' ref={ref} />
+              <ToastContainer />
 
             <div className='win'>
                 <form action='' />

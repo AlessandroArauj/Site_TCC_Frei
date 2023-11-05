@@ -16,6 +16,7 @@ import PageProduto from './pages/USUARIO/pageProduto';
 import PageCarrinho from './pages/USUARIO/carrinho';
 
 
+
 import Categoria from './pages/USUARIO/categoria';
 
 
@@ -40,6 +41,7 @@ root.render(
         <Route path='/PageProduto/:id' element={<PageProduto />} />
         <Route path='/carrinho'   element={<PageCarrinho />} />
         <Route path='/categorias'   element={<Categoria />} />
+        
 
         
         

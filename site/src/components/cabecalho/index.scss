@@ -1,24 +1,143 @@
 .cabecalho {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    background-color: #000;
-    padding: 0px 50px;
 
-    .minhaconta  img{
+    display: flex;
+    flex-direction: column;
+
+    .Input {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+
+
+
+
+
+    //formatação da aba de pesquisa
+
+
+    .resultados::-webkit-scrollbar {
+        width: 5px;
+      }
+      
+      .resultados::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        width: 10px; 
+      }
+      
+      .resultados::-webkit-scrollbar-thumb {
+        background: #b9b9b9;
+        border-radius: 10px;
+      }
+      
+      .resultados::-webkit-scrollbar-thumb:hover {
+        background: #bebebe; 
+      }
+
+    .cont2 {
+        
+        width: 100%;
+        display: flex;
+
+        position: absolute;
+        padding-right: 50px;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 140px;
+    }
+
+    .resultados {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        max-height: 130px;
+        overflow-y: auto;
+        z-index: 999;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 5px #9c9c9c;
+        border-radius: 5px;
+        
+
+    }
+
+    .resultado-cont {
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        box-shadow: 0px 0px 5px #9c9c9c;
+        width: 400px;
+    }
+
+    .Resultados {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 8px;
+        background-color: #fff;
+
+        cursor: pointer;
+        
+    }
+
+
+    .foto-result img {
+        max-width: 50px;
+        max-height: 50px;
+        margin-right: 10px;
+    }
+
+
+    .nome-result p {
+        margin: 0;
+        font-size: 16px;
+        color: #333;
+    }
+
+
+
+
+    // Fim da formatação
+
+
+
+
+
+
+
+
+
+    .cont-cabeca {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: #000;
+        padding: 0px 50px;
+
+    }
+
+    .minhaconta img {
 
         position: absolute;
         height: 35px;
         width: 35px;
         gap: 20px;
-        
+
 
     }
 
-    .minhaconta h1{
+    .minhaconta h1 {
 
         display: flex;
         align-items: center;
@@ -27,8 +146,8 @@
 
     }
 
-    
-    .UserLetra{
+
+    .UserLetra {
         height: 35px;
         width: 35px;
         border-radius: 100%;
@@ -40,13 +159,13 @@
         align-items: center;
         justify-content: center;
     }
-    
+
 
     .logo {
         height: 75px;
     }
 
-    .butt-home{
+    .butt-home {
         text-decoration: none;
 
     }
@@ -116,7 +235,7 @@
 
 
 
-    @media(max-width: 720px){
+    @media(max-width: 720px) {
         display: flex;
         flex-direction: row;
         gap: 30px;
@@ -125,23 +244,23 @@
         width: 100%;
         height: 100px;
         background-color: #000;
-    
 
-        .minhaconta  img{
+
+        .minhaconta img {
 
             position: absolute;
             height: 15px;
             width: 15px;
-            
-    
+
+
         }
 
-        .minhaconta p{
+        .minhaconta p {
             font-size: 12px;
-    
+
         }
 
-        .logo{
+        .logo {
             height: 65px;
         }
 
@@ -159,115 +278,115 @@
 
         .input img {
             height: 20px;
-     
+
         }
-        
+
         .dir div p {
             text-decoration: none;
             color: white;
 
             width: 100%;
         }
-    
-    
-
-
-    
 
 
 
-    }
 
-    @media(max-width: 415px){
-        display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    background-color: #000;
-  
 
-    .minhaconta  img{
-        position: absolute;
-        height: 30px;
-        width: 10px;
-        
+
+
 
     }
 
-  
-    .minhaconta h1{
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-
-    }
-
-    
-    .UserLetra{
-        height: 35px;
-        width: 35px;
-        border-radius: 100%;
-        background-color: #ffffff;
-        font-size: 10px;
-        color: black;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-
-    .logo {
-        height: 50px;
-    }
-
-    .butt-home{
-        text-decoration: none;
-
-    }
-
-    .input {
+    @media(max-width: 415px) {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        background-color: #fff;
-        padding: 15px;
-        border-radius: 25px;
-        gap: 0px;
-    }
-
-    .input button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .input img {
-        height: 15px;
+        width: 100%;
+        height: 100px;
+        background-color: #000;
 
 
-    }
-
-    .input input {
-        background-color: transparent;
-        border: none;
-        font-size: 14px;
-        width: 100px;
-        outline: 0;
-    }
+        .minhaconta img {
+            position: absolute;
+            height: 30px;
+            width: 10px;
 
 
-    .dir {
-        display: none;
+        }
 
-    }
+
+        .minhaconta h1 {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+
+        .UserLetra {
+            height: 35px;
+            width: 35px;
+            border-radius: 100%;
+            background-color: #ffffff;
+            font-size: 10px;
+            color: black;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .logo {
+            height: 50px;
+        }
+
+        .butt-home {
+            text-decoration: none;
+
+        }
+
+        .input {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 25px;
+            gap: 0px;
+        }
+
+        .input button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input img {
+            height: 15px;
+
+
+        }
+
+        .input input {
+            background-color: transparent;
+            border: none;
+            font-size: 14px;
+            width: 100px;
+            outline: 0;
+        }
+
+
+        .dir {
+            display: none;
+
+        }
 
 
     }
