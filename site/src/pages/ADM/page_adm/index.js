@@ -8,9 +8,17 @@ import axios from 'axios'
 import { ListarTodosProdutos, adicionarImagem, adicionarProduto } from '../../../api/produtoApi'
 import { useNavigate } from 'react-router-dom';
 
+import { Link } from 'react-router-dom'
+import { URL_API } from '../../../constant';
+
+
+
+
+
+
 export default function Page_adm() {
 
-    
+
     const [usuario, setUsuario] = useState('-');
     const navigate = useNavigate();
 
@@ -23,22 +31,22 @@ export default function Page_adm() {
 
     useEffect(() => {
         if (storage('usuario-logado')) {
-          navigate('/perfilusuario')
+            navigate('/perfilusuario')
         }
-      }, [])
+    }, [])
 
-      useEffect(() => {
+    useEffect(() => {
         if (!storage('admin-logado')) {
-          navigate('/')
+            navigate('/')
 
         }
 
         else {
             const adminlogado = storage('admin-logado')
             setUsuario(adminlogado.nome)
-        
+
         }
-      }, [])
+    }, [])
 
     const [listarProduto, setListaProduto] = useState()
 
@@ -58,8 +66,6 @@ export default function Page_adm() {
 
 
 
-
-
     const [marca, setMarca] = useState(0);
     const [marcasTipo, setTipoMarcas] = useState([]);
 
@@ -69,23 +75,23 @@ export default function Page_adm() {
 
 
     const [nome, setNome] = useState('');
-    const [preco, setPreco] = useState('');
-    const [precoPromo, setPrecoPromo] = useState('');
+    const [preco, setPreco] = useState(0);
+    const [precoPromo, setPrecoPromo] = useState(0);
     const [promo, setPromo] = useState(false);
     const [estoque, setEstoque] = useState(0);
     const [destaque, setDest] = useState(false);
     const [disponivel, setDisp] = useState(false);
     const [descricao, setDesc] = useState('');
     const [imagem, setImagem] = useState();
-   
+
 
     const [produtos, setProdutos] = useState([]);
 
-    
+
 
     async function CarregarTodosProdutos() {
         const resp = await ListarTodosProdutos();
-        
+
         setProdutos(resp);
     }
 
@@ -93,7 +99,68 @@ export default function Page_adm() {
         return URL.createObjectURL(imagem)
     }
 
-    
+
+    async function SalvarCLick() {
+        try {
+            const ProdutoCadastrado = await adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao)
+            const r = await adicionarImagem(imagem, ProdutoCadastrado.id)
+            toast.dark('Produto Cadastrado!')
+
+        } catch (err) {
+
+            toast.error(err.response.data.erro)
+            console.log(err.message.response);
+
+        }
+    }
+
+    async function listarCategorias() {
+
+        const r = await axios.get(URL_API + '/produto/categoria');
+        setCategoriaTipo(r.data)
+    }
+
+    async function listarMarcas() {
+
+        const r = await axios.get(URL_API + '/produto/marca');
+        setTipoMarcas(r.data)
+    }
+
+    useEffect(() => {
+        //
+        CarregarTodosProdutos();
+    }, [])
+
+
+    useEffect(() => {
+        //
+        listarMarcas();
+    }, []);
+
+
+
+    useEffect(() => {
+        //
+        listarCategorias()
+    }, [])
+
+
+
+
+
+
+
+    async function CarregarTodosProdutos() {
+        const resp = await ListarTodosProdutos();
+
+        setProdutos(resp);
+    }
+
+    function MostrarImagem() {
+        return URL.createObjectURL(imagem)
+    }
+
+
     async function SalvarCLick() {
         try {
             const ProdutoCadastrado = await adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao)
@@ -104,7 +171,7 @@ export default function Page_adm() {
 
             toast.error(err.message)
             console.log(err.response.message);
-            
+
         }
     }
 
@@ -137,9 +204,27 @@ export default function Page_adm() {
         //
         listarCategorias()
     }, [])
-    
 
 
+
+
+    function abrirAdd() {
+        const add = document.getElementById('addProduto')
+        add.classList.add('abrir')
+
+        const consulta = document.getElementById('consultaProd')
+        consulta.classList.remove('abrir')
+
+    }
+
+    function abrirCon() {
+        const add = document.getElementById('addProduto')
+        add.classList.remove('abrir')
+
+        const consulta = document.getElementById('consultaProd')
+        consulta.classList.add('abrir')
+
+    }
 
 
 
@@ -149,8 +234,11 @@ export default function Page_adm() {
     return (
         <div className='pageAdm'>
             <nav className='lateral-menu'>
+
+
                 <div>
-                    <h1> Bem Vindo , {usuario}</h1>
+                    <h1> Bem Vindo</h1>
+                    <h1> {usuario}</h1>
                 </div>
 
 
@@ -159,7 +247,7 @@ export default function Page_adm() {
                     <li className='item-menu ativo' >
                         <div>
 
-                            <span className='link'>Consulta de dados</span>
+                            <span className='link' onClick={abrirCon}>Consulta de dados</span>
                             <img src=''></img>
                         </div>
 
@@ -176,7 +264,7 @@ export default function Page_adm() {
                     </li>
 
                     <li className='item-menu' >
-                        <div>
+                        <div onClick={abrirAdd}>
 
                             <span className='link'>inserir produto</span>
                             <img src=''></img>
@@ -195,21 +283,252 @@ export default function Page_adm() {
                 </ul>
             </nav>
 
-            <section className='conteudo'>
-                <div>
+            <section className='Modais'>
 
-                </div>
-                <div>
 
-                </div>
+                <section className='consultaProd abrir' id='consultaProd'>
 
-                <div>
+                    <div className='cima'>
+                        <h1>Consultar Produtos</h1>
+                        <input type='text' placeholder='sla' />
+                        <hr />
+                    </div>
 
-                </div>
 
-                <div>
+                    <div className='produtos'>
+                        <div className='baixo'>
+                            <div className='card'>
 
-                </div>
+                                <div className='imgProd'>
+                                    <img src='../../../assets/images/logo.svg' />
+                                </div>
+
+                                <div className='linecard' />
+
+
+
+                                <div className='especificacao'>
+                                    <h1> Nome do produto</h1>
+
+                                    <div className='baixo'>
+
+                                        <div className='esq'>
+                                            <p> preço promocional caso tenha</p>
+                                            <h1> preço atual</h1>
+                                        </div>
+
+                                        <div className='meio'>
+                                            <p>marca</p>
+                                            <p>340923(estoque)</p>
+                                        </div>
+
+                                        <div className='dir'>
+                                            <h1>Editar</h1>
+                                            <h1>Excluir</h1>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </section>
+
+                <section className='addProduto' id='addProduto'>
+                    <ToastContainer />
+
+
+                    <div className='Container'>
+
+
+
+                        <div className='conteudo'>
+
+                            <div className='apresentacao'>
+
+                                <div className='azul'></div>
+                                <h3>Cadastrar Novo Produto</h3>
+
+                            </div>
+
+                            <div className='inputsgeral'>
+
+                                <div className='InputEsquerda'>
+
+                                    <div className='inputs'>
+
+                                        <div className='p'>
+                                            <p>Nome:</p>
+                                        </div>
+                                        <div className='inp'>
+                                            <input type='text' value={nome} onChange={e => setNome(e.target.value)} />
+                                        </div>
+
+                                    </div>
+
+                                    <div className='inputs'>
+
+                                        <div className='p'>
+                                            <p>Preço:</p>
+                                        </div>
+                                        <div className='inp'>
+                                            <input type="text" value={preco} onChange={e => setPreco(e.target.value)} />
+                                        </div>
+
+                                    </div>
+
+                                    <div className='inputs'>
+
+                                        <div className='p'>
+                                            <p>Preço Promoção:</p>
+                                        </div>
+                                        <div className='inp'>
+                                            <input type='number' value={precoPromo} onChange={e => setPrecoPromo(e.target.value)} />
+                                        </div>
+
+                                    </div>
+
+
+                                    <div className='inputs'>
+
+                                        <div className='p'>
+                                            <p>Estoque:</p>
+                                        </div>
+                                        <div className='inp'>
+                                            <input type='Number' value={estoque} onChange={e => setEstoque(e.target.value)} />
+                                        </div>
+
+                                    </div>
+
+                                    <div className='inputs'>
+
+                                        <div className='p'>
+                                            <p>Promoçao:</p>
+                                        </div>
+                                        <div className='inp-c'>
+                                            <input type='checkbox' value={promo} onChange={e => setPromo(e.target.checked)} />
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+
+                                <div className='InputDireta'>
+
+                                    <div className='inputs'>
+
+                                        <div className='p'>
+                                            <p>Descrição:</p>
+                                        </div>
+                                        <div className='inp-d'>
+                                            <textarea value={descricao} onChange={e => setDesc(e.target.value)}></textarea>
+                                        </div>
+
+                                    </div>
+
+                                    <div className='inputs'>
+
+                                        <div className='p'>
+                                            <p>Destaque:</p>
+                                        </div>
+                                        <div className='inp-c'>
+                                            <input type='checkbox' value={destaque} onChange={e => setDest(e.target.checked)} />
+                                        </div>
+
+                                    </div>
+
+                                    <div className='inputs'>
+
+                                        <div className='p'>
+                                            <p>Disponivel:</p>
+                                        </div>
+                                        <div className='inp-c'>
+                                            <input type='checkbox' value={disponivel} onChange={e => setDisp(e.target.checked)} />
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div className='inputs'>
+
+                                        <p> Marcas: </p>
+                                        <select value={marca} onChange={e => setMarca(e.target.value)}>
+
+                                            <option id='options' value={0}> Marcas </option>
+                                            {marcasTipo.map(item =>
+
+                                                <option value={item.id}> {item.marca} </option>
+                                            )}
+
+                                        </select>
+
+                                    </div>
+
+                                    <div className='inputs'>
+
+                                        <p> Categorias: </p>
+                                        <select value={categoria} onChange={e => setCategoria(e.target.value)}>
+
+                                            <option id='options' value={0}> Categorias </option>
+                                            {categoriaTipo.map(item =>
+
+                                                <option value={item.Id}> {item.Categoria} </option>
+                                            )}
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+                                <div className='imageminput'>
+
+
+
+                                    <label className='inputdeimagem'>
+
+                                        {!imagem &&
+                                            <img className='imagemUpload' src='../../../assets/images/upload-solid.svg' />
+                                        }
+
+                                        {imagem &&
+                                            <img className='imgaem-Upload' src={MostrarImagem()} />
+                                        }
+                                        <input className='inputdeimagem' type='file' id='imagemProduto' onChange={e => setImagem(e.target.files[0])} />
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                            <div className='butt'>
+
+
+                                <div className='Salvar' onClick={SalvarCLick}>
+
+                                    <p> Salvar </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
 
 
             </section>

@@ -11,7 +11,6 @@ import Page_adm from './pages/ADM/page_adm';
 import LandingPage from './pages/USUARIO/landingPage';
 import LoginUser from './pages/USUARIO/loginUser';
 import CadastroUser from './pages/USUARIO/cadastroUser';
-import AddProduto from './pages/ADM/addProduto';
 import PageProduto from './pages/USUARIO/pageProduto';
 import PageCarrinho from './pages/USUARIO/carrinho';
 
@@ -37,7 +36,6 @@ root.render(
         <Route path='/pageAdm' element={<Page_adm />} />
         <Route path='/cadastroUser' element={<CadastroUser />} />
         <Route path='/loginUser' element={<LoginUser />} />
-        <Route path='/addProduto' element={<AddProduto />} />
         <Route path='/PageProduto/:id' element={<PageProduto />} />
         <Route path='/carrinho'   element={<PageCarrinho />} />
         <Route path='/categorias'   element={<Categoria />} />
