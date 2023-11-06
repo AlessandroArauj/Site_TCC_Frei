@@ -173,7 +173,7 @@ insert TB_CATEGORIA (NM_CATEGORIA)
 
 
 insert into TB_CADASTRO_ADM (NM_NOME_COMP ,DS_EMAIL, DS_SENHA)
-            values      ('Denis Dias' ,'denistodias@hotmail', '2308@Admin'),
+            values      ('Denis Dias' ,'denistodias@hotmail.com', '2308@Admin'),
                         ('Diogo Alves', 'tavaresfalcon5@gmail.com', '2512@Admin'),
                         ('Thiago Almeida', 'thisouza640@gmail.com', '7362@Admin'),
                         ('Alessandro Araujo', 'araujobr1903@gmail.com', '1903@Admin');

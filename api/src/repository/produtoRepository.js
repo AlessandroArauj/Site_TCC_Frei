@@ -1,6 +1,32 @@
 // Importa a conexão do arquivo "connection.js"
 import { con } from "./connection.js";
 
+export async function ListarProdutosPorID(id) {
+    const comando = `
+        SELECT 
+            ID_INSTRUMENTOS AS ID,
+            ID_MARCAS AS MARCAS,
+            ID_CATEGORIA AS CATEGORIAS,
+            NM_PRODUTO AS PRODUTO,
+            NR_PRECO AS PRECO,
+            NR_PRECO_PROMOCIONAL AS PRECOPROMO,
+            BT_DESTAQUE AS DESTAQUE,
+            BT_PROMOCAO AS PROMODISP,
+            BT_DISPONIVEL AS DISPONIVEL,
+            QTD_ESTOQUE AS ESTOQUE,
+            DS_DETALHES AS DETALHE
+        FROM TB_PRODUTO
+
+        WHERE ID_INSTRUMENTOS = ?
+    `
+
+    const [resp] = await con.query(comando, [id]);
+    return resp[0];
+
+
+
+}
+
 export async function ListarProdutosDestaques() {
     const comando = `
         SELECT 

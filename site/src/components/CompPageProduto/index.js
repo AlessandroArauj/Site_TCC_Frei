@@ -1,9 +1,10 @@
+import { BuscarImagem } from '../../api/produtoApi'
 import CompCartao from '../compCartao'
 import './index.scss'
 
 
 
-export default function CompProduto() {
+export default function CompProduto(props) {
 
 
     function abrirModal1() {
@@ -37,11 +38,11 @@ export default function CompProduto() {
                             </div>
 
                             <div className='ImgPrincipal'>
-                                <img />
+                                <img src={BuscarImagem(props.produtos.img)}/>
                             </div>
 
                             <div className='DesqProd'>
-                                <p> Guitarra eeltrica e os carai a quatro</p>
+                                <p> {props.produtos.PRODUTO} </p>
                                 <h1>Preço </h1>
 
                                 <div>
