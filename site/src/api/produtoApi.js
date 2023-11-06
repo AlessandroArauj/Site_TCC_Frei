@@ -12,6 +12,11 @@ export async function ListarProdutosDestaques() {
     return resposta.data;
 }
 
+export async function ListarProdutosPorID(id) {
+    const resposta = await api.get(`/produto/${id}`)
+    return resposta.data
+
+}
 
 export async function ListarProdutosPorNome(nome) {
     const resposta = await api.get(`/produto/busca?nome=${nome}`);

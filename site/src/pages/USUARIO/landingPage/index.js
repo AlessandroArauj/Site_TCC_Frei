@@ -40,7 +40,7 @@ export default function LandingPage() {
 
             <div className='conteudo'>
                 <section className='f1' St>
-                    <div>
+                    <div className='divf1'>
                         <h1> É aqui na TOTH MUSIC que voce encontra o que mais deseja
                         </h1>
                         <p> Não deixe seu sonho de lado, então aproveite esse oportunidade e realize-o</p>

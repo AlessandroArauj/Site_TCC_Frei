@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AdicionarImagens, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, ListarImagemPorIDinstrumentos, ListarProdutosDestaques, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
+import { AdicionarImagens, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, ListarImagemPorIDinstrumentos, ListarProdutosDestaques, ListarProdutosPorID, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
 import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
@@ -20,6 +20,23 @@ server.get('/produto/destaques', async (req, resp) => {
     }
 
 })
+
+server.get('/produto/:id', async (req, resp) => {
+    try {
+        const { id } = req.params;
+
+        const resposta = await ListarProdutosPorID(id);
+
+        resp.send(resposta);
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+});
+
+
 
 // Endpoint para obter imagens de produtos por ID
 server.get('/produto/imagem/:id', async (req, resp) => {
