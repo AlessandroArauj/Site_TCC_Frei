@@ -85,6 +85,44 @@ function Home() {
 
 
 
+  function ArrastaDedo(carouselElement) {
+    let isDragging = false;
+    let touchStartX = 0;
+    let scrollLeft = 0;
+  
+    carouselElement.addEventListener("touchstart", (e) => {
+      isDragging = true;
+      touchStartX = e.touches[0].clientX - carouselElement.offsetLeft;
+      scrollLeft = carouselElement.scrollLeft;
+    });
+  
+    carouselElement.addEventListener("touchmove", (e) => {
+      if (!isDragging) return;
+      const x = e.touches[0].clientX - carouselElement.offsetLeft;
+      const walk = (x - touchStartX) * 2; // Ajuste a sensibilidade do arrasto conforme necessário
+      carouselElement.scrollLeft = scrollLeft - walk;
+    });
+  
+    carouselElement.addEventListener("touchend", () => {
+      isDragging = false;
+    });
+  }
+
+  function ATIdedo(){
+    const carouselElement = document.querySelector(".carousel");
+  ArrastaDedo(carouselElement);
+  
+  }
+  
+
+  
+  
+  useEffect(() => {
+    ATIdedo()
+  }, [])
+  
+  
+  
 
 
 
@@ -176,7 +214,7 @@ function Home() {
 
           <div className='container'>
 
-            <div className='carousel' ref={carousel}>
+            <div className='carousel' ref={carousel} >
               {produto.map((item =>
                 <div className='card-item' onClick={() => navigate('/pageProduto/' + item.ID)}>
 
@@ -189,9 +227,9 @@ function Home() {
                   <div className='inferior'>
                     <div className='infos-prod'>
 
-                    <p> {item.PRODUTO} </p>
-                    <h3 className='preco'>R${item.PRECO}</h3>
-                    <h2 className='precopromo' style={{ display: parseFloat(item.PRECOPROMO) === 0 ? 'none' : 'block' }}> R${item.PRECOPROMO} </h2>
+                      <p> {item.PRODUTO} </p>
+                      <h3 className='preco'>R${item.PRECO}</h3>
+                      <h2 className='precopromo' style={{ display: parseFloat(item.PRECOPROMO) === 0 ? 'none' : 'block' }}> R${item.PRECOPROMO} </h2>
 
                     </div>
                     <div className='frete'>
@@ -243,7 +281,7 @@ function Home() {
           <div className='container'>
             <div className='carousel' ref={carousel2}>
 
-              <div className='card'>
+              <div className='card' >
                 <div className='superior'>
                   <img className='imagem-produto' />
                 </div>
