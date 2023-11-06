@@ -33,19 +33,18 @@ export default function CompProduto(props) {
                     <div className='Esq'>
 
                         <div className='Cima-Esq'>
-                            <div className='ladoImg'>
-
-                            </div>
 
                             <div className='ImgPrincipal'>
-                                <img src={BuscarImagem(props.produtos.img)}/>
+                            <img src={BuscarImagem(props.produtos.img)}/>
+
                             </div>
+                            
 
                             <div className='DesqProd'>
                                 <p> {props.produtos.PRODUTO} </p>
-                                <h1>Preço </h1>
+                                <h1> {props.produtos.PRECO}  </h1>
 
-                                <div>
+                                <div className='bancos'>
                                     <p>Tipos de pagamentos aceitos</p>
                                     <img src='../../../assets/images/Pix.svg' />
                                     <img src='../../../assets/images/Visa.svg' />
@@ -59,16 +58,6 @@ export default function CompProduto(props) {
                             </div>
                         </div>
 
-
-                        <div className='Meio-Esq'>
-                            <button>Canhoto</button>
-                            <button>Destro</button>
-
-                        </div>
-
-                        <div className='Fim-Esq'>
-
-                        </div>
 
                     </div>
 

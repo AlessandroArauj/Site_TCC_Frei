@@ -21,20 +21,7 @@ server.get('/produto/destaques', async (req, resp) => {
 
 })
 
-server.get('/produto/:id', async (req, resp) => {
-    try {
-        const { id } = req.params;
 
-        const resposta = await ListarProdutosPorID(id);
-
-        resp.send(resposta);
-
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        });
-    }
-});
 
 
 
@@ -90,6 +77,21 @@ server.get('/produto/marca', async (req, resp) => {
     try {
         const resposta = await listarMarcas();
         resp.send(resposta);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+});
+
+server.get('/produto/:id', async (req, resp) => {
+    try {
+        const { id } = req.params;
+
+        const resposta = await ListarProdutosPorID(id);
+
+        resp.send(resposta);
+
     } catch (err) {
         resp.status(400).send({
             erro: err.message
