@@ -89,40 +89,40 @@ function Home() {
     let isDragging = false;
     let touchStartX = 0;
     let scrollLeft = 0;
-  
+
     carouselElement.addEventListener("touchstart", (e) => {
       isDragging = true;
       touchStartX = e.touches[0].clientX - carouselElement.offsetLeft;
       scrollLeft = carouselElement.scrollLeft;
     });
-  
+
     carouselElement.addEventListener("touchmove", (e) => {
       if (!isDragging) return;
       const x = e.touches[0].clientX - carouselElement.offsetLeft;
       const walk = (x - touchStartX) * 2; // Ajuste a sensibilidade do arrasto conforme necessário
       carouselElement.scrollLeft = scrollLeft - walk;
     });
-  
+
     carouselElement.addEventListener("touchend", () => {
       isDragging = false;
     });
   }
 
-  function ATIdedo(){
+  function ATIdedo() {
     const carouselElement = document.querySelector(".carousel");
-  ArrastaDedo(carouselElement);
-  
-  }
-  
+    ArrastaDedo(carouselElement);
 
-  
-  
+  }
+
+
+
+
   useEffect(() => {
     ATIdedo()
   }, [])
-  
-  
-  
+
+
+
 
 
 
@@ -213,11 +213,9 @@ function Home() {
           </div>
 
           <div className='container'>
-
-            <div className='carousel' ref={carousel} >
-              {produto.map((item =>
+            <div className='carousel' ref={carousel}>
+              {produto.map(item => (
                 <div className='card-item' onClick={() => navigate('/pageProduto/' + item.ID)}>
-
                   <div className='superior'>
                     <img className='imagem-produto' src={BuscarImagem(item.img)} />
                   </div>
@@ -227,21 +225,32 @@ function Home() {
                   <div className='inferior'>
                     <div className='infos-prod'>
 
-                      <p> {item.PRODUTO} </p>
-                      <h3 className='preco'>R${item.PRECO}</h3>
-                      <h2 className='precopromo' style={{ display: parseFloat(item.PRECOPROMO) === 0 ? 'none' : 'block' }}> R${item.PRECOPROMO} </h2>
+                      <div className='NomesProdutos'> 
+
+                      <p>{item.PRODUTO}</p>
+
+                      </div>
+                      
+
+                      <div className='infosprodutos'>
+                        <h3 className={`preco ${parseFloat(item.PRECOPROMO) === 0 ? 'zero-price' : ''}`}>
+                          R${item.PRECO}
+                        </h3>
+                        <h2 className='precopromo' style={{ display: parseFloat(item.PRECOPROMO) === 0 ? 'none' : 'block' }}>
+                          R${item.PRECOPROMO}
+                        </h2>
+                        <p>Frete Grátis</p>
+
+                      </div>
+
 
                     </div>
-                    <div className='frete'>
 
-                      <p>Frete Grátis</p>
 
-                    </div>
+
                   </div>
-
                 </div>
               ))}
-
             </div>
 
           </div>
@@ -266,7 +275,10 @@ function Home() {
       </section>
 
       <section className='faixa-5'>
+
+
         <button onClick={handleLeftClick2}><img src='../../../assets/images/maior.png' /></button>
+
         <div className='meio'>
           <div className='cima-f5'>
             <div className='line' />
@@ -279,12 +291,14 @@ function Home() {
 
 
           <div className='container'>
+
             <div className='carousel' ref={carousel2}>
 
               <div className='card' >
                 <div className='superior'>
                   <img className='imagem-produto' />
                 </div>
+                <div className='line-carousel' />
                 <div className='inferior'>
                   <div className='nomeProduto'>
                     <p>--------</p>
@@ -298,7 +312,11 @@ function Home() {
                   </div>
                 </div>
               </div>
+
+
+
             </div>
+
           </div>
 
 
@@ -325,7 +343,7 @@ function Home() {
 
         <div className='dir-f6'>
           <input type='text' placeholder='Insira seu email' />
-          <button> Cadastrar </button>
+          <button> Cadast'rar </button>
         </div>
       </section>
 
