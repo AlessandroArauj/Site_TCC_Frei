@@ -99,7 +99,7 @@ function Home() {
     carouselElement.addEventListener("touchmove", (e) => {
       if (!isDragging) return;
       const x = e.touches[0].clientX - carouselElement.offsetLeft;
-      const walk = (x - touchStartX) * 2; // Ajuste a sensibilidade do arrasto conforme necessário
+      const walk = (x - touchStartX) * 2;
       carouselElement.scrollLeft = scrollLeft - walk;
     });
 

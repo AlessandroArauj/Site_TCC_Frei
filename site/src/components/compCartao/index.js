@@ -47,6 +47,8 @@ export default function CompCartao() {
                                 <input ctype='text' placeholder='CVV' required/>
                                 <input type='text' placeholder='CPF' required/>
                             </div>
+
+                            <button>Cadastrar</button>
                         </div>
                     </div>
                 </div>
