@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import storage from 'local-storage'
 
 import axios from 'axios'
-import { ListarTodosProdutos, adicionarImagem, adicionarProduto } from '../../../api/produtoApi'
+import { ListarImagemPorIDinstrumentos, ListarTodosProdutos, adicionarImagem, adicionarProduto } from '../../../api/produtoApi'
 import { useNavigate } from 'react-router-dom';
 
 import { Link } from 'react-router-dom'
@@ -86,6 +86,7 @@ export default function Page_adm() {
 
 
     const [produtos, setProdutos] = useState([]);
+    const [produto, setProduto] = useState([])
 
 
 
@@ -147,18 +148,39 @@ export default function Page_adm() {
 
 
 
-
+    async function CarregarProduto() {
+        try {
+          const resp = await ListarTodosProdutos();
+    
+          let array = resp;
+    
+          for (let i = 0; i < array.length; i++) {
+            let p = array[i];
+            let img = await ListarImagemPorIDinstrumentos(p.ID);
+    
+            p.img = img[0].IMAGEM;
+          }
+    
+          setProduto(array);
+          console.log(array);
+    
+        } catch (err) {
+          console.log(err.message);
+        }
+      }
 
 
     async function CarregarTodosProdutos() {
         const resp = await ListarTodosProdutos();
-
+        console.log();
         setProdutos(resp);
     }
 
     function MostrarImagem() {
         return URL.createObjectURL(imagem)
     }
+
+
 
 
     async function SalvarCLick() {
@@ -190,6 +212,11 @@ export default function Page_adm() {
     useEffect(() => {
         //
         CarregarTodosProdutos();
+    }, [])
+
+    useEffect(() => {
+        //
+        CarregarProduto();
     }, [])
 
 
