@@ -245,9 +245,9 @@ export default function Page_adm() {
 
                 <ul className='baixo'>
                     <li className='item-menu ativo' >
-                        <div>
+                        <div onClick={abrirCon}>
 
-                            <span className='link' onClick={abrirCon}>Consulta de dados</span>
+                            <span className='link' >Consulta de dados</span>
                             <img src=''></img>
                         </div>
 
@@ -290,7 +290,7 @@ export default function Page_adm() {
 
                     <div className='cima'>
                         <h1>Consultar Produtos</h1>
-                        <input type='text' placeholder='sla' />
+                        <input type='text' placeholder='Pesquisa' />
                         <hr />
                     </div>
 
