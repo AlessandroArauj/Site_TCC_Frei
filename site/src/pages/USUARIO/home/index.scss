@@ -503,10 +503,6 @@
         transition: 0.3s;
     }
 
-    .container .carousel .card-item:hover {
-        
-    
-    }
 
     .card-item .superior {
         width: 100%;
@@ -544,9 +540,63 @@
 
     }
 
+    .preco{
+        text-decoration: line-through;
+        font-size: 16px;
+    }
+
+    .zero-price {
+        font-size: 22px;
+        color: #00C2FF;
+        margin-top: 20px;
+      }
+      
+    
+
+
     .infos-prod {
 
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        
+
+    }
+
+    .NomesProdutos p {
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
         height: 50%;
+        
+        
+    }
+
+
+    .NomesProdutos {
+
+        height: 50%;
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+    }
+
+    .infosprodutos {
+
+        height: 50%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
     }
 
