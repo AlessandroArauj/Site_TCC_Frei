@@ -38,17 +38,20 @@ export default function CompCartao() {
                         <div className='info'>
                             <div className='container'>
                                 <input type='text' placeholder='Numero do Cartão' required />
-                                <input type='text' placeholder='Validade' required/>
+                                <input type='text' placeholder='Validade' required />
                             </div>
                             <div className='container'>
                                 <input type='text' placeholder='Nome do titular' required />
                             </div>
                             <div className='container'>
-                                <input ctype='text' placeholder='CVV' required/>
-                                <input type='text' placeholder='CPF' required/>
+                                <input ctype='text' placeholder='CVV' required />
+                                <input type='text' placeholder='CPF' required />
                             </div>
 
-                            <button>Cadastrar</button>
+                            <div className='butonn'>
+
+                                <button>Cadastrar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -81,7 +84,12 @@ export default function CompCartao() {
 
                         <p className='subtitulo'>CARTOES CADASTRADOS</p>
                         <div className='parcela'>
-                            <input className='cartao' type='text' ></input>
+                            <select className='cartao'>
+                                <option>naseeeieieii</option>
+                                <option>naseeeieieii</option>
+                                <option>naseeeieieii</option>
+                                <option>naseeeieieii</option>
+                            </select>
 
                             <label className='labelzim'>
                                 <p className='testinho'>PARCELAR EM:</p>
