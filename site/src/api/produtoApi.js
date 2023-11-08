@@ -66,6 +66,16 @@ export async function adicionarProduto(marca, categoria, nome, preco, precoPromo
 
 }
 
+export async function DeletarImagem(id) {
+    const resposta = await api.delete(`/produto/img/${id}`);
+    return resposta.status
+}
+
+
+export async function DeletarProduto(id) {
+    const resposta = await api.delete(`/produto/${id}`);
+    return resposta.status
+}
 
 export function BuscarImagem(imagem) {
     console.log(imagem);

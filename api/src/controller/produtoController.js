@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AdicionarImagens, AlterarProduto, DeletarProduto, ExibirTodosFiltroNome, ExibirTodosProdutos, ListarImagemPorIDinstrumentos, ListarProdutosDestaques, ListarProdutosPorID, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
+import { AdicionarImagens, AlterarProduto, DeletarProduto, DeletarProdutoImagem, ExibirTodosFiltroNome, ExibirTodosProdutos, ListarImagemPorIDinstrumentos, ListarProdutosDestaques, ListarProdutosPorID, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
 import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
@@ -31,6 +31,10 @@ server.get('/produto/imagem/:id', async (req, resp) => {
         const { id } = req.params;
 
         const resposta = await ListarImagemPorIDinstrumentos(id);
+
+        if (!resposta) {
+            throw new Error('Sem imagem')
+        }
 
         resp.send(resposta);
 
@@ -99,13 +103,28 @@ server.get('/produto/:id', async (req, resp) => {
     }
 });
 
+server.delete('/produto/img/:id', async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const resposta = await DeletarProdutoImagem(id);
+        if (resposta != 1)
+            throw new Error('Imagem não pode ser removida');
+
+        resp.status(204).send();
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+});
+
 // Endpoint para deletar um produto por ID
 server.delete('/produto/:id', async (req, resp) => {
     try {
         const { id } = req.params;
         const resposta = await DeletarProduto(id);
         if (resposta != 1)
-            throw new Error('Tarefa não pode ser removida');
+            throw new Error('Produto não pode ser removido');
 
         resp.status(204).send();
     } catch (err) {

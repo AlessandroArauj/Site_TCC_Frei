@@ -106,10 +106,21 @@ export async function AdicionarImagens(imagem, id) {
     return resp.affectedRows;
 }
 
+export async function DeletarProdutoImagem(id) {
+    const comando = `
+        DELETE FROM TB_PRODUTO_IMAGEM
+        WHERE ID_INSTRUMENTOS = ?
+    `
+
+    const [resp] = await con.query(comando, [id]);
+    return resp.affectedRows;
+}
+
 // Função para deletar um produto por ID
 export async function DeletarProduto(id) {
     // Define o comando SQL para deletar um produto com base no ID de instrumentos
     const comando = `
+        
         DELETE FROM TB_PRODUTO
         WHERE ID_INSTRUMENTOS = ?
     `;

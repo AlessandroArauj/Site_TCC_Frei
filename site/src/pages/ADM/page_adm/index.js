@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import storage from 'local-storage'
 
 import axios from 'axios'
-import { ListarImagemPorIDinstrumentos, ListarTodosProdutos, adicionarImagem, adicionarProduto } from '../../../api/produtoApi'
+import { BuscarImagem, DeletarImagem, DeletarProduto, ListarImagemPorIDinstrumentos, ListarTodosProdutos, adicionarImagem, adicionarProduto, ListarProdutosPorID } from '../../../api/produtoApi'
 import { useNavigate } from 'react-router-dom';
 
 import { Link } from 'react-router-dom'
@@ -19,6 +19,29 @@ import { URL_API } from '../../../constant';
 export default function Page_adm() {
 
 
+    const [marca, setMarca] = useState(0);
+    const [marcasTipo, setTipoMarcas] = useState([]);
+
+
+    const [categoria, setCategoria] = useState(0)
+    const [categoriaTipo, setCategoriaTipo] = useState([]);
+
+
+    const [nome, setNome] = useState('');
+    const [preco, setPreco] = useState(0);
+    const [precoPromo, setPrecoPromo] = useState(0);
+    const [promo, setPromo] = useState(false);
+    const [estoque, setEstoque] = useState(0);
+    const [destaque, setDest] = useState(false);
+    const [disponivel, setDisp] = useState(false);
+    const [descricao, setDesc] = useState('');
+    const [imagem, setImagem] = useState();
+
+
+    const [produtos, setProdutos] = useState([]);
+    const [produto, setProduto] = useState([])
+
+    const idProduto = useParams().id;
     const [usuario, setUsuario] = useState('-');
     const navigate = useNavigate();
 
@@ -66,27 +89,7 @@ export default function Page_adm() {
 
 
 
-    const [marca, setMarca] = useState(0);
-    const [marcasTipo, setTipoMarcas] = useState([]);
-
-
-    const [categoria, setCategoria] = useState(0)
-    const [categoriaTipo, setCategoriaTipo] = useState([]);
-
-
-    const [nome, setNome] = useState('');
-    const [preco, setPreco] = useState(0);
-    const [precoPromo, setPrecoPromo] = useState(0);
-    const [promo, setPromo] = useState(false);
-    const [estoque, setEstoque] = useState(0);
-    const [destaque, setDest] = useState(false);
-    const [disponivel, setDisp] = useState(false);
-    const [descricao, setDesc] = useState('');
-    const [imagem, setImagem] = useState();
-
-
-    const [produtos, setProdutos] = useState([]);
-    const [produto, setProduto] = useState([])
+    
 
 
 
@@ -127,39 +130,20 @@ export default function Page_adm() {
         setTipoMarcas(r.data)
     }
 
-    useEffect(() => {
-        //
-        CarregarTodosProdutos();
-    }, [])
+    
 
-
-    useEffect(() => {
-        //
-        listarMarcas();
-    }, []);
-
-
-
-    useEffect(() => {
-        //
-        listarCategorias()
-    }, [])
-
-
-
-
-    async function CarregarProduto() {
+    async function CarregarProdutoPorID(idProduto) {
         try {
-          const resp = await ListarTodosProdutos();
+          const resp = await ListarProdutosPorID(idProduto);
     
           let array = resp;
     
-          for (let i = 0; i < array.length; i++) {
-            let p = array[i];
+          
+            let p = array;
             let img = await ListarImagemPorIDinstrumentos(p.ID);
     
             p.img = img[0].IMAGEM;
-          }
+          
     
           setProduto(array);
           console.log(array);
@@ -168,6 +152,46 @@ export default function Page_adm() {
           console.log(err.message);
         }
       }
+
+    async function EditarProdutos() {
+
+
+    }
+
+
+    async function DeletarProdutos(id, nome) {
+    
+        try {
+            const resp = [ DeletarImagem(id), DeletarProduto(id) ]
+            alert('Produto Removido')
+        } catch (err) {
+           alert('não pode ser removido') 
+        }
+        
+
+    }
+
+
+    async function CarregarProduto() {
+        try {
+            const resp = await ListarTodosProdutos();
+
+            let array = resp;
+
+            for (let i = 0; i < array.length; i++) {
+                let p = array[i];
+                let img = await ListarImagemPorIDinstrumentos(p.ID);
+
+                p.img = img[0].IMAGEM;
+            }
+
+            setProduto(array);
+            console.log(array);
+
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
 
 
     async function CarregarTodosProdutos() {
@@ -217,6 +241,24 @@ export default function Page_adm() {
     useEffect(() => {
         //
         CarregarProduto();
+    }, [])
+
+
+    useEffect(() => {
+        //
+        listarMarcas();
+    }, []);
+
+
+
+    useEffect(() => {
+        //
+        listarCategorias()
+    }, [])
+
+    useEffect(() => {
+        //
+        CarregarTodosProdutos();
     }, [])
 
 
@@ -324,41 +366,46 @@ export default function Page_adm() {
 
                     <div className='produtos'>
                         <div className='baixo'>
-                            <div className='card'>
+                            {produto.map(item =>
+                                <div className='card'>
 
-                                <div className='imgProd'>
-                                    <img src='../../../assets/images/logo.svg' />
-                                </div>
-
-                                <div className='linecard' />
-
-
-
-                                <div className='especificacao'>
-                                    <h1> Nome do produto</h1>
-
-                                    <div className='baixo'>
-
-                                        <div className='esq'>
-                                            <p> preço promocional caso tenha</p>
-                                            <h1> preço atual</h1>
-                                        </div>
-
-                                        <div className='meio'>
-                                            <p>marca</p>
-                                            <p>340923(estoque)</p>
-                                        </div>
-
-                                        <div className='dir'>
-                                            <h1>Editar</h1>
-                                            <h1>Excluir</h1>
-                                        </div>
-
-
+                                    <div className='imgProd'>
+                                        <img src={BuscarImagem(item.img)} />
                                     </div>
 
+                                    <div className='linecard' />
+
+
+
+                                    <div className='especificacao'>
+                                        <h1> {item.PRODUTO} </h1>
+                                        <p> Identificação: {item.ID} </p>
+
+                                        <div className='baixo'>
+
+                                            <div className='esq'>
+                                                <p> Preço promoção  {item.PRECOPROMO}R$ </p>
+                                                <h1>Preço {item.PRECO}R$ </h1>
+                                            </div>
+
+                                            <div className='meio'>
+                                                <p>{item.MARCAS}</p>
+                                                <p>{item.ESTOQUE}(estoque)</p>
+                                            </div>
+
+                                            <div className='dir'>
+                                                <img alt='Editar' src='../../assets/images/editIcon.svg' onClick={EditarProdutos}/>
+                                                <img alt='Deletar' src='../../assets/images/deleteIcon.svg' onClick={() => DeletarProdutos(item.ID, item.PRODUTO)}/>
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
                                 </div>
-                            </div>
+                            )}
+
 
                         </div>
 

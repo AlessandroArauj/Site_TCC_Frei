@@ -49,6 +49,7 @@
 
 
     ul li.item-menu:hover {
+        
         background: #00c3ffaf;
 
     }
@@ -217,9 +218,16 @@
             }
 
 
-            .dir h1 {
-                font-size: 16px;
+            .dir {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
 
+            }
+
+            .dir img {
+
+                cursor: pointer;
             }
 
         }
