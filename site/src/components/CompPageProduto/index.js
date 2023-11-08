@@ -40,7 +40,15 @@ export default function CompProduto(props) {
                             </div>
 
 
-                            <div className='DesqProd'>
+
+                        </div>
+
+
+                    </div>
+
+                    <div className='Dir'>
+                        <div>
+                            <div className='Cubo-dir'>
                                 <p> {props.produtos.PRODUTO} </p>
                                 {props.produtos.PRECOPROMO ? (
                                     <h1>{props.produtos.PRECOPROMO}</h1>
@@ -48,46 +56,37 @@ export default function CompProduto(props) {
                                     <h1>{props.produtos.PRECO}</h1>
                                 )}
 
-                                <div className='bancos'>
-                                    <p>Tipos de pagamentos aceitos</p>
-                                    <img src='../../../assets/images/Pix.svg' />
-                                    <img src='../../../assets/images/Visa.svg' />
-                                    <img src='../../../assets/images/Santa.png' />
-                                    <img src='../../../assets/images/HipercCard.svg' />
-                                    <img src='../../../assets/images/MasterCard.svg' />
-                                    <img src='../../../assets/images/Elo.svg' />
-                                    <img src='../../../assets/images/itau.png' />
-                                </div>
+                            </div>
+                            
 
+                            <div className='Cubo-dir'>
+                                <p>Produto disponivel</p>
+
+                                <p>Quantidade de estoque</p>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <button className='button1' onClick={abrirModal1}> Forma de pagamento</button>
+                            <button className='button2' > Adicionar ao carrinho</button>
+                        </div>
+
+
+                        <div className='Desq-Prod'>
+                            <div className='bancos'>
+                                <p>Tipos de pagamentos aceitos</p>
+                                <img src='../../../assets/images/Pix.svg' />
+                                <img src='../../../assets/images/Visa.svg' />
+                                <img src='../../../assets/images/Santa.png' />
+                                <img src='../../../assets/images/HipercCard.svg' />
+                                <img src='../../../assets/images/MasterCard.svg' />
+                                <img src='../../../assets/images/Elo.svg' />
+                                <img src='../../../assets/images/itau.png' />
                             </div>
                         </div>
 
-
-                    </div>
-
-                    <div className='Dir'>
-                        <div className='Cubo-dir'>
-
-                        </div>
-                        <div className='Cubo-dir'>
-                            <p>Produto disponivel</p>
-
-                            <p>Quantidade de estoque</p>
-
-                        </div>
-
-                        <button className='button1' onClick={abrirModal1}> Forma de pagamento</button>
-                        <button className='button2' > Adicionar ao carrinho</button>
-
-                        <div className='baixo-dir'>
-                            <h2>Produto Testado e aprovado pela maioria dos compradores.</h2>
-
-                            <h1>Devolução gratis:</h1>
-
-                            <p>Em caso do produto aparecer danificado entrar em contato conosco até 7 dias pós a entrega do produto</p>
-
-
-                        </div>
                     </div>
                 </div>
             </section>
@@ -97,10 +96,12 @@ export default function CompProduto(props) {
             <section className='CompProd-f2'>
 
                 <div className='infoPro' id='desc'>
+
                     <div className='cima'>
                         <h1>INFORMAÇÕES DO PRODUTO</h1>
                         <button onClick={Descricao}>nsei</button>
                     </div>
+
                     <div className='baixo'>
                         <h1> esse procuto e pica demais e3u sei do q eu to falndo pq eu toco muito nas madrugadas que tem, alem de eu fazer bastante pragrama, PROGRAMO MUITOYasfsafsdaf asdfa asf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as
                             asf asfsadf aasf asfrafas asfd aasf assadfasd fasfasd asdfasd sadfasf saf asdf sadf as saf assaf assaf as fas asdf sad fasf a fasdf asf as asdf asd asdf as fas fasd fasd fsadf sadf asd fsad asd fs dfsaf as sadf sadf fs sdf sdf wsfggsg g

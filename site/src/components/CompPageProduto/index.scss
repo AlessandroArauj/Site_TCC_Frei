@@ -30,21 +30,19 @@
     .Esq{
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 55%;
         height: 100%;
-        padding: 15px;
-        gap: 15px;
       
         
     }
 
     .Cima-Esq{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
         padding: 15px;
         width: 100%;
-        height: 70%;
+        height: 100%;
         gap: 10px;
         background-color: #d9d9d9;
         border-radius: 15px;
@@ -57,7 +55,7 @@
     }
 
     .ImgPrincipal{
-        width: 60%;
+        width: 100%;
         height: 100%;
         box-shadow: 0px 0px 5px rgb(141, 141, 141);
         border-radius: 5px; 
@@ -69,12 +67,13 @@
 
     .ImgPrincipal img {
        width: 100%;
+       border-radius: 10px;
        height: 100%;
     }
 
     .DesqProd{
         box-shadow: 0px 0px 5px black;
-        width: 40%;
+        width: 100%;
         padding: 15px;
         display: flex;
         flex-direction: column;
@@ -91,7 +90,7 @@
         font-size: 33px;
     }
 
-    .Esq .bancos img{
+    .Dir .bancos img{
         height: 30px;
         margin: 5px;
     }
@@ -142,7 +141,7 @@
 
 
     .Dir{
-        width: 30%;
+        width: 45%;
         height: 100%; 
         display: flex;
         flex-direction: column;
@@ -153,6 +152,33 @@
         
     }
 
+    .Dir>div:not(:last-child) {
+        width: 80%;
+        height: 45%;
+    }
+
+    .Dir>div:first-child{
+        display:flex ;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .Dir>div:first-child .Cubo-dir{
+        height: 50%;
+    }
+
+
+
+    .Dir>div:not(:last-child,:first-child){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+
     
 
     
@@ -162,7 +188,7 @@
         background-color: #00C2FF;
         border-radius: 15px;
         border: none;
-        margin: 20px 0px;
+        margin: 10px 0px;
         color: #fff;
     }
 
@@ -172,7 +198,7 @@
         background-color: #00c3ff2d;
         border-radius: 15px;
         border: none;
-        margin: 20px 0px;
+        margin: 10px 0px;
         color: #fff;
     }
 
@@ -190,9 +216,8 @@
         flex-direction: column;
         justify-content: space-around;
         width: 100%;
-        height: 15%;
+        height: 25%;
         background-color: #fff;
-        margin: 15px;
         padding: 10px;
         border-radius: 15px;
     }
@@ -242,7 +267,6 @@
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
-        margin: 15px
     }
 
     .infoPro .baixo{
@@ -264,7 +288,7 @@
         border-radius: 25px;
         background-color: #f0f2f3;
         height: 70px;
-        padding: 0 30px;
+        padding: 10px 30px;
         font-size: 14px;
         overflow: hidden;
         
@@ -331,6 +355,43 @@
     }
 
 
+
+    @media (max-width: 720px){
+        .Card{
+            height: 100%;
+            flex-direction: column;
+        }
+
+        .CompProd-f1{
+            height: 1000px;
+        }
+
+        .Cubo-dir{
+            height: 25%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .button1{
+            margin: 0;
+          
+        }
+
+        .Dir .bancos img{
+            height: 20px;
+            margin: 5px;
+        }
+
+        .Dir{
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .Esq{
+            width: 80%;
+        }
+    }
 
 
 

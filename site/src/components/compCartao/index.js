@@ -84,7 +84,12 @@ export default function CompCartao() {
 
                         <p className='subtitulo'>CARTOES CADASTRADOS</p>
                         <div className='parcela'>
-                            <input className='cartao' type='text' ></input>
+                            <select className='cartao'>
+                                <option>naseeeieieii</option>
+                                <option>naseeeieieii</option>
+                                <option>naseeeieieii</option>
+                                <option>naseeeieieii</option>
+                            </select>
 
                             <label className='labelzim'>
                                 <p className='testinho'>PARCELAR EM:</p>
