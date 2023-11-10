@@ -68,7 +68,6 @@ export async function DeletarProduto(id) {
 }
 
 export function BuscarImagem(imagem) {
-    console.log(imagem);
     return `${api.getUri()}/${imagem}`
 }
 

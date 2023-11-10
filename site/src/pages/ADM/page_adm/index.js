@@ -35,7 +35,7 @@ export default function Page_adm() {
     const [destaque, setDest] = useState(false);
     const [disponivel, setDisp] = useState(false);
     const [descricao, setDesc] = useState('');
-    const [imagem, setImagem] = useState();
+    const [imagem, setImagem] = useState('');
     const [id, setId] = useState(0);
 
 
@@ -84,9 +84,7 @@ export default function Page_adm() {
         setProdutos(resp);
     }
 
-    function MostrarImagem() {
-        return URL.createObjectURL(imagem)
-    }
+   
 
 
 
@@ -121,9 +119,10 @@ export default function Page_adm() {
         setMarca(resp.MARCAS)
         setCategoria(resp.CATEGORIAS)
         setId(resp.ID)
+        setImagem(resp.IMAGEM)
 
 
-        console.log(resp);
+        console.log(resp.IMAGEM);
     }
 
     async function EditarProdutos() {
@@ -154,9 +153,7 @@ export default function Page_adm() {
         setProdutos(resp);
     }
 
-    function MostrarImagem() {
-        return URL.createObjectURL(imagem)
-    }
+    
 
 
 
@@ -179,6 +176,17 @@ export default function Page_adm() {
             else
                 toast.error(err.message)
 
+        }
+    }
+
+    function MostrarImagem() {
+        if (typeof (imagem) == 'object') {
+            return URL.createObjectURL(imagem)
+        }
+
+        else {
+            BuscarImagem(imagem)
+            console.log(BuscarImagem(imagem));
         }
     }
 
