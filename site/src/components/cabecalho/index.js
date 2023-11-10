@@ -2,7 +2,7 @@ import './index.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import storage, { set } from 'local-storage'
 import { useEffect, useState } from 'react'
-import { BuscarImagem, ListarImagemPorIDinstrumentos, ListarProdutosPorNome } from '../../api/produtoApi';
+import { BuscarImagem, ListarProdutosPorNome } from '../../api/produtoApi';
 
 
 export default function Header() {
@@ -20,16 +20,11 @@ export default function Header() {
 
             console.log(resp);
 
-            let array = resp;
+            
 
-            for (let i = 0; i < array.length; i++) {
-                let p = array[i];
-                let img = await ListarImagemPorIDinstrumentos(p.ID);
+            
 
-                p.img = img[0].IMAGEM;
-            }
-
-            setResultado(array);
+            setResultado(resp);
 
         } catch (err) {
 
@@ -108,7 +103,7 @@ export default function Header() {
 
                                 <div className='foto-result'>
 
-                                    <img src={BuscarImagem(item.img)} />
+                                    <img src={BuscarImagem(item.IMAGEM)} />
 
                                 </div>
                                 <div className='nome-result'>

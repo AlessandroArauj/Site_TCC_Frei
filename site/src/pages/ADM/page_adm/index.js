@@ -5,8 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import storage from 'local-storage'
 
 import axios from 'axios'
-import { BuscarImagem, DeletarImagem, DeletarProduto, ListarImagemPorIDinstrumentos, ListarTodosProdutos, adicionarImagem, adicionarProduto, ListarProdutosPorID } from '../../../api/produtoApi'
-import { useNavigate } from 'react-router-dom';
+import { BuscarImagem, DeletarProduto, ListarTodosProdutos, adicionarProduto, ListarProdutosPorID, EnviarImagem } from '../../../api/produtoApi'
+import { Await, useNavigate, useParams } from 'react-router-dom';
 
 import { Link } from 'react-router-dom'
 import { URL_API } from '../../../constant';
@@ -36,14 +36,16 @@ export default function Page_adm() {
     const [disponivel, setDisp] = useState(false);
     const [descricao, setDesc] = useState('');
     const [imagem, setImagem] = useState();
+    const [id, setId] = useState(0);
 
 
     const [produtos, setProdutos] = useState([]);
     const [produto, setProduto] = useState([])
 
-    const idProduto = useParams().id;
+
     const [usuario, setUsuario] = useState('-');
     const navigate = useNavigate();
+    const idParams = useParams().id;
 
 
     function sairClick() {
@@ -51,6 +53,159 @@ export default function Page_adm() {
         storage.remove('admin-logado');
         navigate('/')
     }
+
+
+
+    const [listarProduto, setListaProduto] = useState()
+
+
+    var aba = document.querySelectorAll('.item-menu')
+
+    function selectAba() {
+        aba.forEach((item) =>
+            item.classList.remove('ativo')
+        );
+        this.classList.add('ativo')
+    }
+
+    aba.forEach((item) =>
+        item.addEventListener('click', selectAba)
+    )
+
+
+
+
+
+
+
+    async function CarregarTodosProdutos() {
+        const resp = await ListarTodosProdutos();
+
+        setProdutos(resp);
+    }
+
+    function MostrarImagem() {
+        return URL.createObjectURL(imagem)
+    }
+
+
+
+    async function listarCategorias() {
+
+        const r = await axios.get(URL_API + '/produto/categoria');
+        setCategoriaTipo(r.data)
+    }
+
+    async function listarMarcas() {
+
+        const r = await axios.get(URL_API + '/produto/marca');
+        setTipoMarcas(r.data)
+    }
+
+
+
+
+
+
+    async function CarregarProdutoPorIDs() {
+        const resp = await ListarProdutosPorID(idParams)
+
+        setNome(resp.PRODUTO)
+        setPreco(resp.PRECO)
+        setPrecoPromo(resp.PRECOPROMO)
+        setPromo(resp.PROMODISP)
+        setEstoque(resp.ESTOQUE)
+        setDest(resp.DESTAQUE)
+        setDisp(resp.DISPONIVEL)
+        setDesc(resp.DETALHE)
+        setMarca(resp.MARCAS)
+        setCategoria(resp.CATEGORIAS)
+        setId(resp.ID)
+
+
+        console.log(resp);
+    }
+
+    async function EditarProdutos() {
+
+
+    }
+
+
+    async function DeletarProdutos(id, nome) {
+
+        try {
+            const resp = await DeletarProduto(id)
+            alert('Produto Removido' + nome)
+        } catch (err) {
+            alert('não pode ser removido')
+        }
+
+
+    }
+
+
+
+
+
+    async function CarregarTodosProdutos() {
+        const resp = await ListarTodosProdutos();
+        console.log();
+        setProdutos(resp);
+    }
+
+    function MostrarImagem() {
+        return URL.createObjectURL(imagem)
+    }
+
+
+
+
+    async function SalvarCLick() {
+        try {
+
+            if (!imagem) {
+                throw new Error('Imagem Obrigatória')
+            }
+
+            const novoProduto = await adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao);
+            const re = await EnviarImagem(novoProduto.id, imagem)
+
+            toast.dark('Produto Cadastrado!')
+
+        } catch (err) {
+            if (err.response)
+                toast.error(err.response.data.erro)
+            else
+                toast.error(err.message)
+
+        }
+    }
+
+    async function listarCategorias() {
+
+        const r = await axios.get('http://localhost:5000/produto/categoria');
+        setCategoriaTipo(r.data)
+    }
+
+    async function listarMarcas() {
+
+        const r = await axios.get('http://localhost:5000/produto/marca');
+        setTipoMarcas(r.data)
+    }
+
+
+
+
+
+
+
+    useEffect(() => {
+        if (idParams) {
+            CarregarProdutoPorIDs();
+        }
+    }, [])
+
 
     useEffect(() => {
         if (storage('usuario-logado')) {
@@ -71,168 +226,6 @@ export default function Page_adm() {
         }
     }, [])
 
-    const [listarProduto, setListaProduto] = useState()
-
-
-    var aba = document.querySelectorAll('.item-menu')
-
-    function selectAba() {
-        aba.forEach((item) =>
-            item.classList.remove('ativo')
-        );
-        this.classList.add('ativo')
-    }
-
-    aba.forEach((item) =>
-        item.addEventListener('click', selectAba)
-    )
-
-
-
-    
-
-
-
-    async function CarregarTodosProdutos() {
-        const resp = await ListarTodosProdutos();
-
-        setProdutos(resp);
-    }
-
-    function MostrarImagem() {
-        return URL.createObjectURL(imagem)
-    }
-
-
-    async function SalvarCLick() {
-        try {
-            const ProdutoCadastrado = await adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao)
-            const r = await adicionarImagem(imagem, ProdutoCadastrado.id)
-            toast.dark('Produto Cadastrado!')
-
-        } catch (err) {
-
-            toast.error(err.response.data.erro)
-            console.log(err.message.response);
-
-        }
-    }
-
-    async function listarCategorias() {
-
-        const r = await axios.get(URL_API + '/produto/categoria');
-        setCategoriaTipo(r.data)
-    }
-
-    async function listarMarcas() {
-
-        const r = await axios.get(URL_API + '/produto/marca');
-        setTipoMarcas(r.data)
-    }
-
-    
-
-    async function CarregarProdutoPorID(idProduto) {
-        try {
-          const resp = await ListarProdutosPorID(idProduto);
-    
-          let array = resp;
-    
-          
-            let p = array;
-            let img = await ListarImagemPorIDinstrumentos(p.ID);
-    
-            p.img = img[0].IMAGEM;
-          
-    
-          setProduto(array);
-          console.log(array);
-    
-        } catch (err) {
-          console.log(err.message);
-        }
-      }
-
-    async function EditarProdutos() {
-
-
-    }
-
-
-    async function DeletarProdutos(id, nome) {
-    
-        try {
-            const resp = [ DeletarImagem(id), DeletarProduto(id) ]
-            alert('Produto Removido')
-        } catch (err) {
-           alert('não pode ser removido') 
-        }
-        
-
-    }
-
-
-    async function CarregarProduto() {
-        try {
-            const resp = await ListarTodosProdutos();
-
-            let array = resp;
-
-            for (let i = 0; i < array.length; i++) {
-                let p = array[i];
-                let img = await ListarImagemPorIDinstrumentos(p.ID);
-
-                p.img = img[0].IMAGEM;
-            }
-
-            setProduto(array);
-            console.log(array);
-
-        } catch (err) {
-            console.log(err.message);
-        }
-    }
-
-
-    async function CarregarTodosProdutos() {
-        const resp = await ListarTodosProdutos();
-        console.log();
-        setProdutos(resp);
-    }
-
-    function MostrarImagem() {
-        return URL.createObjectURL(imagem)
-    }
-
-
-
-
-    async function SalvarCLick() {
-        try {
-            const ProdutoCadastrado = await adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao)
-            const r = await adicionarImagem(imagem, ProdutoCadastrado.id)
-            toast.dark('Produto Cadastrado!')
-
-        } catch (err) {
-
-            toast.error(err.message)
-            console.log(err.response.message);
-
-        }
-    }
-
-    async function listarCategorias() {
-
-        const r = await axios.get('http://localhost:5000/produto/categoria');
-        setCategoriaTipo(r.data)
-    }
-
-    async function listarMarcas() {
-
-        const r = await axios.get('http://localhost:5000/produto/marca');
-        setTipoMarcas(r.data)
-    }
-
     useEffect(() => {
         //
         CarregarTodosProdutos();
@@ -240,7 +233,7 @@ export default function Page_adm() {
 
     useEffect(() => {
         //
-        CarregarProduto();
+
     }, [])
 
 
@@ -366,11 +359,11 @@ export default function Page_adm() {
 
                     <div className='produtos'>
                         <div className='baixo'>
-                            {produto.map(item =>
+                            {produtos.map(item =>
                                 <div className='card'>
 
                                     <div className='imgProd'>
-                                        <img src={BuscarImagem(item.img)} />
+                                        <img src={BuscarImagem(item.IMAGEM)} />
                                     </div>
 
                                     <div className='linecard' />
@@ -394,8 +387,8 @@ export default function Page_adm() {
                                             </div>
 
                                             <div className='dir'>
-                                                <img alt='Editar' src='../../assets/images/editIcon.svg' onClick={EditarProdutos}/>
-                                                <img alt='Deletar' src='../../assets/images/deleteIcon.svg' onClick={() => DeletarProdutos(item.ID, item.PRODUTO)}/>
+                                                <img alt='Editar' src='../../assets/images/editIcon.svg' onClick={EditarProdutos} />
+                                                <img alt='Deletar' src='../../assets/images/deleteIcon.svg' onClick={() => DeletarProdutos(item.ID, item.PRODUTO)} />
 
                                             </div>
 

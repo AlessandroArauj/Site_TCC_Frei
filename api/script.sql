@@ -7,7 +7,6 @@ drop table TB_PRODUTO;
 drop table TB_CATEGORIA;
 drop table TB_PEDIDO;
 drop table TB_PEDIDO_ITEM;
-drop table TB_PRODUTO_IMAGEM;
 drop table TB_CLIENTE;
 drop table TB_ENDERECO;
 drop table TB_MARCAS;
@@ -16,6 +15,12 @@ drop table TB_CARTOES;
 drop table TB_FORMAS_PAGAMENTO;
 drop table TB_AVALIACAO;
 drop table TB_CARRINHO;
+
+
+USE TOTH_Music;
+
+show tables from TOTH_Music;
+
 
 CREATE TABLE TB_CADASTRO_USER (
 	ID_USER int primary key auto_increment,
@@ -29,32 +34,13 @@ CREATE TABLE TB_CADASTRO_USER (
 	ds_SENHA varchar(400) NOT NULL
 );
 
+
 CREATE TABLE TB_CADASTRO_ADM (
 	ID_ADM int PRIMARY KEY auto_increment,
+    NM_NOME_COMP varchar(200) NOT NULL,
     DS_EMAIL VARCHAR(400),
     DS_SENHA VARCHAR(400)
 
-
-);
-
-
-
-
-CREATE TABLE TB_PRODUTO(
-	ID_INSTRUMENTOS INT PRIMARY KEY auto_increment,
-	ID_MARCAS INT,
-	ID_CATEGORIA INT,
-	NM_PRODUTO varchar(400),
-	DS_PRECO varchar(400),
-	DS_PRECO_PROMOCIONAL varchar(400),
-	BT_DESTAQUE boolean,
-	BT_PROMOCAO boolean,
-	BT_DISPONIVEL boolean,
-	QTD_ESTOQUE int,
-	DS_DETALHES varchar(500),
-    
-    foreign key (ID_MARCAS) references TB_MARCAS (ID_MARCAS),
-    foreign key (ID_CATEGORIA) REFERENCES TB_CATEGORIA (ID_CATEGORIA)
 
 );
 
@@ -63,6 +49,44 @@ CREATE TABLE TB_CATEGORIA(
 	ID_CATEGORIA INT PRIMARY KEY auto_increment,
     NM_CATEGORIA varchar(400)
 );
+
+
+CREATE TABLE TB_ENDERECO(
+	ID_ENDERECO int PRIMARY KEY auto_increment,
+	DS_CEP varchar(400),
+	DS_ENDERECO varchar(400),
+	NR_ENDERECO varchar(400),
+	DS_CIDADE varchar(400)
+
+);
+
+
+CREATE TABLE TB_MARCAS(
+	ID_MARCAS INT PRIMARY KEY auto_increment,
+    NM_MARCA varchar(400)
+
+);
+
+
+CREATE TABLE TB_PRODUTO(
+	ID_INSTRUMENTOS INT PRIMARY KEY auto_increment,
+	ID_MARCAS INT,
+	ID_CATEGORIA INT,
+	NM_PRODUTO varchar(400),
+	NR_PRECO decimal(10, 2),
+	NR_PRECO_PROMOCIONAL decimal(10, 2),
+	BT_DESTAQUE boolean,
+	BT_PROMOCAO boolean,
+	BT_DISPONIVEL boolean,
+	QTD_ESTOQUE int,
+	DS_DETALHES varchar(500),
+    IMG_PRODUTO varchar(500),
+    
+    foreign key (ID_MARCAS) references TB_MARCAS (ID_MARCAS),
+    foreign key (ID_CATEGORIA) REFERENCES TB_CATEGORIA (ID_CATEGORIA)
+
+);
+
 
 CREATE TABLE TB_PEDIDO(
 	ID_PEDIDO int PRIMARY KEY auto_increment,
@@ -91,30 +115,8 @@ CREATE TABLE TB_PEDIDO_ITEM(
 );
 
 
-CREATE TABLE TB_PRODUTO_IMAGEM(
-	ID_PRODUTO_IMAGEM int PRIMARY KEY auto_increment,
-	ID_INSTRUMENTOS int,
-	IMG_PRODUTO varchar(500),
-    foreign key (ID_INSTRUMENTOS) REFERENCES TB_PRODUTO (ID_INSTRUMENTOS)
-
-);
 
 
-
-CREATE TABLE TB_ENDERECO(
-	ID_ENDERECO int PRIMARY KEY auto_increment,
-	DS_CEP varchar(400),
-	DS_ENDERECO varchar(400),
-	NR_ENDERECO varchar(400),
-	DS_CIDADE varchar(400)
-
-);
-
-CREATE TABLE TB_MARCAS(
-	ID_MARCAS INT PRIMARY KEY auto_increment,
-    NM_MARCA varchar(400)
-
-);
 
 CREATE TABLE TB_PREFE_PRODUTO(
 	ID_PREF_PRODUTO int PRIMARY KEY auto_increment,
@@ -154,6 +156,7 @@ CREATE TABLE TB_AVALIACAO(
 
 );
 
+
 CREATE TABLE TB_CARRINHO(
 	ID_CARRINHO int PRIMARY KEY auto_increment,
 	ID_USER int,
@@ -165,9 +168,6 @@ CREATE TABLE TB_CARRINHO(
 
 );
 
-select * from TB_PRODUTO;
-select * from TB_MARCAS;
-drop table TB_MARCAS;
 
 insert TB_MARCAS (NM_MARCA)
 		values 	('Yamaha'),
@@ -176,9 +176,22 @@ insert TB_MARCAS (NM_MARCA)
                 ('Steinway & Sons e Selmer'),
                 ('Boss');
 
-select * from TB_CATEGORIA;
+
 insert TB_CATEGORIA (NM_CATEGORIA)
-		values ('Cordas');
-        
-        
-select * from TB_CADASTRO_USER;
+		values ('Audios'), 
+			   ('Cordas'), 
+               ('Teclas'), 
+               ('Bateria e Percussão'), 
+               ('Sopro');                
+
+
+insert into TB_CADASTRO_ADM (NM_NOME_COMP ,DS_EMAIL, DS_SENHA)
+            values      ('Denis Dias' ,'denistodias@hotmail.com', '2308@Admin'),
+                        ('Diogo Alves', 'tavaresfalcon5@gmail.com', '2512@Admin'),
+                        ('Thiago Almeida', 'thisouza640@gmail.com', '7362@Admin'),
+                        ('Alessandro Araujo', 'araujobr1903@gmail.com', '1903@Admin');
+
+
+select * from TB_PRODUTO;
+
+

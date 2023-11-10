@@ -14,7 +14,8 @@ export async function ListarProdutosPorID(id) {
             BT_PROMOCAO AS PROMODISP,
             BT_DISPONIVEL AS DISPONIVEL,
             QTD_ESTOQUE AS ESTOQUE,
-            DS_DETALHES AS DETALHE
+            DS_DETALHES AS DETALHE,
+            IMG_PRODUTO AS IMAGEM
         FROM TB_PRODUTO
 
         WHERE ID_INSTRUMENTOS = ?
@@ -40,7 +41,8 @@ export async function ListarProdutosDestaques() {
             BT_PROMOCAO AS PROMODISP,
             BT_DISPONIVEL AS DISPONIVEL,
             QTD_ESTOQUE AS ESTOQUE,
-            DS_DETALHES AS DETALHE
+            DS_DETALHES AS DETALHE,
+            IMG_PRODUTO AS IMAGEM
         FROM TB_PRODUTO
 
         WHERE BT_DESTAQUE = 1 AND BT_DISPONIVEL = 1;
@@ -51,32 +53,6 @@ export async function ListarProdutosDestaques() {
 }
 
 
-// Função para listar todas as imagens de produtos no banco de dados
-export async function ListarTodasImagens() {
-    // Define o comando SQL para selecionar todas as imagens de produtos
-    const comando = `
-        SELECT IMG_PRODUTO AS Imagem
-        FROM TB_PRODUTO_IMAGEM
-    `;
-
-    // Executa a consulta SQL e retorna as imagens encontradas
-    const [resp] = await con.query(comando);
-    return resp;
-}
-
-// Função para listar imagens de produtos por ID de instrumentos
-export async function ListarImagemPorIDinstrumentos(id) {
-    // Define o comando SQL para selecionar imagens de produtos com base no ID de instrumentos
-    const comando = `
-        SELECT IMG_PRODUTO AS IMAGEM
-        FROM TB_PRODUTO_IMAGEM
-        WHERE ID_INSTRUMENTOS = ?
-    `;
-
-    // Executa a consulta SQL com o ID fornecido e retorna as imagens encontradas
-    const [resp] = await con.query(comando, [id]);
-    return resp;
-}
 
 // Função para listar todas as categorias
 export async function listarCategorias() {
@@ -91,30 +67,18 @@ export async function listarCategorias() {
     return resp;
 }
 
-// Função para adicionar imagens de produtos
-export async function AdicionarImagens(imagem, id) {
-    // Define o comando SQL para inserir uma imagem de produto com base no ID de instrumentos
+
+export async function alterarImagem(imagem, id) {
     const comando = `
-        INSERT INTO TB_PRODUTO_IMAGEM (ID_INSTRUMENTOS, IMG_PRODUTO)
-        VALUES (?, ?)
-    `;
-
-    // Executa a consulta SQL com o ID e a imagem fornecidos
-    const [resp] = await con.query(comando, [id, imagem]);
-
-    // Retorna o número de linhas afetadas pela inserção
-    return resp.affectedRows;
-}
-
-export async function DeletarProdutoImagem(id) {
-    const comando = `
-        DELETE FROM TB_PRODUTO_IMAGEM
+        UPDATE TB_PRODUTO
+        SET IMG_PRODUTO = ?
         WHERE ID_INSTRUMENTOS = ?
     `
 
-    const [resp] = await con.query(comando, [id]);
+    const [resp] = await con.query(comando, [imagem, id]);
     return resp.affectedRows;
 }
+
 
 // Função para deletar um produto por ID
 export async function DeletarProduto(id) {
@@ -197,18 +161,7 @@ export async function inserirProduto(produto) {
     return produto;
 }
 
-// Função para alterar uma imagem
-export async function AlterarImagem(imagem, id) {
-    // Define o comando SQL para inserir uma imagem
-    const comando = `
-        INSERT INTO TB_PRODUTO_IMAGEM (IMG_PRODUTO)
-        VALUES (?)
-    `;
 
-    // Executa a consulta SQL com a imagem e o ID fornecidos
-    const [resp] = await con.query(comando, [imagem.imagem, id]);
-    return resp;
-}
 
 // Função para exibir todos os produtos
 export async function ExibirTodosProdutos() {
@@ -225,7 +178,8 @@ export async function ExibirTodosProdutos() {
             BT_PROMOCAO AS PROMODISP,
             BT_DISPONIVEL AS DISPONIVEL,
             QTD_ESTOQUE AS ESTOQUE,
-            DS_DETALHES AS DETALHE
+            DS_DETALHES AS DETALHE,
+            IMG_PRODUTO AS IMAGEM
         FROM TB_PRODUTO
     `;
 
@@ -249,7 +203,8 @@ export async function ExibirTodosFiltroNome(nome) {
             BT_PROMOCAO AS PROMODISP,
             BT_DISPONIVEL AS DISPONIVEL,
             QTD_ESTOQUE AS ESTOQUE,
-            DS_DETALHES AS DETALHE
+            DS_DETALHES AS DETALHE,
+            IMG_PRODUTO AS IMAGEM
         FROM TB_PRODUTO
         WHERE NM_PRODUTO LIKE ?
     `;

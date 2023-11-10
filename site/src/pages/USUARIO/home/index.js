@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import CardProduto from '../../../components/cardDestaque';
 import CardProdutoMenor from '../../../components/cardMenorPreco';
 
-import { ListarImagemPorIDinstrumentos, ListarTodosProdutos, BuscarImagem, ListarProdutosDestaques } from '../../../api/produtoApi';
+import { ListarTodosProdutos, BuscarImagem, ListarProdutosDestaques } from '../../../api/produtoApi';
 
 
 function Home() {
@@ -22,18 +22,8 @@ function Home() {
   async function CarregarProduto() {
     try {
       const resp = await ListarProdutosDestaques();
-
-      let array = resp;
-
-      for (let i = 0; i < array.length; i++) {
-        let p = array[i];
-        let img = await ListarImagemPorIDinstrumentos(p.ID);
-
-        p.img = img[0].IMAGEM;
-      }
-
-      setProduto(array);
-      console.log(array);
+      setProduto(resp);
+      console.log(resp);
 
     } catch (err) {
       console.log(err.message);
@@ -217,7 +207,7 @@ function Home() {
               {produto.map(item => (
                 <div className='card-item' onClick={() => navigate('/pageProduto/' + item.ID)}>
                   <div className='superior'>
-                    <img className='imagem-produto' src={BuscarImagem(item.img)} />
+                    <img className='imagem-produto' src={BuscarImagem(item.IMAGEM)} />
                   </div>
 
                   <div className='line-carousel' />

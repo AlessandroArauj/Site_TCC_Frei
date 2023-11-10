@@ -31,14 +31,18 @@ root.render(
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/loginAdm' element={<CadastroAdm />} />
         <Route path='/perfilusuario' element={<UsarioPerfil />} />
-        <Route path='/pageAdm' element={<Page_adm />} />
         <Route path='/cadastroUser' element={<CadastroUser />} />
         <Route path='/loginUser' element={<LoginUser />} />
         <Route path='/PageProduto/:id' element={<PageProduto />} />
         <Route path='/carrinho'   element={<PageCarrinho />} />
         <Route path='/categorias'   element={<Categoria />} />
+
+        <Route path='/loginAdm' element={<CadastroAdm />} />
+        <Route path='/pageAdm' element={<Page_adm />} />
+        <Route path='/pageAdm/alterar/:id' element={<Page_adm />} />
+
+        
         
 
         

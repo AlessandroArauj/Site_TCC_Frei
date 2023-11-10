@@ -23,29 +23,13 @@ export async function ListarProdutosPorNome(nome) {
     return resposta.data;
 }
 
-    export async function ListarImagemPorIDinstrumentos(id) {
-        const resposta = await api.get(`/produto/imagem/${id}`)
-        return resposta.data
-    }
 
 export async function ListarTodosProdutos() {
     const resposta = await api.get('/produto');
     return resposta.data;
 }
 
-export async function adicionarImagem(imagem, id) {
-    const formData = new FormData();
-    formData.append('produtosIma', imagem)
-    const resposta = await api.post(`/produto/${id}/imagem`, formData, {
-        headers: {
-            "Content-Type": "multipart/form-data"
-        },
 
-    });
-
-    return resposta.data
-
-}
 
 export async function adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao) {
     const resposta = await api.post('/produto', {
@@ -66,11 +50,17 @@ export async function adicionarProduto(marca, categoria, nome, preco, precoPromo
 
 }
 
-export async function DeletarImagem(id) {
-    const resposta = await api.delete(`/produto/img/${id}`);
-    return resposta.status
-}
+export async function EnviarImagem(id, imagem) {
+    const formData = new FormData();
+    formData.append('produtosIma', imagem)
+    const resposta = await api.put(`/produto/${id}/imagem`, formData, {
+        headers: {
+            "Content-Type": "multipart/form-data"
+        },
+    })
 
+    return resposta.status; 
+}
 
 export async function DeletarProduto(id) {
     const resposta = await api.delete(`/produto/${id}`);

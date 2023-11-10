@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AdicionarImagens, AlterarProduto, DeletarProduto, DeletarProdutoImagem, ExibirTodosFiltroNome, ExibirTodosProdutos, ListarImagemPorIDinstrumentos, ListarProdutosDestaques, ListarProdutosPorID, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
+import { AlterarProduto, DeletarProduto,  ExibirTodosFiltroNome, ExibirTodosProdutos, ListarProdutosDestaques, ListarProdutosPorID, alterarImagem, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
 import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
@@ -25,25 +25,7 @@ server.get('/produto/destaques', async (req, resp) => {
 
 
 
-// Endpoint para obter imagens de produtos por ID
-server.get('/produto/imagem/:id', async (req, resp) => {
-    try {
-        const { id } = req.params;
 
-        const resposta = await ListarImagemPorIDinstrumentos(id);
-
-        if (!resposta) {
-            throw new Error('Sem imagem')
-        }
-
-        resp.send(resposta);
-
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        });
-    }
-});
 
 // Endpoint para listar categorias de produtos
 server.get('/produto/categoria', async (req, resp) => {
@@ -103,20 +85,7 @@ server.get('/produto/:id', async (req, resp) => {
     }
 });
 
-server.delete('/produto/img/:id', async (req, resp) => {
-    try {
-        const { id } = req.params;
-        const resposta = await DeletarProdutoImagem(id);
-        if (resposta != 1)
-            throw new Error('Imagem não pode ser removida');
 
-        resp.status(204).send();
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        });
-    }
-});
 
 // Endpoint para deletar um produto por ID
 server.delete('/produto/:id', async (req, resp) => {
@@ -152,21 +121,27 @@ server.put('/produto/:id', async (req, resp) => {
 });
 
 // Endpoint para adicionar uma imagem a um produto por ID
-server.post('/produto/:id/imagem', upload.single('produtosIma'), async (req, resp) => {
+server.put('/produto/:id/imagem', upload.single('produtosIma'), async (req, resp) => {
     try {
+
+        if (!req.file) {
+            throw new Error('Imagem do produto Obrigatória')
+        }
+
+        const { id } = req.params;
         const imagem = req.file.path;
-        const idProduto = req.params.id;
 
-        const resposta = await AdicionarImagens(imagem, idProduto);
+        const resposta = await alterarImagem(imagem, id)
+        if (resposta != 1) {
+            throw new Error('imagem não pode ser salva')
+        }
 
-        if (resposta != 1)
-            throw new Error('A imagem não pode ser adicionada.');
-
-        resp.status(204).send();
+        resp.status(204).send()
+        
     } catch (err) {
         resp.status(400).send({
             erro: err.message
-        });
+        })
     }
 });
 
