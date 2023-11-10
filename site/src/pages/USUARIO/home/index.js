@@ -206,6 +206,8 @@ function Home() {
             <div className='carousel' ref={carousel}>
               {produto.map(item => (
                 <div className='card-item' onClick={() => navigate('/pageProduto/' + item.ID)}>
+                  
+                  
                   <div className='superior'>
                     <img className='imagem-produto' src={BuscarImagem(item.IMAGEM)} />
                   </div>

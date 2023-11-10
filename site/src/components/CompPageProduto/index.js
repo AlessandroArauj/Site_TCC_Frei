@@ -15,9 +15,15 @@ export default function CompProduto(props) {
 
 
 
-    function Descricao() {
+    function AbrirDescricao() {
         const Modal1 = document.getElementById('desc')
         Modal1.classList.add('maior')
+
+    }
+
+    function FecharDescricao() {
+        const Modal1 = document.getElementById('desc')
+        Modal1.classList.remove('maior')
     }
 
 
@@ -32,7 +38,7 @@ export default function CompProduto(props) {
                 <div className='Card'>
                     <div className='Esq'>
 
-                        <div className='Cima-Esq'>
+                        
 
                             <div className='ImgPrincipal'>
                                 <img src={BuscarImagem(props.produtos.IMAGEM)} />
@@ -41,13 +47,13 @@ export default function CompProduto(props) {
 
 
 
-                        </div>
+                  
 
 
                     </div>
 
                     <div className='Dir'>
-                        <div>
+                        <div className='cubos'>
                             <div className='Cubo-dir'>
                                 <p> {props.produtos.PRODUTO} </p>
                                 {props.produtos.PRECOPROMO ? (
@@ -68,7 +74,7 @@ export default function CompProduto(props) {
 
                         </div>
 
-                        <div>
+                        <div className='cad'>
                             <button className='button1' onClick={abrirModal1}> Forma de pagamento</button>
                             <button className='button2' > Adicionar ao carrinho</button>
                         </div>
@@ -99,7 +105,8 @@ export default function CompProduto(props) {
 
                     <div className='cima'>
                         <h1>INFORMAÇÕES DO PRODUTO</h1>
-                        <button onClick={Descricao}> Desc... </button>
+                        <button  className='button11' onClick={AbrirDescricao}> Abrir </button>
+                        <button  className='button22' onClick={FecharDescricao}>Fech</button>
                     </div>
 
                     <div className='baixo'>
