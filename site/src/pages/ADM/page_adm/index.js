@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import storage from 'local-storage'
 
 import axios from 'axios'
-import { BuscarImagem, DeletarProduto, ListarTodosProdutos, adicionarProduto, ListarProdutosPorID, EnviarImagem } from '../../../api/produtoApi'
+import { BuscarImagem, DeletarProduto, ListarTodosProdutos, adicionarProduto, ListarProdutosPorID, EnviarImagem, editarProduto } from '../../../api/produtoApi'
 import { Await, useNavigate, useParams } from 'react-router-dom';
 
 import { Link } from 'react-router-dom'
@@ -84,7 +84,7 @@ export default function Page_adm() {
         setProdutos(resp);
     }
 
-   
+
 
 
 
@@ -125,10 +125,7 @@ export default function Page_adm() {
         console.log(resp.IMAGEM);
     }
 
-    async function EditarProdutos() {
-
-
-    }
+    
 
 
     async function DeletarProdutos(id, nome) {
@@ -153,8 +150,12 @@ export default function Page_adm() {
         setProdutos(resp);
     }
 
-    
 
+
+    function AlterarProdutoClick(id) {
+        navigate(`/pageAdm/alterar/${id}`)
+
+    }
 
 
 
@@ -165,10 +166,21 @@ export default function Page_adm() {
                 throw new Error('Imagem Obrigatória')
             }
 
-            const novoProduto = await adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao);
-            const re = await EnviarImagem(novoProduto.id, imagem)
+            if (id === 0) {
+                const novoProduto = await adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao);
+                const re = await EnviarImagem(novoProduto.id, imagem)
 
-            toast.dark('Produto Cadastrado!')
+                toast.dark('Produto Cadastrado!')
+            }
+
+            else {
+                
+                await editarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao, id);
+                await EnviarImagem(id, imagem)
+
+                toast.dark('Produto Alterado!')
+
+            }
 
         } catch (err) {
             if (err.response)
@@ -179,16 +191,20 @@ export default function Page_adm() {
         }
     }
 
+
+
     function MostrarImagem() {
+
         if (typeof (imagem) == 'object') {
             return URL.createObjectURL(imagem)
         }
 
         else {
-            BuscarImagem(imagem)
-            console.log(BuscarImagem(imagem));
+            return BuscarImagem(imagem);
         }
     }
+
+
 
     async function listarCategorias() {
 
@@ -336,7 +352,7 @@ export default function Page_adm() {
                     <li className='item-menu' >
                         <div onClick={abrirAdd}>
 
-                            <span className='link'>inserir produto</span>
+                            <span className='link'>{id === 0 ? 'Inserir Produto' : 'Alterar Produto'}</span>
                             <img src=''></img>
                         </div>
 
@@ -395,7 +411,7 @@ export default function Page_adm() {
                                             </div>
 
                                             <div className='dir'>
-                                                <img alt='Editar' src='../../assets/images/editIcon.svg' onClick={EditarProdutos} />
+                                                <img alt='Editar' src='../../assets/images/editIcon.svg' onClick={() => [ AlterarProdutoClick(item.ID), window.location.reload()]}/>
                                                 <img alt='Deletar' src='../../assets/images/deleteIcon.svg' onClick={() => DeletarProdutos(item.ID, item.PRODUTO)} />
 
                                             </div>
@@ -591,9 +607,9 @@ export default function Page_adm() {
                             <div className='butt'>
 
 
-                                <div className='Salvar' onClick={SalvarCLick}>
+                                <div className='Salvar' onClick={SalvarCLick} >
 
-                                    <p> Salvar </p>
+                                    <p> {id === 0 ? 'Salvar' : 'Alterar'} </p>
 
                                 </div>
 

@@ -50,6 +50,25 @@ export async function adicionarProduto(marca, categoria, nome, preco, precoPromo
 
 }
 
+export async function editarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao, id) {
+    const resposta = await api.put(`/produto/${id}`, {
+        MARCAS: marca,
+        CATEGORIA: categoria,
+        PRODUTO: nome,
+        PRECO: preco,
+        PRECO_PROMOCIONAL: precoPromo,
+        DESTAQUE: destaque,
+        PROMOCAO: promo,
+        DISPONIVEL: disponivel,
+        ESTOQUE: estoque,
+        DETALHE: descricao
+
+    });
+
+    return resposta.data
+
+}
+
 export async function EnviarImagem(id, imagem) {
     const formData = new FormData();
     formData.append('produtosIma', imagem)
@@ -68,6 +87,8 @@ export async function DeletarProduto(id) {
 }
 
 export function BuscarImagem(imagem) {
+    console.log(`${api.getUri()}/${imagem}`);
+
     return `${api.getUri()}/${imagem}`
 }
 
