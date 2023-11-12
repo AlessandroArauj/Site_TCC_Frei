@@ -97,12 +97,22 @@ export default function ContaUser() {
 
                </div>
                <div>
-                  
+
                   <input id='email' type='email' name='name' placeholder='Email' required value={email} onChange={e => setEmail(e.target.value)} />
                   <input id='password' type={mostrarSenha ? 'text' : 'password'} name='password' placeholder='Senha' required value={senha} onChange={e => setSenha(e.target.value)} />
+                  <button className='button1' onClick={() => setMostrarSenha(!mostrarSenha)}>
+                     <img src='../../../assets/images/olho1.png'></img>
+                  </button>
+                 
+
                   <input id='password' type={mostrarSenha ? 'text' : 'password'} name='Confirmpassword' placeholder='Confirme Sua Senha' required value={confirmaSenha} onChange={e => setConfirmar(e.target.value)} />
                   <p className='mensagem-erro-senha'> {erroConfirma} </p>
-                  
+
+                  <button className='button2' onClick={() => setMostrarSenha(!mostrarSenha)}>
+                     <img src='../../../assets/images/olho1.png'></img>
+                  </button>
+
+
                </div>
 
             </div>
@@ -112,7 +122,10 @@ export default function ContaUser() {
 
 
 
-            <button onClick={() => setMostrarSenha(!mostrarSenha)}> FUTURO OLHO </button>
+            <button onClick={() => setMostrarSenha(!mostrarSenha)}>
+               <img src='../../../assets/images/olho1.png'></img>
+            </button>
+
 
 
 

@@ -45,7 +45,7 @@
 
         .inputbox label {
             position: absolute;
-            top: 25%;
+            top: 30%;
             left: 17px;
             transform: translatey(30%);
             font-size: 16px;
@@ -53,6 +53,22 @@
             padding: 0 5px;
             pointer-events: none;
             transition: .6s;
+        }
+
+        .inputbox button{
+           position: absolute;
+           right: 20px;
+           background: transparent;
+           top: 33%;
+          
+           filter: grayscale(1);
+            filter: brightness(2);
+            border: none ;
+        }
+
+        .inputbox button img{
+            height: 30px;
+            width: 30px;
         }
 
         .inputbox input {
