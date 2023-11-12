@@ -28,11 +28,41 @@ export async function ListarProdutosPorID(id) {
 
 }
 
+export async function ListarProdutosPorCategoria(id) {
+    const comando = `
+    SELECT 
+        ID_INSTRUMENTOS AS ID,
+        ID_MARCAS AS MARCAS,
+        ID_CATEGORIA AS CATEGORIAS,
+        NM_PRODUTO AS PRODUTO,
+        NR_PRECO AS PRECO,
+        NR_PRECO_PROMOCIONAL AS PRECOPROMO,
+        BT_DESTAQUE AS DESTAQUE,
+        BT_PROMOCAO AS PROMODISP,
+        BT_DISPONIVEL AS DISPONIVEL,
+        QTD_ESTOQUE AS ESTOQUE,
+        DS_DETALHES AS DETALHE,
+        IMG_PRODUTO AS IMAGEM
+    FROM TB_PRODUTO
+
+    WHERE ID_CATEGORIA = ? AND BT_DISPONIVEL = 1; 
+
+`
+
+    const [resp] = await con.query(comando, [id]);
+    return resp;
+
+
+
+
+}
+
+
 export async function ListarProdutosDestaques() {
     const comando = `
-        SELECT 
+    SELECT 
             ID_INSTRUMENTOS AS ID,
-            ID_MARCAS AS MARCAS,
+        ID_MARCAS AS MARCAS,
             ID_CATEGORIA AS CATEGORIAS,
             NM_PRODUTO AS PRODUTO,
             NR_PRECO AS PRECO,
@@ -53,6 +83,16 @@ export async function ListarProdutosDestaques() {
 }
 
 
+export async function listarCategoriasIDNomes(id) {
+    const comando = `
+        SELECT NM_CATEGORIA AS Categoria
+        FROM TB_CATEGORIA
+        WHERE ID_CATEGORIA = ?
+    `
+    const [resp] = await con.query(comando, [id])
+    return resp[0];
+}
+
 
 // Função para listar todas as categorias
 export async function listarCategorias() {
@@ -60,7 +100,7 @@ export async function listarCategorias() {
     const comando = `
         SELECT NM_CATEGORIA AS Categoria, ID_CATEGORIA AS Id
         FROM TB_CATEGORIA
-    `;
+        `;
 
     // Executa a consulta SQL e retorna as categorias encontradas
     const [resp] = await con.query(comando);
@@ -73,7 +113,7 @@ export async function alterarImagem(imagem, id) {
         UPDATE TB_PRODUTO
         SET IMG_PRODUTO = ?
         WHERE ID_INSTRUMENTOS = ?
-    `
+            `
 
     const [resp] = await con.query(comando, [imagem, id]);
     return resp.affectedRows;
@@ -87,7 +127,7 @@ export async function DeletarProduto(id) {
         
         DELETE FROM TB_PRODUTO
         WHERE ID_INSTRUMENTOS = ?
-    `;
+        `;
 
     // Executa a consulta SQL com o ID fornecido e retorna o número de linhas afetadas
     const [resp] = await con.query(comando, [id]);
@@ -99,19 +139,19 @@ export async function AlterarProduto(produto, id) {
     // Define o comando SQL para atualizar informações de um produto com base no ID de instrumentos
     const comando = `
         UPDATE TB_PRODUTO
-        SET
-            ID_MARCAS = ?,
-            ID_CATEGORIA = ?,
-            NM_PRODUTO = ?,
-            NR_PRECO = ?,
-            NR_PRECO_PROMOCIONAL = ?,
-            BT_DESTAQUE = ?,
-            BT_PROMOCAO = ?,
-            BT_DISPONIVEL = ?,
-            QTD_ESTOQUE = ?,
-            DS_DETALHES = ?
-        WHERE ID_INSTRUMENTOS = ?
-    `;
+    SET
+    ID_MARCAS = ?,
+        ID_CATEGORIA = ?,
+        NM_PRODUTO = ?,
+        NR_PRECO = ?,
+        NR_PRECO_PROMOCIONAL = ?,
+        BT_DESTAQUE = ?,
+        BT_PROMOCAO = ?,
+        BT_DISPONIVEL = ?,
+        QTD_ESTOQUE = ?,
+        DS_DETALHES = ?
+            WHERE ID_INSTRUMENTOS = ?
+                `;
 
     // Executa a consulta SQL com os parâmetros fornecidos
     const [resp] = await con.query(comando, [
@@ -136,8 +176,8 @@ export async function AlterarProduto(produto, id) {
 export async function inserirProduto(produto) {
     // Define o comando SQL para inserir um novo produto
     const comando = `
-        INSERT INTO TB_PRODUTO (ID_MARCAS, ID_CATEGORIA, NM_PRODUTO, NR_PRECO, NR_PRECO_PROMOCIONAL, BT_DESTAQUE, BT_PROMOCAO, BT_DISPONIVEL, QTD_ESTOQUE, DS_DETALHES)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        INSERT INTO TB_PRODUTO(ID_MARCAS, ID_CATEGORIA, NM_PRODUTO, NR_PRECO, NR_PRECO_PROMOCIONAL, BT_DESTAQUE, BT_PROMOCAO, BT_DISPONIVEL, QTD_ESTOQUE, DS_DETALHES)
+    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
     `;
 
     // Executa a consulta SQL com os parâmetros fornecidos
@@ -167,21 +207,21 @@ export async function inserirProduto(produto) {
 export async function ExibirTodosProdutos() {
     // Define o comando SQL para selecionar todos os produtos
     const comando = `
-        SELECT
+    SELECT
             ID_INSTRUMENTOS AS ID,
-            ID_MARCAS AS MARCAS,
+        ID_MARCAS AS MARCAS,
             ID_CATEGORIA AS CATEGORIAS,
-            NM_PRODUTO AS PRODUTO,
-            NR_PRECO AS PRECO,
-            NR_PRECO_PROMOCIONAL AS PRECOPROMO,
-            BT_DESTAQUE AS DESTAQUE,
-            BT_PROMOCAO AS PROMODISP,
-            BT_DISPONIVEL AS DISPONIVEL,
-            QTD_ESTOQUE AS ESTOQUE,
-            DS_DETALHES AS DETALHE,
-            IMG_PRODUTO AS IMAGEM
+                NM_PRODUTO AS PRODUTO,
+                    NR_PRECO AS PRECO,
+                        NR_PRECO_PROMOCIONAL AS PRECOPROMO,
+                            BT_DESTAQUE AS DESTAQUE,
+                                BT_PROMOCAO AS PROMODISP,
+                                    BT_DISPONIVEL AS DISPONIVEL,
+                                        QTD_ESTOQUE AS ESTOQUE,
+                                            DS_DETALHES AS DETALHE,
+                                                IMG_PRODUTO AS IMAGEM
         FROM TB_PRODUTO
-    `;
+        `;
 
     // Executa a consulta SQL e retorna os produtos encontrados
     let [resp] = await con.query(comando);
@@ -192,24 +232,24 @@ export async function ExibirTodosProdutos() {
 export async function ExibirTodosFiltroNome(nome) {
     // Define o comando SQL para selecionar produtos que contenham o nome especificado
     const comando = `
-        SELECT
+    SELECT
             ID_INSTRUMENTOS AS ID,
-            ID_MARCAS AS MARCAS,
+        ID_MARCAS AS MARCAS,
             ID_CATEGORIA AS CATEGORIAS,
-            NM_PRODUTO AS PRODUTO,
-            NR_PRECO AS PRECO,
-            NR_PRECO_PROMOCIONAL AS PRECOPROMO,
-            BT_DESTAQUE AS DESTAQUE,
-            BT_PROMOCAO AS PROMODISP,
-            BT_DISPONIVEL AS DISPONIVEL,
-            QTD_ESTOQUE AS ESTOQUE,
-            DS_DETALHES AS DETALHE,
-            IMG_PRODUTO AS IMAGEM
+                NM_PRODUTO AS PRODUTO,
+                    NR_PRECO AS PRECO,
+                        NR_PRECO_PROMOCIONAL AS PRECOPROMO,
+                            BT_DESTAQUE AS DESTAQUE,
+                                BT_PROMOCAO AS PROMODISP,
+                                    BT_DISPONIVEL AS DISPONIVEL,
+                                        QTD_ESTOQUE AS ESTOQUE,
+                                            DS_DETALHES AS DETALHE,
+                                                IMG_PRODUTO AS IMAGEM
         FROM TB_PRODUTO
         WHERE NM_PRODUTO LIKE ?
-    `;
+        `;
 
     // Executa a consulta SQL com o nome especificado (usando coringas % para pesquisa parcial) e retorna os produtos encontrados
-    let [resp] = await con.query(comando, [`%${nome}%`]);
+    let [resp] = await con.query(comando, [`% ${ nome }% `]);
     return resp;
 }

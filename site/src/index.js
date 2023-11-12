@@ -36,7 +36,7 @@ root.render(
         <Route path='/loginUser' element={<LoginUser />} />
         <Route path='/PageProduto/:id' element={<PageProduto />} />
         <Route path='/carrinho'   element={<PageCarrinho />} />
-        <Route path='/categorias'   element={<Categoria />} />
+        <Route path='/categorias/:id'   element={<Categoria />} />
 
         <Route path='/loginAdm' element={<CadastroAdm />} />
         <Route path='/pageAdm' element={<Page_adm />} />

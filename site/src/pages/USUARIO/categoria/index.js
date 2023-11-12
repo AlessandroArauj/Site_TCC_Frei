@@ -1,76 +1,116 @@
 import './index.scss'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import Header from '../../../components/cabecalho'
 import CardProduto from '../../../components/cardDestaque'
 import Rodape from '../../../components/rodape'
+import { useEffect, useState } from 'react'
+import { BuscarImagem, ListarProdutosPorCategoriaID, listarCategoriasIDNomes } from '../../../api/produtoApi'
 
 export default function Cardaudio() {
+      
+      const navigate = useNavigate()
+      const id = useParams().id;
+      const [produto, setProduto] = useState([]);
+      const [categorias, setCategorias] = useState({})
+
+      async function listarCategorias() {
+            try {
+                  const resp = await listarCategoriasIDNomes(id)
+                  setCategorias(resp)
+                  
+            } catch (err) {
+                  console.log(err.message)
+                  
+            }
+      }
+
+      async function ListarPorCategoria() {
+            try {
+                  const resp = await ListarProdutosPorCategoriaID(id);
+                  setProduto(resp);
+
+                } catch (err) {
+                  console.log(err.message);
+                }
+      }
+
+      useEffect(() => {
+      listarCategorias()
+      }, [  ])
+
+      useEffect(() => {
+      ListarPorCategoria()
+      }, [])
 
       return (
 
             <div className='categorias'>
                   <Header />
 
-                  <div className='start'>
-                        <div className='liner' />
-                        <h1 className='destaque'>Categorias</h1>
+                  <div className='principalcontCat'>
 
-                        <div className='liner2' />
-                  </div>
+                        <div className='tituloCat'>
+                              
+                              <h1>{categorias.Categoria}</h1>
+                              
+                              
 
-                  <div className='produtos'>
+                        </div>
+                        <div className='conteiner'>
 
-                        <div className='cardProduto'>
+                              <div className='subcont' >
 
+                                    <div className='conteudoCat'>
 
-
-                              <div className='carousel' >
-
-                                    <div className='card'>
-
-                                          <div className='superior'>
+                                    {produto.map(item => (
+                                          <div className='card-item' onClick={() => navigate('/pageProduto/' + item.ID)}>
 
 
+                                                <div className='superior'>
+                                                      <img className='imagem-produto' src={BuscarImagem(item.IMAGEM)} />
+                                                </div>
+
+                                                <div className='line-carousel' />
+
+                                                <div className='inferior'>
+                                                      <div className='infos-prod'>
+
+                                                            <div className='NomesProdutos'>
+
+                                                                  <p>{item.PRODUTO}</p>
+
+                                                            </div>
+
+
+                                                            <div className='infosprodutos'>
+                                                                  <h3 className={`preco ${parseFloat(item.PRECOPROMO) === 0 ? 'zero-price' : ''}`}>
+                                                                        R${item.PRECO}
+                                                                  </h3>
+                                                                  <h2 className='precopromo' style={{ display: parseFloat(item.PRECOPROMO) === 0 ? 'none' : 'block' }}>
+                                                                        R${item.PRECOPROMO}
+                                                                  </h2>
+                                                                  <p>Frete Grátis</p>
+
+                                                            </div>
+
+
+                                                      </div>
+
+
+
+                                                </div>
                                           </div>
-
-                                          <div className='linhareta' />
-
-                                          <div className='inferior'>
-
-                                                <div className='nomeProduto'>
-                                                      <p>  </p>
-                                                </div>
-
-                                                <div className='precos'>
-
-                                                      <h3 className='preco'>R$</h3>
-                                                      <h2 className='precopromo'> R$</h2>
-
-                                                </div>
-
-                                                <div className='freteVisual'>
-
-                                                      <p>Frete Grátis</p>
-
-                                                </div>
-
-                                          </div>
+                                    ))}
 
                                     </div>
 
-
-
                               </div>
-
-
-                        </div>
-                        <div className='cardpro'>
 
                         </div>
 
                   </div>
 
-                
+
                   <Rodape />
 
             </div>

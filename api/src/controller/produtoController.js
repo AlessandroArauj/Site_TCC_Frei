@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { AlterarProduto, DeletarProduto,  ExibirTodosFiltroNome, ExibirTodosProdutos, ListarProdutosDestaques, ListarProdutosPorID, alterarImagem, inserirProduto, listarCategorias } from "../repository/produtoRepository.js";
+import { AlterarProduto, DeletarProduto,  ExibirTodosFiltroNome, ExibirTodosProdutos, ListarProdutosDestaques, ListarProdutosPorCategoria, ListarProdutosPorID, alterarImagem, inserirProduto, listarCategorias, listarCategoriasIDNomes } from "../repository/produtoRepository.js";
 import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
+
 
 // Configuração do multer para upload de imagens
 const upload = multer({ dest: 'storage/fotosProdutos' });
@@ -69,6 +70,36 @@ server.get('/produto/marca', async (req, resp) => {
         });
     }
 });
+
+server.get('/produto/categoria/nome/:id', async (req, resp) => {
+    try {
+        const { id } = req.params
+
+        const resposta = await listarCategoriasIDNomes(id)
+
+        resp.send(resposta)
+        
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
+server.get('/produto/categoria/:id', async (req, resp) => {
+    try {
+        const { id } = req.params
+
+        const resposta = await ListarProdutosPorCategoria(id)
+
+        resp.send(resposta)
+        
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
 
 server.get('/produto/:id', async (req, resp) => {
     try {

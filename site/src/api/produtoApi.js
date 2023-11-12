@@ -7,6 +7,8 @@ const api = axios.create({
 
 
 
+
+
 export async function ListarProdutosDestaques() {
     const resposta = await api.get('/produto/destaques');
     return resposta.data;
@@ -24,11 +26,24 @@ export async function ListarProdutosPorNome(nome) {
 }
 
 
+
+
 export async function ListarTodosProdutos() {
     const resposta = await api.get('/produto');
     return resposta.data;
 }
 
+export async function ListarProdutosPorCategoriaID(id) {
+    const resposta = await api.get(`/produto/categoria/${id}`)
+    return resposta.data
+}
+
+
+export async function listarCategoriasIDNomes(id) {
+    const resposta = await api.get(`/produto/categoria/nome/${id}`)
+    return resposta.data
+
+}
 
 
 export async function adicionarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao) {
@@ -68,6 +83,7 @@ export async function editarProduto(marca, categoria, nome, preco, precoPromo, d
     return resposta.data
 
 }
+
 
 export async function EnviarImagem(id, imagem) {
     const formData = new FormData();
