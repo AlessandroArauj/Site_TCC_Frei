@@ -19,6 +19,8 @@ export default function ContaUser() {
    const [confirmaSenha, setConfirmar] = useState('');
    const [erroConfirma, setErroConfirma] = useState('');
    const [termosAceitos, setTermosAceitos] = useState(false);
+
+   const [mostrarSenha2, setMostrarSenha2] = useState(false)
    const [mostrarSenha, setMostrarSenha] = useState(false);
 
    async function Cadastrar() {
@@ -99,18 +101,30 @@ export default function ContaUser() {
                <div>
 
                   <input id='email' type='email' name='name' placeholder='Email' required value={email} onChange={e => setEmail(e.target.value)} />
-                  <input id='password' type={mostrarSenha ? 'text' : 'password'} name='password' placeholder='Senha' required value={senha} onChange={e => setSenha(e.target.value)} />
-                  <button className='button1' onClick={() => setMostrarSenha(!mostrarSenha)}>
-                     <img src='../../../assets/images/olho1.png'></img>
-                  </button>
-                 
 
-                  <input id='password' type={mostrarSenha ? 'text' : 'password'} name='Confirmpassword' placeholder='Confirme Sua Senha' required value={confirmaSenha} onChange={e => setConfirmar(e.target.value)} />
-                  <p className='mensagem-erro-senha'> {erroConfirma} </p>
 
-                  <button className='button2' onClick={() => setMostrarSenha(!mostrarSenha)}>
-                     <img src='../../../assets/images/olho1.png'></img>
-                  </button>
+                  <div className='password'>
+
+                     <label>
+                        <input id='password' type={mostrarSenha ? 'text' : 'password'} name='password' placeholder='Senha' required value={senha} onChange={e => setSenha(e.target.value)} />
+                        <img src='../../../assets/images/olho.png' onClick={() => setMostrarSenha(!mostrarSenha)} />
+
+
+                     </label>
+
+
+
+                     <label>
+
+                        <input id='password' type={mostrarSenha2 ? 'text' : 'password'} name='Confirmpassword' placeholder='Confirme Sua Senha' required value={confirmaSenha} onChange={e => setConfirmar(e.target.value)} />
+                        <p className='mensagem-erro-senha'> {erroConfirma} </p>
+
+                        <img src='../../../assets/images/olho.png' onClick={() => setMostrarSenha2(!mostrarSenha2)} />
+
+
+                     </label>
+
+                  </div>
 
 
                </div>

@@ -79,7 +79,7 @@ export default function LoginUsuario() {
           
           <label for="">SENHA</label>
 
-          <button onClick={() => setMostrarSenha(!mostrarSenha)}> <img src='../../../assets/images/olho1.png'>
+          <button onClick={() => setMostrarSenha(!mostrarSenha)}> <img src='../../../assets/images/olho.png'>
           </img></button>
 
          

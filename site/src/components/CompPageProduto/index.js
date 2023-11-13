@@ -3,7 +3,6 @@ import CompCartao from '../compCartao'
 import './index.scss'
 
 
-
 export default function CompProduto(props) {
 
 
@@ -105,8 +104,11 @@ export default function CompProduto(props) {
 
                     <div className='cima'>
                         <h1>INFORMAÇÕES DO PRODUTO</h1>
-                        <button  className='button11' onClick={AbrirDescricao}> Abrir </button>
-                        <button  className='button22' onClick={FecharDescricao}>Fech</button>
+                        
+                            <img className='button11' onClick={AbrirDescricao}  src='../../../assets/images/menor.png' />
+                            <img className='button22' onClick={FecharDescricao} src='../../../assets/images/menor.png' />
+                         
+                        
                     </div>
 
                     <div className='baixo'>
