@@ -28,6 +28,32 @@ export async function ListarProdutosPorID(id) {
 
 }
 
+
+
+
+
+
+
+export async function Carrinho(id) {
+    const comando = `
+        SELECT
+                ID_INSTRUMENTOS          AS "Id",
+                NM_PRODUTO              AS "Produto",
+                NR_PRECO                AS "Preço",
+                NR_PRECO_PROMOCIONAL    AS "Preço promoção"
+            FROM TB_PRODUTO
+            
+        WHERE ID_INSTRUMENTOS = ?
+    `;
+
+    const resp = await con.query(comando, [id])
+
+    const linhas = resp[0]
+    const linha = linhas[0];
+
+    return linha;
+}
+
 export async function ListarProdutosPorCategoria(id) {
     const comando = `
     SELECT 
@@ -171,6 +197,19 @@ export async function AlterarProduto(produto, id) {
     // Retorna o número de linhas afetadas pela atualização
     return resp.affectedRows;
 }
+
+export async function AddCarrinho(carrinho) {
+    const comando = `
+        INSERT INTO TB_CARRINHO (ID_USER, ID_INSTRUMENTOS)
+                        VALUES  (?, ?)
+    `
+
+    const [resp] = await con.query(comando, [carrinho.User, carrinho.ID])
+
+    carrinho.id = resp.insertId;
+    return carrinho
+
+};
 
 // Função para inserir um novo produto
 export async function inserirProduto(produto) {

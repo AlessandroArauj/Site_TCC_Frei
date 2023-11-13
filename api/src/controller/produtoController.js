@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AlterarProduto, DeletarProduto,  ExibirTodosFiltroNome, ExibirTodosProdutos, ListarProdutosDestaques, ListarProdutosPorCategoria, ListarProdutosPorID, alterarImagem, inserirProduto, listarCategorias, listarCategoriasIDNomes } from "../repository/produtoRepository.js";
+import { AddCarrinho, AlterarProduto, Carrinho, DeletarProduto,  ExibirTodosFiltroNome, ExibirTodosProdutos, ListarProdutosDestaques, ListarProdutosPorCategoria, ListarProdutosPorID, alterarImagem, inserirProduto, listarCategorias, listarCategoriasIDNomes } from "../repository/produtoRepository.js";
 import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
@@ -24,7 +24,19 @@ server.get('/produto/destaques', async (req, resp) => {
 
 
 
+server.post('/produto/carrinho', async (req, resp) => {
+    try {
+        const id = req.body.ID
 
+        const linha = await Carrinho(id)
+
+        resp.send(linha);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
 
 
 
@@ -175,6 +187,21 @@ server.put('/produto/:id/imagem', upload.single('produtosIma'), async (req, resp
         })
     }
 });
+
+
+server.post('/produto/carrinho/add', async (req, resp) => {
+    try {
+        const carrinho = req.body
+
+        const resposta = await AddCarrinho(carrinho)
+        resp.send(resposta)
+        
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
 
 // Endpoint para cadastrar um novo produto
 server.post('/produto', async (req, resp) => {

@@ -1,6 +1,8 @@
 // Importa a conexão do arquivo "connection.js"
 import { con } from './connection.js';
 
+
+
 // Função para buscar uma marca por seu ID no banco de dados
 export async function buscarMarcasPorId(id) {
     // Define o comando SQL de seleção

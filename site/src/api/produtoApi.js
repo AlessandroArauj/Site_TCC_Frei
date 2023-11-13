@@ -7,6 +7,14 @@ const api = axios.create({
 
 
 
+export async function CarrinhoAdd(id) {
+    const r = await api.post('/produto/carrinho', {
+        ID: id
+
+    })
+
+    return r.data
+}
 
 
 export async function ListarProdutosDestaques() {
