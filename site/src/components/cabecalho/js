@@ -6,14 +6,13 @@ import { BuscarImagem, ListarProdutosPorNome } from '../../api/produtoApi';
 
 
 export default function Header() {
+
     const navigate = useNavigate();
 
     const [usuario, setUsuario] = useState('-')
     const [busca, setBusca] = useState('')
     const [resultado, setResultado] = useState([]);
     const [erro, setErro] = useState('')
-
-
 
     async function Filtro() {
         try {
@@ -40,9 +39,6 @@ export default function Header() {
         }
     }
 
-
-
-
     useEffect(() => {
         if (storage('usuario-logado')) {
             const usuariologado = storage('usuario-logado');
@@ -51,30 +47,20 @@ export default function Header() {
 
     }, [])
 
-
-
     return (
-        <div className='cabecalho'>
+        <header>
+            <div className='logo'>
+                <Link to={'/home'}><img src='../../../assets/images/logo.svg' className='logo'></img></Link>
+            </div>
 
-            <div className='cont-cabeca'>
-
-                <div>
-               
-                    <Link to={'/home'}><img src='../../../assets/images/logo.svg' className='logo'></img></Link>
-
+            <div className='navbar'>
+                <div className='pes'>
+                    <button onClick={Filtro} onKeyUp={handleKeyUp}>
+                        <img src='../../../assets/images/lupa.png'></img>
+                    </button>
+                    <input type='text' value={busca} onChange={e => setBusca(e.target.value)} />
                 </div>
 
-
-                <div className='Input'>
-
-                    <div className='input'>
-                        <button onClick={Filtro} onKeyUp={handleKeyUp}>
-                            <img src='../../../assets/images/lupa.png'></img>
-                        </button>
-                        <input type='text' value={busca} onChange={e => setBusca(e.target.value)} />
-                    </div>
-
-                </div>
 
                 <div className='dir'>
                     <div>
@@ -91,10 +77,10 @@ export default function Header() {
                     </div>
                 </div>
 
+
             </div>
 
 
-         
             <div className='cont2' >
                 <div className='resultados' >
 
@@ -125,9 +111,14 @@ export default function Header() {
             </div>
 
 
-
-
-        </div>
+        </header>
     )
-}
 
+
+
+
+
+
+
+
+}

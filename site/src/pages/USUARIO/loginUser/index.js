@@ -76,10 +76,16 @@ export default function LoginUsuario() {
 
         <div className='inputbox'>
           <input className='barra' type={mostrarSenha ? 'text' : 'password'} value={senha} onChange={e => setSenha(e.target.value)} required ></input>
+          
           <label for="">SENHA</label>
+
+          <button onClick={() => setMostrarSenha(!mostrarSenha)}> <img src='../../../assets/images/olho1.png'>
+          </img></button>
+
+         
         </div>
 
-        <button onClick={() => setMostrarSenha(!mostrarSenha)}> FUTURO OLHO </button>
+        
         <div className='form-entrar invalido'>
 
           {erro}

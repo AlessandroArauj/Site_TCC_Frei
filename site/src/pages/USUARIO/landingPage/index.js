@@ -7,10 +7,10 @@ import Rodape from '../../../components/rodape/index.js'
 
 
 
+
 export default function LandingPage() {
 
     const navigate = useNavigate()
-
    
 
 
@@ -18,7 +18,9 @@ export default function LandingPage() {
         <div className='landingPage'>
             <header>
                 <img src=' ../../../assets/images/logo.svg' />
+              
                 <nav>
+
                     <Link className='link-head' to={'/home'}>
                         <h1 className='button-text-head'> Home</h1>
                     </Link>
