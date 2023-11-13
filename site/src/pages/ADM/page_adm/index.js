@@ -180,6 +180,9 @@ export default function Page_adm() {
 
                 toast.dark('Produto Alterado!')
 
+                navigate('/pageAdm')
+                window.location.reload()
+
             }
 
         } catch (err) {
