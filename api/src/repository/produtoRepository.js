@@ -37,10 +37,11 @@ export async function ListarProdutosPorID(id) {
 export async function Carrinho(id) {
     const comando = `
         SELECT
-                ID_INSTRUMENTOS          AS "Id",
-                NM_PRODUTO              AS "Produto",
-                NR_PRECO                AS "Preço",
-                NR_PRECO_PROMOCIONAL    AS "Preço promoção"
+                ID_INSTRUMENTOS         AS  "Id",
+                NM_PRODUTO              AS  "Produto",
+                NR_PRECO                AS  "Preço",
+                NR_PRECO_PROMOCIONAL    AS  "Preço promoção",
+                IMG_PRODUTO             AS  "IMAGEM"
             FROM TB_PRODUTO
             
         WHERE ID_INSTRUMENTOS = ?

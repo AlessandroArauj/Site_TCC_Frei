@@ -11,6 +11,7 @@ export default function PageProduto(){
     const id = useParams().id;
 
     const [produto, setProduto] = useState({});
+    const [preco, setPreco] = useState(0)
 
     
 
@@ -25,7 +26,7 @@ export default function PageProduto(){
           const resp = await ListarProdutosPorID(id);
     
           
-          
+          setPreco(Number(resp.PRECO) - Number(resp.PRECOPROMO))
     
           setProduto(resp);
           
@@ -44,7 +45,7 @@ export default function PageProduto(){
             <Cabecalho />
             </div>
             
-            <CompProduto produtos={produto}/>
+            <CompProduto produtos={produto} precos = {preco}/>
         
             
             
