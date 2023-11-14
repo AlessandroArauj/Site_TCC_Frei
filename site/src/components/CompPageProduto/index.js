@@ -61,16 +61,16 @@ export default function CompProduto(props) {
                 <div className='Card'>
                     <div className='Esq'>
 
-                        
-
-                            <div className='ImgPrincipal'>
-                                <img src={BuscarImagem(props.produtos.IMAGEM)} />
-
-                            </div>
 
 
+                        <div className='ImgPrincipal'>
+                            <img src={BuscarImagem(props.produtos.IMAGEM)} />
 
-                  
+                        </div>
+
+
+
+
 
 
                     </div>
@@ -86,7 +86,7 @@ export default function CompProduto(props) {
                                 )}
 
                             </div>
-                            
+
 
                             <div className='Cubo-dir'>
                                 <p>Produto disponivel</p>
@@ -128,15 +128,14 @@ export default function CompProduto(props) {
 
                     <div className='cima'>
                         <h1>INFORMAÇÕES DO PRODUTO</h1>
-                        
-                            <img className='button11' onClick={AbrirDescricao}  src='../../../assets/images/menor.png' />
-                            <img className='button22' onClick={FecharDescricao} src='../../../assets/images/menor.png' />
-                         
-                        
+
+                        <img className='button11' onClick={AbrirDescricao} src='../../../assets/images/menor.png' />
+                        <img className='button22' onClick={FecharDescricao} src='../../../assets/images/menor.png' />
+
                     </div>
 
                     <div className='baixo'>
-                        <h1> 
+                        <h1>
                             {props.produtos.DETALHE}
                         </h1>
                     </div>
