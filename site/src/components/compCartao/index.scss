@@ -1,41 +1,49 @@
 .compCartao {
 
     
+    
     .page-cadastrar-cartao.abrir {
         display: flex;
+        
 
     }
 
     .page-cadastrar-cartao {
-        position: absolute;
+        position: fixed;
         justify-content: center;
         align-items: center;
         display: none;
         width: 100%;
-        height: 80%;
-
+        height: 100%;
+        backdrop-filter: blur(5px);
 
         .card {
             position: fixed;
-            width: 544px;
-            height: 550px;
+            width: 480px;
+            height: 500px;
             background-color: #222222;
             display: flex;
+            padding: 10px 30px 30px 30px;
             align-items: center;
             flex-direction: column;
             border-radius: 15px;
 
 
             .titulo {
-                margin-top: 15px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
             }
 
 
             .x {
+                width: 100%;
+                text-align: end;
                 font-size: 19px;
                 color: aliceblue;
                 display: flex;
-                margin-bottom: 10px;
                 justify-content: right;
                 color: #fff;
 
@@ -45,23 +53,21 @@
                 font-size: 22px;
                 color: rgb(253, 254, 255);
                 display: flex;
-                padding-top: 10px;
                 justify-content: center;
 
             }
 
             .linha {
-                margin-top: 10px;
                 height: 1px;
-                width: 430px;
+                width: 100%px;
                 background-color: rgba(255, 255, 255, 0.568);
             }
 
 
 
             .subcard {
-                width: 465px;
-                height: 380px;
+                width: 100%;
+                height: 100%;
                 margin-top: 20px;
                 background-color: #fffffff6;
                 border-radius: 10px;
@@ -76,7 +82,7 @@
                 .info {
                     display: flex;
                     flex-direction: column;
-                    padding: 50px 0px;
+                    padding: 10px;
 
                 }
 
@@ -119,6 +125,7 @@
                     align-items: center;
                     justify-content: center;
 
+
                 }
 
 
@@ -130,7 +137,7 @@
                     border-radius: 5px;
                     cursor: pointer;
                     height: 35px;
-                    width: 200px;
+                    width: 100%;
                     transition: 1s;
                     font-size: 15px;
                 }
@@ -147,6 +154,16 @@
 
             }
         }
+
+
+        @media(max-width:415px) {
+
+            .card {
+                width: 90%;
+                height: 450px;
+            }
+
+        }
     }
 
 
@@ -162,12 +179,14 @@
 
 
     .page-add-cartao {
-        position: absolute;
+        position: fixed;
         justify-content: center;
         align-items: center;
         display: none;
         width: 100%;
-        height: 80%;
+        height: 100%;
+        backdrop-filter: blur(5px);
+
 
 
         .parcela {
@@ -179,8 +198,8 @@
         .card {
             position: fixed;
             margin-top: 50px;
-            width: 485px;
-            height: 550px;
+            width: 450px;
+            height: 500px;
             background-color: black;
             border-radius: 30px;
             align-items: center;
@@ -405,4 +424,11 @@
         }
     }
 
+    @media(max-width:415px) {
+
+        .card {
+            width: 90%;
+            height: 450px;
+        }
+    }
 }

@@ -1,5 +1,5 @@
 import './index.js'
-import Cabecalho from '../../../components/cabecalho/index.js'
+
 import CompProduto from '../../../components/CompPageProduto/index.js'
 import { useParams } from 'react-router-dom'
 import { ListarProdutosPorID } from '../../../api/produtoApi.js';
@@ -41,9 +41,8 @@ export default function PageProduto(){
 
     return(
         <div className='PageProduto'>
-            <div>
-            <Cabecalho />
-            </div>
+            
+
             
             <CompProduto produtos={produto} precos = {preco}/>
         

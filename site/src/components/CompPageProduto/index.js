@@ -1,4 +1,5 @@
 import { BuscarImagem } from '../../api/produtoApi'
+import Header from '../cabecalho'
 import CompCartao from '../compCartao'
 import './index.scss'
 
@@ -56,7 +57,9 @@ export default function CompProduto(props) {
         <div className='CompProduto'>
             <ToastContainer />
             <CompCartao />
+            <Header />
             <section className='CompProd-f1'>
+                
 
                 <div className='Card'>
                     <div className='Esq'>
