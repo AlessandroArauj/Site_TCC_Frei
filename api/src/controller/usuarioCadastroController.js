@@ -57,7 +57,7 @@ server.post('/cliente/login', async (req, resp) => {
 
         const linha = await LoginUsuario(email, senha);
         if (linha == undefined) {
-            throw new Error('⚠ Credenciais Inválidas ⚠');
+            throw new Error('⚠ Credenciais Inválidas Ou inexistente ⚠');
         }
 
         resp.send(linha);

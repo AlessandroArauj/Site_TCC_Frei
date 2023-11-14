@@ -133,6 +133,7 @@ export default function Page_adm() {
         try {
             const resp = await DeletarProduto(id)
             alert('Produto Removido' + nome)
+            window.location.reload()
         } catch (err) {
             alert('não pode ser removido')
         }
@@ -171,6 +172,7 @@ export default function Page_adm() {
                 const re = await EnviarImagem(novoProduto.id, imagem)
 
                 toast.dark('Produto Cadastrado!')
+                
             }
 
             else {
@@ -610,7 +612,7 @@ export default function Page_adm() {
                             <div className='butt'>
 
 
-                                <div className='Salvar' onClick={SalvarCLick} >
+                                <div className='Salvar' onClick={[SalvarCLick]} >
 
                                     <p> {id === 0 ? 'Salvar' : 'Alterar'} </p>
 
