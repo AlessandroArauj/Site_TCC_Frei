@@ -8,14 +8,14 @@ return(
     <div className='compcarrinho'>
 
       <div className='img'>
-        <input className='imagem' type='image' ></input>
+       <img className='imagem' />
       </div>
 
 
 
       <div className='avaliacao'>
         <p className='nome'>Violao iamarra knmdlkasalkn djkasjs sakjdsakj jushdnas kjjsf dkfjkasmn dfkjfkdsnflk dfj kldfsklj ikjfldsk </p>
-        <img className='estrelas' src='assets/images/estrelas.png'></img>
+        
         <p className='promocao'>47,90 RS</p>
         <p className='preco_final'>30,90 RS</p>
       </div>

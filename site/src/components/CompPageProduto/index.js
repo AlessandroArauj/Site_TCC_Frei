@@ -2,9 +2,32 @@ import { BuscarImagem } from '../../api/produtoApi'
 import CompCartao from '../compCartao'
 import './index.scss'
 
+import storage from 'local-storage'
+import { ToastContainer, toast } from 'react-toastify'
+
+
 
 export default function CompProduto(props) {
 
+    const id = props.produtos.ID
+
+
+    function addCarrinho() {
+        let carrinho = [];
+        if (storage('carrinho')) {
+            carrinho = storage('carrinho')
+        }
+
+        if (!carrinho.find(item => item.id === id)) {
+            carrinho.push({
+                id: id,
+                qtd: 1
+            })
+            storage('carrinho', carrinho)
+        }
+
+        toast.dark('Produto no carrinho')
+    }
 
     function abrirModal1() {
         const editar = document.getElementById('Modal1')
@@ -31,6 +54,7 @@ export default function CompProduto(props) {
 
     return (
         <div className='CompProduto'>
+            <ToastContainer />
             <CompCartao />
             <section className='CompProd-f1'>
 
@@ -75,7 +99,7 @@ export default function CompProduto(props) {
 
                         <div className='cad'>
                             <button className='button1' onClick={abrirModal1}> Forma de pagamento</button>
-                            <button className='button2' > Adicionar ao carrinho</button>
+                            <button className='button2' onClick={addCarrinho}> Adicionar ao carrinho</button>
                         </div>
 
 
