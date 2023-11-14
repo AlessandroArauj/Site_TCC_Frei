@@ -19,32 +19,40 @@ export default function CadastroAdm() {
     const navigate = useNavigate();
     const ref = useRef()
 
-    async function LoginADMReact() {
+    function verificaEmail(email) {
+        const padrao = /^\S+@\S+\.\S+$/;
+        return padrao.test(email);
+      }
+    
+      async function LoginADMReact() {
         ref.current.continuousStart();
         setCarregando(true);
-
+    
         try {
-            const r = await loginAdm(email, senha);
-            storage('admin-logado', r)
-
-            setTimeout(() => {
-                navigate('/pageAdm')
-            }, 3000)
-
-
-
-        }
-
-        catch (err) {
+          if (!verificaEmail(email)) {
+            toast.error('Por favor, insira um endereço de e-mail válido.');
             ref.current.complete();
-            setCarregando(false)
-            if (err.response.status === 400) {
-                setErro(err.response.data.erro)
-                toast.error(erro)
-            }
+            setCarregando(false);
+            return;
+          }
+    
+          const r = await loginAdm(email, senha);
+          storage('admin-logado', r);
+    
+          setTimeout(() => {
+            navigate('/pageAdm');
+          }, 3000);
+        } catch (err) {
+          ref.current.complete();
+          setCarregando(false);
+    
+          if (err.response && err.response.status === 400) {
+            setErro(err.response.data.erro);
+            toast.error(erro);
+          }
         }
-
-    }
+      }
+    
 
 
     useEffect(() => {

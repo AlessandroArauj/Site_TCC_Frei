@@ -27,33 +27,46 @@ export default function LoginUsuario() {
     }
   }, [])
 
-
-
-  async function LoginUsuarioReact() {
-    ref.current.continuousStart();
-    setCarregando(true);
-
-    try {
-      const r = await login(email, senha);
-      storage('usuario-logado', r)
-
-      setTimeout(() => {
-        navigate('/home')
-      }, 3000)
+  function teclaEnter(e) {
+    if (e.key === 'Enter') {
+        LoginUsuarioReact();
+    }}
 
 
 
-    }
+ async function LoginUsuarioReact() {
+  ref.current.continuousStart();
+  setCarregando(true);
 
-    catch (err) {
-      ref.current.complete();
-      setCarregando(false)
-      if (err.response.status === 400) {
-        setErro(err.response.data.erro)
-      }
-    }
-
+  // Verificar se o e-mail é válido antes de prosseguir
+  if (!verificaEmail(email)) {
+    setErro('Por favor, insira um endereço de e-mail válido.');
+    ref.current.complete();
+    setCarregando(false);
+    return;
   }
+
+  try {
+    const r = await login(email, senha);
+    storage('usuario-logado', r);
+
+    setTimeout(() => {
+      navigate('/home');
+    }, 3000);
+  } catch (err) {
+    ref.current.complete();
+    setCarregando(false);
+    if (err.response && err.response.status === 400) {
+      setErro(err.response.data.erro);
+    }
+  }
+}
+
+
+function verificaEmail(email) {
+  const padrao = /^\S+@\S+\.\S+$/;
+  return padrao.test(email);
+}
 
   return (
 
@@ -70,7 +83,7 @@ export default function LoginUsuario() {
         </Link>
 
         <div className='inputbox'>
-          <input className='barra' type='text' value={email} onChange={e => setEmail(e.target.value)} required ></input>
+          <input className='barra' type='text' onKeyUp={teclaEnter} value={email} onChange={e => setEmail(e.target.value)} required ></input>
           <label for="">EMAIL</label>
         </div>
 
