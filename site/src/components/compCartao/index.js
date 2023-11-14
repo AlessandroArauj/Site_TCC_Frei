@@ -8,6 +8,12 @@ export default function CompCartao() {
         const Modal1 = document.getElementById('Modal1')
         Modal1.classList.remove('abrir')
     }
+    
+    function abrirModal1() {
+        const editar = document.getElementById('Modal1')
+        editar.classList.add('abrir')
+
+    }
 
     function AbrirModal2() {
         const Modal2 = document.getElementById('Modal2')
@@ -50,7 +56,7 @@ export default function CompCartao() {
 
                                 <div className='butonn'>
 
-                                    <button>Cadastrar</button>
+                                    <button onClick={abrirModal1}>Cadastrar</button>
                                 </div>
                             </div>
                         </div>
