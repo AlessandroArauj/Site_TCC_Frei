@@ -142,7 +142,7 @@ function Home() {
           <p className='cardizinho'>Cordas</p>
         </Link>
 
-        <Link className='link-head' to={'/categorias/'  + 1}>
+        <Link className='link-head' to={'/categorias/' + 1}>
           <p className='cardizinho'>Audio</p>
         </Link>
 
@@ -208,8 +208,8 @@ function Home() {
             <div className='carousel' ref={carousel}>
               {produto.map(item => (
                 <div className='card-item' onClick={() => navigate('/pageProduto/' + item.ID)}>
-                  
-                  
+
+
                   <div className='superior'>
                     <img className='imagem-produto' src={BuscarImagem(item.IMAGEM)} />
                   </div>
@@ -219,12 +219,12 @@ function Home() {
                   <div className='inferior'>
                     <div className='infos-prod'>
 
-                      <div className='NomesProdutos'> 
+                      <div className='NomesProdutos'>
 
-                      <p>{item.PRODUTO}</p>
+                        <p>{item.PRODUTO}</p>
 
                       </div>
-                      
+
 
                       <div className='infosprodutos'>
                         <h3 className={`preco ${parseFloat(item.PRECOPROMO) === 0 ? 'zero-price' : ''}`}>
@@ -288,25 +288,46 @@ function Home() {
 
             <div className='carousel' ref={carousel2}>
 
-              <div className='card' >
-                <div className='superior'>
-                  <img className='imagem-produto' />
-                </div>
-                <div className='line-carousel' />
-                <div className='inferior'>
-                  <div className='nomeProduto'>
-                    <p>--------</p>
-                  </div>
-                  <div className='precos'>
-                    <h3 className='preco'>----</h3>
-                    <h2 className='precopromo'>-------</h2>
-                  </div>
-                  <div className='freteVisual'>
-                    <p>Frete Grátis</p>
-                  </div>
-                </div>
-              </div>
 
+              {produto.map(item => (
+                <div className='card-item' onClick={() => navigate('/pageProduto/' + item.ID)}>
+
+
+                  <div className='superior'>
+                    <img className='imagem-produto' src={BuscarImagem(item.IMAGEM)} />
+                  </div>
+
+                  <div className='line-carousel' />
+
+                  <div className='inferior'>
+                    <div className='infos-prod'>
+
+                      <div className='NomesProdutos'>
+
+                        <p>{item.PRODUTO}</p>
+
+                      </div>
+
+
+                      <div className='infosprodutos'>
+                        <h3 className={`preco ${parseFloat(item.PRECOPROMO) === 0 ? 'zero-price' : ''}`}>
+                          R${item.PRECO}
+                        </h3>
+                        <h2 className='precopromo' style={{ display: parseFloat(item.PRECOPROMO) === 0 ? 'none' : 'block' }}>
+                          R${item.PRECOPROMO}
+                        </h2>
+                        <p>Frete Grátis</p>
+
+                      </div>
+
+
+                    </div>
+
+
+
+                  </div>
+                </div>
+              ))}
 
 
             </div>

@@ -1,56 +1,62 @@
 import './index.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import storage, { set } from 'local-storage'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BuscarImagem, ListarProdutosPorNome } from '../../api/produtoApi';
 
 
 export default function Header() {
     const navigate = useNavigate();
-
-    const [usuario, setUsuario] = useState('-')
-    const [busca, setBusca] = useState('')
+    const [usuario, setUsuario] = useState('-');
+    const [busca, setBusca] = useState('');
     const [resultado, setResultado] = useState([]);
-    const [erro, setErro] = useState('')
+    const [mostrarResultados, setMostrarResultados] = useState(false);
+    const [erro, setErro] = useState('');
 
+    const cont2Ref = useRef(null);
 
+    const handleClickOutside = (event) => {
+        if (cont2Ref.current && !cont2Ref.current.contains(event.target)) {
+            setMostrarResultados(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside, true);
+        return () => {
+            document.removeEventListener('click', handleClickOutside, true);
+        };
+    }, []);
 
     async function Filtro() {
         try {
             const resp = await ListarProdutosPorNome(busca);
-
-            console.log(resp);
-
-
-
-
-
             setResultado(resp);
 
+            if (resp.lenght == ' ') {
+                setMostrarResultados(false);
+            }
+
+            else {
+                setMostrarResultados(true);
+            }
+            
         } catch (err) {
-
-
+            console.error(err);
         }
     }
 
-    function handleKeyUp(event) {
-        if (event.key === 'Enter') {
-            console.log('Enter key pressed');
+    function teclaEnter(e) {
+        if (e.key === 'Enter') {
             Filtro();
-        }
-    }
-
-
-
+        }}
 
     useEffect(() => {
         if (storage('usuario-logado')) {
             const usuariologado = storage('usuario-logado');
-            setUsuario(usuariologado.nome)
+            setUsuario(usuariologado.nome);
         }
-
-    }, [])
-
+    }, []);
 
 
     return (
@@ -68,10 +74,10 @@ export default function Header() {
                 <div className='Input'>
 
                     <div className='input'>
-                        <button onClick={Filtro} onKeyUp={handleKeyUp}>
+                        <button onClick={Filtro}>
                             <img src='../../../assets/images/lupa.png'></img>
                         </button>
-                        <input type='text' value={busca} onChange={e => setBusca(e.target.value)} />
+                        <input type='text' value={busca} onKeyUp={teclaEnter} onChange={e => setBusca(e.target.value)} />
                     </div>
 
                 </div>
@@ -95,35 +101,23 @@ export default function Header() {
 
 
          
-            <div className='cont2' >
-                <div className='resultados' >
-
-                    {resultado.map(item => (
-
+            <div className='cont2' ref={cont2Ref}>
+                <div className='resultados'>
+                    {mostrarResultados && resultado.map(item => (
                         <div className='Resultados' onClick={() => navigate('/pageProduto/' + item.ID)}>
-
                             <div className='resultado-cont'>
-
                                 <div className='foto-result'>
-
-                                    <img src={BuscarImagem(item.IMAGEM)} />
-
+                                    <img src={BuscarImagem(item.IMAGEM)} alt={`Imagem ${item.PRODUTO}`} />
                                 </div>
                                 <div className='nome-result'>
-
                                     <p> {item.PRODUTO}</p>
-
                                 </div>
-
                             </div>
-
                         </div>
-
                     ))}
+                </div>
 
                 </div>
-            </div>
-
 
 
 

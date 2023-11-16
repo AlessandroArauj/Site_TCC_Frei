@@ -36,8 +36,30 @@ server.post('/produto/carrinho', async (req, resp) => {
             erro: err.message
         });
     }
+
 })
 
+
+// Endpoint para buscar produtos por nome
+server.get('/produto/busca', async (req, resp) => {
+    try {
+        const { nome } = req.query;
+
+        if (!nome || nome.trim() === '') {
+            resp.send([]);
+            return;
+        }
+
+        const resposta = await ExibirTodosFiltroNome(nome);
+
+        resp.send(resposta);
+        
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+});
 
 
 // Endpoint para listar categorias de produtos
@@ -52,24 +74,7 @@ server.get('/produto/categoria', async (req, resp) => {
     }
 });
 
-// Endpoint para buscar produtos por nome
-server.get('/produto/busca', async (req, resp) => {
-    try {
-        const { nome } = req.query;
-        const resposta = await ExibirTodosFiltroNome(nome);
 
-        
-        if (resposta.length == 0) {
-            resp.status(404).send([]);
-        } else {
-            resp.send(resposta);
-        }
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        });
-    }
-});
 
 // Endpoint para listar marcas de produtos
 server.get('/produto/marca', async (req, resp) => {

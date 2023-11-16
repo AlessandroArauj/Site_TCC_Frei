@@ -38,7 +38,6 @@ export default function LoginUsuario() {
   ref.current.continuousStart();
   setCarregando(true);
 
-  // Verificar se o e-mail é válido antes de prosseguir
   if (!verificaEmail(email)) {
     setErro('Por favor, insira um endereço de e-mail válido.');
     ref.current.complete();

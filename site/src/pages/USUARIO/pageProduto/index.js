@@ -1,4 +1,4 @@
-import './index.js'
+import './index.scss'
 
 import CompProduto from '../../../components/CompPageProduto/index.js'
 import { useParams } from 'react-router-dom'
