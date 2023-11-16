@@ -277,7 +277,7 @@ function Home() {
           <div className='cima-f5'>
             <div className='line' />
 
-            <h1> Com os menores preços</h1>
+            <h1> Maiores Promoções disponiveis</h1>
 
             <div className='line2' />
 

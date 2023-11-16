@@ -92,9 +92,9 @@ export default function CompProduto(props) {
 
 
                             <div className='Cubo-dir'>
-                                <p>Produto disponivel</p>
+                            <p>{props.produtos.DISPONIVEL ? 'Produto Disponível' : 'Produto Indisponível'}</p>
 
-                                <p>Quantidade de estoque</p>
+                                <p>Quantidade de estoque: {props.produtos.ESTOQUE}</p>
 
                             </div>
 

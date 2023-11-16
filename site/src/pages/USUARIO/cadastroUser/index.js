@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './index.scss'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { CadastroUsuarioReact } from '../../../api/loginUserApi';
-
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -19,6 +19,7 @@ export default function ContaUser() {
    const [confirmaSenha, setConfirmar] = useState('');
    const [erroConfirma, setErroConfirma] = useState('');
    const [termosAceitos, setTermosAceitos] = useState(false);
+   const navigate = useNavigate;
 
    const [mostrarSenha2, setMostrarSenha2] = useState(false)
    const [mostrarSenha, setMostrarSenha] = useState(false);
@@ -52,9 +53,12 @@ export default function ContaUser() {
             senha
          );
 
-         alert('Usuário Cadastrado');
+         toast.success('Usuário Cadastrado');
+
+         
       } catch (err) {
-         alert(err.message);
+         toast.error('Usuario não cadastrado');
+         console.log(err.message);
       }
    }
 
@@ -65,6 +69,7 @@ export default function ContaUser() {
 
    return (
       <div className='criarConta'>
+         <ToastContainer />
 
          <div className='cima'>
 
@@ -136,9 +141,7 @@ export default function ContaUser() {
 
 
 
-            <button onClick={() => setMostrarSenha(!mostrarSenha)}>
-               <img src='../../../assets/images/olho1.png'></img>
-            </button>
+           
 
 
 
