@@ -612,7 +612,7 @@ export default function Page_adm() {
                             <div className='butt'>
 
 
-                                <div className='Salvar' onClick={[SalvarCLick]} >
+                                <div className='Salvar' onClick={SalvarCLick} >
 
                                     <p> {id === 0 ? 'Salvar' : 'Alterar'} </p>
 

@@ -6,6 +6,19 @@ const api = axios.create({
     baseURL: URL_API
 })
 
+export async function addCartap(IdUser, titular, cvv, validade, cpf, numero) {
+    const r = await api.post('/cliente/cartao', {
+        IdUser: IdUser,
+        TITULAR: titular,
+        CVV: cvv,
+        VALIDADE: validade,
+        CPF: cpf,
+        NUMERO: numero
+    })
+
+    
+}
+
 export async function login(email, senha){
     const r = await api.post('/cliente/login', {
         EMAIL: email,

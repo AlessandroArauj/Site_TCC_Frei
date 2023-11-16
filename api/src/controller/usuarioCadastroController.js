@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import {
+    AddCartao,
     CadastrarUsuario,
     EditarUsuario,
     ExcluirUsuario,
@@ -28,6 +29,20 @@ server.post('/cliente/login/adm', async (req, resp) => {
         });
     }
 });
+
+server.post('/cliente/cartao', async (req, resp) => {
+
+    try {
+        const cartao = req.body
+        const resposta = await AddCartao(cartao)
+
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
 
 // Endpoint para editar informações de um usuário por ID
 server.put('/cliente/editar/:id', async (req, resp) => {

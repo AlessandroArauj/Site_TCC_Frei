@@ -1,5 +1,5 @@
-
-USE TOTH_Music;
+create database TOTH_Music;
+USE TOTH_Music;	
 
 show tables from TOTH_Music;
 
@@ -113,7 +113,10 @@ CREATE TABLE TB_CARTOES(
 	ID_CARTOES int PRIMARY KEY auto_increment,
 	ID_USER int,
 	NM_TITULAR varchar(200),
-	DS_CARTAO varchar(200),
+	DS_CVV varchar(200),
+    DS_VAL varchar(200),
+    DS_CPF varchar(200),
+    NR_CARTAO varchar(200),
 	foreign key (ID_USER) REFERENCES TB_CADASTRO_USER (ID_USER)
 
 );
@@ -175,5 +178,23 @@ insert into TB_CADASTRO_ADM (NM_NOME_COMP ,DS_EMAIL, DS_SENHA)
 
 
 select * from TB_PRODUTO;
+select * from TB_CATEGORIA;
+select * from TB_CADASTRO_USER;
+
+SELECT
+        ID_INSTRUMENTOS AS ID,
+                ID_MARCAS AS MARCAS,
+                ID_CATEGORIA AS CATEGORIAS,
+                NM_PRODUTO AS PRODUTO,
+                NR_PRECO AS PRECO,
+                NR_PRECO_PROMOCIONAL AS PRECOPROMO,
+                BT_DESTAQUE AS DESTAQUE,
+                BT_PROMOCAO AS PROMODISP,
+                BT_DISPONIVEL AS DISPONIVEL,
+                QTD_ESTOQUE AS ESTOQUE,
+                DS_DETALHES AS DETALHE,
+                IMG_PRODUTO AS IMAGEM
+        FROM TB_PRODUTO
+        WHERE NM_PRODUTO LIKE '%a%'
 
 

@@ -1,7 +1,15 @@
+import { useState } from 'react'
 import './index.scss'
 
 
 export default function CompCartao() {
+
+    const [nomeTitular, setNomeTitular] = useState('')
+    const [idUser, setIdUser] = useState(0)
+    const [cvv, setCvv] = useState('')
+    const [validade, setValidade] = useState('')
+    const [cpf, setCPF] = useState('')
+    const [numero, setNumero] = useState(0)
 
 
     function fecharModal1() {

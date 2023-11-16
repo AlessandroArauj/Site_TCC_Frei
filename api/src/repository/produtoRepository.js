@@ -32,8 +32,6 @@ export async function ListarProdutosPorID(id) {
 
 
 
-
-
 export async function Carrinho(id) {
     const comando = `
         SELECT

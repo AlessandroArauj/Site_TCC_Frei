@@ -77,6 +77,34 @@ export async function ExcluirUsuario(id) {
     return resp.affectedRows;
 }
 
+
+
+export async function AddCartao(cartao) {
+    const comando = `
+        INSERT INTO TB_CARTOES(ID_USER, NM_TITULAR, DS_CVV, DS_VAL, DS_CPF, NR_CARTAO)
+                    values (?, ?, ?, ?, ?, ?)
+
+        
+    `
+
+    const [resp] = await con.query(comando, [
+        
+        cartao.IdUser,
+        cartao.TITULAR,
+        cartao.CARTAO,
+        cartao.CVV,
+        cartao.VALIDADE,
+        cartao.CPF,
+        cartao.NUMERO
+    
+    ])
+
+    cartao.id = resp.insertId
+    return cartao
+
+}
+
+
 // Função para fazer login de um usuário com base no email e senha
 export async function LoginUsuario(email, senha) {
     // Define o comando SQL de seleção para verificar as credenciais do usuário
