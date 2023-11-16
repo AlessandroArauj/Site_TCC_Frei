@@ -59,7 +59,7 @@ export default function CompProduto(props) {
             <CompCartao />
             <Header />
             <section className='CompProd-f1'>
-                
+
 
                 <div className='Card'>
                     <div className='Esq'>
@@ -92,7 +92,7 @@ export default function CompProduto(props) {
 
 
                             <div className='Cubo-dir'>
-                            <p>{props.produtos.DISPONIVEL ? 'Produto Disponível' : 'Produto Indisponível'}</p>
+                                <p>{props.produtos.DISPONIVEL ? 'Produto Disponível' : 'Produto Indisponível'}</p>
 
                                 <p>Quantidade de estoque: {props.produtos.ESTOQUE}</p>
 
@@ -146,7 +146,16 @@ export default function CompProduto(props) {
                 </div>
 
                 <div className='comen'>
-                    <h1>AVALIAÇÕES DOS CLIENTES</h1>
+                    <h1>COMENTARIOS</h1>
+
+                    <div className='comentarios'>
+
+                    </div>
+
+                    <label>
+                        <input type='text' placeholder='Faça seu comentario' />
+                        <img src='../../../assets/images/enviar.png' />
+                    </label>
                 </div>
 
 
