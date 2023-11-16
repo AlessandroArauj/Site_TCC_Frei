@@ -11,7 +11,7 @@ export default function PagePubli() {
 
                 <div className='conteinerPrincipal'>
 
-                    
+                    <div className='cardusuario'></div>
 
                 </div>
 
