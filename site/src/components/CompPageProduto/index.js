@@ -94,9 +94,10 @@ export default function CompProduto(props) {
 
     return (
         <div className='CompProduto'>
-            <Header />
+            
             <ToastContainer />
             <CompCartao />
+            <Header />
 
 
             <section className='CompProd-f1'>
