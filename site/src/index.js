@@ -15,7 +15,7 @@ import PageProduto from './pages/USUARIO/pageProduto';
 import PageCarrinho from './pages/USUARIO/carrinho';
 import PagePubli from './pages/USUARIO/pagepubli';
 import Progresso from './pages/USUARIO/progressoDEProd';
-
+import Prog from './pages/ADM/ProgAdm';
 
 
 
@@ -44,6 +44,7 @@ root.render(
         <Route path='/progresso' element= {<Progresso/>}/>
         <Route path='/loginAdm' element={<CadastroAdm />} />
         <Route path='/pageAdm' element={<Page_adm />} />
+        <Route path='/progressoAdm' element={<Prog/>}/>
         <Route path='/pageAdm/alterar/:id' element={<Page_adm />} />
 
 
