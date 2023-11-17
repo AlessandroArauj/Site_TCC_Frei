@@ -118,6 +118,8 @@ export default function LandingPage() {
                         <button className='button' > Saiba mais</button>
                     </Link> */}
 
+                    <button className='button'>EM BREVE</button>
+
                 </section>
 
                 <Rodape />
