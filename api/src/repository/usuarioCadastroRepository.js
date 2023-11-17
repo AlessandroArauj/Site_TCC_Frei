@@ -35,6 +35,40 @@ export async function EditarUsuario(usuario, id) {
     return resp.affectedRows;
 }
 
+export async function BuscarComentarioProduto(id) {
+    const comando = `
+        SELECT
+            NM_NOME_COMP        AS Usuario,
+            DS_COMENTARIO       AS Comentario
+        FROM TB_AVALIACAO       AS A
+        
+
+        INNER JOIN 
+            TB_CADASTRO_USER AS C ON A.ID_USER = C.ID_USER
+
+            WHERE ID_INSTRUMENTOS = ?
+
+    `
+
+    const [resp] = await con.query(comando, [id])
+    return resp;
+}
+
+export async function CadastrarComentario(comentario) {
+    const comando = `
+        INSERT INTO TB_AVALIACAO(ID_USER, ID_INSTRUMENTOS, DS_COMENTARIO)
+                VALUES(?, ?, ?)
+    `
+    const [resp] = await con.query(comando, [
+    comentario.IDUser,
+    comentario.IDInstrumento,
+    comentario.Comentario
+    ]);
+
+    comentario.id = resp.insertId
+    return comando;
+}
+
 // Função para cadastrar um novo usuário no banco de dados
 export async function CadastrarUsuario(usuario) {
     // Define o comando SQL de inserção
@@ -126,10 +160,14 @@ export async function LoginUsuario(email, senha) {
     // Define o comando SQL de seleção para verificar as credenciais do usuário
     const comando = `
         SELECT
-            ID_USER AS "id",
-            NM_NOME_COMP AS "nome",
-            DS_EMAIL AS "email",
-            ds_SENHA AS "senha"
+            ID_USER         AS "id",
+            NM_NOME_COMP    AS "nome",
+            DS_EMAIL        AS "email",
+            ds_SENHA        AS "senha",
+            DT_NASC         AS "Nascimento",
+            DS_ENDEREÇO     AS "Endereço",
+            DS_TELEFONE     AS "Celular"
+
         FROM TB_CADASTRO_USER
         WHERE DS_EMAIL = ? AND ds_SENHA = ?
     `;

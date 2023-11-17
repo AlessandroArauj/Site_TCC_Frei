@@ -39,8 +39,9 @@
     }
 
 
-    .inputs > div input{
+    .inputs > div input, p{
         display: flex;
+        justify-content: center;
         flex-direction: column;
         margin: 10px;
         width: 300px;

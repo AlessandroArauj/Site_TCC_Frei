@@ -1,9 +1,35 @@
 import './index.scss'
+import { ToastContainer, toast } from 'react-toastify';
+import storage from 'local-storage';
+import { useEffect, useState } from 'react';
 
 
-export default function conteudoOptions() {
+
+export default function ConteudoOptions() {
+
+    const [usuario ,setUsuario] = useState('');
+    const [celular, setCelular] = useState('');
+    const [endereco, setEndereco] = useState('');
+    const [nasci, setNasci] = useState('');
+    const [email, setEmail] = useState('');
+    
+ 
+    useEffect(() => {
+
+        
+    
+        if (storage('usuario-logado')) {
+            const usuariologado = storage('usuario-logado');
+            setUsuario(usuariologado.nome);
+            setCelular(usuariologado.Celular);
+            setEndereco(usuariologado.Endereço);
+            setNasci(usuariologado.Nascimento);
+            setEmail(usuariologado.email);
+        }
+    }, [])
 
 
+    
 
 
     return (
@@ -19,12 +45,12 @@ export default function conteudoOptions() {
                     <div>
                         <h1> Dados cadastrais</h1>
                         <div />
-                        <input type='text' placeholder=' NOME' />
-                        <input type='text' placeholder=' DATA NASCM' />
-                        <input type='text' placeholder=' ENDEREÇO' />
-                        <input type='text' placeholder=' TELEFONE' />
-                        <input type='text' placeholder=' CPF' />
-                        <input type='text' placeholder=' CIDADE' />
+                        <p>{usuario}</p>
+                        <p>{nasci.substr(0, 10)}</p>
+                        <p>{endereco}</p>
+                        <p>{celular}</p>
+                        <p>{email}</p>
+                        
                     </div>
                     <div>
                         <h1> Alterar dados</h1>
@@ -33,8 +59,8 @@ export default function conteudoOptions() {
                         <input type='text' placeholder=' DATA NASCM' />
                         <input type='text' placeholder=' ENDEREÇO' />
                         <input type='text' placeholder=' TELEFONE' />
-                        <input type='text' placeholder=' CPF' />
-                        <input type='text' placeholder=' CIDADE' />
+                        <input type='text' placeholder=' EMAIL' />
+                        
                     </div>
                 </div>
 

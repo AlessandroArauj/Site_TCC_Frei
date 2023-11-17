@@ -6,6 +6,21 @@ const api = axios.create({
     baseURL: URL_API
 })
 
+export async function ListarComentarios(id) {
+    const r = await api.get(`/cliente/comentarios/${id}`)
+    return r.data
+}
+
+export async function AddComentario(IDUser, IDInstrumento, Comentario) {
+    const r = await api.post('/cliente/comentarios', {
+        IDUser: IDUser,
+        IDInstrumento: IDInstrumento,
+        Comentario: Comentario
+    })
+
+    return r.data;
+}
+
 export async function BuscarCartaoPorID(id) {
     const resposta = await api.get(`/cliente/cartoes/${id}`)
     return resposta.data

@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import {
     AddCartao,
+    BuscarComentarioProduto,
+    CadastrarComentario,
     CadastrarUsuario,
     EditarUsuario,
     ExcluirUsuario,
@@ -30,6 +32,33 @@ server.post('/cliente/login/adm', async (req, resp) => {
         });
     }
 });
+
+server.get('/cliente/comentarios/:id', async (req, resp) => {
+    try {
+        const { id } = req.params
+        const resposta = await BuscarComentarioProduto(id)
+
+        resp.send(resposta);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
+server.post('/cliente/comentarios', async (req, resp) => {
+    try {
+        const comentario = req.body
+        const resposta = await CadastrarComentario(comentario);
+
+        resp.send(resposta)
+        
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
 
 server.get('/cliente/cartoes/:id', async (req, resp) => {
     try {

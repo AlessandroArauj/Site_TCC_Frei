@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react'
+import { AddComentario, ListarComentarios } from '../../api/loginUserApi'
 import { BuscarImagem } from '../../api/produtoApi'
-import Header from '../cabecalho'
 import CompCartao from '../compCartao'
 import './index.scss'
 
@@ -11,6 +12,39 @@ import { ToastContainer, toast } from 'react-toastify'
 export default function CompProduto(props) {
 
     const id = props.produtos.ID
+
+    const [comentario, setComentario] = useState('')
+    const [idUser, setIdUser] = useState(0);
+    const [comentarios, setComentarios] = useState([]);
+
+    async function listarComentarios() {
+        try {
+            const resposta = await ListarComentarios(id)
+
+            setComentarios(resposta);
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
+
+    async function addComent() {
+        try {
+            const resposta = await AddComentario(idUser, id, comentario)
+
+            toast.dark('Comentario Adicionado')
+            window.location.reload()
+        } catch (err) {
+            toast.error('Ocorreu um erro')
+        }
+    }
+
+
+    useEffect(() => {
+        if (storage('usuario-logado')) {
+            const usuariologado = storage('usuario-logado');
+            setIdUser(usuariologado.id);
+        }
+    }, [id, listarComentarios()]);
 
 
     function addCarrinho() {
@@ -51,13 +85,15 @@ export default function CompProduto(props) {
 
 
 
-
+    useEffect(() => {
+        listarComentarios()
+    }, [])
 
     return (
         <div className='CompProduto'>
             <ToastContainer />
             <CompCartao />
-            <Header />
+
             <section className='CompProd-f1'>
 
 
@@ -153,27 +189,29 @@ export default function CompProduto(props) {
 
                     <div className='comentarios'>
 
+                        {comentarios.map((item, index) => (
+                            item.Comentario.trim() !== '' && (
+                                <div key={index} className='comentarioCard'>
+                                    <div className='coment'>
+                                    <p>{item.Usuario} Comentou:</p>
+                                    <h3>{item.Comentario}</h3>
+                                    </div>
+                                </div>
+                            )
+                        ))}
+
+
+
                     </div>
 
                     <label>
-                        <input type='text' placeholder='Faça seu comentario' />
-                        <img src='../../../assets/images/enviar.png' />
+                        <input type='text' placeholder='Faça seu comentario' value={comentario} onChange={e => setComentario(e.target.value)} />
+                        <img src='../../../assets/images/enviar.png' onClick={addComent} />
                     </label>
                 </div>
 
 
-                <div className='faixa-5'>
-                    <div className='cima-f5'>
-                        <div className='line' />
-                        <h1> Com os menores preços</h1>
-                        <div className='line2' />
-                    </div>
 
-
-                    <div>
-
-                    </div>
-                </div>
 
 
 

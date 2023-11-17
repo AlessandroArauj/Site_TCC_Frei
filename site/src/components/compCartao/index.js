@@ -60,7 +60,7 @@ export default function CompCartao() {
 
     useEffect(() => {
         BuscarCartao()
-    })
+    }, [])
 
     useEffect(() => {
         
