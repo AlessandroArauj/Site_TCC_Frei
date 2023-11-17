@@ -68,12 +68,12 @@ export default function AbaUsuario() {
         const senha = document.getElementById('senhaSeguranca')
         senha.classList.remove('abrir')
 
-        const notificacao = document.getElementById('notificacao')    
+        const notificacao = document.getElementById('notificacao')
         notificacao.classList.remove('abrir')
 
     }
 
-    function abrirNoti(){
+    function abrirNoti() {
         const notificacao = document.getElementById('notificacao')
         notificacao.classList.add('abrir')
 
@@ -100,104 +100,74 @@ export default function AbaUsuario() {
 
     }
 
-
-
-
-
-
-
-
-
-
-
     return (
+        <div className='perfil'>
+            <nav className='lateral-menu'>
+                <div>
+                    <h1>Bem Vindo</h1>
+                    <h1>{usuario}</h1>
+                    <h1>{email}</h1>
+                </div>
 
-        <div className='aba-usuario'>
+                <ul className='down'>
 
-            <div className='superior' />
-            <section className='f1-usuario'>
+                    <Link to={'/home'} className='Link'>
+                        <li className='item-menu'>
+                            <span className='link'>HOME</span>
+                            <img src='../../assets/images/image142.svg' />
+                        </li>
+                    </Link>
 
-
-                <div className='options'>
-
-                    <div className='cima'>
-                        <img src='../../../assets/images/logo.svg' />
+                    <li className='item-menu ativo' onClick={abrirAlt}>
                         <div>
-                            <h1> {usuario}</h1>
-                            <div className='line' />
-                            <p>{email}</p>
+                            <span className='link'>Editar Perfil</span>
+                            <img src='../../assets/images/image138.svg' />
                         </div>
-                    </div>
+                    </li>
+
+                    <li className='item-menu' onClick={abrirNoti}>
+                        <div>
+
+                            <span className='link'>Notificação</span>
+                            <img src='../../assets/images/image137.svg'></img>
+                        </div>
 
 
-                    <ul className='baixo'>
-                        <Link to={'/home'} className='Link'>
-                            <li className='item-menu'>
-                                <div>
+                    </li>
+
+                    <li className='item-menu' onClick={abrirSeg}>
+                        <div>
+
+                            <span className='link'>Senha/Segurança</span>
+                            <img src='../../assets/images/image139.svg'></img>
+                        </div>
+
+                    </li>
+
+                    <li className='item-menu' onClick={sairClick}>
+                        <div>
+
+                            <span className='link' >Sair da conta</span>
+                            <img src='../../assets/images/sair.png'></img>
+                        </div>
 
 
+                    </li>
 
-                                    <span className='link'>Home</span>
-                                    <img src='../../assets/images/image142.svg'></img>
+                </ul>
+            </nav>
+            <div className='conteudo-option'>
 
-
-
-                                </div>
-
-                            </li>
-                        </Link>
-                        <li className='item-menu ativo' onClick={abrirAlt}>
-                            <div>
-
-                                <span className='link'>Editar Perfil</span>
-                                <img src='../../assets/images/image138.svg'></img>
-                            </div>
-
-                        </li>
-
-                        <li className='item-menu' onClick={abrirNoti}>
-                            <div>
-
-                                <span className='link'>Notificação</span>
-                                <img src='../../assets/images/image137.svg'></img>
-                            </div>
-
-
-                        </li>
-
-                        <li className='item-menu' onClick={abrirSeg}>
-                            <div>
-
-                                <span className='link'>Senha/Segurança</span>
-                                <img src='../../assets/images/image139.svg'></img>
-                            </div>
-
-                        </li>
-
-                        <li className='item-menu' onClick={sairClick}>
-                            <div>
-
-                                <span className='link' >Sair da conta</span>
-                                <img src='../../assets/images/sair.png'></img>
-                            </div>
-
-
-                        </li>
-
-                    </ul>
-
-                </div>
-
-                <div className='conteudo-option'>
-
-                    <Modais />
-                </div>
-
-
-            </section>
+                <Modais />
+            </div>
 
         </div>
 
+
     )
 
+
+
 }
+
+
