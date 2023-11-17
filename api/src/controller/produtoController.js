@@ -10,6 +10,18 @@ const upload = multer({ dest: 'storage/fotosProdutos' });
 
 const server = Router();
 
+server.get('/produto/promo', async (req, resp) => {
+    try {
+        const resposta = await ListarProdutosDestaques();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+
+})
+
 server.get('/produto/destaques', async (req, resp) => {
     try {
         const resposta = await ListarProdutosDestaques();
@@ -102,6 +114,8 @@ server.get('/produto/categoria/nome/:id', async (req, resp) => {
         });
     }
 })
+
+
 
 server.get('/produto/categoria/:id', async (req, resp) => {
     try {

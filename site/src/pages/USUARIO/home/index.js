@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import CardProduto from '../../../components/cardDestaque';
 import CardProdutoMenor from '../../../components/cardMenorPreco';
 
-import { ListarTodosProdutos, BuscarImagem, ListarProdutosDestaques } from '../../../api/produtoApi';
+import { ListarTodosProdutos, BuscarImagem, ListarProdutosDestaques, ListarProdutosPromo } from '../../../api/produtoApi';
 
 
 function Home() {
@@ -16,6 +16,20 @@ function Home() {
 
 
   const [produto, setProduto] = useState([]);
+
+  const [promos, setPromos] = useState([])
+
+
+  async function CarregarProdutoPromo() {
+    try {
+      const resp = await ListarProdutosPromo();
+      setPromos(resp);
+      console.log(resp);
+
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
 
 
 
@@ -32,6 +46,9 @@ function Home() {
     }
   }
 
+  useEffect(() => {
+    CarregarProdutoPromo()
+  }, [])
 
   useEffect(() => {
     CarregarProduto()
@@ -289,7 +306,7 @@ function Home() {
             <div className='carousel' ref={carousel2}>
 
 
-              {produto.map(item => (
+              {promos.map(item => (
                 <div className='card-item' onClick={() => navigate('/pageProduto/' + item.ID)}>
 
 

@@ -1,45 +1,47 @@
-.conteudoOption{
-    
+.conteudoOption {
 
-    .editarPerfil{
+
+    .editarPerfil {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         display: none;
-       
+
     }
 
-    .editarPerfil.abrir{
+    .editarPerfil.abrir {
         display: flex;
     }
 
-    .editarPerfil h1{
+    .editarPerfil h1 {
         font-size: 25px;
         padding-top: 20px;
         margin-bottom: 10px;
     }
-    .line{
+
+    .line {
         width: 250px;
         margin-bottom: 20px;
     }
 
-    .inputs{
+    .inputs {
         display: flex;
-        
+
         padding: 20px 50px;
-           
-        
+
+
     }
 
-    .inputs div{
+    .inputs div {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
 
-    .inputs > div input, p{
+    .inputs>div input,
+    p {
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -53,17 +55,17 @@
     }
 
 
-    .editarPerfil button{
+    .editarPerfil button {
         width: 200px;
         height: 35px;
-        border: none; 
+        border: none;
         border-radius: 15px;
         cursor: pointer;
         background-color: #00C2FF;
         color: #fff;
     }
 
-    .editarPerfil button:hover{
+    .editarPerfil button:hover {
         background-color: transparent;
         border: 1px solid black;
         color: black;
@@ -73,25 +75,25 @@
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    .senhaSeguranca{
+
+    .senhaSeguranca {
         display: none;
         align-items: center;
-        justify-content: center; 
+        justify-content: center;
         padding: 50px;
-      
-        
+
+
     }
 
-    .senhaSeguranca.abrir{
+    .senhaSeguranca.abrir {
         display: flex;
     }
 
-    
 
-    
 
-    .senhaSeguranca h1{
+
+
+    .senhaSeguranca h1 {
         display: flex;
         font-size: 30px;
         align-items: center;
@@ -99,7 +101,7 @@
         padding: 5px;
     }
 
-    .senhaSeguranca h2{
+    .senhaSeguranca h2 {
         display: flex;
         font-size: 23px;
         align-items: center;
@@ -107,7 +109,7 @@
 
     }
 
-    .meio{
+    .meio {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -115,29 +117,29 @@
         padding: 10px;
     }
 
-    .meio div{
+    .meio div {
         width: 100%;
         background-color: #000;
         height: 1px;
         margin: 10px;
     }
 
-    .bot{
+    .bot {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 300px;
         font-size: 20px;
         height: 37px;
-        border: none; 
+        border: none;
         border-radius: 15px;
         cursor: pointer;
         background-color: #00C2FF;
         color: #080808;
-        
+
     }
 
-    .senhaSeguranca input{
+    .senhaSeguranca input {
         width: 270px;
         display: flex;
         height: 35px;
@@ -147,24 +149,48 @@
         flex-direction: column;
         outline: 0;
         padding: 10px;
-       
+
     }
 
-   
-   
+
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    .notificacao{
+
+    .notificacao {
         display: none;
     }
-    .notificacao.abrir{
+
+    .notificacao.abrir {
         display: flex;
+
+
     }
 
 
 
 
-   
-
+    .direita {
     
+    overflow-y: auto;
+    }
+
+
+    .direita::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .direita::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        width: 10px;
+    }
+
+    .direita::-webkit-scrollbar-thumb {
+        background: #b9b9b9;
+        border-radius: 10px;
+    }
+
+    .direita::-webkit-scrollbar-thumb:hover {
+        background: #bebebe;
+    }
+
 }

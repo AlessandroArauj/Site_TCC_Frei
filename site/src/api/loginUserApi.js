@@ -6,6 +6,18 @@ const api = axios.create({
     baseURL: URL_API
 })
 
+export async function EditarUsuario(usuario, nasci, celular, endereco, email, id) {
+    const resposta = await api.put(`/cliente/editar/${id}`, {
+        Nome: usuario,
+        Nasc: nasci,
+        Telefone: celular,
+        endereco: endereco,
+        email: email
+    })
+    console.log(resposta.data);
+    return resposta.data;
+}
+
 export async function ListarComentarios(id) {
     const r = await api.get(`/cliente/comentarios/${id}`)
     return r.data

@@ -4,7 +4,7 @@ import {
     BuscarComentarioProduto,
     CadastrarComentario,
     CadastrarUsuario,
-    EditarUsuario,
+    EditarDados,
     ExcluirUsuario,
     LoginAdmin,
     LoginUsuario,
@@ -26,6 +26,22 @@ server.post('/cliente/login/adm', async (req, resp) => {
         }
 
         resp.send(linha);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+});
+
+server.put('/cliente/:id', async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const usuario = req.body;
+        const resposta = await EditarDados(usuario, id);
+        if (resposta != 1)
+            throw new Error('usuario não pode ser alterado');
+        else
+            resp.status(204).send();
     } catch (err) {
         resp.status(400).send({
             erro: err.message
@@ -100,7 +116,7 @@ server.put('/cliente/editar/:id', async (req, resp) => {
         if (resposta != 1) {
             throw new Error('Usuário não pode ser alterado');
         } else {
-            resp.status(204).send();
+            resp.status(204).send(resposta);
         }
     } catch (err) {
         resp.status(400).send({

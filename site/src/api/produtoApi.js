@@ -17,6 +17,10 @@ export async function CarrinhoAdd(id) {
     return r.data
 }
 
+export async function ListarProdutosPromo() {
+    const resposta = await api.get('/produto/promo');
+    return resposta.data;
+}
 
 export async function ListarProdutosDestaques() {
     const resposta = await api.get('/produto/destaques');

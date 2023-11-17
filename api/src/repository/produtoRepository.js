@@ -56,6 +56,30 @@ export async function Carrinho(id) {
     return linha;
 }
 
+export async function ListarProdutosPromos() {
+    const comando = `
+    SELECT 
+            ID_INSTRUMENTOS AS ID,
+        ID_MARCAS AS MARCAS,
+            ID_CATEGORIA AS CATEGORIAS,
+            NM_PRODUTO AS PRODUTO,
+            NR_PRECO AS PRECO,
+            NR_PRECO_PROMOCIONAL AS PRECOPROMO,
+            BT_DESTAQUE AS DESTAQUE,
+            BT_PROMOCAO AS PROMODISP,
+            BT_DISPONIVEL AS DISPONIVEL,
+            QTD_ESTOQUE AS ESTOQUE,
+            DS_DETALHES AS DETALHE,
+            IMG_PRODUTO AS IMAGEM
+        FROM TB_PRODUTO
+
+        WHERE BT_PROMOCAO = 1 AND BT_DISPONIVEL = 1;
+    `
+    const [resp] = await con.query(comando)
+    return resp;
+
+}
+
 export async function ListarProdutosPorCategoria(id) {
     const comando = `
     SELECT 

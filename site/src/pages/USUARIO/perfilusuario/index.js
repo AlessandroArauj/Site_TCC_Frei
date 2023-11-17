@@ -128,21 +128,14 @@ export default function AbaUsuario() {
                     <li className='item-menu' onClick={abrirNoti}>
                         <div>
 
-                            <span className='link'>Notificação</span>
+                            <span className='link'>Pedidos</span>
                             <img src='../../assets/images/image137.svg'></img>
                         </div>
 
 
                     </li>
 
-                    <li className='item-menu' onClick={abrirSeg}>
-                        <div>
-
-                            <span className='link'>Senha/Segurança</span>
-                            <img src='../../assets/images/image139.svg'></img>
-                        </div>
-
-                    </li>
+                    
 
                     <li className='item-menu' onClick={sairClick}>
                         <div>

@@ -2,37 +2,33 @@
 import { con } from "./connection.js";
 
 // Função para editar informações de um usuário no banco de dados
-export async function EditarUsuario(usuario, id) {
-    // Define o comando SQL de atualização
+
+
+export async function EditarDados(usuario, id) {
     const comando = `
         UPDATE TB_CADASTRO_USER
-        SET
-            NM_NOME_COMP = ?,
-            DT_NASC = ?,
-            DS_TELEFONE = ?,
-            DS_CPF = ?,
-            DS_ENDEREÇO = ?,
-            DS_CIDADE = ?,
-            DS_EMAIL = ?,
-            ds_SENHA = ?
-        WHERE ID_USER = ?
-    `;
+            SET NM_NOME_COMP = ?,
+                DT_NASC = ?,
+                DS_TELEFONE = ?,
+                DS_CPF = ?,
+                DS_ENDEREÇO = ?,
+                DS_EMAIL = ?
+            WHERE ID_USER = ?
 
-    // Executa a consulta SQL com os parâmetros fornecidos e aguarda a resposta
-    const [resp] = await con.query(comando, [
-        usuario.NOME,
-        usuario.DATA,
-        usuario.TELEFONE,
-        usuario.CPF,
-        usuario.ENDERECO,
-        usuario.CIDADE,
-        usuario.EMAIL,
-        usuario.SENHA,
+
+    `
+
+    const [resp]= await con.query(comando, [
+        usuario.Nome,
+        usuario.Nasc,
+        usuario.Telefone,
+        usuario.cpf,
+        usuario.endereco,
+        usuario.email,
         id
     ]);
 
-    // Retorna o número de linhas afetadas pela atualização
-    return resp.affectedRows;
+    return resp.affectedRows
 }
 
 export async function BuscarComentarioProduto(id) {
