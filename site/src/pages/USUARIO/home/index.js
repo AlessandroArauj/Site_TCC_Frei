@@ -143,7 +143,7 @@ function Home() {
         </Link>
 
         <Link className='link-head' to={'/categorias/' + 1}>
-          <p className='cardizinho'>Audio</p>
+          <p className='cardizinho'>Audios</p>
         </Link>
 
       </nav>

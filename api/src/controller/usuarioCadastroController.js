@@ -5,7 +5,8 @@ import {
     EditarUsuario,
     ExcluirUsuario,
     LoginAdmin,
-    LoginUsuario
+    LoginUsuario,
+    MapearCartaoPorID
 } from '../repository/usuarioCadastroRepository.js';
 
 // Cria uma instância de roteador Express
@@ -29,6 +30,21 @@ server.post('/cliente/login/adm', async (req, resp) => {
         });
     }
 });
+
+server.get('/cliente/cartoes/:id', async (req, resp) => {
+    try {
+        const { id } = req.params
+
+        const resposta = await MapearCartaoPorID(id)
+
+        resp.send(resposta)
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
 
 server.post('/cliente/cartao', async (req, resp) => {
 

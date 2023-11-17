@@ -78,6 +78,22 @@ export async function ExcluirUsuario(id) {
 }
 
 
+export async function MapearCartaoPorID(id) {
+    const comando = `
+        SELECT
+            ID_CARTOES      AS ID,
+            ID_USER         AS UsuarioID,
+            NM_TITULAR      AS Titular,
+            NR_CARTAO       AS NumeroDoCartao
+        
+        from TB_CARTOES
+
+        WHERE ID_USER = ?
+    `
+    const [resp] = await con.query(comando, [id])
+    return resp;
+}
+
 
 export async function AddCartao(cartao) {
     const comando = `
