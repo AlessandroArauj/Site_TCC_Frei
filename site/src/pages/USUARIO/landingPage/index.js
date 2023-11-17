@@ -104,7 +104,7 @@ export default function LandingPage() {
                         </Link>
                     </div>
 
-                    <img src='../../../../assets/images/Dicas.svg' />
+                    <img src='../../../../assets/images/DIcas.svg' />
 
                 </section>
 
