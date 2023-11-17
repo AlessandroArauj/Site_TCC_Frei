@@ -16,7 +16,7 @@ export default function CompCartao() {
         const Modal1 = document.getElementById('Modal1')
         Modal1.classList.remove('abrir')
     }
-    
+
     function abrirModal1() {
         const editar = document.getElementById('Modal1')
         editar.classList.add('abrir')
@@ -87,49 +87,55 @@ export default function CompCartao() {
 
                 <div className='page-add-cartao' id='Modal1'>
                     <div className='card'>
-
-                        <div className='titulo'>
-                            <h1 className='sair' onClick={fecharModal1}>X</h1>
-                            <h1 className='forma'>ESCOLHER FORMA DE PAGAMENTO</h1>
-                            <div className='linha'></div>
-                        </div>
-
+                        <h1 className='sair' onClick={fecharModal1}>X</h1>
+                        <h1> ESOLHA FORMA DE PAGAMENTO</h1>
                         <div className='subcard'>
-
-                            <p className='subtitulo'>CARTOES CADASTRADOS</p>
-                            <div className='parcela'>
-                                <select className='cartao'>
-                                    <option>naseeeieieii</option>
-                                    <option>naseeeieieii</option>
-                                    <option>naseeeieieii</option>
-                                    <option>naseeeieieii</option>
-                                </select>
-
-                                <label className='labelzim'>
-                                    <p className='testinho'>PARCELAR EM:</p>
-                                    <input className='numero_parcela' type='number'></input>
-                                </label>
-                                <button className='cadastrar' onClick={AbrirModal2}>Cadastrar Novo Cartão</button>
-                            </div>
-                            <div className='dd'>
-                                <div className='divisinha'></div>
-                                <p className='outras'>outras formas</p>
-                                <div className='divisinha'></div>
-                            </div>
-                            <div className='baixo'>
-                                <div>   <button className='pix'>pix</button>
-                                    <img src='/assets/images/pix.svg'></img>
-                                </div>
-                                <p>OU</p>
+                            <div className='cima'>
+                                <h1> CARTÕES CADASTRADOS</h1>
                                 <div>
-                                    <button className='boleto'>boleto</button>
-                                    <img src='/assets/images/image_125.png'></img>
+                                    
+                                        <select>
+                                            <option>nseeeieieiei</option>
+                                            <option>nseeeieieiei</option>
+                                            <option>nseeeieieiei</option>
+                                        </select>
+                                    
+                                    <label>
+                                        <h1> Parcelar em:</h1>
+                                        <select value={'Parcelar'}>
+                                            <option>6x</option>
+                                            <option>12x</option>
+                                            <option>24x</option>
+                                        </select>
+                                    </label>
+
+                                    <button onClick={AbrirModal2}>CADASTRAR NOVO CARTÃO</button>
                                 </div>
                             </div>
-                            <div className='ultima'>
-                                <p className='total'>Total:</p>
-                                <button className='cadastrar'>Efetuar Compra</button>
+
+                            <div className='meio'>
+                                <div className='line' />
+                                <h1> outras formas</h1>
+                                <div className='line' />
                             </div>
+
+                            <div className='baixo'>
+                                <div>
+                                    <button> PIX <img /></button>
+                                    <h1>OU</h1>
+                                    <button> BOLETO <img /></button>
+                                </div>
+
+                                <div>
+                                    <div>
+                                        <h1>TOTAL:</h1>
+
+                                    </div>
+
+                                    <button>Efetuar compra</button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

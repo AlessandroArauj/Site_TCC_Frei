@@ -9,14 +9,35 @@ import { ListarProdutosPorID } from '../../../api/produtoApi'
 
 export default function PageCarrinho() {
 
-    const [ item, setItem ] = useState([]);
+    const [itens, setItem] = useState([]);
+
+    function qtdItens() {
+        return itens.length;
+    }
+
+    function calcularValorTotal() {
+        let total = 0;
+        for (let item of itens) {
+            total = total + item.produto.PRECO * item.qtd
+        }
+        return total;
+        
+    }
+
+    function RemoverItem(id) {
+        let carrinho = storage('carrinho');
+        carrinho = carrinho.filter(item => item.id != id)
+
+        storage('carrinho', carrinho)
+        carregarCarrinho()
+    }
 
     async function carregarCarrinho() {
         let carrinho = storage('carrinho');
         if (carrinho) {
             let array = []
 
-            for(let produto of carrinho) {
+            for (let produto of carrinho) {
                 let p = await ListarProdutosPorID(produto.id)
 
                 array.push({
@@ -47,7 +68,12 @@ export default function PageCarrinho() {
 
                         <div className='Direita'>
 
-                            <Compcarrinho />
+                            {itens.map(item =>
+
+                                <Compcarrinho item={item} removerItem={RemoverItem} carregarCarrinho={carregarCarrinho} />
+                            )}
+                            
+
 
                         </div>
 
@@ -67,13 +93,13 @@ export default function PageCarrinho() {
                             <div>
 
                                 <h3 className='p'> frete: GRÁTIS </h3>
-                                <h3>Total de Produtos: </h3>
+                                <h3>Total de Produtos: {qtdItens()}  </h3>
 
                             </div>
 
                             <div className='bbaixo'>
 
-                                <h2>SubTotal: </h2>
+                                <h2>Total: R${calcularValorTotal()} </h2>
                                 <button className='butt-carrinho' > Finalizar pedido </button>
 
                             </div>
