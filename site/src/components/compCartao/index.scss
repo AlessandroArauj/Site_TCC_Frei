@@ -297,6 +297,11 @@
 
         }
 
+        .sair{
+            width: 100%;
+            text-align: end;
+        }
+
         .baixo {
             display: flex;
             flex-direction: column;
@@ -352,8 +357,12 @@
 
             .card {
                 width: 90%;
-                height: 350px;
+                height: 450px;
 
+            }
+
+            .baixo{
+                height: 30%;
             }
 
 

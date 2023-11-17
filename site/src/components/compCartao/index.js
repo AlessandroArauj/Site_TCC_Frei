@@ -85,8 +85,9 @@ export default function CompCartao() {
 
 
 
-                <div className='page-add-cartao abrir' id='Modal1'>
+                <div className='page-add-cartao' id='Modal1'>
                     <div className='card'>
+                        <h1 className='sair' onClick={fecharModal1}>X</h1>
                         <h1> ESOLHA FORMA DE PAGAMENTO</h1>
                         <div className='subcard'>
                             <div className='cima'>
