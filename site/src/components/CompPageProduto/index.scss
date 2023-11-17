@@ -306,7 +306,7 @@
         padding: 10px 30px;
         font-size: 14px;
         overflow: hidden;
-        
+        transition: 0.5s ease;
     }
 
     .button22{
@@ -327,8 +327,8 @@
 
 
     .infoPro.maior{
-        transition: 0.5s ease;
-        height: 400px;
+        
+        height: 100%;
         .button11{
             display: none;
         }
@@ -568,8 +568,11 @@
         .infoPro{
            font-size: 10px;
            padding: 12px;
-           height: 50px;
+           height: 40px;
         }
+
+
+        
 
         .button11, .button22{
             height: 15px;

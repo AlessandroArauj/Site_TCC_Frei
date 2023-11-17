@@ -72,7 +72,7 @@ export default function Header() {
 
 
                 <div className='Input'>
-
+                    
                     <div className='input'>
                         <button onClick={Filtro}>
                             <img src='../../../assets/images/lupa.png'></img>
