@@ -1,23 +1,152 @@
-.conteinerprincipal{
 
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+.PagePubli{
+   
+     
+
+    .conteinerPrincipal{
+
+        align-items: center;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow-y: auto;
+        white-space: normal;
+        overflow: visible;
+        overflow-y:scroll;
+        overflow-x: hidden;
+        word-wrap: break-word;
+        gap: 30px;
+        transition: 0.3s ease;
+   
+        
+
+        .cardusuario{
+
+            height: 30vh;
+            width:  80%;
+            display: flex;
+           
+            justify-content:center;
+            padding: 10px;
+            flex-direction: row;
+            border: solid 1px ;
+            border-radius: 10px;
+            margin-top: 10px;
+
+            .divimg{
+                height: 100%;
+                width: 40%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                .ADDIMAGEM{
+                    height: 100%;
+                    width: 80%;
+                }
+
+            }
+            .divtest{
+                height: 100%;
+                width: 60%;
+                 padding: 10px;
+                display: flex;
+                align-items: center;
+                overflow-y:scroll;
+                overflow-x: hidden;
+                word-wrap: break-word;
+              
+                
+                p{  height: 80%;
+                    width: 80%;
+                    font-size: 20px;
+                    text-align: center;
+                    line-height: 2.0;
+              
+                }
+                
+            }
+            
+            
+        }
+
+    }
+
+    .conteinerPrincipal :hover{
+
+        background-color: rgb(230, 230, 230);
+        transition: 0.4s;
+    }
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #12adf9;
+    border-radius: 6px;
+}
+
+}
+
+@media (max-width:1200px){
+
 
     .cardusuario{
 
-        height: 30%;
-        width: 80%;
+        height: 900px !important;
+        width:  600px !important;
         display: flex;
+        justify-content:center;
         align-items: center;
-        justify-content: center;
         padding: 10px;
-        flex-direction: row;
+        flex-direction: column !important;
+   
+       
+        
+        .divimg{
+            height: 100%;
+            width: 100% !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            .ADDIMAGEM{
+                height: 400px !important;
+                width: 400px !important;
+            }
+
+        }
+        .divtest{
+            height: 100%;
+            width: 100% !important;
+             padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-y:scroll;
+            overflow-x: hidden;
+            word-wrap: break-word;
+          
+            
+            p{  height: 80%;
+                width: 80%;
+                font-size: 20px;
+                text-align: center;
+                line-height: 2.0;
+          
+            }
+            
+        }
+        
+        
 
 
-
+       
+            
+        
+        
     }
 
 
@@ -25,7 +154,152 @@
 
 
 
-
-
-
+    
+    
 }
+
+
+
+
+
+
+@media (max-width:724px){
+
+
+    .cardusuario{
+
+        height: 700px !important;
+        width:  500px !important;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        padding: 10px;
+        flex-direction: column !important;
+   
+       
+        
+        .divimg{
+            height: 100%;
+            width: 100% !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            .ADDIMAGEM{
+                height: 400px !important;
+                width: 400px !important;
+            }
+
+        }
+        .divtest{
+            height: 100%;
+            width: 100% !important;
+             padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-y:scroll;
+            overflow-x: hidden;
+            word-wrap: break-word;
+          
+            
+            p{  height: 80%;
+                width: 80%;
+                font-size: 20px;
+                text-align: center;
+                line-height: 2.0;
+          
+            }
+            
+        }
+        
+        
+
+
+       
+            
+        
+        
+    }
+
+
+
+
+
+
+    
+    
+}
+
+
+
+
+
+@media (max-width:515px){
+
+
+    .cardusuario{
+
+        height: 500px !important;
+        width:  300px !important;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        padding: 10px;
+        flex-direction: column !important;
+   
+       
+        
+        .divimg{
+            height: 100%;
+            width: 100% !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            .ADDIMAGEM{
+                height: 300px !important;
+                width: 400px !important;
+            }
+
+        }
+        .divtest{
+            height: 100%;
+            width: 100% !important;
+             padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-y:scroll;
+            overflow-x: hidden;
+            word-wrap: break-word;
+          
+            
+            p{  height: 80%;
+                width: 80%;
+                font-size: 20px;
+                text-align: center;
+                line-height: 2.0;
+          
+            }
+            
+        }
+        
+        
+
+
+       
+            
+        
+        
+    }
+
+
+
+
+
+
+    
+    
+}
+
