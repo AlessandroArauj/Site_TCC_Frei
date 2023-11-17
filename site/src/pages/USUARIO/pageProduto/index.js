@@ -4,8 +4,7 @@ import CompProduto from '../../../components/CompPageProduto/index.js'
 import { useNavigate, useParams } from 'react-router-dom'
 import { BuscarImagem, ListarProdutosDestaques, ListarProdutosPorID } from '../../../api/produtoApi.js';
 import { useEffect, useState } from 'react';
-import Header from '../../../components/cabecalho';
-import Rodape from '../../../components/rodape/index.js';
+
 
 
 export default function PageProduto(){
@@ -59,12 +58,12 @@ export default function PageProduto(){
         <div className='PageProduto'>
             
 
-            <Header />
+            
             <CompProduto produtos={produto} precos = {preco}/>
 
 
            
-            <Rodape />   
+               
             
         </div>
     )

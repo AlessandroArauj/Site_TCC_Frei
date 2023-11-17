@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import { AddComentario, ListarComentarios } from '../../api/loginUserApi'
 import { BuscarImagem } from '../../api/produtoApi'
 import CompCartao from '../compCartao'
+import Header from '../cabecalho'
+import Rodape from '../rodape'
+
 import './index.scss'
 
 import storage from 'local-storage'
@@ -91,8 +94,10 @@ export default function CompProduto(props) {
 
     return (
         <div className='CompProduto'>
+            <Header />
             <ToastContainer />
             <CompCartao />
+
 
             <section className='CompProd-f1'>
 
@@ -221,7 +226,8 @@ export default function CompProduto(props) {
 
 
 
-
+        <Rodape />
         </div>
+
     )
 }
