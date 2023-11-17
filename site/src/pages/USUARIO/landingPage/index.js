@@ -114,9 +114,11 @@ export default function LandingPage() {
 
                     <img src='../../../../assets/images/laptop.svg' />
 
-                    <Link className='butt-landin-page' to={'/PagePubli'}>
+                    {/* <Link className='butt-landin-page' to={'/PagePubli'}>
                         <button className='button' > Saiba mais</button>
-                    </Link>
+                    </Link> */}
+
+                    <button className='button'>EM BREVE</button>
 
                 </section>
 
