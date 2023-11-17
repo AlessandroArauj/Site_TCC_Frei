@@ -86,7 +86,7 @@ export async function editarProduto(marca, categoria, nome, preco, precoPromo, d
         PRECO: preco,
         PRECO_PROMOCIONAL: precoPromo,
         DESTAQUE: destaque,
-        PROMOCAO: promo,
+        PROMO: promo,
         DISPONIVEL: disponivel,
         ESTOQUE: estoque,
         DETALHE: descricao

@@ -3,8 +3,9 @@ import './index.scss'
 import storage from 'local-storage'
 import { BuscarCartaoPorID, addCartao } from '../../api/loginUserApi'
 import { ToastContainer, toast } from 'react-toastify';
+import { Link, redirect, useNavigate } from 'react-router-dom';
 
-export default function CompCartao() {
+export default function CompCartao(props) {
 
     const [titular, setNomeTitular] = useState('')
     const [idUser, setIdUser] = useState(0)
@@ -13,6 +14,10 @@ export default function CompCartao() {
     const [cpf, setCPF] = useState('')
     const [numero, setNumero] = useState(0);
     const [cartoes, setCartoes] = useState([]);
+
+    const id = props.produtoId
+    console.log(id);    
+    const navigate = useNavigate();
 
 
     async function BuscarCartao() {
@@ -58,9 +63,7 @@ export default function CompCartao() {
         Modal2.classList.remove('abrir')
     }
 
-    useEffect(() => {
-        BuscarCartao()
-    }, [])
+    
 
     useEffect(() => {
         
@@ -71,6 +74,10 @@ export default function CompCartao() {
         }
         
     }, [storage('usuario-logado')]);
+
+    useEffect(() => {
+        BuscarCartao()
+    }, [idUser])
 
 
     return (
@@ -170,7 +177,7 @@ export default function CompCartao() {
 
                                     </div>
 
-                                    <button>Efetuar compra</button>
+                                    <button onClick={() => navigate('/progresso/' + id)}>Efetuar compra</button>
                                 </div>
                             </div>
 

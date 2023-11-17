@@ -30,7 +30,7 @@ export default function Page_adm() {
     const [nome, setNome] = useState('');
     const [preco, setPreco] = useState(0);
     const [precoPromo, setPrecoPromo] = useState(0);
-    const [promo, setPromo] = useState(false);
+    const [promo, setPromo] = useState();
     const [estoque, setEstoque] = useState(0);
     const [destaque, setDest] = useState(false);
     const [disponivel, setDisp] = useState(false);

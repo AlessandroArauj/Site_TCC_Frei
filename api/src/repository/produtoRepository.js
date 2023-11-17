@@ -60,7 +60,7 @@ export async function ListarProdutosPromos() {
     const comando = `
     SELECT 
             ID_INSTRUMENTOS AS ID,
-        ID_MARCAS AS MARCAS,
+            ID_MARCAS AS MARCAS,
             ID_CATEGORIA AS CATEGORIAS,
             NM_PRODUTO AS PRODUTO,
             NR_PRECO AS PRECO,
@@ -205,7 +205,7 @@ export async function AlterarProduto(produto, id) {
         BT_DISPONIVEL = ?,
         QTD_ESTOQUE = ?,
         DS_DETALHES = ?
-            WHERE ID_INSTRUMENTOS = ?
+    WHERE ID_INSTRUMENTOS = ?
                 `;
 
     // Executa a consulta SQL com os parâmetros fornecidos
@@ -216,7 +216,7 @@ export async function AlterarProduto(produto, id) {
         produto.PRECO,
         produto.PRECO_PROMOCIONAL,
         produto.DESTAQUE,
-        produto.PROMOCAO,
+        produto.PROMODISP,
         produto.DISPONIVEL,
         produto.ESTOQUE,
         produto.DETALHE,

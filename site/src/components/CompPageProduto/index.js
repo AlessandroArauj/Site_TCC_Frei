@@ -90,13 +90,13 @@ export default function CompProduto(props) {
 
     useEffect(() => {
         listarComentarios()
-    }, [])
+    }, [props.produtos.ID])
 
     return (
         <div className='CompProduto'>
             
             <ToastContainer />
-            <CompCartao />
+            <CompCartao produtoId={id}/>
             <Header />
 
 
