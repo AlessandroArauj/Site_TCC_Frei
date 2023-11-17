@@ -3,20 +3,23 @@ import { con } from "./connection.js";
 
 export async function ListarProdutosPorID(id) {
     const comando = `
-        SELECT 
-            ID_INSTRUMENTOS AS ID,
-            ID_MARCAS AS MARCAS,
-            ID_CATEGORIA AS CATEGORIAS,
-            NM_PRODUTO AS PRODUTO,
-            NR_PRECO AS PRECO,
-            NR_PRECO_PROMOCIONAL AS PRECOPROMO,
-            BT_DESTAQUE AS DESTAQUE,
-            BT_PROMOCAO AS PROMODISP,
-            BT_DISPONIVEL AS DISPONIVEL,
-            QTD_ESTOQUE AS ESTOQUE,
-            DS_DETALHES AS DETALHE,
-            IMG_PRODUTO AS IMAGEM
-        FROM TB_PRODUTO
+    SELECT 
+    ID_INSTRUMENTOS AS ID,
+    NM_MARCA AS MARCAS,
+    ID_CATEGORIA AS CATEGORIAS,
+    NM_PRODUTO AS PRODUTO,
+    NR_PRECO AS PRECO,
+    NR_PRECO_PROMOCIONAL AS PRECOPROMO,
+    BT_DESTAQUE AS DESTAQUE,
+    BT_PROMOCAO AS PROMODISP,
+    BT_DISPONIVEL AS DISPONIVEL,
+    QTD_ESTOQUE AS ESTOQUE,
+    DS_DETALHES AS DETALHE,
+    IMG_PRODUTO AS IMAGEM
+FROM TB_PRODUTO AS P
+
+INNER JOIN
+    TB_MARCAS AS M ON P.ID_MARCAS = M.ID_MARCAS
 
         WHERE ID_INSTRUMENTOS = ?
     `
@@ -57,7 +60,7 @@ export async function ListarProdutosPorCategoria(id) {
     const comando = `
     SELECT 
         ID_INSTRUMENTOS AS ID,
-        ID_MARCAS AS MARCAS,
+        NM_MARCA AS MARCAS,
         ID_CATEGORIA AS CATEGORIAS,
         NM_PRODUTO AS PRODUTO,
         NR_PRECO AS PRECO,
@@ -68,7 +71,10 @@ export async function ListarProdutosPorCategoria(id) {
         QTD_ESTOQUE AS ESTOQUE,
         DS_DETALHES AS DETALHE,
         IMG_PRODUTO AS IMAGEM
-    FROM TB_PRODUTO
+    FROM TB_PRODUTO AS P
+
+    INNER JOIN
+        TB_MARCAS AS M ON P.ID_MARCAS = M.ID_MARCAS
 
     WHERE ID_CATEGORIA = ? AND BT_DISPONIVEL = 1; 
 
