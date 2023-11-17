@@ -1,36 +1,99 @@
 import { Link } from 'react-router-dom'
 import './index.scss'
+import { BuscarImagem } from '../../api/produtoApi'
+import { useState } from 'react'
+import storage from 'local-storage'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
-export default function Compcarrinho() {
-return(
-    <div className='compcarrinho'>
+export default function Compcarrinho(props) {
+  // const [subTotal, setSubTotal] = useState(0)
+  const [qtdProduto, setQtdProduto] = useState(props.item.qtd)
 
-      <div className='img'>
-       <img className='imagem' />
-      </div>
+  function remover() {
+    props.removerItem(props.item.produto.ID)
+    toast.dark('Item Removido do carrinho')
+    window.location.reload()
+  }
 
+  function calcularSubTotal() {
+    const subtotal = qtdProduto * props.item.produto.PRECO
+    return subtotal
+  }
 
+  function alterarQUantidade(novaQtd) {
+    setQtdProduto(novaQtd);
+    let carrinho = storage('carrinho')
+    let itemStorage = carrinho.find(item => item.id == props.item.produto.ID)
+    itemStorage.qtd = novaQtd;
 
-      <div className='avaliacao'>
-        <p className='nome'>Violao iamarra knmdlkasalkn djkasjs sakjdsakj jushdnas kjjsf dkfjkasmn dfkjfkdsnflk dfj kldfsklj ikjfldsk </p>
-        
-        <p className='promocao'>47,90 RS</p>
-        <p className='preco_final'>30,90 RS</p>
-      </div>
+    storage('carrinho', carrinho)
 
+    window.location.reload()
+  }
 
-      <div className='right'>
-      <div className='valores'>
-         <p className='adicionar'> Adicionar</p>
-         <input className='valor' type='number' min="0" max="10"></input>
-      </div>
-        <button className='tirar'>Remover do carrinho</button>
-       
+  console.log(props.item.qtd);
+
+  return (
+    <div className='compCarrinho'>
+      <ToastContainer />
+
+      <div className='conteinerCarrinho'>
+
+        <div className='CardCarrinho'>
+
+          <div className='direita'>
+
+            <div className='imagemProduto'>
+
+              <img className='ProdutoImagemCarrinho' alt='Imagens' src={BuscarImagem(props.item.produto.IMAGEM)} />
+
+            </div>
+
+            <div className='infosProdutos'>
+
+              <div className='InfosTextos'>
+
+                <h3>{props.item.produto.PRODUTO}</h3>
+                <p>Promoção: R${props.item.produto.PRECOPROMO}</p>
+                <p>Preço do Produto: R${props.item.produto.PRECO}</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div className='quanti' >
+
+            <label> Quantidade </label>
+            <select value={qtdProduto} onChange={e => alterarQUantidade(e.target.value)}>
+
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+
+            </select>
+
+            <h4>SubTotal: R${calcularSubTotal()}</h4>
+
+          </div>
+
+          <div className='excluir'>
+
+            <button className='butt' onClick={remover}> Excluir Do carrinho</button>
+
+          </div>
+
+        </div>
+
 
 
       </div>
 
     </div>
-)}
+  )
+}
