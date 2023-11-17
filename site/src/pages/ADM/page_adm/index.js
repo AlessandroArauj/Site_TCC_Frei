@@ -211,21 +211,6 @@ export default function Page_adm() {
 
 
 
-    async function listarCategorias() {
-
-        const r = await axios.get('http://localhost:5000/produto/categoria');
-        setCategoriaTipo(r.data)
-    }
-
-    async function listarMarcas() {
-
-        const r = await axios.get('http://localhost:5000/produto/marca');
-        setTipoMarcas(r.data)
-    }
-
-
-
-
 
 
 
