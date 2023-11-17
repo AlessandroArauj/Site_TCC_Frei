@@ -1,10 +1,10 @@
 .compCartao {
 
-    
-    
+
+
     .page-cadastrar-cartao.abrir {
         display: flex;
-        
+
 
     }
 
@@ -189,15 +189,9 @@
 
 
 
-        .parcela {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
         .card {
             position: fixed;
-            margin-top: 50px;
             width: 450px;
             height: 500px;
             background-color: black;
@@ -205,230 +199,166 @@
             align-items: center;
             display: flex;
             flex-direction: column;
-
-            .titulo {
-                margin-top: 15px;
-            }
-
-            .sair {
-                font-size: 19px;
-                display: flex;
-                margin-bottom: 10px;
-                justify-content: right;
-                color: aliceblue;
-            }
-
-            .forma {
-                font-size: 19px;
-                color: aliceblue;
-                margin-left: 10px;
-
-            }
-
-            .linha {
-                margin-top: 10px;
-                height: 0.1px;
-                width: 100%;
-                background-color: aliceblue;
-            }
+            padding: 15px;
 
 
-
-            .subcard {
-                width: 425px;
-                height: 370px;
-                background-color: #9999;
-                border-radius: 29px;
-                display: flex;
-                align-items: start;
-                display: flex;
-                flex-direction: column;
-                border: solid 2px;
-                color: aliceblue;
-                padding: 15px;
-                gap: 5px;
-
-                .subtitulo {
-                    font-size: 13px;
-                    color: aliceblue;
-                    margin-bottom: 10px;
-
-                }
-
-                .cartao {
-
-                    width: 390px;
-                    height: 35px;
-                    border-radius: 10px;
-                    border: none;
-                    text-decoration: none;
-                    font-size: 20px;
-                    margin-bottom: 10px;
-                }
-
-                .labelzim {
-                    display: flex;
-                    margin-bottom: 10px;
-
-                    .testinho {
-                        color: black;
-                        background-color: #ffffff;
-                        font-size: 13px;
-                        width: 160px;
-                        height: 35px;
-                        align-items: center;
-                        justify-content: center;
-                        display: flex;
-                        border-top-left-radius: 10px;
-                        border-bottom-left-radius: 10px;
-                    }
-
-                    .numero_parcela {
-                        background-color: #fff;
-                        width: 40px;
-                        height: 35px;
-                        border: none;
-                        border-top-right-radius: 10px;
-                        border-bottom-right-radius: 10px;
-                        font-size: 15px;
-                        color: #4e4e4e;
-                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-                    }
-                }
-
-                .cadastrar {
-
-                    width: 150px;
-                    height: 35px;
-                    background-color: #00C2ff;
-                    font-size: 12px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: #e9e9e9;
-                    border-radius: 10px;
-                    border: none;
-                    transition: 0.5s ease;
-
-                }
-
-                .cadastrar:hover {
-                    transition: 0.5s;
-                    background-color: #3f3f3f59;
-                    color: #ffffff;
-                    border: solid 2px;
-                    cursor: pointer;
-
-                }
-
-                .dd {
-                    flex-direction: row;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-
-                    width: 100%;
-
-
-
-                    .divisinha {
-                        height: 1px;
-                        width: 35%;
-                        background-color: #e9e9e9;
-                    }
-
-                    .outras {
-                        text-align: center;
-                        font-size: 14px;
-                        width: 30%;
-                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                    }
-                }
-
-                .baixo {
-                    align-items: center;
-                    justify-content: space-around;
-                    display: flex;
-                    position: inherit;
-                    background-color: transparent;
-                    margin-top: 10px;
-                    width: 100%;
-                    font-size: 15px;
-                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-                    div {
-                        align-items: center;
-                        justify-content: center;
-                        display: flex;
-                        gap: 0;
-                        cursor: pointer;
-                    }
-
-                    img {
-
-                        height: 40px;
-                        width: 55px;
-                        background: #fff;
-                        border-top-right-radius: 10px;
-                        border-bottom-right-radius: 10px;
-                        border: none;
-                    }
-
-                    .pix {
-                        height: 40px;
-                        width: 55px;
-                        border-top-left-radius: 10px;
-                        border-bottom-left-radius: 10px;
-                        border: none;
-                        background-color: #fff;
-
-
-                    }
-
-                    .boleto {
-                        height: 40px;
-                        width: 55px;
-                        border-top-left-radius: 10px;
-                        border-bottom-left-radius: 10px;
-                        border: none;
-                        background-color: #fff;
-                    }
-
-
-                }
-
-                .ultima {
-                    align-items: center;
-                    justify-content: space-around;
-                    display: flex;
-                    height: 100%;
-
-
-                    .total {
-                        font-size: 17px;
-                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                    }
-
-                    .valor {
-
-                        display: flex;
-                    }
-                }
-
-
-
-
-
-            }
         }
-    }
 
-    @media(max-width:415px) {
-
-        .card {
-            width: 90%;
-            height: 450px;
+        .card>h1 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
+
+
+        .subcard {
+            border-radius: 15px;
+            padding: 15px;
+            width: 100%;
+            height: 100%;
+            background-color: #353535;
+            border: 2px solid #fff;
+
+        }
+
+        
+
+        .cima div {
+            display: flex;
+            gap: 15px;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cima div>select {
+            padding: 0px 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            width: 100%;
+            height: 35px;
+        }
+
+        .cima div> button{
+            padding: 0px 10px;
+            background-color: #00C2ff;
+            border-radius: 10px;
+            width: 100%;
+            height: 35px;
+        }
+
+        .cima div label h1 {
+            color: #000;
+        }
+
+        .cima div label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            width: 50%;
+            height: 35px;
+        }
+
+        .cima div label select {
+            outline: 0;
+            border: none;
+            background-color: transparent;
+        }
+
+        .cima h1 {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .line {
+
+            width: 80%;
+            height: 1px;
+            background-color: #fff;
+        }
+
+        .meio {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+            margin: 15px 0;
+        }
+
+        .meio h1 {
+            font-size: 14px;
+            width: 20%;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+
+
+        }
+
+        .baixo {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 50%;
+            gap: 15px;
+        }
+
+        .baixo div:first-child button {
+            width: 100px;
+            height: 35px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        .baixo div:first-child {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .baixo div:first-child h1 {
+            font-size: 14px;
+            color: #fff;
+
+        }
+
+
+        .baixo div:last-child {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .baixo div:last-child button {
+            height: 35px;
+            border-radius: 10px;
+            border: 1px solid #fff;
+            background-color: transparent;
+            color: #fff;
+        }
+
+        .baixo div:last-child div h1 {
+            font-size: 14px;
+            color: #fff;
+
+        }
+
+
+
+        @media(max-width:415px) {
+
+            .card {
+                width: 90%;
+                height: 350px;
+
+            }
+
+
+        }
+
+
     }
 }
