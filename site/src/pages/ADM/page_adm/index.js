@@ -402,7 +402,7 @@ export default function Page_adm() {
 
                                             <div className='dir'>
                                                 <img alt='Editar' src='../../assets/images/editIcon.svg' onClick={() => [ AlterarProdutoClick(item.ID), window.location.reload()]}/>
-                                                <img alt='Deletar' src='../../assets/images/deleteIcon.svg' onClick={() => DeletarProdutos(item.ID, item.PRODUTO)} />
+                                                <img alt='Deletar' src='../../assets/images/DeleteIcon.svg' onClick={() => DeletarProdutos(item.ID, item.PRODUTO)} />
 
                                             </div>
 
