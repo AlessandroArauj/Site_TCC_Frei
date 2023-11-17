@@ -47,7 +47,7 @@ export default function CompProduto(props) {
             const usuariologado = storage('usuario-logado');
             setIdUser(usuariologado.id);
         }
-    }, [id, listarComentarios()]);
+    }, []);
 
 
     function addCarrinho() {
