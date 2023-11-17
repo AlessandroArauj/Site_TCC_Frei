@@ -1,16 +1,38 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './index.scss'
-
+import storage from 'local-storage'
+import { BuscarCartaoPorID, addCartao } from '../../api/loginUserApi'
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function CompCartao() {
 
-    const [nomeTitular, setNomeTitular] = useState('')
+    const [titular, setNomeTitular] = useState('')
     const [idUser, setIdUser] = useState(0)
     const [cvv, setCvv] = useState('')
     const [validade, setValidade] = useState('')
     const [cpf, setCPF] = useState('')
-    const [numero, setNumero] = useState(0)
+    const [numero, setNumero] = useState(0);
+    const [cartoes, setCartoes] = useState([]);
 
+
+    async function BuscarCartao() {
+        
+        const r = await BuscarCartaoPorID(idUser)
+        setCartoes(r)
+
+    }
+
+    async function addCartaoNovo() {
+        const r = await addCartao(idUser, titular, cvv, validade, cpf, numero)
+        toast.dark('Cartão Cadastrado')
+
+        setNomeTitular('')
+        setCvv('')
+        setValidade('')
+        setCPF('')
+        setNumero(0);
+        window.location.reload()
+    }
 
     function fecharModal1() {
         const Modal1 = document.getElementById('Modal1')
@@ -36,9 +58,24 @@ export default function CompCartao() {
         Modal2.classList.remove('abrir')
     }
 
+    useEffect(() => {
+        BuscarCartao()
+    })
+
+    useEffect(() => {
+        
+        if (storage('usuario-logado')) {
+            const usuariologado = storage('usuario-logado');
+            setIdUser(usuariologado.id);
+            console.log(idUser);
+        }
+        
+    }, [storage('usuario-logado')]);
+
 
     return (
         <div className='compCartao'>
+            <ToastContainer />
 
             <div className='blur'>
                 <div className='page-cadastrar-cartao' id='Modal2'>
@@ -51,20 +88,20 @@ export default function CompCartao() {
                         <div className='subcard'>
                             <div className='info'>
                                 <div className='container'>
-                                    <input type='text' placeholder='Numero do Cartão' required />
-                                    <input type='text' placeholder='Validade' required />
+                                    <input type='text' placeholder='Numero do Cartão' required  value={numero} onChange={e => setNumero(e.target.value)}/>
+                                    <input type='text' placeholder='Validade' required value={validade} onChange={e => setValidade(e.target.value)}/>
                                 </div>
                                 <div className='container'>
-                                    <input type='text' placeholder='Nome do titular' required />
+                                    <input type='text' placeholder='Nome do titular' required value={titular} onChange={e => setNomeTitular(e.target.value)}/>
                                 </div>
                                 <div className='container'>
-                                    <input ctype='text' placeholder='CVV' required />
-                                    <input type='text' placeholder='CPF' required />
+                                    <input ctype='text' placeholder='CVV' required value={cvv} onChange={e => setCvv(e.target.value)}/>
+                                    <input type='text' placeholder='CPF' required value={cpf} onChange={e => setCPF(e.target.value)}/>
                                 </div>
 
                                 <div className='butonn'>
 
-                                    <button onClick={abrirModal1}>Cadastrar</button>
+                                    <button onClick={addCartaoNovo}>Cadastrar</button>
                                 </div>
                             </div>
                         </div>
@@ -93,12 +130,13 @@ export default function CompCartao() {
                             <div className='cima'>
                                 <h1> CARTÕES CADASTRADOS</h1>
                                 <div>
-                                    
-                                        <select>
-                                            <option>nseeeieieiei</option>
-                                            <option>nseeeieieiei</option>
-                                            <option>nseeeieieiei</option>
-                                        </select>
+                                <select>
+                                    {cartoes.map(item =>
+                                        
+                                        <option>Titular:{item.Titular}, Numero: {item.NumeroDoCartao}</option>
+                                        
+                                        )}
+                                    </select>
                                     
                                     <label>
                                         <h1> Parcelar em:</h1>

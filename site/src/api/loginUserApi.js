@@ -6,9 +6,14 @@ const api = axios.create({
     baseURL: URL_API
 })
 
-export async function addCartap(IdUser, titular, cvv, validade, cpf, numero) {
+export async function BuscarCartaoPorID(id) {
+    const resposta = await api.get(`/cliente/cartoes/${id}`)
+    return resposta.data
+}
+
+export async function addCartao(idUser, titular, cvv, validade, cpf, numero) {
     const r = await api.post('/cliente/cartao', {
-        IdUser: IdUser,
+        IdUser: idUser,
         TITULAR: titular,
         CVV: cvv,
         VALIDADE: validade,

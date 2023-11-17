@@ -103,16 +103,16 @@ export default function AbaUsuario() {
     return (
         <div className='perfil'>
             <nav className='lateral-menu'>
+
                 <div>
-                    <h1>Bem Vindo</h1>
                     <h1>{usuario}</h1>
-                    <h1>{email}</h1>
+                    <p>{email}</p>
                 </div>
 
                 <ul className='down'>
 
                     <Link to={'/home'} className='Link'>
-                        <li className='item-menu'>
+                        <li className='item-menu' id='home'>
                             <span className='link'>HOME</span>
                             <img src='../../assets/images/image142.svg' />
                         </li>

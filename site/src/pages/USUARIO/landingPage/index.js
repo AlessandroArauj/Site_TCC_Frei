@@ -56,7 +56,7 @@ export default function LandingPage() {
 
                     <div className=' baixo-f2'>
 
-                        <Link className='butt-landin-page' to={'/categorias'}>
+                        <Link className='butt-landin-page' to={'/categorias/' + 1}>
                             <div>
                                 <img src='../../../../assets/images/fone.svg' />
                                 <h1> Audios</h1>
@@ -64,7 +64,7 @@ export default function LandingPage() {
                             </div>
                         </Link>
 
-                        <Link className='butt-landin-page' to={'/categorias'}>
+                        <Link className='butt-landin-page' to={'/categorias/' + 5}>
                             <div>
                                 <img src='../../../../assets/images/gaita.svg' />
                                 <h1> Sopro</h1>
@@ -72,7 +72,7 @@ export default function LandingPage() {
                             </div>
                         </Link>
 
-                        <Link className='butt-landin-page' to={'/categorias'}>
+                        <Link className='butt-landin-page' to={'/categorias/' + 2}>
                             <div>
                                 <img src='../../../../assets/images/violao.svg' />
                                 <h1> Cordas</h1>
@@ -114,9 +114,11 @@ export default function LandingPage() {
 
                     <img src='../../../../assets/images/laptop.svg' />
 
-                    <Link className='butt-landin-page' to={'/PagePubli'}>
+                    {/* <Link className='butt-landin-page' to={'/PagePubli'}>
                         <button className='button' > Saiba mais</button>
-                    </Link>
+                    </Link> */}
+
+                    <button className='button'> EM BREVE </button>
 
                 </section>
 

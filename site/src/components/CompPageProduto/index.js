@@ -81,18 +81,19 @@ export default function CompProduto(props) {
                     <div className='Dir'>
                         <div className='cubos'>
                             <div className='Cubo-dir'>
-                                <p> {props.produtos.PRODUTO} </p>
+                                <h2> {props.produtos.PRODUTO} </h2>
+                                <h3 className='fretes'>  Frete Gratís para todo País!  </h3>
                                 {props.produtos.PRECOPROMO ? (
-                                    <h1>{props.produtos.PRECOPROMO}</h1>
+                                    <h3>R${props.produtos.PRECOPROMO}</h3>
                                 ) : (
-                                    <h1>{props.produtos.PRECO}</h1>
+                                    <h3>R${props.produtos.PRECO}</h3>
                                 )}
 
                             </div>
 
 
                             <div className='Cubo-dir'>
-                                <p>{props.produtos.DISPONIVEL ? 'Produto Disponível' : 'Produto Indisponível'}</p>
+                                <p> Marca Do produto: {props.produtos.MARCAS} </p>
 
                                 <p>Quantidade de estoque: {props.produtos.ESTOQUE}</p>
 
@@ -141,6 +142,8 @@ export default function CompProduto(props) {
                         <h1>
                             {props.produtos.DETALHE}
                         </h1>
+
+
                     </div>
 
                 </div>
