@@ -12,6 +12,9 @@ export default function PageCarrinho() {
 
     const navigate = useNavigate();
     const [itens, setItem] = useState([]);
+    const [IDuser, SetIDuser] = useState(0)
+    const [IDproduto, SetIDproduto] = useState([]) 
+        
 
     function qtdItens() {
         return itens.length;
@@ -36,6 +39,8 @@ export default function PageCarrinho() {
         navigate('/carrinho')
     }
 
+
+
     async function carregarCarrinho() {
         let carrinho = storage('carrinho');
         if (carrinho) {
@@ -43,6 +48,8 @@ export default function PageCarrinho() {
 
             for (let produto of carrinho) {
                 let p = await ListarProdutosPorID(produto.id)
+                SetIDproduto(p.ID)
+                console.log(IDproduto);
 
                 array.push({
                     produto: p,

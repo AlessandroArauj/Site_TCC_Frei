@@ -20,21 +20,23 @@ export async function AdicionarPedido(pedidos) {
 export async function MostrarPedidosPorIdUsuario(id) {
     const comando = `
     SELECT
-        NM_NOME_COMP            AS Usuario,
-        NM_PRODUTO              AS Produto,
-        NR_PRECO                AS Preco,
-        NR_PRECO_PROMOCIONAL    AS PrecoPromo,
-        DT_PEDIDO               AS Data,
-        IMG_PRODUTO             AS Imagem
+            P.ID_INSTRUMENTOS       AS ID,
+            ds_status_pedido        AS Status,
+            NM_NOME_COMP            AS Usuario,
+            NM_PRODUTO              AS Produto,
+            NR_PRECO                AS Preco,
+            NR_PRECO_PROMOCIONAL    AS PrecoPromo,
+            DT_PEDIDO               AS Data,
+            IMG_PRODUTO             AS Imagem
     FROM TB_PEDIDO AS A
 
+    INNER JOIN
+        tb_status_pedido AS S ON A.id_status_pedido = S.id_status_pedido
     INNER JOIN 
         TB_CADASTRO_USER AS C ON A.ID_USER = C.ID_USER
-
     INNER JOIN
         TB_PRODUTO AS P ON A.ID_INSTRUMENTOS = P.ID_INSTRUMENTOS
-
-    WHERE A.ID_USER = ?
+    WHERE A.ID_USER = ?;
 
     `
 
