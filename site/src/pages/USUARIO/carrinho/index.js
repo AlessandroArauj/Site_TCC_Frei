@@ -5,11 +5,16 @@ import Compcarrinho from '../../../components/compcarrinho'
 import storage from 'local-storage'
 import { useEffect, useState } from 'react'
 import { ListarProdutosPorID } from '../../../api/produtoApi'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function PageCarrinho() {
 
+    const navigate = useNavigate();
     const [itens, setItem] = useState([]);
+    const [IDuser, SetIDuser] = useState(0)
+    const [IDproduto, SetIDproduto] = useState([]) 
+        
 
     function qtdItens() {
         return itens.length;
@@ -21,6 +26,7 @@ export default function PageCarrinho() {
             total = total + item.produto.PRECO * item.qtd
         }
         return total;
+       
         
     }
 
@@ -30,7 +36,10 @@ export default function PageCarrinho() {
 
         storage('carrinho', carrinho)
         carregarCarrinho()
+        navigate('/carrinho')
     }
+
+
 
     async function carregarCarrinho() {
         let carrinho = storage('carrinho');
@@ -39,6 +48,8 @@ export default function PageCarrinho() {
 
             for (let produto of carrinho) {
                 let p = await ListarProdutosPorID(produto.id)
+                SetIDproduto(p.ID)
+                console.log(IDproduto);
 
                 array.push({
                     produto: p,

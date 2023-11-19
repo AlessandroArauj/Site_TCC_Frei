@@ -3,6 +3,7 @@ import express from 'express'
 import cors from 'cors'
 import produtoController from './controller/produtoController.js';
 import usuarioCadastroController from './controller/usuarioCadastroController.js'
+import pedidosController from './controller/pedidosController.js'
 
 
 const server = express();
@@ -10,6 +11,8 @@ server.use(cors());
 server.use(express.json());
 server.use(produtoController);
 server.use(usuarioCadastroController)
+server.use(pedidosController);
+
 
 server.use('/storage/fotosProdutos', express.static('storage/fotosProdutos'))
 

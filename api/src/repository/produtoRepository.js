@@ -117,7 +117,7 @@ export async function ListarProdutosDestaques() {
     const comando = `
     SELECT 
             ID_INSTRUMENTOS AS ID,
-        ID_MARCAS AS MARCAS,
+            ID_MARCAS AS MARCAS,
             ID_CATEGORIA AS CATEGORIAS,
             NM_PRODUTO AS PRODUTO,
             NR_PRECO AS PRECO,

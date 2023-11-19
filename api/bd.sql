@@ -69,18 +69,24 @@ CREATE TABLE TB_PRODUTO(
 
 );
 
+create table tb_status_pedido (
+	id_status_pedido	int primary key not null auto_increment,
+    ds_status_pedido 	varchar(100) not null
+);
+
 
 CREATE TABLE TB_PEDIDO(
 	ID_PEDIDO int PRIMARY KEY auto_increment,
 	ID_USER int,
+    ID_INSTRUMENTOS int,
+    id_status_pedido int,
 	ID_ENDERECO int,
-	DS_NOTA_FISCAL varchar(400),
-	TP_FORMA_PAG varchar(400),
-	QTD_PARCELAS int,
 	DT_PEDIDO datetime,
-	DS_SITUACAO varchar(400),
+    
     foreign key (ID_USER) references TB_CADASTRO_USER (ID_USER),
-    foreign key (ID_ENDERECO) REFERENCES TB_ENDERECO (ID_ENDERECO)
+    foreign key (id_status_pedido) references tb_status_pedido(id_status_pedido),
+    foreign key (ID_ENDERECO) REFERENCES TB_ENDERECO (ID_ENDERECO),
+    foreign key (ID_INSTRUMENTOS) REFERENCES TB_PRODUTO (ID_INSTRUMENTOS)
 
 
 );
@@ -129,7 +135,6 @@ CREATE TABLE TB_FORMAS_PAGAMENTO(
 
 );
 
-
 CREATE TABLE TB_AVALIACAO(
 	ID_AVALIACAO int PRIMARY KEY auto_increment,
 	ID_USER int,
@@ -176,6 +181,7 @@ insert into TB_CADASTRO_ADM (NM_NOME_COMP ,DS_EMAIL, DS_SENHA)
                         ('Diogo Alves', 'tavaresfalcon5@gmail.com', '2512@Admin'),
                         ('Thiago Almeida', 'thisouza640@gmail.com', '7362@Admin'),
                         ('Alessandro Araujo', 'araujobr1903@gmail.com', '1903@Admin');
+                        
 
 
 select * from TB_PRODUTO;
@@ -196,6 +202,30 @@ SELECT
                 DS_DETALHES AS DETALHE,
                 IMG_PRODUTO AS IMAGEM
         FROM TB_PRODUTO
-        WHERE NM_PRODUTO LIKE '%a%'
+        WHERE NM_PRODUTO LIKE '%a%';
+        
+        
+insert into tb_status_pedido(ds_status_pedido)
+					  values('Aguardando aprovação'),
+							('Em preparação'),
+							('A caminho'),
+							('Entregue');
+                            
+select * from tb_status_pedido;
 
+SELECT
+        NM_NOME_COMP            AS Usuario,
+        NM_PRODUTO              AS Produto,
+        NR_PRECO                AS Preco,
+        NR_PRECO_PROMOCIONAL    AS PrecoPromo,
+        IMG_PRODUTO             AS Imagem
+    FROM TB_PEDIDO AS A
 
+    INNER JOIN 
+        TB_CADASTRO_USER AS C ON A.ID_USER = C.ID_USER
+
+    INNER JOIN
+        TB_PRODUTO AS P ON A.ID_INSTRUMENTOS = P.ID_INSTRUMENTOS
+
+    WHERE A.ID_USER = 1
+    ;
