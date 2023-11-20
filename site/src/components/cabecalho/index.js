@@ -40,7 +40,7 @@ export default function Header() {
             else {
                 setMostrarResultados(true);
             }
-            
+
         } catch (err) {
             console.error(err);
         }
@@ -49,7 +49,8 @@ export default function Header() {
     function teclaEnter(e) {
         if (e.key === 'Enter') {
             Filtro();
-        }}
+        }
+    }
 
     useEffect(() => {
         if (storage('usuario-logado')) {
@@ -59,26 +60,56 @@ export default function Header() {
     }, []);
 
 
+
+    function toggleMenu() {
+        const menuToggle = document.querySelector('.dirCel');
+        menuToggle.classList.toggle('menu-active');
+    }
+
+
+
+
+
     return (
         <div className='cabecalho'>
 
             <div className='cont-cabeca'>
 
                 <div>
-               
+
                     <Link to={'/home'}><img src='../../../assets/images/logo.svg' className='logo'></img></Link>
 
                 </div>
 
 
                 <div className='Input'>
-                    
+
                     <div className='input'>
                         <button onClick={Filtro}>
                             <img src='../../../assets/images/lupa.png'></img>
                         </button>
                         <input type='text' value={busca} onKeyUp={teclaEnter} onChange={e => setBusca(e.target.value)} />
                     </div>
+
+                </div>
+
+                <div className='dirCel'>
+
+                    <div class="menu-toggle" onClick={toggleMenu}>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+
+
+
+                    <div class="side-menu">
+                        <ul>
+                            <li><a href="#">Perfil</a></li>
+                            <li><a href="#">Carrinho</a></li>
+                        </ul>
+                    </div>
+
 
                 </div>
 
@@ -100,7 +131,7 @@ export default function Header() {
             </div>
 
 
-         
+
             <div className='cont2' ref={cont2Ref}>
                 <div className='resultados'>
                     {mostrarResultados && resultado.map(item => (
@@ -117,7 +148,11 @@ export default function Header() {
                     ))}
                 </div>
 
-                </div>
+            </div>
+
+
+
+
 
 
 
