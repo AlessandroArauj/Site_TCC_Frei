@@ -105,8 +105,19 @@ export default function Header() {
 
                     <div class="side-menu">
                         <ul>
-                            <li><a href="#">Perfil</a></li>
-                            <li><a href="#">Carrinho</a></li>
+
+                            <li>
+                                <Link className='butt-home' to={'/loginUser'}>
+                                    <div className={!storage('usuario-logado') ? 'minhaconta' : 'UserLetra'}> <h1> {storage('usuario-logado') ? usuario[0] : <img className='Perfilimg' src='../../../assets/images/perfil.png' />} </h1></div>
+
+                                </Link>
+                                <Link className='butt-home' to={storage('usuario-logado') ? '/LoginUser' : '/perfilusuario'}><p>{storage('usuario-logado') ? "Minha Conta" : 'Login'}</p></Link>
+
+                            </li>
+                            <li>
+                                <Link to={'/Carrinho'}><img src='../../../assets/images/carrinho.png'></img></Link>
+                                <Link className='butt-home' to={'/Carrinho'}><p>carrinho</p></Link>
+                            </li>
                         </ul>
                     </div>
 

@@ -154,16 +154,30 @@
       
       .side-menu ul li {
         padding: 15px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        gap: 10px;
+      }
+
+      .side-menu ul li .UserLetra{
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+      }
+
+      .side-menu ul li img{
+        height: 20px;
       }
       
-      .side-menu ul li a {
+      .side-menu ul li p {
         color: #fff;
         text-decoration: none;
         transition: 0.3s;
       }
       
       .side-menu ul li a:hover {
-        color: #ff0;
+        color: #0fbbff;
       }
       
         .menu-active .menu-toggle{
@@ -172,7 +186,7 @@
         }   
 
       .menu-active .side-menu {
-        width: 150px;
+        width: 160px;
 
       }
       
