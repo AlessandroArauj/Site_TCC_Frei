@@ -16,6 +16,7 @@ export default function CompProduto(props) {
 
     const id = props.produtos.ID
 
+    const [loggedIn, setLoggedIn] = useState(false);
     const [comentario, setComentario] = useState('')
     const [idUser, setIdUser] = useState(0);
     const [comentarios, setComentarios] = useState([]);
@@ -32,22 +33,23 @@ export default function CompProduto(props) {
 
     async function addComent() {
         try {
-            const resposta = await AddComentario(idUser, id, comentario)
+            if (idUser != 0) {
+                const resposta = await AddComentario(idUser, id, comentario)
 
-            toast.dark('Comentario Adicionado')
-            window.location.reload()
+                toast.dark('Comentario Adicionado')
+                window.location.reload()
+            }
+
+            else {
+                toast.dark('Usuario sem login')
+            }
         } catch (err) {
             toast.error('Ocorreu um erro')
         }
     }
 
 
-    useEffect(() => {
-        if (storage('usuario-logado')) {
-            const usuariologado = storage('usuario-logado');
-            setIdUser(usuariologado.id);
-        }
-    }, []);
+
 
 
     function addCarrinho() {
@@ -92,11 +94,19 @@ export default function CompProduto(props) {
         listarComentarios()
     }, [props.produtos.ID])
 
+
+    useEffect(() => {
+        if (storage('usuario-logado')) {
+            const usuariologado = storage('usuario-logado');
+            setIdUser(usuariologado.id);
+            setLoggedIn(true);
+        }
+    }, []);
+
     return (
         <div className='CompProduto'>
-            
-            <ToastContainer />
-            <CompCartao produtoId={id}/>
+
+            <CompCartao produtoId={id} />
             <Header />
 
 
@@ -144,8 +154,19 @@ export default function CompProduto(props) {
                         </div>
 
                         <div className='cad'>
-                            <button className='button1' onClick={abrirModal1}> Forma de pagamento</button>
-                            <button className='button2' onClick={addCarrinho}> Adicionar ao carrinho</button>
+                            {loggedIn && (
+                                <>
+                                    <button className='button1' onClick={abrirModal1}> Forma de pagamento</button>
+                                    <button className='button2' onClick={addCarrinho}> Adicionar ao carrinho</button>
+                                </>
+                            )}
+                            {!loggedIn && (
+                                <>
+                                <button className='button1'> Forma de pagamento</button>
+                                <button className='button2'> Adicionar ao carrinho</button>
+                                </>
+
+                            )}
                         </div>
 
 
@@ -199,8 +220,8 @@ export default function CompProduto(props) {
                             item.Comentario.trim() !== '' && (
                                 <div key={index} className='comentarioCard'>
                                     <div className='coment'>
-                                    <p>{item.Usuario} Comentou:</p>
-                                    <h3>{item.Comentario}</h3>
+                                        <p>{item.Usuario} Comentou:</p>
+                                        <h3>{item.Comentario}</h3>
                                     </div>
                                 </div>
                             )
@@ -227,7 +248,7 @@ export default function CompProduto(props) {
 
 
 
-        <Rodape />
+            <Rodape />
         </div>
 
     )

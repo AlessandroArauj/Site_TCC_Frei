@@ -7,10 +7,10 @@ const api = axios.create({
 })
 
 
-export async function PedidoAdd(IDuser, IDproduto) {
+export async function PedidoAdd(IDuser, produtoId) {
     const r = await api.post('/pedido', {
         IdUser: IDuser,
-        IDInstrumentso: IDproduto
+        IDInstrumentos: produtoId
     });
 
     return r.data
