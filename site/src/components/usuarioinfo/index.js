@@ -32,14 +32,14 @@ export default function ConteudoOptions() {
             console.log('Chamando EditarUsuario com os seguintes parâmetros:', usuario, nasci, celular, endereco, email, id);
             const resposta = await EditarUsuario(usuario, nasci, celular, endereco, email, id);
             alert('Usuário alterado');
-    
+
             storage.remove('usuario-logado');
             navigate('/');
         } catch (err) {
             console.log(err.message);
         }
     }
-    
+
 
     async function carregarCarrinho() {
         let carrinho = storage('carrinho');
@@ -89,7 +89,7 @@ export default function ConteudoOptions() {
 
 
 
-            <section className='editarPerfil abrir' id='editarPerfil'>
+            <section className='editarPerfil' id='editarPerfil'>
 
 
 
@@ -145,12 +145,14 @@ export default function ConteudoOptions() {
             </section>
 
 
-            <section className='notificacao' id='notificacao'>
+            <section className='notificacao abrir' id='notificacao'>
+
+
                 <div className='Pedidos'>
 
+                    <h1> SEUS PEDIDOS</h1>
 
-
-                    {itens.map(item =>
+                    {/* {itens.map(item =>
                         <div className='CardCarrinho' onClick={() => navigate(`/progresso/${item.produto.ID}`)}>
 
                             <div className='direita'>
@@ -193,7 +195,42 @@ export default function ConteudoOptions() {
 
                         </div>
                     )}
+ */}
 
+
+                    <div className='cardPedi'>
+                        <div className=' cima'>
+                            <div>
+                                <p>N° do pedido:</p>
+                                <h1></h1>
+                            </div>
+                            <div>
+                                <p>pedido feito em:</p>
+                                <h1></h1>
+                            </div>
+                        </div>
+
+                        <div className='subcard'>
+                            <div>
+                                <img src='' />
+                            </div>
+
+                            <div className='infoPedi'>
+
+                                <div>
+                                    <h1>Nome Produto</h1>
+                                    <p> vendido e entregue por TOTH Music</p>
+                                </div>
+
+                                <div>
+                                    <h1>Andamento do Produto</h1>
+                                    <p></p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
 

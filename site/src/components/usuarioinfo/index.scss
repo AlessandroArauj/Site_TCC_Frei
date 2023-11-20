@@ -12,65 +12,68 @@
 
     .editarPerfil.abrir {
         display: flex;
+
+        .editarPerfil h1 {
+            font-size: 25px;
+            padding-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .line {
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .inputs {
+            display: flex;
+
+            padding: 20px 50px;
+
+
+        }
+
+        .inputs div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .inputs>div input,
+        p {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 10px;
+            width: 300px;
+            height: 35px;
+            border-radius: 15px;
+            border: 1px solid #00C2FF;
+            outline: 0;
+            padding: 10px;
+        }
+
+
+        .editarPerfil button {
+            width: 200px;
+            height: 35px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            background-color: #00C2FF;
+            color: #fff;
+        }
+
+        .editarPerfil button:hover {
+            background-color: transparent;
+            border: 1px solid black;
+            color: black;
+            transition: 0.4s;
+        }
+
+
     }
 
-    .editarPerfil h1 {
-        font-size: 25px;
-        padding-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    .line {
-        width: 250px;
-        margin-bottom: 20px;
-    }
-
-    .inputs {
-        display: flex;
-
-        padding: 20px 50px;
-
-
-    }
-
-    .inputs div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .inputs>div input,
-    p {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        margin: 10px;
-        width: 300px;
-        height: 35px;
-        border-radius: 15px;
-        border: 1px solid #00C2FF;
-        outline: 0;
-        padding: 10px;
-    }
-
-
-    .editarPerfil button {
-        width: 200px;
-        height: 35px;
-        border: none;
-        border-radius: 15px;
-        cursor: pointer;
-        background-color: #00C2FF;
-        color: #fff;
-    }
-
-    .editarPerfil button:hover {
-        background-color: transparent;
-        border: 1px solid black;
-        color: black;
-        transition: 0.4s;
-    }
 
 
 
@@ -162,6 +165,64 @@
 
     .notificacao.abrir {
         display: flex;
+        width: 100%;
+        height: 100%;
+
+
+        .cardPedi {
+            width: 900px;
+            height: 300px;
+            padding: 15px;
+            border: 1px solid black;
+            background-color: #bebebe;
+            border-radius: 10px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cardPedi .cima{
+            display: flex;
+            height: 20%;
+            justify-content: space-between;
+        }
+
+        .subcard{
+            width: 100%;
+            height: 80%;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 15px;
+            display: flex;
+        }
+
+
+        .subcard div:first-child{
+            width: 25%;
+            height: 100%;
+        }
+
+        .subcard .infoPedi{
+            width: 75%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .subcard .infoPedi div{
+            width: 100%;
+        }
+
+        .subcard .infoPedi div:last-child h1{
+            text-align: end;
+        }
+
+        .subcard .infoPedi h1{
+            font-size: 18px;
+        }
+
+        
+        
 
 
     }
@@ -169,9 +230,12 @@
 
 
 
+
+
+
     .direita {
-    
-    overflow-y: auto;
+
+        overflow-y: auto;
     }
 
 

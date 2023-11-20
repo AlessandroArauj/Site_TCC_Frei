@@ -87,7 +87,7 @@ export default function AbaUsuario() {
 
 
 
-    function abrirSeg() {
+    function abrirPed() {
         const senha = document.getElementById('senhaSeguranca')
         senha.classList.add('abrir')
 

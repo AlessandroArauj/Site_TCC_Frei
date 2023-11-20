@@ -125,7 +125,7 @@ export default function Page_adm() {
         console.log(resp.IMAGEM);
     }
 
-    
+
 
 
     async function DeletarProdutos(id, nome) {
@@ -172,11 +172,11 @@ export default function Page_adm() {
                 const re = await EnviarImagem(novoProduto.id, imagem)
 
                 toast.dark('Produto Cadastrado!')
-                
+
             }
 
             else {
-                
+
                 await editarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao, id);
                 await EnviarImagem(id, imagem)
 
@@ -291,6 +291,9 @@ export default function Page_adm() {
         const consulta = document.getElementById('consultaProd')
         consulta.classList.remove('abrir')
 
+        const status = document.getElementById('statusProd')
+        status.classList.remove('abrir')
+
     }
 
     function abrirCon() {
@@ -299,6 +302,20 @@ export default function Page_adm() {
 
         const consulta = document.getElementById('consultaProd')
         consulta.classList.add('abrir')
+
+        const status = document.getElementById('statusProd')
+        status.classList.remove('abrir')
+    }
+
+    function abrirSta() {
+        const status = document.getElementById('statusProd')
+        status.classList.add('abrir')
+
+        const add = document.getElementById('addProduto')
+        add.classList.remove('abrir')
+
+        const consulta = document.getElementById('consultaProd')
+        consulta.classList.remove('abrir')
 
     }
 
@@ -330,9 +347,9 @@ export default function Page_adm() {
                     </li>
 
                     <li className='item-menu' >
-                        <div>
+                        <div onClick={abrirSta}>
 
-                            <span className='link'>Reclamações</span>
+                            <span className='link'>Status de produtos</span>
                             <img src=''></img>
                         </div>
 
@@ -362,7 +379,7 @@ export default function Page_adm() {
             <section className='Modais'>
 
 
-                <section className='consultaProd abrir' id='consultaProd'>
+                <section className='consultaProd' id='consultaProd'>
 
                     <div className='cima'>
                         <h1>Consultar Produtos</h1>
@@ -401,7 +418,7 @@ export default function Page_adm() {
                                             </div>
 
                                             <div className='dir'>
-                                                <img alt='Editar' src='../../assets/images/editIcon.svg' onClick={() => [ AlterarProdutoClick(item.ID), window.location.reload()]}/>
+                                                <img alt='Editar' src='../../assets/images/editIcon.svg' onClick={() => [AlterarProdutoClick(item.ID), window.location.reload()]} />
                                                 <img alt='Deletar' src='../../assets/images/DeleteIcon.svg' onClick={() => DeletarProdutos(item.ID, item.PRODUTO)} />
 
                                             </div>
@@ -420,6 +437,64 @@ export default function Page_adm() {
                     </div>
 
 
+
+                </section>
+
+                <section className='statusProd abrir' id='statusProd'>
+                    
+                    <div className='cardPedi'>
+                        <div className=' cima'>
+                            <div>
+                                <p>N° do pedido:</p>
+                                <h1></h1>
+                            </div>
+
+                            <div>
+                                <p>Nome do usuario:</p>
+                                <h1>sdfgsdfgsdgsd</h1>
+                            </div>
+
+                            <div>
+                                <p>pedido feito em:</p>
+                                <h1></h1>
+                            </div>
+                        </div>
+
+                        <div className='subcard'>
+
+                            <div>
+                                <img src='' />
+                            </div>
+
+                            <div  className='dir'>
+
+                                <div className='infoPedi'>
+
+                                    <div>
+                                        <h1>Nome Produto</h1>
+                                    </div>
+
+                                    <div>
+                                        <h1>Andamento do Produto</h1>
+                                        <p></p>
+                                    </div>
+
+                                </div>
+
+                                <div className='buttons'>
+                                    <select>
+                                        <option>nsei</option>
+                                        <option>nsei</option>
+                                        <option>nsei</option>
+                                    </select>
+
+                                    <button>Confirmar slaoq</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </section>
 
