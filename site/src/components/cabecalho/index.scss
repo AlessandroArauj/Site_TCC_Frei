@@ -153,11 +153,22 @@
       }
       
       .side-menu ul li {
-        padding: 15px;
+        padding: 20px;
         display: flex;
         align-items: center;
         height: 50px;
         gap: 10px;
+      }
+
+
+      .side-menu ul li h1{
+        padding: 0;
+        padding: 0 10px;
+      }
+
+      .side-menu ul li .Perfilimg{
+        width: 20px;
+        height: 20px;
       }
 
       .side-menu ul li .UserLetra{
