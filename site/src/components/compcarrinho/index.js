@@ -58,9 +58,9 @@ export default function Compcarrinho(props) {
               <div className='InfosTextos'>
 
                 <h3>{props.item.produto.PRODUTO}</h3>
-                <p>Promoção: R${props.item.produto.PRECOPROMO}</p>
+               
                 <p>Preço do Produto: R${props.item.produto.PRECO}</p>
-
+                <p>Promoção: R${props.item.produto.PRECOPROMO}</p>
               </div>
 
             </div>
@@ -86,7 +86,7 @@ export default function Compcarrinho(props) {
 
           <div className='excluir'>
 
-            <button className='butt' onClick={remover}> Excluir Do carrinho</button>
+            <button className='butt' onClick={remover}> Excluir do carrinho</button>
 
           </div>
 

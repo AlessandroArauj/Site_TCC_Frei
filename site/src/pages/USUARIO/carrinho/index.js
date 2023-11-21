@@ -147,7 +147,7 @@ export default function PageCarrinho() {
 
                             <div>
 
-                                <h3 className='p'> frete: GRÁTIS </h3>
+                                <h3 className='p'> Frete: *GRÁTIS* </h3>
                                 <h3>Total de Produtos: {qtdItens()}  </h3>
 
                             </div>
