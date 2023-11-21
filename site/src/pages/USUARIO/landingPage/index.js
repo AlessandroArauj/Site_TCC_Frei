@@ -88,7 +88,7 @@ export default function LandingPage() {
                         <h1> Parcerias com Shows</h1>
                         <p>Você sabia que aqui no site da TOTH Music, fazemos parcerias com shows bastante renomeado ?  E que uma deles que esta
                             rolando agora é parceria que a gente está tendo com o Rock in Rio. Caso queira saber mais click no botão abaixo</p>
-                        <Link className='butt-landin-page'>
+                        <Link className='butt-landin-page' to={'https://rockinrio.com/rio/pt-br/home/'}>
                             <button className='button'> Saiba mais</button>
                         </Link>
                     </div>

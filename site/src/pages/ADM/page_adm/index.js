@@ -37,10 +37,12 @@ export default function Page_adm() {
     const [descricao, setDesc] = useState('');
     const [imagem, setImagem] = useState('');
     const [id, setId] = useState(0);
+    const [listarProduto, setListaProduto] = useState()
 
 
     const [produtos, setProdutos] = useState([]);
     const [produto, setProduto] = useState([])
+
 
 
     const [usuario, setUsuario] = useState('-');
@@ -56,7 +58,6 @@ export default function Page_adm() {
 
 
 
-    const [listarProduto, setListaProduto] = useState()
 
 
     var aba = document.querySelectorAll('.item-menu')
