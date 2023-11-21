@@ -116,7 +116,7 @@ export default function Header() {
                             </li>
                             <li>
                                 <Link to={'/Carrinho'}><img src='../../../assets/images/carrinho.png'></img></Link>
-                                <Link className='butt-home' to={'/Carrinho'}><p>carrinho</p></Link>
+                                <Link className='butt-home' to={'/Carrinho'}><p>Carrinho</p></Link>
                             </li>
                         </ul>
                     </div>
