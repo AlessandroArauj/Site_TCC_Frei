@@ -1,3 +1,4 @@
+
 .Carrinho-page{
     
    
@@ -20,17 +21,14 @@
 
         background-color: #f5f5f5;
         box-shadow: 0px 0px 10px #b4b4b4;
-
         display: flex;
         flex-direction: column;
         padding: 5px;
-        
-        
-
-        
         width: 100%;
         height: 90vh;
     }
+   
+
 
 
     .conteiner2 {
@@ -56,9 +54,6 @@
         overflow-y: auto;
         
         height: 80vh !important;
-
-
-
     }
 
 
@@ -110,7 +105,7 @@
         height: 95%;
         padding: 20px;
         gap: 40px;
-        color: #00c3ff;
+        color: #3bd1ff;
 
         display: flex;
         flex-direction: column;
@@ -120,20 +115,74 @@
 
     .p {
         
-        color: greenyellow;
+        color: rgb(224, 63, 63);
         font-size: 18px;
     }
 
     .butt-carrinho {
         
-        background-color: #00c3ff;
+        background-color: #3bd1ff;
         width: 95%;
         height: 30px;
         box-shadow: none;
         border: none;
+        transition: 0.4s ease;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
     }
 
-    
+    .butt-carrinho:hover{
+
+        border:solid 1px ;
+        color: #3bd1ff;
+        transition: 0.3s;
+        background-color: #ffff;
+           
+   
+       }
+
+        @media(max-width:1500px){
+
+            .butt-carrinho {
         
+                background-color: #00c3ff;
+                width: 95%;
+                height: 40px;
+                box-shadow: none;
+                border: none;
+            }
+        
+    }
+         @media(max-width:752px){
+        .conteiner {
+
+            background-color: #f5f5f5;
+            box-shadow: 0px 0px 10px #b4b4b4;
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            width: 75%;
+            height: 90vh;
+        }
+
+
+    }
+
+
+    @media(max-width:752px){
+        .conteiner2 {
+
+            background-color: #f5f5f5;
+            box-shadow: 0px 0px 10px #b4b4b4;
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            width: 75%;
+            height: 90vh;
+        }
+
+
+    }
+
+
     
     }
