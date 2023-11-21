@@ -152,61 +152,15 @@ export default function ConteudoOptions() {
 
                     <h1> SEUS PEDIDOS</h1>
 
-                    {/* {itens.map(item =>
-                        <div className='CardCarrinho' onClick={() => navigate(`/progresso/${item.produto.ID}`)}>
-
-                            <div className='direita'>
-
-
-
-                                <div className='imagemProduto'>
-
-                                    <img className='ProdutoImagemCarrinho' alt='Imagens' src={BuscarImagem(item.produto.IMAGEM)} />
-
-                                </div>
-
-                                <div className='infosProdutos'>
-
-                                    <div className='InfosTextos'>
-
-                                        <h3></h3>
-                                        <p>Produto: {item.produto.PRODUTO}</p>
-                                        <p>Preço do Produto: R${item.produto.PRECO}</p>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div className='quanti' >
-
-
-
-
-
-                            </div>
-
-                            <div className='excluir'>
-
-
-
-                            </div>
-
-                        </div>
-                    )}
- */}
 
 
                     <div className='cardPedi'>
                         <div className=' cima'>
                             <div>
-                                <p>N° do pedido:</p>
-                                <h1></h1>
+                            <div className='barrinhaAzul'></div> <p>pedido feito em:</p>
                             </div>
                             <div>
-                                <p>pedido feito em:</p>
-                                <h1></h1>
+                                
                             </div>
                         </div>
 
