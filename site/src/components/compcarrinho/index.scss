@@ -9,12 +9,23 @@
 
     .butt {
         
-        background-color: #00ccff;
+        background-color: #3bd1ff;
         border: none;
         width: 130px;
         height: 40px;
         border-radius: 10px;
         cursor: pointer;
+        transition: 0.4s ease;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+    }
+    .butt:hover{
+
+     border:solid 1px ;
+     color: #3bd1ff;
+     transition: 0.3s;
+     background-color: #ffff;
+        
+
     }
 
 
@@ -28,7 +39,6 @@
         box-shadow: 0px 0px 10px #b4b4b4;
         margin-bottom: 10px;
         padding: 5px;
-
         width: 100%;
         height: 25vh;
         gap: 30px;
@@ -51,6 +61,7 @@
         width: 120px;
         height: 110px;
     }
+    
 
     .imagemProduto{
         
@@ -63,4 +74,118 @@
         
         padding: 10px;
     }
+    
+ 
+
+
+    
+    @media (max-width:864px) {
+        .ProdutoImagemCarrinho{
+        
+            width: 120px;
+            height: 120px;
+            margin-top: 30px;
+        }
+        
+        .InfosTextos h3, p{
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+    }
+
+
+     
+    @media (max-width:752px) {
+       .CardCarrinho{
+
+        gap: 5px;
+       }
+
+       .butt{
+
+        width: 50px;
+        font-size: 10px;
+       }
+
+        
+       .InfosTextos h3, p{
+        font-size: 13px;
+        
+    }
+    
+    }
+
+
+      
+    @media (max-width:658px) {
+        .CardCarrinho{
+         height: 32vh;
+         gap: 0px;
+        }
+ 
+        .butt{
+ 
+         width: 60px;
+         font-size: 10px;
+        }
+ 
+         
+        .InfosTextos h3{
+         font-size: 13px;
+         margin-top: 30px;
+         
+     }
+
+     .direita {
+        
+        display: flex;
+        gap: 20px;
+        padding: 10px;
+        flex-direction: column;
+        width: 50%;
+    }
+     }
+
+
+
+       
+    @media (max-width:561px) {
+        .CardCarrinho{
+         height: 40vh;
+         gap: 0px;
+        }
+ 
+        .butt{
+ 
+         width: 60px;
+         font-size: 10px;
+        }
+ 
+         
+        .InfosTextos h3{
+         font-size: 13px;
+         margin-top: 30px;
+         
+     }
+
+     .direita {
+        
+        display: flex;
+        gap: 20px;
+        padding: 10px;
+        flex-direction: column;
+        width: 40%;
+      
+    }
+
+    .quanti {
+        width: 30%;
+        padding: 10px;
+
+    }
+     }
+ 
+
+
 }
