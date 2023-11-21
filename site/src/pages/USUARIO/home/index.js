@@ -152,6 +152,7 @@ function Home() {
   return (
     <div className="pageHome">
       <Header />
+      
       <nav className='nav-cabe'>
 
         <Link className='link-head' to={'/categorias/' + 5}>
