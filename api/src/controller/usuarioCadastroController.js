@@ -33,21 +33,6 @@ server.post('/cliente/login/adm', async (req, resp) => {
     }
 });
 
-server.put('/cliente/:id', async (req, resp) => {
-    try {
-        const { id } = req.params;
-        const usuario = req.body;
-        const resposta = await EditarDados(usuario, id);
-        if (resposta != 1)
-            throw new Error('usuario não pode ser alterado');
-        else
-            resp.status(204).send();
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        });
-    }
-});
 
 server.get('/cliente/comentarios/:id', async (req, resp) => {
     try {
@@ -111,12 +96,12 @@ server.put('/cliente/editar/:id', async (req, resp) => {
         const { id } = req.params;
         const usuario = req.body;
 
-        const resposta = await EditarUsuario(usuario, id);
+        const resposta = await EditarDados(usuario, id);
 
         if (resposta != 1) {
             throw new Error('Usuário não pode ser alterado');
         } else {
-            resp.status(204).send(resposta);
+            resp.status(204).send();
         }
     } catch (err) {
         resp.status(400).send({

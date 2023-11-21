@@ -1,5 +1,6 @@
 .conteudoOption {
 
+    width: 100%;
 
     .editarPerfil {
         display: flex;
@@ -169,18 +170,48 @@
         display: none;
     }
 
+    
+
     .notificacao.abrir {
         display: flex;
         width: 100%;
-        height: 100%;
+
+        justify-content: center;
+        height: 90vh;
+        overflow-y: auto;
+
+        .pedidos {
+            
+            margin-bottom: 20px;
+        }
+
+
+        .imagemPedido {
+            width: 130px !important;
+            height: 110px;
+
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .PedidoImagem {
+            width: 110px;
+            height: 100px;
+        }
 
 
         .cardPedi {
-            width: 900px;
-            height: 300px;
+
+            margin-top: 20px;
+            
+            width: 800px;
+            
+            height: 200px;
             padding: 15px;
-            border: 1px solid black;
-            background-color: #bebebe;
+            box-shadow: 0px 0px 10px #9b9b9b;
+            background-color: #e7e7e7;
             border-radius: 10px;
             gap: 10px;
             display: flex;
@@ -191,6 +222,41 @@
             display: flex;
             height: 20%;
             justify-content: space-between;
+            
+        }
+
+        .andamentoDetalhes {
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20px;
+
+        }
+
+        .VerDetalhes {
+            
+            display: flex;
+            margin-top: 30px;
+            align-items: center;
+            justify-content: center;
+
+            border: #00C2FF 1px solid;
+            border-radius: 5px;
+            width: 60% !important;
+            height: 30px;
+            background-color: #00C2FF;
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            cursor: pointer;
+        }
+
+        .informacoesPedidosDatas{
+            
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
         }
 
         .subcard{
@@ -220,7 +286,7 @@
         }
 
         .subcard .infoPedi div:last-child h1{
-            text-align: end;
+           
         }
 
         .subcard .infoPedi h1{

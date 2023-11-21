@@ -15,3 +15,9 @@ export async function PedidoAdd(IDuser, produtoId) {
 
     return r.data
 }
+
+
+export async function MostrarPedidosUsuario(id) {
+    const resposta = await api.get(`/pedido/usuario/${id}`)
+    return resposta.data;
+}
