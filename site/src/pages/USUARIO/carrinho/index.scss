@@ -1,10 +1,9 @@
+.Carrinho-page {
 
-.Carrinho-page{
-    
-   
-    
+
+
     .contPrincipal {
-    
+
         width: 100%;
         height: 100vh;
         margin-top: 10px;
@@ -16,7 +15,7 @@
         align-items: center;
         justify-content: center;
     }
-   
+
     .conteiner {
 
         background-color: #f5f5f5;
@@ -27,33 +26,33 @@
         width: 100%;
         height: 90vh;
     }
-   
+
 
 
 
     .conteiner2 {
-    
+
         background-color: #f5f5f5;
         box-shadow: 0px 0px 10px #b4b4b4;
-        
+
 
         width: 25%;
         height: 90vh;
 
         display: flex;
         flex-direction: column;
-        
+
     }
 
     .Direita {
-        
+
         display: flex;
         flex-direction: column;
         padding: 10px;
-        
+
         overflow-y: auto;
-        
-        height: 80vh !important;
+
+        height: 100% !important;
     }
 
 
@@ -76,30 +75,30 @@
     }
 
     .conteudo {
-        
+
         display: flex;
         overflow-y: hidden;
-    
+
     }
 
     .conteudo2 {
-        
+
         display: flex;
-        
+
         justify-content: center;
         flex-direction: column;
         padding: 10px;
 
         height: 100%;
         gap: 20px;
-        
+
 
     }
 
-    
+
 
     .baixo2 {
-        
+
         background-color: #ffffff;
         box-shadow: 0px 0px 10px #b4b4b4;
         height: 95%;
@@ -110,17 +109,17 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-    
+
     }
 
     .p {
-        
+
         color: rgb(224, 63, 63);
         font-size: 18px;
     }
 
     .butt-carrinho {
-        
+
         background-color: #3bd1ff;
         width: 95%;
         height: 30px;
@@ -130,29 +129,30 @@
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
     }
 
-    .butt-carrinho:hover{
+    .butt-carrinho:hover {
 
-        border:solid 1px ;
+        border: solid 1px;
         color: #3bd1ff;
         transition: 0.3s;
         background-color: #ffff;
-           
-   
-       }
 
-        @media(max-width:1500px){
 
-            .butt-carrinho {
-        
-                background-color: #00c3ff;
-                width: 95%;
-                height: 40px;
-                box-shadow: none;
-                border: none;
-            }
-        
     }
-         @media(max-width:752px){
+
+    @media(max-width:1500px) {
+
+        .butt-carrinho {
+
+            background-color: #00c3ff;
+            width: 95%;
+            height: 40px;
+            box-shadow: none;
+            border: none;
+        }
+
+    }
+
+    @media(max-width:752px) {
         .conteiner {
 
             background-color: #f5f5f5;
@@ -168,7 +168,7 @@
     }
 
 
-    @media(max-width:752px){
+    @media(max-width:752px) {
         .conteiner2 {
 
             background-color: #f5f5f5;
@@ -183,6 +183,16 @@
 
     }
 
+    @media(max-width:420px){
+        .contPrincipal{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
 
     
-    }
+
+   
+
+
+}
