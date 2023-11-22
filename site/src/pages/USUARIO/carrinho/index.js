@@ -46,9 +46,9 @@ export default function PageCarrinho() {
 
                 if (IDuser !== 0 && produtoId !== 0) {
 
-                    const resposta = await PedidoAdd(IDuser, produtoId);
+                    await PedidoAdd(IDuser, produtoId);
                     toast.success('Pedido Realizado!');
-                    storage.remove('carrinho');
+                    
                     
                 }
 
@@ -58,6 +58,7 @@ export default function PageCarrinho() {
                 }
 
                 window.location.reload()
+                storage.remove('carrinho');
             }
 
 
@@ -154,7 +155,7 @@ export default function PageCarrinho() {
 
                             <div className='bbaixo'>
 
-                                <h2>Total: R${calcularValorTotal()} </h2>
+                                <h2>Total: R${calcularValorTotal() === 0 ? '0' : calcularValorTotal()} </h2>
                                 <button className='butt-carrinho' onClick={AdicionarPedidos}> Finalizar pedido </button>
 
                             </div>

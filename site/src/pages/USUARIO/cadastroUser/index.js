@@ -66,7 +66,11 @@ export default function ContaUser() {
 
 
 
-
+   function teclaEnter(e) {
+      if (e.key === 'Enter') {
+          Cadastrar();
+      }
+  }
 
 
 
@@ -115,7 +119,7 @@ export default function ContaUser() {
                   <div className='password'>
 
                      <label>
-                        <input id='password' type={mostrarSenha ? 'text' : 'password'} name='password' placeholder='Senha' required value={senha} onChange={e => setSenha(e.target.value)} />
+                        <input id='password' onKeyUp={teclaEnter} type={mostrarSenha ? 'text' : 'password'} name='password' placeholder='Senha' required value={senha} onChange={e => setSenha(e.target.value)} />
                         <img src='../../../assets/images/olho.png' onClick={() => setMostrarSenha(!mostrarSenha)} />
 
 

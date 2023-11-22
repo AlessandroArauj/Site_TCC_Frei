@@ -61,6 +61,12 @@ export default function LoginUsuario() {
   }
 }
 
+function teclaEnter(e) {
+  if (e.key === 'Enter') {
+      LoginUsuarioReact();
+  }
+}
+
 
 function verificaEmail(email) {
   const padrao = /^\S+@\S+\.\S+$/;
@@ -91,7 +97,7 @@ function verificaEmail(email) {
           
           <label for="">SENHA</label>
 
-          <button onClick={() => setMostrarSenha(!mostrarSenha)}> <img src='../../../assets/images/olho.png'>
+          <button onClick={() => setMostrarSenha(!mostrarSenha)}> <img className='visao' src='../../../assets/images/olho.png'>
           </img></button>
 
          

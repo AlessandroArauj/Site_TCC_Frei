@@ -4,16 +4,6 @@ import { AdicionarPedido, MostrarPedidosPorIdUsuario, MostrarPedidosUsuarios } f
 
 const server = Router();
 
-server.get('/pedido/admin', async (req, resp) => {
-    try {
-        const resposta = await MostrarPedidosUsuarios()
-        resp.send(resposta)
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        });
-    }
-})
 
 server.post('/pedido', async (req, resp) => {
     try {
@@ -27,6 +17,19 @@ server.post('/pedido', async (req, resp) => {
         });
     }
 });
+
+server.get('/pedido/admin', async (req, resp) => {
+    try {
+        const resposta = await MostrarPedidosUsuarios()
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
+
 
 server.get('/pedido/usuario/:id', async (req, resp) => {
     try {
