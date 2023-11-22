@@ -42,7 +42,7 @@ root.render(
         <Route path='/categorias/:id' element={<Categoria />} />
         <Route path='/PagePubli' element={<PagePubli />} />
         <Route path='/progresso/:id' element= {<Progresso/>}/>
-
+  
 
         <Route path='/loginAdm' element={<CadastroAdm />} />
         <Route path='/pageAdm' element={<Page_adm />} />
