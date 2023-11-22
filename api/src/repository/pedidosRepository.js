@@ -16,6 +16,32 @@ export async function AdicionarPedido(pedidos) {
     return pedidos;
 };
 
+export async function MostrarPedidosUsuarios() {
+    const comando = `
+    SELECT
+            P.ID_INSTRUMENTOS       AS ID,
+            ds_status_pedido        AS Status,
+            NM_NOME_COMP            AS Usuario,
+            NM_PRODUTO              AS Produto,
+            NR_PRECO                AS Preco,
+            NR_PRECO_PROMOCIONAL    AS PrecoPromo,
+            DT_PEDIDO               AS Data,
+            IMG_PRODUTO             AS Imagem
+    FROM TB_PEDIDO AS A
+
+    INNER JOIN
+        tb_status_pedido AS S ON A.id_status_pedido = S.id_status_pedido
+    INNER JOIN 
+        TB_CADASTRO_USER AS C ON A.ID_USER = C.ID_USER
+    INNER JOIN
+        TB_PRODUTO AS P ON A.ID_INSTRUMENTOS = P.ID_INSTRUMENTOS
+
+    `
+
+    const [resp] = await con.query(comando);
+    return resp;
+}
+
 
 export async function MostrarPedidosPorIdUsuario(id) {
     const comando = `
