@@ -296,6 +296,31 @@ export async function ExibirTodosProdutos() {
     return resp;
 }
 
+export async function ExibirTodosFiltroNomeAdm(nome) {
+
+    const comando = `
+    SELECT
+        ID_INSTRUMENTOS AS ID,
+                ID_MARCAS AS MARCAS,
+                ID_CATEGORIA AS CATEGORIAS,
+                NM_PRODUTO AS PRODUTO,
+                NR_PRECO AS PRECO,
+                NR_PRECO_PROMOCIONAL AS PRECOPROMO,
+                BT_DESTAQUE AS DESTAQUE,
+                BT_PROMOCAO AS PROMODISP,
+                BT_DISPONIVEL AS DISPONIVEL,
+                QTD_ESTOQUE AS ESTOQUE,
+                DS_DETALHES AS DETALHE,
+                IMG_PRODUTO AS IMAGEM
+        FROM TB_PRODUTO
+        WHERE NM_PRODUTO LIKE ?
+        `;
+
+    let [resp] = await con.query(comando, [`%${nome}%`]);
+    return resp;
+}
+
+
 // Função para exibir produtos filtrados por nome
 export async function ExibirTodosFiltroNome(nome) {
 

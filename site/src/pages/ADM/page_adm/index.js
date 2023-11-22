@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import storage from 'local-storage'
 
 import axios from 'axios'
-import { BuscarImagem, DeletarProduto, ListarTodosProdutos, adicionarProduto, ListarProdutosPorID, EnviarImagem, editarProduto } from '../../../api/produtoApi'
+import { BuscarImagem, DeletarProduto, ListarTodosProdutos, adicionarProduto, ListarProdutosPorID, EnviarImagem, editarProduto, ListarProdutosPorNome, ListarProdutosPorNomeAdm } from '../../../api/produtoApi'
 import { Await, useNavigate, useParams } from 'react-router-dom';
 
 import { Link } from 'react-router-dom'
@@ -42,7 +42,8 @@ export default function Page_adm() {
 
     const [produtos, setProdutos] = useState([]);
     const [produto, setProduto] = useState([])
-
+    const [filtro, setFiltro] = useState('')
+ 
 
 
     const [usuario, setUsuario] = useState('-');
@@ -55,6 +56,7 @@ export default function Page_adm() {
         storage.remove('admin-logado');
         navigate('/')
     }
+
 
 
 
@@ -75,7 +77,10 @@ export default function Page_adm() {
 
 
 
-
+    async function FiltroNome() {
+        const resp = await ListarProdutosPorNomeAdm(filtro)
+        setProdutos(resp)
+    }
 
 
 
@@ -213,8 +218,54 @@ export default function Page_adm() {
 
 
 
+    function teclaEnter(e) {
+        if (e.key === 'Enter') {
+            FiltroNome();
+        }
+    }
 
 
+
+
+
+    function abrirAdd() {
+        const add = document.getElementById('addProduto')
+        add.classList.add('abrir')
+
+        const consulta = document.getElementById('consultaProd')
+        consulta.classList.remove('abrir')
+
+        const status = document.getElementById('statusProd')
+        status.classList.remove('abrir')
+
+    }
+
+    function abrirCon() {
+        const add = document.getElementById('addProduto')
+        add.classList.remove('abrir')
+
+        const consulta = document.getElementById('consultaProd')
+        consulta.classList.add('abrir')
+
+        const status = document.getElementById('statusProd')
+        status.classList.remove('abrir')
+    }
+
+    function abrirSta() {
+        const status = document.getElementById('statusProd')
+        status.classList.add('abrir')
+
+        const add = document.getElementById('addProduto')
+        add.classList.remove('abrir')
+
+        const consulta = document.getElementById('consultaProd')
+        consulta.classList.remove('abrir')
+
+    }
+
+
+
+    
     useEffect(() => {
         if (idParams) {
             CarregarProdutoPorIDs();
@@ -285,45 +336,6 @@ export default function Page_adm() {
 
 
 
-    function abrirAdd() {
-        const add = document.getElementById('addProduto')
-        add.classList.add('abrir')
-
-        const consulta = document.getElementById('consultaProd')
-        consulta.classList.remove('abrir')
-
-        const status = document.getElementById('statusProd')
-        status.classList.remove('abrir')
-
-    }
-
-    function abrirCon() {
-        const add = document.getElementById('addProduto')
-        add.classList.remove('abrir')
-
-        const consulta = document.getElementById('consultaProd')
-        consulta.classList.add('abrir')
-
-        const status = document.getElementById('statusProd')
-        status.classList.remove('abrir')
-    }
-
-    function abrirSta() {
-        const status = document.getElementById('statusProd')
-        status.classList.add('abrir')
-
-        const add = document.getElementById('addProduto')
-        add.classList.remove('abrir')
-
-        const consulta = document.getElementById('consultaProd')
-        consulta.classList.remove('abrir')
-
-    }
-
-
-
-
-
 
     return (
         <div className='pageAdm'>
@@ -384,7 +396,10 @@ export default function Page_adm() {
 
                     <div className='cima'>
                         <h1>Consultar Produtos</h1>
-                        <input type='text' placeholder='Pesquisa' />
+                        <label className='inputFiltro'>
+                        <input type='text' placeholder='Pesquisa' value={filtro} onKeyUp={teclaEnter} onChange={e => setFiltro(e.target.value)}/>
+                        <img onClick={FiltroNome} src='../../assets/images/lupa.png' />
+                        </label>
                         <hr />
                     </div>
 

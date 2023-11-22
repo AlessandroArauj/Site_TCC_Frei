@@ -33,6 +33,11 @@ export async function ListarProdutosPorID(id) {
 
 }
 
+export async function ListarProdutosPorNomeAdm(nome) {
+    const resposta = await api.get(`/produto/adm/busca?nome=${nome}`);
+    return resposta.data;
+}
+
 export async function ListarProdutosPorNome(nome) {
     const resposta = await api.get(`/produto/busca?nome=${nome}`);
     return resposta.data;

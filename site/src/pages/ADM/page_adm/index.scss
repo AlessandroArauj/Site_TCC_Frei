@@ -155,7 +155,7 @@
             
         }
 
-        .cima input {
+        .inputFiltro {
             padding: 0 10px;
             width: 300px;
             height: 40px;
@@ -163,9 +163,24 @@
             transition: 0.7s;
             outline: 0;
             border: 2px solid #918f8f;
+
+            display: flex;
+            justify-content: space-between;
         }
 
-        .cima input:hover {
+        .inputFiltro input {
+            border: none;
+            outline: 0;
+        }
+
+        .inputFiltro img{
+        
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .inputFiltro:hover {
             box-shadow: 0 0 10px #0fbbff, inset 0 0 2px #3b3b3b
         }
 
