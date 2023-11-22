@@ -15,6 +15,7 @@ export default function Header() {
 
     const cont2Ref = useRef(null);
 
+
     const handleClickOutside = (event) => {
         if (cont2Ref.current && !cont2Ref.current.contains(event.target)) {
             setMostrarResultados(false);
@@ -127,7 +128,7 @@ export default function Header() {
                 <div className='dir'>
                     <div>
                         <Link className='butt-home' to={'/loginUser'}>
-                            <div className={!storage('usuario-logado') ? 'minhaconta' : 'UserLetra'}> <h1> {storage('usuario-logado') ? usuario[0] : <img className='Perfilimg' src='../../../assets/images/perfil.png' />} </h1></div>
+                            <div className={!storage('usuario-logado') ? 'minhaconta' : 'UserLetra'}> <h1> {storage('usuario-logado') ? usuario[0].toUpperCase() : <img className='Perfilimg' src='../../../assets/images/perfil.png' />} </h1></div>
 
                         </Link>
                         <Link className='butt-home' to={storage('usuario-logado') ? '/LoginUser' : '/perfilusuario'}><p>{storage('usuario-logado') ? "Minha Conta" : 'Login'}</p></Link>

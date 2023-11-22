@@ -106,7 +106,7 @@ export default function AbaUsuario() {
         <div className='perfil'>
             <nav className='lateral-menu'>
 
-                <div>
+                <div className='infoUsuarioStrings'>
                     <h1>{usuario}</h1>
                     <p>{email}</p>
                 </div>

@@ -113,7 +113,7 @@ export default function ConteudoOptions() {
 
 
 
-            <section className='editarPerfil' id='editarPerfil'>
+            <section className='editarPerfil abrir' id='editarPerfil'>
 
 
 
@@ -169,7 +169,7 @@ export default function ConteudoOptions() {
             </section>
 
 
-            <section className='notificacao abrir' id='notificacao'>
+            <section className='notificacao' id='notificacao'>
 
 
                 <div className='Pedidos'>
