@@ -24,12 +24,7 @@ export default function LandingPage() {
                     <Link className='link-head' to={'/home'}>
                         <h1 className='button-text-head'> Home</h1>
                     </Link>
-                    <Link className='link-head'>
-                        <h1 className='button-text-head'> Serviços</h1>
-                    </Link>
-                    <Link className='link-head'>
-                        <h1 className='button-text-head'> Contatos</h1>
-                    </Link>
+                    
                     <Link className='link-head' to={!storage('usuario-logado') ? '/LoginUser' : '/perfilusuario'}>
                         <h1 className='button-text-head'>{storage('usuario-logado') ? "Minha Conta" : 'Login'}</h1>
                     </Link>
