@@ -331,7 +331,7 @@ export default function Page_adm() {
 
 
                 <div>
-                    <h1> Bem Vindo</h1>
+                    <h1> Bem Vindo, </h1>
                     <h1> {usuario}</h1>
                 </div>
 
@@ -380,7 +380,7 @@ export default function Page_adm() {
             <section className='Modais'>
 
 
-                <section className='consultaProd' id='consultaProd'>
+                <section className={id > 0 ? 'consultaProd' : 'consultaProd abrir'} id='consultaProd'>
 
                     <div className='cima'>
                         <h1>Consultar Produtos</h1>
@@ -441,7 +441,7 @@ export default function Page_adm() {
 
                 </section>
 
-                <section className='statusProd abrir' id='statusProd'>
+                <section className='statusProd' id='statusProd'>
                     
                     <div className='cardPedi'>
                         <div className=' cima'>
@@ -499,7 +499,7 @@ export default function Page_adm() {
 
                 </section>
 
-                <section className='addProduto' id='addProduto'>
+                <section className={id == 0 ? 'addProduto' : 'addProduto abrir'} id='addProduto'>
                     <ToastContainer />
 
 

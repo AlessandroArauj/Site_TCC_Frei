@@ -363,10 +363,26 @@
 
         }
 
+        .input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .cont-cabeca{
             flex-direction: row-reverse;
         }
 
+        .UserLetra {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .UserLetra h1{
+            font-size: 12px;
+            margin: 0px;
+        }
 
         
 
