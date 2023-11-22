@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AddCarrinho, AlterarProduto, Carrinho, DeletarProduto,  ExibirTodosFiltroNome, ExibirTodosProdutos, ListarProdutosDestaques, ListarProdutosPorCategoria, ListarProdutosPorID, alterarImagem, inserirProduto, listarCategorias, listarCategoriasIDNomes } from "../repository/produtoRepository.js";
+import { AddCarrinho, AlterarProduto, Carrinho, DeletarProduto,  ExibirTodosFiltroNome, ExibirTodosFiltroNomeAdm, ExibirTodosProdutos, ListarProdutosDestaques, ListarProdutosPorCategoria, ListarProdutosPorID, alterarImagem, inserirProduto, listarCategorias, listarCategoriasIDNomes } from "../repository/produtoRepository.js";
 import { buscarMarcasPorId, listarMarcas } from "../repository/produtosmarcasRepository.js";
 
 import multer from 'multer'
@@ -51,6 +51,20 @@ server.post('/produto/carrinho', async (req, resp) => {
 
 })
 
+server.get('/produto/adm/busca', async (req, resp) => {
+    try {
+        const { nome } = req.query;
+
+        const resposta = await ExibirTodosFiltroNomeAdm(nome);
+
+        resp.send(resposta);
+        
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+});
 
 // Endpoint para buscar produtos por nome
 server.get('/produto/busca', async (req, resp) => {

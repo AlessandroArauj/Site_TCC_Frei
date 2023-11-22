@@ -1,5 +1,6 @@
 .conteudoOption {
 
+    width: 100%;
 
     .editarPerfil {
         display: flex;
@@ -10,67 +11,76 @@
 
     }
 
+    .barrinhaAzul{
+        width: 10px;
+        height: 30px;
+        background-color:#00C2FF;
+    }
+
     .editarPerfil.abrir {
         display: flex;
+
+        .editarPerfil h1 {
+            font-size: 25px;
+            padding-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .line {
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .inputs {
+            display: flex;
+
+            padding: 20px 50px;
+
+
+        }
+
+        .inputs div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .inputs>div input,
+        p {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 10px;
+            width: 300px;
+            height: 35px;
+            border-radius: 15px;
+            border: 1px solid #00C2FF;
+            outline: 0;
+            padding: 10px;
+        }
+
+
+        .editarPerfil button {
+            width: 200px;
+            height: 35px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            background-color: #00C2FF;
+            color: #fff;
+        }
+
+        .editarPerfil button:hover {
+            background-color: transparent;
+            border: 1px solid black;
+            color: black;
+            transition: 0.4s;
+        }
+
+
     }
 
-    .editarPerfil h1 {
-        font-size: 25px;
-        padding-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    .line {
-        width: 250px;
-        margin-bottom: 20px;
-    }
-
-    .inputs {
-        display: flex;
-
-        padding: 20px 50px;
-
-
-    }
-
-    .inputs div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .inputs>div input,
-    p {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        margin: 10px;
-        width: 300px;
-        height: 35px;
-        border-radius: 15px;
-        border: 1px solid #00C2FF;
-        outline: 0;
-        padding: 10px;
-    }
-
-
-    .editarPerfil button {
-        width: 200px;
-        height: 35px;
-        border: none;
-        border-radius: 15px;
-        cursor: pointer;
-        background-color: #00C2FF;
-        color: #fff;
-    }
-
-    .editarPerfil button:hover {
-        background-color: transparent;
-        border: 1px solid black;
-        color: black;
-        transition: 0.4s;
-    }
 
 
 
@@ -160,8 +170,131 @@
         display: none;
     }
 
+    
+
     .notificacao.abrir {
         display: flex;
+        width: 100%;
+
+        justify-content: center;
+        height: 90vh;
+        overflow-y: auto;
+
+        .pedidos {
+            
+            margin-bottom: 20px;
+        }
+
+
+        .imagemPedido {
+            width: 130px !important;
+            height: 110px;
+
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .PedidoImagem {
+            width: 110px;
+            height: 100px;
+        }
+
+
+        .cardPedi {
+
+            margin-top: 20px;
+            
+            width: 800px;
+            
+            height: 200px;
+            padding: 15px;
+            box-shadow: 0px 0px 10px #9b9b9b;
+            background-color: #e7e7e7;
+            border-radius: 10px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cardPedi .cima{
+            display: flex;
+            height: 20%;
+            justify-content: space-between;
+            
+        }
+
+        .andamentoDetalhes {
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20px;
+
+        }
+
+        .VerDetalhes {
+            
+            display: flex;
+            margin-top: 30px;
+            align-items: center;
+            justify-content: center;
+
+            border: #00C2FF 1px solid;
+            border-radius: 5px;
+            width: 60% !important;
+            height: 30px;
+            background-color: #00C2FF;
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            cursor: pointer;
+        }
+
+        .informacoesPedidosDatas{
+            
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .subcard{
+            width: 100%;
+            height: 80%;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 15px;
+            display: flex;
+        }
+
+
+        .subcard div:first-child{
+            width: 25%;
+            height: 100%;
+        }
+
+        .subcard .infoPedi{
+            width: 75%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .subcard .infoPedi div{
+            width: 100%;
+        }
+
+        .subcard .infoPedi div:last-child h1{
+           
+        }
+
+        .subcard .infoPedi h1{
+            font-size: 18px;
+        }
+
+        
+        
 
 
     }
@@ -169,9 +302,12 @@
 
 
 
+
+
+
     .direita {
-    
-    overflow-y: auto;
+
+        overflow-y: auto;
     }
 
 

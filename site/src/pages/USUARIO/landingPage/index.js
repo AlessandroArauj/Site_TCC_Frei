@@ -24,12 +24,7 @@ export default function LandingPage() {
                     <Link className='link-head' to={'/home'}>
                         <h1 className='button-text-head'> Home</h1>
                     </Link>
-                    <Link className='link-head'>
-                        <h1 className='button-text-head'> Serviços</h1>
-                    </Link>
-                    <Link className='link-head'>
-                        <h1 className='button-text-head'> Contatos</h1>
-                    </Link>
+                    
                     <Link className='link-head' to={!storage('usuario-logado') ? '/LoginUser' : '/perfilusuario'}>
                         <h1 className='button-text-head'>{storage('usuario-logado') ? "Minha Conta" : 'Login'}</h1>
                     </Link>
@@ -88,7 +83,7 @@ export default function LandingPage() {
                         <h1> Parcerias com Shows</h1>
                         <p>Você sabia que aqui no site da TOTH Music, fazemos parcerias com shows bastante renomeado ?  E que uma deles que esta
                             rolando agora é parceria que a gente está tendo com o Rock in Rio. Caso queira saber mais click no botão abaixo</p>
-                        <Link className='butt-landin-page'>
+                        <Link className='butt-landin-page' to={'https://rockinrio.com/rio/pt-br/home/'}>
                             <button className='button'> Saiba mais</button>
                         </Link>
                     </div>

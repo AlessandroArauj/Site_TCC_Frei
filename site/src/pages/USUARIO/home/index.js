@@ -124,7 +124,18 @@ function Home() {
   }
 
 
+  function ATIdedo2() {
+    const carouselElement = document.querySelector(".carousel2");
+    ArrastaDedo(carouselElement);
 
+  }
+ 
+
+
+
+  useEffect(() => {
+    ATIdedo2()
+  }, [])
 
   useEffect(() => {
     ATIdedo()
@@ -141,6 +152,7 @@ function Home() {
   return (
     <div className="pageHome">
       <Header />
+      
       <nav className='nav-cabe'>
 
         <Link className='link-head' to={'/categorias/' + 5}>
@@ -273,6 +285,9 @@ function Home() {
         <button onClick={handleRightClick}><img src='../../../assets/images/maior.png' /></button>
       </section>
 
+
+
+
       <section className='faixa-4'>
 
         <div className='left-f4'>
@@ -284,6 +299,9 @@ function Home() {
         </div>
 
       </section>
+
+
+
 
       <section className='faixa-5'>
 
@@ -303,7 +321,7 @@ function Home() {
 
           <div className='container'>
 
-            <div className='carousel' ref={carousel2}>
+            <div className='carousel2' ref={carousel2}>
 
 
               {promos.map(item => (

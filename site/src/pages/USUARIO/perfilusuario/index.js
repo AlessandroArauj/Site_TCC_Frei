@@ -87,7 +87,7 @@ export default function AbaUsuario() {
 
 
 
-    function abrirSeg() {
+    function abrirPed() {
         const senha = document.getElementById('senhaSeguranca')
         senha.classList.add('abrir')
 
@@ -100,11 +100,13 @@ export default function AbaUsuario() {
 
     }
 
+    
+
     return (
         <div className='perfil'>
             <nav className='lateral-menu'>
 
-                <div>
+                <div className='infoUsuarioStrings'>
                     <h1>{usuario}</h1>
                     <p>{email}</p>
                 </div>

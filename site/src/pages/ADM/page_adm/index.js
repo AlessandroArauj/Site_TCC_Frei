@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import storage from 'local-storage'
 
 import axios from 'axios'
-import { BuscarImagem, DeletarProduto, ListarTodosProdutos, adicionarProduto, ListarProdutosPorID, EnviarImagem, editarProduto } from '../../../api/produtoApi'
+import { BuscarImagem, DeletarProduto, ListarTodosProdutos, adicionarProduto, ListarProdutosPorID, EnviarImagem, editarProduto, ListarProdutosPorNome, ListarProdutosPorNomeAdm } from '../../../api/produtoApi'
 import { Await, useNavigate, useParams } from 'react-router-dom';
 
 import { Link } from 'react-router-dom'
@@ -30,17 +30,20 @@ export default function Page_adm() {
     const [nome, setNome] = useState('');
     const [preco, setPreco] = useState(0);
     const [precoPromo, setPrecoPromo] = useState(0);
-    const [promo, setPromo] = useState(false);
+    const [promo, setPromo] = useState();
     const [estoque, setEstoque] = useState(0);
     const [destaque, setDest] = useState(false);
     const [disponivel, setDisp] = useState(false);
     const [descricao, setDesc] = useState('');
     const [imagem, setImagem] = useState('');
     const [id, setId] = useState(0);
+    const [listarProduto, setListaProduto] = useState()
 
 
     const [produtos, setProdutos] = useState([]);
     const [produto, setProduto] = useState([])
+    const [filtro, setFiltro] = useState('')
+ 
 
 
     const [usuario, setUsuario] = useState('-');
@@ -56,7 +59,7 @@ export default function Page_adm() {
 
 
 
-    const [listarProduto, setListaProduto] = useState()
+
 
 
     var aba = document.querySelectorAll('.item-menu')
@@ -74,7 +77,10 @@ export default function Page_adm() {
 
 
 
-
+    async function FiltroNome() {
+        const resp = await ListarProdutosPorNomeAdm(filtro)
+        setProdutos(resp)
+    }
 
 
 
@@ -125,7 +131,7 @@ export default function Page_adm() {
         console.log(resp.IMAGEM);
     }
 
-    
+
 
 
     async function DeletarProdutos(id, nome) {
@@ -172,11 +178,11 @@ export default function Page_adm() {
                 const re = await EnviarImagem(novoProduto.id, imagem)
 
                 toast.dark('Produto Cadastrado!')
-                
+
             }
 
             else {
-                
+
                 await editarProduto(marca, categoria, nome, preco, precoPromo, destaque, promo, disponivel, estoque, descricao, id);
                 await EnviarImagem(id, imagem)
 
@@ -212,8 +218,54 @@ export default function Page_adm() {
 
 
 
+    function teclaEnter(e) {
+        if (e.key === 'Enter') {
+            FiltroNome();
+        }
+    }
 
 
+
+
+
+    function abrirAdd() {
+        const add = document.getElementById('addProduto')
+        add.classList.add('abrir')
+
+        const consulta = document.getElementById('consultaProd')
+        consulta.classList.remove('abrir')
+
+        const status = document.getElementById('statusProd')
+        status.classList.remove('abrir')
+
+    }
+
+    function abrirCon() {
+        const add = document.getElementById('addProduto')
+        add.classList.remove('abrir')
+
+        const consulta = document.getElementById('consultaProd')
+        consulta.classList.add('abrir')
+
+        const status = document.getElementById('statusProd')
+        status.classList.remove('abrir')
+    }
+
+    function abrirSta() {
+        const status = document.getElementById('statusProd')
+        status.classList.add('abrir')
+
+        const add = document.getElementById('addProduto')
+        add.classList.remove('abrir')
+
+        const consulta = document.getElementById('consultaProd')
+        consulta.classList.remove('abrir')
+
+    }
+
+
+
+    
     useEffect(() => {
         if (idParams) {
             CarregarProdutoPorIDs();
@@ -284,28 +336,6 @@ export default function Page_adm() {
 
 
 
-    function abrirAdd() {
-        const add = document.getElementById('addProduto')
-        add.classList.add('abrir')
-
-        const consulta = document.getElementById('consultaProd')
-        consulta.classList.remove('abrir')
-
-    }
-
-    function abrirCon() {
-        const add = document.getElementById('addProduto')
-        add.classList.remove('abrir')
-
-        const consulta = document.getElementById('consultaProd')
-        consulta.classList.add('abrir')
-
-    }
-
-
-
-
-
 
     return (
         <div className='pageAdm'>
@@ -313,7 +343,7 @@ export default function Page_adm() {
 
 
                 <div>
-                    <h1> Bem Vindo</h1>
+                    <h1> Bem Vindo, </h1>
                     <h1> {usuario}</h1>
                 </div>
 
@@ -330,9 +360,9 @@ export default function Page_adm() {
                     </li>
 
                     <li className='item-menu' >
-                        <div>
+                        <div onClick={abrirSta}>
 
-                            <span className='link'>Reclamações</span>
+                            <span className='link'>Status de produtos</span>
                             <img src=''></img>
                         </div>
 
@@ -362,11 +392,14 @@ export default function Page_adm() {
             <section className='Modais'>
 
 
-                <section className='consultaProd abrir' id='consultaProd'>
+                <section className={id > 0 ? 'consultaProd' : 'consultaProd abrir'} id='consultaProd'>
 
                     <div className='cima'>
                         <h1>Consultar Produtos</h1>
-                        <input type='text' placeholder='Pesquisa' />
+                        <label className='inputFiltro'>
+                        <input type='text' placeholder='Pesquisa' value={filtro} onKeyUp={teclaEnter} onChange={e => setFiltro(e.target.value)}/>
+                        <img onClick={FiltroNome} src='../../assets/images/lupa.png' />
+                        </label>
                         <hr />
                     </div>
 
@@ -401,7 +434,7 @@ export default function Page_adm() {
                                             </div>
 
                                             <div className='dir'>
-                                                <img alt='Editar' src='../../assets/images/editIcon.svg' onClick={() => [ AlterarProdutoClick(item.ID), window.location.reload()]}/>
+                                                <img alt='Editar' src='../../assets/images/editIcon.svg' onClick={() => [AlterarProdutoClick(item.ID), window.location.reload()]} />
                                                 <img alt='Deletar' src='../../assets/images/DeleteIcon.svg' onClick={() => DeletarProdutos(item.ID, item.PRODUTO)} />
 
                                             </div>
@@ -423,7 +456,65 @@ export default function Page_adm() {
 
                 </section>
 
-                <section className='addProduto' id='addProduto'>
+                <section className='statusProd' id='statusProd'>
+                    
+                    <div className='cardPedi'>
+                        <div className=' cima'>
+                            <div>
+                                <p>N° do pedido:</p>
+                                <h1></h1>
+                            </div>
+
+                            <div>
+                                <p>Nome do usuario:</p>
+                                <h1>sdfgsdfgsdgsd</h1>
+                            </div>
+
+                            <div>
+                                <p>pedido feito em:</p>
+                                <h1></h1>
+                            </div>
+                        </div>
+
+                        <div className='subcard'>
+
+                            <div>
+                                <img src='' />
+                            </div>
+
+                            <div  className='dir'>
+
+                                <div className='infoPedi'>
+
+                                    <div>
+                                        <h1>Nome Produto</h1>
+                                    </div>
+
+                                    <div>
+                                        <h1>Andamento do Produto</h1>
+                                        <p></p>
+                                    </div>
+
+                                </div>
+
+                                <div className='buttons'>
+                                    <select>
+                                        <option>nsei</option>
+                                        <option>nsei</option>
+                                        <option>nsei</option>
+                                    </select>
+
+                                    <button>Confirmar slaoq</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section className={id == 0 ? 'addProduto' : 'addProduto abrir'} id='addProduto'>
                     <ToastContainer />
 
 

@@ -110,6 +110,109 @@
 
 
 
+    .dirCel {
+        display: none;
+        flex-direction: column;
+      }
+      
+      .menu-toggle {
+        cursor: pointer;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+    
+
+      }
+      
+      .bar {
+        z-index: 3;
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        transition: 0.4s;
+      }
+      
+      .side-menu {
+        width: 0;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+        background-color: #111;
+        z-index: 1;
+        padding-top: 70px;
+      }
+      
+      .side-menu ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .side-menu ul li {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        gap: 10px;
+      }
+
+
+      .side-menu ul li h1{
+        padding: 0;
+        padding: 0 10px;
+      }
+
+      .side-menu ul li .Perfilimg{
+        width: 20px;
+        height: 20px;
+      }
+
+      .side-menu ul li .UserLetra{
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+      }
+
+      .side-menu ul li img{
+        height: 20px;
+      }
+      
+      .side-menu ul li p {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      
+      .side-menu ul li a:hover {
+        color: #0fbbff;
+      }
+      
+        .menu-active .menu-toggle{
+            position: fixed;
+            top: 7%;
+        }   
+
+      .menu-active .side-menu {
+        width: 160px;
+
+      }
+      
+      .menu-active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      
+      .menu-active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .menu-active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+
 
 
 
@@ -124,6 +227,7 @@
         height: 100px;
         background-color: #000;
         padding: 0 20px;
+        z-index: 3;
         
     }
 
@@ -259,6 +363,27 @@
 
         }
 
+        .input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cont-cabeca{
+            flex-direction: row-reverse;
+        }
+
+        .UserLetra {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .UserLetra h1{
+            font-size: 12px;
+            margin: 0px;
+        }
+
         
 
         .input {
@@ -270,12 +395,11 @@
 
         .dir {
 
-            font-size: 10px;
+            display: none;
+        }
+
+        .dirCel{
             display: flex;
-            flex-direction: row;
-            gap: 10px;
-            padding: 20px;
-            align-items: center;
         }
 
         .logo {

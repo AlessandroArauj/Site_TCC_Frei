@@ -10,7 +10,6 @@ export async function EditarDados(usuario, id) {
             SET NM_NOME_COMP = ?,
                 DT_NASC = ?,
                 DS_TELEFONE = ?,
-                DS_CPF = ?,
                 DS_ENDEREÇO = ?,
                 DS_EMAIL = ?
             WHERE ID_USER = ?
@@ -18,11 +17,10 @@ export async function EditarDados(usuario, id) {
 
     `
 
-    const [resp]= await con.query(comando, [
+    const [resp] = await con.query(comando, [
         usuario.Nome,
         usuario.Nasc,
         usuario.Telefone,
-        usuario.cpf,
         usuario.endereco,
         usuario.email,
         id

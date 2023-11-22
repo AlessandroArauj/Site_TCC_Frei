@@ -32,33 +32,10 @@ export default function Progresso(){
 
     return(
         
-        <div className='progresso'>
+        
+           <div className='encaminhamentoProduto'>
             <Header />
-            <div className='titulo'>
-                <h1> Progresso do produto</h1>
-            </div>
-
-            <div className='meio'>
-                <img src={BuscarImagem(produtos.IMAGEM)} className='imgg'></img>
-                <p>Seu código de verificação é 84593.
-                    Referente ao produto <b>{produtos.PRODUTO}</b>
-                </p>
-            </div>
-
-            <div className='img' >
-
-            <img src='../../assets/images/barra.png'></img>
-
-            </div>
-            
-
-
-            <div className='divButt'>
-                <button className='buttons'>Atualizar instruções de entrega do produto</button>
-                <button className='buttons'>Cancelar esta entrega</button>
-            </div>
-
             <Rodape />
-        </div>
+           </div>
     )
 }

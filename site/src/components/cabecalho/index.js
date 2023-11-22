@@ -15,6 +15,7 @@ export default function Header() {
 
     const cont2Ref = useRef(null);
 
+
     const handleClickOutside = (event) => {
         if (cont2Ref.current && !cont2Ref.current.contains(event.target)) {
             setMostrarResultados(false);
@@ -40,7 +41,7 @@ export default function Header() {
             else {
                 setMostrarResultados(true);
             }
-            
+
         } catch (err) {
             console.error(err);
         }
@@ -49,7 +50,8 @@ export default function Header() {
     function teclaEnter(e) {
         if (e.key === 'Enter') {
             Filtro();
-        }}
+        }
+    }
 
     useEffect(() => {
         if (storage('usuario-logado')) {
@@ -59,20 +61,30 @@ export default function Header() {
     }, []);
 
 
+
+    function toggleMenu() {
+        const menuToggle = document.querySelector('.dirCel');
+        menuToggle.classList.toggle('menu-active');
+    }
+
+
+
+
+
     return (
         <div className='cabecalho'>
 
             <div className='cont-cabeca'>
 
                 <div>
-               
+
                     <Link to={'/home'}><img src='../../../assets/images/logo.svg' className='logo'></img></Link>
 
                 </div>
 
 
                 <div className='Input'>
-                    
+
                     <div className='input'>
                         <button onClick={Filtro}>
                             <img src='../../../assets/images/lupa.png'></img>
@@ -82,10 +94,41 @@ export default function Header() {
 
                 </div>
 
+                <div className='dirCel'>
+
+                    <div class="menu-toggle" onClick={toggleMenu}>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+
+
+
+                    <div class="side-menu">
+                        <ul>
+
+                            <li>
+                                <Link className='butt-home' to={'/loginUser'}>
+                                    <div className={!storage('usuario-logado') ? 'minhaconta' : 'UserLetra'}> <h1> {storage('usuario-logado') ? usuario[0] : <img className='Perfilimg' src='../../../assets/images/perfil.png' />} </h1></div>
+
+                                </Link>
+                                <Link className='butt-home' to={storage('usuario-logado') ? '/LoginUser' : '/perfilusuario'}><p>{storage('usuario-logado') ? "Minha Conta" : 'Login'}</p></Link>
+
+                            </li>
+                            <li>
+                                <Link to={'/Carrinho'}><img src='../../../assets/images/carrinho.png'></img></Link>
+                                <Link className='butt-home' to={'/Carrinho'}><p>Carrinho</p></Link>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
                 <div className='dir'>
                     <div>
                         <Link className='butt-home' to={'/loginUser'}>
-                            <div className={!storage('usuario-logado') ? 'minhaconta' : 'UserLetra'}> <h1> {storage('usuario-logado') ? usuario[0] : <img className='Perfilimg' src='../../../assets/images/perfil.png' />} </h1></div>
+                            <div className={!storage('usuario-logado') ? 'minhaconta' : 'UserLetra'}> <h1> {storage('usuario-logado') ? usuario[0].toUpperCase() : <img className='Perfilimg' src='../../../assets/images/perfil.png' />} </h1></div>
 
                         </Link>
                         <Link className='butt-home' to={storage('usuario-logado') ? '/LoginUser' : '/perfilusuario'}><p>{storage('usuario-logado') ? "Minha Conta" : 'Login'}</p></Link>
@@ -100,7 +143,7 @@ export default function Header() {
             </div>
 
 
-         
+
             <div className='cont2' ref={cont2Ref}>
                 <div className='resultados'>
                     {mostrarResultados && resultado.map(item => (
@@ -117,7 +160,11 @@ export default function Header() {
                     ))}
                 </div>
 
-                </div>
+            </div>
+
+
+
+
 
 
 

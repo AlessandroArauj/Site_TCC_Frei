@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './index.scss'
 import { BuscarImagem } from '../../api/produtoApi'
 import { useState } from 'react'
@@ -10,11 +10,13 @@ import { ToastContainer, toast } from 'react-toastify';
 export default function Compcarrinho(props) {
   // const [subTotal, setSubTotal] = useState(0)
   const [qtdProduto, setQtdProduto] = useState(props.item.qtd)
+  const navigate = useNavigate()
 
   function remover() {
     props.removerItem(props.item.produto.ID)
     toast.dark('Item Removido do carrinho')
     window.location.reload()
+    
   }
 
   function calcularSubTotal() {
@@ -56,9 +58,9 @@ export default function Compcarrinho(props) {
               <div className='InfosTextos'>
 
                 <h3>{props.item.produto.PRODUTO}</h3>
-                <p>Promoção: R${props.item.produto.PRECOPROMO}</p>
+               
                 <p>Preço do Produto: R${props.item.produto.PRECO}</p>
-
+                <p>Promoção: R${props.item.produto.PRECOPROMO}</p>
               </div>
 
             </div>
@@ -70,11 +72,11 @@ export default function Compcarrinho(props) {
             <label> Quantidade </label>
             <select value={qtdProduto} onChange={e => alterarQUantidade(e.target.value)}>
 
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option onClick={() => window.location.reload()}>1</option>
+              <option onClick={() => window.location.reload()}>2</option>
+              <option onClick={() => window.location.reload()}>3</option>
+              <option onClick={() => window.location.reload()}>4</option>
+              <option onClick={() => window.location.reload()}>5</option>
 
             </select>
 
@@ -84,7 +86,7 @@ export default function Compcarrinho(props) {
 
           <div className='excluir'>
 
-            <button className='butt' onClick={remover}> Excluir Do carrinho</button>
+            <button className='butt' onClick={remover}> Excluir do carrinho</button>
 
           </div>
 

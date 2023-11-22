@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { BuscarImagem, ListarProdutosPorID } from '../../api/produtoApi';
 import { useNavigate } from 'react-router-dom';
 import { EditarUsuario } from '../../api/loginUserApi';
+import { MostrarPedidosUsuario } from '../../api/pedidosApi';
 
 
 
@@ -25,21 +26,37 @@ export default function ConteudoOptions() {
     const [nasc, setNasc] = useState('');
     const [emails, setEmails] = useState('');
 
+    const [pedidos, setPedidos] = useState([]);
+
     const navigate = useNavigate();
 
-    async function EditarPerfil() {
+    async function MostrarMeusPedidos() {
         try {
-            console.log('Chamando EditarUsuario com os seguintes parâmetros:', usuario, nasci, celular, endereco, email, id);
-            const resposta = await EditarUsuario(usuario, nasci, celular, endereco, email, id);
-            alert('Usuário alterado');
-    
-            storage.remove('usuario-logado');
-            navigate('/');
+            const resposta = await MostrarPedidosUsuario(id)
+            setPedidos(resposta)
+
+
+
         } catch (err) {
             console.log(err.message);
         }
     }
-    
+
+    async function EditarPerfil() {
+        try {
+
+            const resposta = await EditarUsuario(usuario, nasci, celular, endereco, email, id);
+            toast.dark('Usuário alterado');
+
+
+            navigate('/')
+            storage.remove('usuario-logado');
+
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
+
 
     async function carregarCarrinho() {
         let carrinho = storage('carrinho');
@@ -61,13 +78,13 @@ export default function ConteudoOptions() {
         }
     }
 
+
+
     useEffect(() => {
         carregarCarrinho()
     }, [])
 
     useEffect(() => {
-
-
 
         if (storage('usuario-logado')) {
             const usuariologado = storage('usuario-logado');
@@ -79,6 +96,13 @@ export default function ConteudoOptions() {
             setEmails(usuariologado.email);
         }
     }, [])
+
+    useEffect(() => {
+
+        MostrarMeusPedidos()
+
+
+    }, [id > 0])
 
 
 
@@ -146,53 +170,49 @@ export default function ConteudoOptions() {
 
 
             <section className='notificacao' id='notificacao'>
+
+
                 <div className='Pedidos'>
 
+                    <h1> SEUS PEDIDOS</h1>
 
 
-                    {itens.map(item =>
-                        <div className='CardCarrinho' onClick={() => navigate(`/progresso/${item.produto.ID}`)}>
-
-                            <div className='direita'>
-
-
-
-                                <div className='imagemProduto'>
-
-                                    <img className='ProdutoImagemCarrinho' alt='Imagens' src={BuscarImagem(item.produto.IMAGEM)} />
+                    {pedidos.map(item => (
+                        <div className='cardPedi'>
+                            <div className=' cima'>
+                                <div className='informacoesPedidosDatas'>
+                                    <div className='barrinhaAzul'></div> <p>pedido feito em: {item.Data.substr(0, 10)}</p>
+                                </div>
+                                <div>
 
                                 </div>
+                            </div>
 
-                                <div className='infosProdutos'>
 
-                                    <div className='InfosTextos'>
+                            <div className='subcard'>
+                                <div className='imagemPedido'>
+                                    <img className='PedidoImagem' src={BuscarImagem(item.Imagem)} />
+                                </div>
 
-                                        <h3></h3>
-                                        <p>Produto: {item.produto.PRODUTO}</p>
-                                        <p>Preço do Produto: R${item.produto.PRECO}</p>
+                                <div className='infoPedi'>
 
+                                    <div>
+                                        <h1>Nome Produto: {item.Produto}</h1>
+                                        <p> vendido e entregue por TOTH Music</p>
+                                    </div>
+
+                                    <div className='andamentoDetalhes'>
+                                        <h1>Andamento do Produto</h1>
+                                        <p> {item.Status} </p>
+                                        <div className='VerDetalhes' onClick={() => navigate('/')}> Ver Detalhes</div>
                                     </div>
 
                                 </div>
-
                             </div>
 
-                            <div className='quanti' >
-
-
-
-
-
-                            </div>
-
-                            <div className='excluir'>
-
-
-
-                            </div>
 
                         </div>
-                    )}
+                    ))}
 
 
                 </div>

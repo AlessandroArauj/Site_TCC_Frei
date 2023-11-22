@@ -23,7 +23,7 @@ return(
                 <h1> Siga-nos</h1>
                 <div className="sociais">
                 <Link><img src="https://www.freepnglogos.com/uploads/tik-tok-logo-png/tik-tok-tiktok-logo-glitch-toedit-sticker-fly-wall-7.png" /></Link>
-                <Link><img src="https://www.freepnglogos.com/uploads/youtube-play-red-logo-png-transparent-background-6.png" /></Link>
+                <Link to={'https://www.youtube.com/@TothMusic.05/featured'}><img src="https://www.freepnglogos.com/uploads/youtube-play-red-logo-png-transparent-background-6.png" /></Link>
                 <Link><img src="../../../assets/images/inst.png" /></Link>
                 </div>
             </div>

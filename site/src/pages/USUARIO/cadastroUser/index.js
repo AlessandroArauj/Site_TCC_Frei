@@ -19,7 +19,7 @@ export default function ContaUser() {
    const [confirmaSenha, setConfirmar] = useState('');
    const [erroConfirma, setErroConfirma] = useState('');
    const [termosAceitos, setTermosAceitos] = useState(false);
-   const navigate = useNavigate;
+   const navigate = useNavigate();
 
    const [mostrarSenha2, setMostrarSenha2] = useState(false)
    const [mostrarSenha, setMostrarSenha] = useState(false);
@@ -54,13 +54,17 @@ export default function ContaUser() {
          );
 
          toast.success('Usuário Cadastrado');
-
+         navigate('/loginUser')
          
+
+
       } catch (err) {
          toast.error('Usuario não cadastrado');
          console.log(err.message);
       }
    }
+
+
 
 
 
@@ -141,7 +145,7 @@ export default function ContaUser() {
 
 
 
-           
+
 
 
 
