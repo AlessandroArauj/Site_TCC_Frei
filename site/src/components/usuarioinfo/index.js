@@ -99,10 +99,12 @@ export default function ConteudoOptions() {
 
     useEffect(() => {
 
-        MostrarMeusPedidos()
+        if (id > 0) {
+            MostrarMeusPedidos()
+        }
 
 
-    }, [id > 0])
+    }, [id])
 
 
 
@@ -204,7 +206,7 @@ export default function ConteudoOptions() {
                                     <div className='andamentoDetalhes'>
                                         <h1>Andamento do Produto</h1>
                                         <p> {item.Status} </p>
-                                        <div className='VerDetalhes' onClick={() => navigate('/')}> Ver Detalhes</div>
+                                        <div className='VerDetalhes' onClick={() => navigate('/progresso/' + item.IDStatus)}> Ver Detalhes</div>
                                     </div>
 
                                 </div>

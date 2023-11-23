@@ -116,14 +116,14 @@ export default function AbaUsuario() {
                     <Link to={'/home'} className='Link'>
                         <li className='item-menu' id='home'>
                             <span className='link'>HOME</span>
-                            <img src='../../assets/images/image142.svg' />
+                            <img className='iconesPerfilUsuario' src='../../assets/images/image142.svg' />
                         </li>
                     </Link>
 
                     <li className='item-menu ativo' onClick={abrirAlt}>
                         <div>
                             <span className='link'>Editar Perfil</span>
-                            <img src='../../assets/images/image138.svg' />
+                            <img className='iconesPerfilUsuario' src='../../assets/images/image138.svg' />
                         </div>
                     </li>
 
@@ -131,7 +131,7 @@ export default function AbaUsuario() {
                         <div>
 
                             <span className='link'>Pedidos</span>
-                            <img src='../../assets/images/image137.svg'></img>
+                            <img className='iconesPerfilUsuario' src='../../assets/images/image137.svg'></img>
                         </div>
 
 
@@ -143,7 +143,7 @@ export default function AbaUsuario() {
                         <div>
 
                             <span className='link' >Sair da conta</span>
-                            <img src='../../assets/images/sair.png'></img>
+                            <img className='iconesPerfilUsuario' src='../../assets/images/sair.png'></img>
                         </div>
 
 
