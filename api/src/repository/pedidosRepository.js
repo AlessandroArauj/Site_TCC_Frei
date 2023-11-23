@@ -33,6 +33,7 @@ export async function MostrarPedidosUsuarios() {
     const comando = `
     SELECT
             P.ID_INSTRUMENTOS       AS ID,
+            C.ID_USER               AS UserID,
             S.id_status_pedido      AS IDStatus,
             ds_status_pedido        AS Status,
             NM_NOME_COMP            AS Usuario,

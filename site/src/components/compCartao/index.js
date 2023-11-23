@@ -4,6 +4,7 @@ import storage from 'local-storage'
 import { BuscarCartaoPorID, addCartao } from '../../api/loginUserApi'
 import { ToastContainer, toast } from 'react-toastify';
 import { Link, redirect, useNavigate } from 'react-router-dom';
+import { PedidoAdd } from '../../api/pedidosApi';
 
 export default function CompCartao(props) {
 
@@ -19,6 +20,39 @@ export default function CompCartao(props) {
     console.log(id);    
     const navigate = useNavigate();
 
+
+    async function AdicionarPedidos() {
+        try {
+           
+
+                if (cartoes.length == 0) {
+
+                    toast.dark('Adicione um cartão!')
+                    
+                    
+                }
+
+                else if (idUser !== 0 || id !== 0) {
+                    await PedidoAdd(idUser, id);
+                    toast.success('Pedido Realizado!');
+                }
+
+                else {
+
+                    toast.dark('Pedido não realizado!')
+                }
+
+                
+            
+
+
+
+
+
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
 
     async function BuscarCartao() {
         
@@ -172,12 +206,9 @@ export default function CompCartao(props) {
                                 </div>
 
                                 <div>
-                                    <div>
-                                        <h1>TOTAL:</h1>
+                                    
 
-                                    </div>
-
-                                    <button onClick={() => navigate('/progresso/' + id)}>Efetuar compra</button>
+                                    <button onClick={AdicionarPedidos}>Efetuar compra</button>
                                 </div>
                             </div>
 

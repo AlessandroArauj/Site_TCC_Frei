@@ -36,7 +36,6 @@ export default function ConteudoOptions() {
             setPedidos(resposta)
 
 
-
         } catch (err) {
             console.log(err.message);
         }

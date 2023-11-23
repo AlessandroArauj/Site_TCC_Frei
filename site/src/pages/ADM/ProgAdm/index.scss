@@ -1,60 +1,152 @@
-.progresso {
+.ProdProgreAdm {
 
-    .titulo {
-      text-align: center;
-      margin-bottom: 20px;
-
-      h1 {
-        color: #333;
-      }
-    }
-
-    .meio {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 20px;
-
-      img {
-        max-width: 100%;
-        margin-bottom: 10px;
-      }
-
-      p {
-        color: #666;
-      }
-
-      b {
-        font-weight: bold;
-      }
-    }
-
-    img {
-      display: flex;
-      max-width: 100%;
-      margin: 0 auto;
-      margin-bottom: 20px;
-    }
-
-    button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.6s;
-
-      &:hover {
-        background-color: #0056b3;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
+  .pr {
+    height: 80vh;
+    width: 100%;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+
+  .cardProgre {
+    width: 90%;
+    height: 65%;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(94, 94, 94, 0.459);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+  .bolinhas {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+  }
+
+  .bolinhas div {
+    color: black;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .MudarStatus {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    
+    width: 100%;
+  }
+
+  .SelectStatus {
+    border: none;
+    outline: 0;
+  
+  }
+
+  .bolinhas div div {
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    border-radius: 100%;
+  }
+
+
+  .barra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40%;
+    padding: 0px 30px;
+  }
+
+  .esboco {
+    width: 100%;
+    height: 30px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgba(173, 173, 173, 0.788);
+  }
+
+  .one {
+    display: flex;
+    padding: 0px 20px;
+    align-items: center;
+    width: 6%;
+    border-radius: 25px 0px 0px 25px;
+    height: 100%;
+    background-color: #3bd1ff;
+  }
+
+  .two {
+    display: flex;
+    padding: 0px 20px;
+    align-items: center;
+    width: 36%;
+    border-radius: 25px 0px 0px 25px;
+    height: 100%;
+    background-color: #3bd1ff;
+  }
+
+  .three {
+    display: flex;
+    padding: 0px 20px;
+    align-items: center;
+    width: 66%;
+    border-radius: 25px 0px 0px 25px;
+    height: 100%;
+    background-color: #3bd1ff;
+  }
+
+  .four {
+    display: flex;
+    padding: 0px 20px;
+    align-items: center;
+    width: 100%;
+    border-radius: 25px;
+    height: 100%;
+    background-color: #3bd1ff;
+  }
+
+
+  .infos {
+    display: flex;
+    justify-content: space-between;
+    height: 30%;
+    padding: 15px 0px;
+  }
+
+  .lineHori {
+    width: 10%;
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.87);
+  }
+
+  .infos div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .infos div p {
+    color: rgba(128, 128, 128, 0.87);
+  }
+
+
+
+
+
+}

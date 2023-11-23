@@ -10,6 +10,7 @@ import { Await, useNavigate, useParams } from 'react-router-dom';
 
 import { Link } from 'react-router-dom'
 import { URL_API } from '../../../constant';
+import { MostrarPedidos } from '../../../api/pedidosApi';
 
 
 
@@ -37,19 +38,37 @@ export default function Page_adm() {
     const [descricao, setDesc] = useState('');
     const [imagem, setImagem] = useState('');
     const [id, setId] = useState(0);
-    const [listarProduto, setListaProduto] = useState()
+    const [listarProduto, setListaProduto] = useState();
+    const [status, setStatus] = useState(0);
+    const [idPedido, setIdPedido] = useState(0);
 
 
     const [produtos, setProdutos] = useState([]);
     const [produto, setProduto] = useState([])
     const [filtro, setFiltro] = useState('')
- 
+
+    const [pedidos, setPedidos] = useState([]);
+
 
 
     const [usuario, setUsuario] = useState('-');
     const navigate = useNavigate();
     const idParams = useParams().id;
 
+    console.log(pedidos);
+    console.log(idPedido);
+
+    async function MostrarMeusPedidos() {
+        try {
+            const resposta = await MostrarPedidos()
+            setPedidos(resposta)
+
+
+
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
 
     function sairClick() {
 
@@ -265,7 +284,10 @@ export default function Page_adm() {
 
 
 
-    
+    useEffect(() => {
+        MostrarMeusPedidos()
+    }, [])
+
     useEffect(() => {
         if (idParams) {
             CarregarProdutoPorIDs();
@@ -397,8 +419,8 @@ export default function Page_adm() {
                     <div className='cima'>
                         <h1>Consultar Produtos</h1>
                         <label className='inputFiltro'>
-                        <input type='text' placeholder='Pesquisa' value={filtro} onKeyUp={teclaEnter} onChange={e => setFiltro(e.target.value)}/>
-                        <img onClick={FiltroNome} src='../../assets/images/lupa.png' />
+                            <input type='text' placeholder='Pesquisa' value={filtro} onKeyUp={teclaEnter} onChange={e => setFiltro(e.target.value)} />
+                            <img onClick={FiltroNome} src='../../assets/images/lupa.png' />
                         </label>
                         <hr />
                     </div>
@@ -457,60 +479,60 @@ export default function Page_adm() {
                 </section>
 
                 <section className='statusProd' id='statusProd'>
-                    
-                    <div className='cardPedi'>
-                        <div className=' cima'>
-                            <div>
-                                <p>N° do pedido:</p>
-                                <h1></h1>
-                            </div>
 
-                            <div>
-                                <p>Nome do usuario:</p>
-                                <h1>sdfgsdfgsdgsd</h1>
-                            </div>
+                    <div className='statusCards' >
+                        {pedidos.map(item => (
+                            <div className='cardPedi' onClick={() => navigate(`/progressoAdm/status/${item.IDStatus}/pedido/${item.ID}/usuario/${item.UserID}`)}>
+                                <div className=' cima'>
 
-                            <div>
-                                <p>pedido feito em:</p>
-                                <h1></h1>
-                            </div>
-                        </div>
-
-                        <div className='subcard'>
-
-                            <div>
-                                <img src='' />
-                            </div>
-
-                            <div  className='dir'>
-
-                                <div className='infoPedi'>
 
                                     <div>
-                                        <h1>Nome Produto</h1>
+                                        <p>Nome do usuario:</p>
+                                        <h1>{item.Usuario}</h1>
                                     </div>
 
                                     <div>
-                                        <h1>Andamento do Produto</h1>
-                                        <p></p>
+                                        <p>pedido feito em:</p>
+                                        <h1>{item.Data.substr(0, 10)}</h1>
+                                    </div>
+                                </div>
+
+                                <div className='subcard'>
+
+                                    <div>
+                                        <img src={BuscarImagem(item.Imagem)} />
+                                    </div>
+
+                                    <div className='dir'>
+
+                                        <div className='infoPedi'>
+
+                                            <div>
+                                                <h1>Nome do pedido: {item.Produto}</h1>
+                                            </div>
+
+                                            <div>
+                                                <h1 className='andamento'>Andamento do Pedido:</h1>
+                                                <p>{item.Status}</p>
+                                            </div>
+
+                                        </div>
+
+                                        <div className='buttons'>
+                                            
+
+                                            <button>Trocar status</button>
+                                        </div>
                                     </div>
 
                                 </div>
 
-                                <div className='buttons'>
-                                    <select>
-                                        <option>nsei</option>
-                                        <option>nsei</option>
-                                        <option>nsei</option>
-                                    </select>
-
-                                    <button>Confirmar slaoq</button>
-                                </div>
                             </div>
-
-                        </div>
-
+                        ))}
                     </div>
+
+
+
 
                 </section>
 

@@ -46,7 +46,7 @@ root.render(
 
         <Route path='/loginAdm' element={<CadastroAdm />} />
         <Route path='/pageAdm' element={<Page_adm />} />
-        <Route path='/progressoAdm' element={<Prog/>}/>
+        <Route path='/progressoAdm/status/:id1/pedido/:id2/usuario/:id3' element={<Prog/>}/>
         <Route path='/pageAdm/alterar/:id' element={<Page_adm />} />
 
 

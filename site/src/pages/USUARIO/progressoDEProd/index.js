@@ -103,25 +103,7 @@ export default function Progresso() {
           </div>
 
 
-          <div className='infos'>
-
-            <div>
-              <p>data da compra</p>
-              <h1></h1>
-            </div>
-            <hr />
-            <div>
-              <p> ultima atualização</p>
-              <h1></h1>
-            </div>
-            <hr />
-
-            <div>
-              <p> produto finalizado</p>
-              <h1></h1>
-            </div>
-          </div>
-
+         
         </div>
       </div>
       <Rodape />

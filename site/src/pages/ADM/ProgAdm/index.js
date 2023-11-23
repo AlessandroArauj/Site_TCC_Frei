@@ -1,26 +1,128 @@
 import './index.scss'
+import Header from '../../../components/cabecalho'
+import Rodape from '../../../components/rodape'
+import { useNavigate, useParams, } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { BuscarImagem, ListarProdutosPorID } from '../../../api/produtoApi';
+import { StatusAlterar } from '../../../api/pedidosApi';
 
 
-export default function prog(){
+export default function Progresso() {
+
+    const [produtos, setProdutos] = useState({});
+    const ido = useParams().id1;
+    const id = useParams().id2;
+    const idp = useParams().id3
+
+    const navigate = useNavigate();
+
+    const [progresso, setProgresso] = useState('')
+    const [statusId, setStatusId] = useState(0)
 
 
-    return(
-        <div className='progresso'>
-            <div className='titulo'>
-                <h1> Esse é o progresso do produto</h1>
+
+    async function AlterarStatus() {
+        try {
+            await StatusAlterar(statusId, id)
+            navigate('/pageAdm')
+
+        } catch (err) {
+            console.log(err.message);
+        }
+
+    }
+
+
+
+    useEffect(() => {
+        ProgreBarra()
+    }, [])
+
+
+
+    function ProgreBarra() {
+
+        if (ido == 1) {
+            setProgresso('one')
+        }
+
+        else if (ido == 2) {
+            setProgresso('two')
+
+        }
+
+        else if (ido == 3) {
+            setProgresso('three')
+        }
+
+        else if (ido == 4) {
+            setProgresso('four')
+        }
+    }
+
+    return (
+
+
+        <div className='ProdProgreAdm'>
+
+
+            <div className='pr'>
+
+                <div className='cardProgre'>
+
+                    <div className=' bolinhas'>
+                        <div>
+                            <div></div>
+                            <p> enviando chamado</p>
+                        </div>
+                        <div className='lineHori' />
+                        <div>
+                            <div> </div>
+                            <p> pedido em andamento</p>
+                        </div>
+                        <div className='lineHori' />
+
+                        <div>
+                            <div> </div>
+                            <p> pedido a caminho</p>
+                        </div>
+                        <div className='lineHori' />
+
+                        <div>
+                            <div></div>
+                            <p>  pedido finalizado</p>
+                        </div>
+                    </div>
+
+                    <div className='barra'>
+                        <div className='esboco'>
+                            <div className={progresso}>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MudarStatus'>
+
+                        <select className='SelectStatus' value={statusId} onChange={e => setStatusId(e.target.value)}>
+
+                            <option value={0}>Selecione</option>
+                            <option value={1}>Aguardando aprovação</option>
+                            <option value={2}>Em preparação</option>
+                            <option value={3}>A caminho</option>
+                            <option value={4}>Entregue</option>
+
+                        </select>
+
+                        <button className='butt-status' onClick={AlterarStatus}> Confirmar Alteração </button>
+
+                    </div>
+
+
+
+                </div>
             </div>
 
-            <div className='meio'>
-                <img src='../../assets/images/guitarlandin2.png'></img>
-                <p>O produto chegará ao cliente às duas da tarde do dia vinte desse mês, daqui no maximo 5 dias
-                </p>
-            </div>
-            <img src='../../assets/images/barra.png'></img>
-
-            <div>
-                <button>Atualizar instruções de entrega do produto</button>
-                <button>Cancelar esta entrega</button>
-            </div>
         </div>
     )
 }
