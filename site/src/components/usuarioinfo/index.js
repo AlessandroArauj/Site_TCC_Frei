@@ -112,7 +112,14 @@ export default function ConteudoOptions() {
     return (
         <div className='conteudoOption'>
 
+            <div className='headerPerfil'>
+                <div>
+                    <h1> nome</h1>
+                    <p1> email</p1>
+                </div>
 
+                <div className='boll' />
+            </div>
 
             <section className='editarPerfil abrir' id='editarPerfil'>
 
@@ -147,76 +154,59 @@ export default function ConteudoOptions() {
 
 
 
-            <section className='senhaSeguranca' id='senhaSeguranca'>
-
-                <div className='Seg'>
-                    <h1> Altere sua senha</h1>
-                    <div className='senhas'>
-                        <input type='text' placeholder='SENHA  ATUAL' />
-                        <input type='text' placeholder='NOVA  SENHA' />
-                        <input type='text' placeholder='CONFIRMAR' />
-                    </div>
-                    <div className='meio'>
-
-                        <div />
-                        <p>ou</p>
-                        <div />
-                    </div>
-
-
-                    <button className='bot'>Excluir conta</button>
-                </div>
-
-            </section>
-
 
             <section className='notificacao' id='notificacao'>
 
 
-                <div className='Pedidos'>
-
                     <h1> SEUS PEDIDOS</h1>
 
 
-                    {pedidos.map(item => (
-                        <div className='cardPedi'>
-                            <div className=' cima'>
-                                <div className='informacoesPedidosDatas'>
-                                    <div className='barrinhaAzul'></div> <p>pedido feito em: {item.Data.substr(0, 10)}</p>
-                                </div>
-                                <div>
 
-                                </div>
-                            </div>
-
-
-                            <div className='subcard'>
-                                <div className='imagemPedido'>
-                                    <img className='PedidoImagem' src={BuscarImagem(item.Imagem)} />
-                                </div>
-
-                                <div className='infoPedi'>
-
+                    <div className='pedidos'>
+                        {pedidos.map(item => (
+                            <div className='cardPedi'>
+                                <div className=' cima'>
+                                    <div className='informacoesPedidosDatas'>
+                                        <div className='barrinhaAzul'></div> <p>pedido feito em: {item.Data.substr(0, 10)}</p>
+                                    </div>
                                     <div>
-                                        <h1>Nome Produto: {item.Produto}</h1>
-                                        <p> vendido e entregue por TOTH Music</p>
-                                    </div>
 
-                                    <div className='andamentoDetalhes'>
-                                        <h1>Andamento do Produto</h1>
-                                        <p> {item.Status} </p>
-                                        <div className='VerDetalhes' onClick={() => navigate('/progresso/' + item.IDStatus)}> Ver Detalhes</div>
                                     </div>
-
                                 </div>
+
+
+                                <div className='subcard'>
+                                    <div className='imagemPedido'>
+                                        <img className='PedidoImagem' src={BuscarImagem(item.Imagem)} />
+                                    </div>
+
+                                    <div className='infoPedi'>
+
+                                        <div className='esquerdo'>
+                                            <h1>Nome Produto: {item.Produto}</h1>
+                                            <p> vendido e entregue por TOTH Music</p>
+                                        </div>
+
+                                        <div className='andamentoDetalhes'>
+                                            <h1>Andamento do Produto</h1>
+                                            <p> {item.Status} </p>
+                                            <div className='VerDetalhes' onClick={() => navigate('/progresso/' + item.IDStatus)}> Ver Detalhes</div>
+                                            
+                                        </div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+
                             </div>
+                        ))}
+
+                    </div>
 
 
-                        </div>
-                    ))}
-
-
-                </div>
+                
 
             </section>
 

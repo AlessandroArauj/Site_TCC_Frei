@@ -65,8 +65,6 @@ export default function AbaUsuario() {
         const editar = document.getElementById('editarPerfil')
         editar.classList.add('abrir')
 
-        const senha = document.getElementById('senhaSeguranca')
-        senha.classList.remove('abrir')
 
         const notificacao = document.getElementById('notificacao')
         notificacao.classList.remove('abrir')
@@ -80,27 +78,16 @@ export default function AbaUsuario() {
         const editar = document.getElementById('editarPerfil')
         editar.classList.remove('abrir')
 
-        const senha = document.getElementById('senhaSeguranca')
-        senha.classList.remove('abrir')
+      
 
     }
 
 
 
-    function abrirPed() {
-        const senha = document.getElementById('senhaSeguranca')
-        senha.classList.add('abrir')
-
-        const editar = document.getElementById('editarPerfil')
-        editar.classList.remove('abrir')
-
-        const notificacao = document.getElementById('notificacao')
-        notificacao.classList.remove('abrir')
-
-
-    }
-
+  
     
+
+
 
     return (
         <div className='perfil'>
@@ -127,7 +114,7 @@ export default function AbaUsuario() {
                         </div>
                     </li>
 
-                    <li className='item-menu' onClick={abrirNoti}>
+                    <li className='item-menu' id='pedidos' onClick={abrirNoti}>
                         <div>
 
                             <span className='link'>Pedidos</span>
@@ -137,7 +124,7 @@ export default function AbaUsuario() {
 
                     </li>
 
-                    
+
 
                     <li className='item-menu' onClick={sairClick}>
                         <div>
@@ -151,10 +138,12 @@ export default function AbaUsuario() {
 
                 </ul>
             </nav>
-            <div className='conteudo-option'>
 
-                <Modais />
+
+            <div className='conteudo-option'>
+                    <Modais />
             </div>
+
 
         </div>
 
