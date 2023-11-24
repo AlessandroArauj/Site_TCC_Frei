@@ -41,7 +41,7 @@ root.render(
         <Route path='/carrinho' element={<PageCarrinho />} />
         <Route path='/categorias/:id' element={<Categoria />} />
         <Route path='/PagePubli' element={<PagePubli />} />
-        <Route path='/progresso/:id' element= {<Progresso/>}/>
+        <Route path='/progresso/:id/pedido/:id2' element= {<Progresso/>}/>
   
 
         <Route path='/loginAdm' element={<CadastroAdm />} />

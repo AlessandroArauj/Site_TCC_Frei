@@ -117,7 +117,6 @@ function verificaEmail(email) {
 
 
 
-        <a href='https://i.pinimg.com/564x/fd/4f/f3/fd4ff31c42c79d2442d4fc3ce7eb029a.jpg' className='esqueceu' >ESQUECEU A SENHA?</a>
 
 
         <div className='comp'>

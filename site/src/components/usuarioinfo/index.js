@@ -192,7 +192,7 @@ export default function ConteudoOptions() {
                                         <div className='andamentoDetalhes'>
                                             <h1>Andamento do Produto</h1>
                                             <p> {item.Status} </p>
-                                            <div className='VerDetalhes' onClick={() => navigate('/progresso/' + item.IDStatus)}> Ver Detalhes</div>
+                                            <div className='VerDetalhes' onClick={() => navigate('/progresso/' + item.IDStatus + '/pedido/' + item.ID)}> Ver Detalhes</div>
                                             
                                         </div>
 
