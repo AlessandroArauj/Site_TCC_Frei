@@ -102,7 +102,7 @@ export default function AbaUsuario() {
 
                     <Link to={'/home'} className='Link'>
                         <li className='item-menu' id='home'>
-                            <span className='link'>HOME</span>
+                            <span className='link'>Home</span>
                             <img className='iconesPerfilUsuario' src='../../assets/images/image142.svg' />
                         </li>
                     </Link>

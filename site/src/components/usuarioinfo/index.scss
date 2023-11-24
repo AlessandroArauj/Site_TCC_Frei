@@ -8,21 +8,26 @@
 
 
 
-    .headerPerfil{
+    .headerPerfil {
         width: 100%;
-        
-        background-color: #ececec;
+
+        background-color: #ddd6d6;
         display: none;
         margin-top: -100px;
         margin-bottom: 100px;
-   }
-
-
-   @media (max-width: 415px) {
-    .headerPerfil{
-display: flex;
     }
-   }
+
+
+    @media (max-width: 415px) {
+        .headerPerfil {
+            display: flex;
+        }
+
+        .headerPerfil h1{
+            font-size: 20px;
+            color: black;
+        }
+    }
 
 
     .editarPerfil {
@@ -34,10 +39,10 @@ display: flex;
 
     }
 
-    .barrinhaAzul{
+    .barrinhaAzul {
         width: 10px;
         height: 30px;
-        background-color:#00C2FF;
+        background-color: #00C2FF;
     }
 
     .editarPerfil.abrir {
@@ -84,7 +89,7 @@ display: flex;
         }
 
 
-        .editarPerfil button {
+        button {
             width: 200px;
             height: 35px;
             border: none;
@@ -94,7 +99,7 @@ display: flex;
             color: #fff;
         }
 
-        .editarPerfil button:hover {
+        button:hover {
             background-color: transparent;
             border: 1px solid black;
             color: black;
@@ -103,14 +108,15 @@ display: flex;
 
 
 
-       
-        @media( max-width: 720px){
 
-            .inputs>div input, p{
+        @media(max-width: 720px) {
+
+            .inputs>div input,
+            p {
                 width: 210px;
             }
 
-            .inputs{
+            .inputs {
                 padding: 20px 30px;
             }
 
@@ -119,18 +125,18 @@ display: flex;
         }
 
 
-        @media(max-width: 415px){
+        @media(max-width: 415px) {
 
-           .inputs>div:first-child{
+            .inputs>div:first-child {
                 display: none;
-           }
-           
-           
+            }
+
+
         }
 
 
 
-        
+
 
 
     }
@@ -140,7 +146,7 @@ display: flex;
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
- 
+
 
 
 
@@ -154,15 +160,15 @@ display: flex;
         display: none;
     }
 
-    
+
 
     .notificacao.abrir {
         display: flex;
-        
 
-     
+
+
         .imagemPedido {
-            width: 25%!important;
+            width: 25% !important;
             height: 100%;
 
 
@@ -184,16 +190,16 @@ display: flex;
             width: 100%;
             overflow-x: auto;
             scroll-behavior: smooth;
-            
+
         }
 
 
         .cardPedi {
 
             margin-top: 20px;
-            
+
             width: 80%;
-            
+
             height: 200px;
             padding: 15px;
             box-shadow: 0px 0px 10px #9b9b9b;
@@ -204,15 +210,15 @@ display: flex;
             flex-direction: column;
         }
 
-        .cardPedi .cima{
+        .cardPedi .cima {
             display: flex;
             height: 20%;
             justify-content: space-between;
-            
+
         }
 
         .andamentoDetalhes {
-            
+
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -223,7 +229,7 @@ display: flex;
 
 
         .VerDetalhes {
-            
+
             display: flex;
             margin-top: 15px;
             align-items: center;
@@ -231,7 +237,7 @@ display: flex;
 
             border: #00C2FF 1px solid;
             border-radius: 5px;
-            width: 150px!important;
+            width: 150px !important;
             height: 30px;
             background-color: #00C2FF;
             color: white;
@@ -239,15 +245,15 @@ display: flex;
             cursor: pointer;
         }
 
-        .informacoesPedidosDatas{
-            
+        .informacoesPedidosDatas {
+
             display: flex;
             align-items: center;
 
             gap: 10px;
         }
 
-        .subcard{
+        .subcard {
             width: 100%;
             height: 80%;
             border-radius: 10px;
@@ -257,45 +263,45 @@ display: flex;
         }
 
 
-        .subcard div:first-child{
+        .subcard div:first-child {
             width: 25%;
             height: 100%;
         }
 
-        .subcard .infoPedi{
+        .subcard .infoPedi {
             width: 75%;
             height: 100%;
             display: flex;
             justify-content: space-between;
         }
 
-        .subcard .infoPedi div{
+        .subcard .infoPedi div {
             width: 100%;
         }
 
-        
 
-        .subcard .infoPedi h1{
+
+        .subcard .infoPedi h1 {
             font-size: 18px;
         }
 
 
-        @media(max-width:720px){
+        @media(max-width:720px) {
 
-            .imagemPedido{
-                width: 100%!important;
+            .imagemPedido {
+                width: 100% !important;
             }
 
-            .cardPedi{
+            .cardPedi {
                 height: 500px;
             }
 
-            .subcard{
+            .subcard {
                 flex-direction: column;
-                
+
             }
 
-            .cardPedi .infoPedi{
+            .cardPedi .infoPedi {
                 padding: 10px 0px;
                 width: 100%;
                 display: flex;
@@ -303,59 +309,59 @@ display: flex;
             }
 
 
-            .subcard .infoPedi h1{
+            .subcard .infoPedi h1 {
                 font-size: 14px;
             }
 
 
-            .VerDetalhes{
-             width: 100%;
+            .VerDetalhes {
+                width: 100%;
             }
 
-            .andamentoDetalhes{
+            .andamentoDetalhes {
                 margin-left: 10px;
             }
         }
 
 
-        @media(max-width:415px){
+        @media(max-width:415px) {
 
 
-            
-            .subcard{
+
+            .subcard {
                 height: 350px;
-                
+
             }
 
-            .esquerdo{
+            .esquerdo {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-    
+
             }
 
-            .esquerdo p{
+            .esquerdo p {
                 text-align: center;
             }
 
-            .cardPedi .infoPedi{
+            .cardPedi .infoPedi {
                 padding: 10px 0px;
                 width: 100%;
                 display: flex;
-               flex-direction: column;
+                flex-direction: column;
                 align-items: center;
-                
+
                 justify-content: space-between;
             }
 
-            p{
+            p {
                 display: flex;
             }
         }
 
-        
-        
+
+
 
 
     }

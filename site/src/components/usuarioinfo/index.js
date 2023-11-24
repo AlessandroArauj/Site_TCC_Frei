@@ -18,6 +18,8 @@ export default function ConteudoOptions() {
     const [email, setEmail] = useState('');
     const [itens, setItem] = useState([]);
     const [id, setId] = useState(0)
+   
+
 
 
     const [usuarios, setUsuarios] = useState('');
@@ -114,8 +116,8 @@ export default function ConteudoOptions() {
 
             <div className='headerPerfil'>
                 <div>
-                    <h1> nome</h1>
-                    <p1> email</p1>
+                    <h1>{usuario}</h1>
+                    <p1>{email}</p1>
                 </div>
 
                 <div className='boll' />

@@ -150,41 +150,39 @@
 
 
        
-    @media (max-width:561px) {
+     @media (max-width:415px) {
+
+       
         .CardCarrinho{
-         height: 40vh;
-         gap: 0px;
+            height: 100%;
+           
+            gap: 10px;
         }
- 
+    
         .butt{
- 
-         width: 60px;
-         font-size: 10px;
+            width: 60px;
+            font-size: 10px;
         }
- 
-         
+    
         .InfosTextos h3{
-         font-size: 13px;
-         margin-top: 30px;
-         
-     }
-
-     .direita {
-        
-        display: flex;
-        gap: 20px;
-        padding: 10px;
-        flex-direction: column;
-        width: 40%;
-      
+            font-size: 13px;
+            margin-top: 20px;
+        }
+    
+        .direita {
+            display: flex;
+            gap: 15px;
+            padding: 10px;
+            flex-direction: column;
+            width: 100%;
+        }
+    
+        .quanti {
+            width: 30%;
+            padding: 0px;
+        }
     }
-
-    .quanti {
-        width: 30%;
-        padding: 10px;
-
-    }
-     }
+    
  
 
 

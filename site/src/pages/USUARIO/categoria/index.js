@@ -81,7 +81,7 @@ export default function Cardaudio() {
                         <div className={fundo}>
                               <h1 >{categorias.Categoria}</h1>
                         </div>
-                        
+
                         <div className='conteiner'>
 
                               <div className='subcont' >
